@@ -66,9 +66,13 @@ The device exposes a RESTful API for remote configuration and control.
   - **Response**:
     ```json
     {
-      "total_ram": 2048,
-      "used_ram": 1024,
-      "free_ram": 1024
+        "xAvailableHeapSpaceInBytes": "11688",
+        "xSizeOfLargestFreeBlockInBytes": "9528",
+        "xSizeOfSmallestFreeBlockInBytes": "48",
+        "xNumberOfFreeBlocks": "4",
+        "xMinimumEverFreeBytesRemaining": "1976",
+        "xNumberOfSuccessfulAllocations": "215",
+        "xNumberOfSuccessfulFrees": "180"
     }
     ```
 
