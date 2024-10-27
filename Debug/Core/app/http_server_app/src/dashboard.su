@@ -1,0 +1,17 @@
+../Middlewares/Third_Party/mongoose/mongoose.h:192:21:mg_calloc	24	static
+../Core/app/http_server_app/src/dashboard.c:42:13:handle_ram_status_get	96	static
+../Core/app/http_server_app/src/dashboard.c:67:12:calc_file_md5sum	136	static
+../Core/app/http_server_app/src/dashboard.c:114:13:handle_io_status_get	96	static
+../Core/app/http_server_app/src/dashboard.c:169:13:handle_mqtt_conf	80	static
+../Core/app/http_server_app/src/dashboard.c:274:13:handle_dev_status	336	static
+../Core/app/http_server_app/src/dashboard.c:361:13:handle_OPTIONS_method	16	static
+../Core/app/http_server_app/src/dashboard.c:370:13:handle_restart_mcu	48	static
+../Core/app/http_server_app/src/dashboard.c:388:13:handle_firmware_upload	160	static
+../Core/app/http_server_app/src/dashboard.c:405:13:handle_firmware_md5	40	static
+../Core/app/http_server_app/src/dashboard.c:423:13:handle_firmware_activate	48	static
+../Core/app/http_server_app/src/dashboard.c:451:13:handle_firmware_deactivate	32	static
+../Core/app/http_server_app/src/dashboard.c:468:13:handle_web_files_remove	32	static
+../Core/app/http_server_app/src/dashboard.c:482:13:handle_fs_mkdir	288	static
+../Core/app/http_server_app/src/dashboard.c:514:13:dashboard	168	static
+../Core/app/http_server_app/src/dashboard.c:556:8:dash_hdl	4	static
+../Core/app/http_server_app/src/dashboard.c:561:6:reg_parameter_handler	16	static

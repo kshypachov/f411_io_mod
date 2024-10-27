@@ -1,0 +1,11 @@
+../Core/Inc/definitions.h:51:21:void* my_calloc(size_t, size_t)	2
+../Core/app/mqtt_client_app/src/mqtt.cpp:41:13:void mqtt_send_registration_data(mg_connection*, const SensorInfo*, size_t)	2
+../Core/app/mqtt_client_app/src/mqtt.cpp:63:13:void mqtt_send_io_status(mg_connection*, bool)	6
+../Core/app/mqtt_client_app/src/mqtt.cpp:112:13:void mqtt_subscrabe_on_sw(mg_connection*, const SensorInfo*, size_t)	3
+../Core/app/mqtt_client_app/src/mqtt.cpp:128:13:void mqtt_subscrabe_recv_cmd_parce(mg_mqtt_message*)	19
+../Core/app/mqtt_client_app/src/mqtt.cpp:181:13:void mqtt_pereodic_status_send_timer_handler(void*)	2
+../Core/app/mqtt_client_app/src/mqtt.cpp:187:13:void mqtt_event_handler(mg_connection*, int, void*)	7
+../Core/app/mqtt_client_app/src/mqtt.cpp:212:13:void mqtt_timer_handler(void*)	2
+../Core/app/mqtt_client_app/src/mqtt.cpp:234:13:void mqtt_timer_handler_cher_io_status(void*)	3
+../Core/app/mqtt_client_app/src/mqtt.cpp:241:23:mg_connection* get_mqtt_connection()	1
+../Core/app/mqtt_client_app/src/mqtt.cpp:246:6:void mqtt_init(void*, void*, void*, void*, void*, void (*)(void*, sett_type_t, sett_direction_t))	1
