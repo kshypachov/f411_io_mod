@@ -262,7 +262,7 @@ int lfs_fs_ll_init(void (*lock)(void *), void (*unlock)(void *)){
 
     if (lfs_mount(&lfs, &cfg)< 0){
     	lfs_format(&lfs, &cfg);
-    	lfs_mount(&lfs, &cfg);
+    	return lfs_mount(&lfs, &cfg);
     }
 
 	return 0;

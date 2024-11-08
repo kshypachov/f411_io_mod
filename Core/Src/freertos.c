@@ -483,7 +483,9 @@ void StartSettingsTask(void *argument)
 	MQTT_cred_struct mqtt_config;
 
   SPI_flash_reg_cb(FlashBegin, FlashEnd, RecvBuffSPI2, SendByteSPI2);
-  lfs_fs_ll_init(FS_Lock, FS_Unlock);
+  if (lfs_fs_ll_init(FS_Lock, FS_Unlock) < 0){
+	  HAL_NVIC_SystemReset();
+  }
 
   mg_fs_lfs_mkdir("/web");
   mg_fs_lfs_remove("/firmware");

@@ -78,7 +78,7 @@ static void mqtt_send_io_status(struct mg_connection * arg, bool force_update){
 	    // Состояние изменилось, продолжаем
 		memcpy(&prev_status, &status, sizeof(status));
 
-		logging(L_INFO, "Send io status data to MQTT server");
+		//logging(L_INFO, "Send io status data to MQTT server");
 
 		payload = (char * )calloc(MQTT_PAYLOAD_MAX_LEN, sizeof(char));
 		topik   = (char * )calloc(MQTT_TOPIK_MAX_LEN,   sizeof(char));
