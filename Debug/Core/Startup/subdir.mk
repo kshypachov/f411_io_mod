@@ -16,7 +16,7 @@ OBJS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 Core/Startup/%.o: ../Core/Startup/%.s Core/Startup/subdir.mk
-	arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -I../Core/app/mqtt_client_app/inc -I../Core/app/http_server_app/inc -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@" "$<"
+	arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -I../Core/app/mqtt_client_app/inc -I../Core/app/http_server_app/inc -I../Drivers/i2c_display/inc -I../Middlewares/Third_Party/crypto_lib_mbed_TLS/include/mbedtls -I../Middlewares/Third_Party/crypto_lib_mbed_TLS/library -I../Middlewares/Third_Party/crypto_lib_mbed_TLS/include/psa -I../Middlewares/Third_Party/crypto_lib_mbed_TLS/include -x assembler-with-cpp -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@" "$<"
 
 clean: clean-Core-2f-Startup
 

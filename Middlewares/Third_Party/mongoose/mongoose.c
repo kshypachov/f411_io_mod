@@ -3145,6 +3145,10 @@ struct mg_str mg_http_get_header_var(struct mg_str s, struct mg_str v) {
   return mg_str_n(NULL, 0);
 }
 
+#define headers_tmp     "Content-Type: application/json\r\n" "Access-Control-Allow-Origin: *\r\n" "Access-Control-Allow-Headers: Content-Type\r\n"
+
+
+
 long mg_http_upload(struct mg_connection *c, struct mg_http_message *hm,
                     struct mg_fs *fs, const char *dir, size_t max_size) {
   char buf[20] = "0", file[MG_PATH_MAX], path[MG_PATH_MAX];
@@ -3154,7 +3158,7 @@ long mg_http_upload(struct mg_connection *c, struct mg_http_message *hm,
   offset = strtol(buf, NULL, 0);
   mg_snprintf(path, sizeof(path), "%s%c%s", dir, MG_DIRSEP, file);
   if (hm->body.len == 0) {
-    mg_http_reply(c, 200, "", "%ld", res);  // Nothing to write
+    mg_http_reply(c, 200, headers_tmp, "%ld", res);  // Nothing to write  //TODO DELETE HEADERS!!!!!
   } else if (file[0] == '\0') {
     mg_http_reply(c, 400, "", "file required");
     res = -1;
@@ -3183,7 +3187,7 @@ long mg_http_upload(struct mg_connection *c, struct mg_http_message *hm,
     } else {
       res = offset + (long) fs->wr(fd->fd, hm->body.buf, hm->body.len);
       mg_fs_close(fd);
-      mg_http_reply(c, 200, "", "%ld", res);
+      mg_http_reply(c, 200, headers_tmp, "%ld", res);  //TODO DELETE HEADERS!!!!!
     }
   }
   return res;

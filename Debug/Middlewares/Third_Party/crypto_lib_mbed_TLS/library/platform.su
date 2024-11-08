@@ -1,0 +1,3 @@
+../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/platform.c:279:5:mbedtls_platform_set_time	16	static
+../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/platform.c:386:5:mbedtls_platform_setup	16	static
+../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/platform.c:396:6:mbedtls_platform_teardown	16	static
