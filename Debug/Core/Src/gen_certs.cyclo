@@ -1,0 +1,2 @@
+../Core/Src/gen_certs.c:46:5:my_entropy_source	2
+../Core/Src/gen_certs.c:91:5:verify_key_cert_pair	7

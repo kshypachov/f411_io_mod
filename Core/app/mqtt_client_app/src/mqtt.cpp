@@ -9,7 +9,7 @@
 #include "mqtt.hpp"
 #include "mqtt_gen_strings.hpp"
 #include "definitions.h"
-
+#include "logger.h"
 
 
 static char   *mqtt_broker_url = NULL;
@@ -47,8 +47,10 @@ static void mqtt_send_registration_data(struct mg_connection * arg, const Sensor
 	for (size_t i = 0; i < sensor_count; i++) {
 	        int sensor_type = sensors[i].sensor_type;
 	        int sensor_number = sensors[i].sensor_number;
-
 			get_config_topik_string(topik_buff, MQTT_TOPIK_MAX_LEN, sensor_type, sensor_number);
+
+			logging(L_INFO, "Sending registration data to: %s", topik_buff);
+
 			get_config_payload_string(payload_buff, MQTT_PAYLOAD_MAX_LEN, sensor_type, sensor_number);
 			mqtt_opts.topic = mg_str(topik_buff);
 			mqtt_opts.message = mg_str(payload_buff);
@@ -75,6 +77,8 @@ static void mqtt_send_io_status(struct mg_connection * arg, bool force_update){
 	    memcmp(status.outputs, prev_status.outputs, sizeof(outputs_state_t)) != 0 || force_update) {
 	    // Состояние изменилось, продолжаем
 		memcpy(&prev_status, &status, sizeof(status));
+
+		//logging(L_INFO, "Send io status data to MQTT server");
 
 		payload = (char * )calloc(MQTT_PAYLOAD_MAX_LEN, sizeof(char));
 		topik   = (char * )calloc(MQTT_TOPIK_MAX_LEN,   sizeof(char));
@@ -117,6 +121,9 @@ static void mqtt_subscrabe_on_sw(struct mg_connection *conn, const SensorInfo * 
 		if(sensors[i].sensor_type == OUTPUT_SENSOR){
 			topik = (char * )calloc(MQTT_TOPIK_MAX_LEN,   sizeof(char));
 			generate_comand_topik_for_subscrabe(topik, MQTT_TOPIK_MAX_LEN, OUTPUT_SENSOR, sensors[i].sensor_number);
+
+			logging(L_INFO, "Subscribe on MQTT topik: %s", topik);
+
 			mqtt_opts.qos = 1;
 			mqtt_opts.topic = mg_str(topik);
 			mg_mqtt_sub(conn, &mqtt_opts);
@@ -150,8 +157,14 @@ static void mqtt_subscrabe_recv_cmd_parce(mg_mqtt_message * mess){
     	// Извлекаем номер реле (например, "3" из "switch3")
     	if (sscanf(switch_position, "switch%d", &relay_number) == 1){
     		MG_INFO(("Getting relay number %d, from topik %s.\n", relay_number, topic));
+
+    		logging(L_INFO, "Getting relay number %d, from topik %s.", relay_number, topic);
+
     		if(relay_number < 1 || relay_number > OUTPUTS_COUNT){
     			MG_ERROR(("Error: invalid relay number. Relay number should be between 1 and %d. Got %d.\n", OUTPUTS_COUNT, relay_number));
+
+    			logging(L_ERR, "Error: invalid relay number. Relay number should be between 1 and %d. Got %d.\n", OUTPUTS_COUNT, relay_number);
+
     			return;
     		}
 
@@ -167,13 +180,16 @@ static void mqtt_subscrabe_recv_cmd_parce(mg_mqtt_message * mess){
 
 			}else{
 				MG_ERROR(("Error: expected message \"ON\" or \"OFF\" but got message: %s \n", message));
+				logging(L_ERR, "Error: expected message \"ON\" or \"OFF\" but got message: %s \n", message);
 			}
 
     	}else{
     		MG_ERROR(("Error: relay number is not found, or incorrect format.\n"));
+			logging(L_ERR, "Error: relay number is not found, or incorrect format.");
     	}
     }else{
     	MG_ERROR(("Substring \"switch\" is not fount in topik %s. \n", topic));
+    	logging(L_ERR, "Substring \"switch\" is not fount in topik %s. \n", topic);
     }
 }
 
@@ -187,6 +203,7 @@ static void mqtt_pereodic_status_send_timer_handler(void *arg){
 static void mqtt_event_handler(struct mg_connection *conn, int ev, void *ev_data){
 	if (ev == MG_EV_MQTT_OPEN) {// MQTT connect is successful
 		MG_DEBUG(("MQTT_open_connection"));
+		logging(L_INFO, "MQTT Open connection");
 		mqtt_conn = conn;
 		if(!is_registered){
 			mqtt_send_registration_data(mqtt_conn, sensors, sizeof(sensors)/sizeof(SensorInfo));
@@ -196,6 +213,7 @@ static void mqtt_event_handler(struct mg_connection *conn, int ev, void *ev_data
 		}
 
 	}else if (ev == MG_EV_MQTT_MSG){
+		logging(L_INFO, "Receive message from MQTT server");
 		 struct mg_mqtt_message *mm = (struct mg_mqtt_message *) ev_data;
 		 mqtt_subscrabe_recv_cmd_parce(mm);
 		 mqtt_send_io_status(mqtt_conn, 0);
@@ -203,6 +221,7 @@ static void mqtt_event_handler(struct mg_connection *conn, int ev, void *ev_data
 	}else if (ev == MG_EV_MQTT_CMD){
 
 	}else if (ev == MG_EV_CLOSE){
+		logging(L_INFO, "MQTT Close connection");
 		mqtt_conn     = NULL;
 		is_registered = false;
 	}
@@ -211,7 +230,7 @@ static void mqtt_event_handler(struct mg_connection *conn, int ev, void *ev_data
 // Таймер для установления и поддержания соединения.
 static void mqtt_timer_handler(void *arg){
 	if (!mqtt_conn){
-
+		logging(L_INFO, "Try to connect to MQTT server");
 		memset(&mqtt_opts, 0, sizeof(mqtt_opts));
 		mqtt_opts.user 		    = mg_str(mqtt_username);
 		mqtt_opts.pass		    = mg_str(mqtt_password);
@@ -256,6 +275,8 @@ void mqtt_init(void *mgr_parameter, void * mif_parameter, void * broker_url, voi
 	strcpy(mqtt_broker_url, (char *)broker_url);
 	strcpy(mqtt_username,   (char *)username);
 	strcpy(mqtt_password,   (char *)password);
+
+	logging(L_INFO, "Start MQTT task, server: %s, username: %s", mqtt_broker_url, mqtt_username);
 
 	mgr = (struct mg_mgr *)     mgr_parameter;
 	mif = (struct mg_tcpip_if*) mif_parameter;

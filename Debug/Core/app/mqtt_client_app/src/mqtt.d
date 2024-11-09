@@ -15,7 +15,7 @@ Core/app/mqtt_client_app/src/mqtt.o: \
  ../Core/Inc/data_types.h ../Core/Inc/definitions.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h \
  ../Core/app/mqtt_client_app/inc/mqtt_gen_strings.hpp \
- ../Core/Inc/definitions.h
+ ../Core/Inc/definitions.h ../Core/Inc/logger.h ../Core/Inc/data_types.h
 ../Core/app/mqtt_client_app/inc/mqtt.hpp:
 ../Middlewares/Third_Party/mongoose/mongoose.h:
 ../Core/Inc/mongoose_config.h:
@@ -33,3 +33,5 @@ Core/app/mqtt_client_app/src/mqtt.o: \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h:
 ../Core/app/mqtt_client_app/inc/mqtt_gen_strings.hpp:
 ../Core/Inc/definitions.h:
+../Core/Inc/logger.h:
+../Core/Inc/data_types.h:

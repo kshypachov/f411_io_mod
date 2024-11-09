@@ -36,6 +36,10 @@
 //#include "eth.h"
 #include "mqtt_gen_strings.hpp"
 #include "mqtt.hpp"
+#include "ssd1306.h"
+#include "fonts.h"
+#include "i2c.h"
+#include "logger.h"
 
 /* USER CODE END Includes */
 
@@ -56,7 +60,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
-
+struct mg_full_net_info mg_full_info;
 /* USER CODE END Variables */
 /* Definitions for ethTask */
 osThreadId_t ethTaskHandle;
@@ -86,6 +90,13 @@ const osThreadAttr_t settingsTask_attributes = {
   .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
+/* Definitions for loggingTask */
+osThreadId_t loggingTaskHandle;
+const osThreadAttr_t loggingTask_attributes = {
+  .name = "loggingTask",
+  .stack_size = 512 * 4,
+  .priority = (osPriority_t) osPriorityLow,
+};
 /* Definitions for inputReadQ */
 osMessageQueueId_t inputReadQHandle;
 const osMessageQueueAttr_t inputReadQ_attributes = {
@@ -105,6 +116,11 @@ const osMessageQueueAttr_t outputWriteQ_attributes = {
 osMessageQueueId_t mqttQHandle;
 const osMessageQueueAttr_t mqttQ_attributes = {
   .name = "mqttQ"
+};
+/* Definitions for loggingQ */
+osMessageQueueId_t loggingQHandle;
+const osMessageQueueAttr_t loggingQ_attributes = {
+  .name = "loggingQ"
 };
 /* Definitions for SPI2Mutex */
 osMutexId_t SPI2MutexHandle;
@@ -136,12 +152,14 @@ void FS_Unlock(void * param);
 uint8_t SPI_SendReceiveByte(SPI_HandleTypeDef *hspi, uint8_t data);
 uint8_t spi_txn(void *spi, uint8_t data);
 void RW_parameters_from_queue(void * param, sett_type_t param_type,  sett_direction_t direction);
+void add_log_mess_to_q(struct log_message mess);
 /* USER CODE END FunctionPrototypes */
 
 void StartEthTask(void *argument);
 void StartIOTask(void *argument);
 void StartDisplayTask(void *argument);
 void StartSettingsTask(void *argument);
+void StartLoggingTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -186,6 +204,9 @@ void MX_FREERTOS_Init(void) {
   /* creation of mqttQ */
   mqttQHandle = osMessageQueueNew (1, sizeof(MQTT_cred_struct), &mqttQ_attributes);
 
+  /* creation of loggingQ */
+  loggingQHandle = osMessageQueueNew (15, sizeof(log_message_t), &loggingQ_attributes);
+
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
   /* USER CODE END RTOS_QUEUES */
@@ -203,6 +224,9 @@ void MX_FREERTOS_Init(void) {
   /* creation of settingsTask */
   settingsTaskHandle = osThreadNew(StartSettingsTask, NULL, &settingsTask_attributes);
 
+  /* creation of loggingTask */
+  loggingTaskHandle = osThreadNew(StartLoggingTask, NULL, &loggingTask_attributes);
+
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
   /* USER CODE END RTOS_THREADS */
@@ -214,6 +238,7 @@ void MX_FREERTOS_Init(void) {
 }
 
 /* USER CODE BEGIN Header_StartEthTask */
+
 /**
 * @brief Function implementing the ethTask thread.
 * @param argument: Not used
@@ -248,10 +273,10 @@ void StartEthTask(void *argument)
 											  .driver_data = &spi
 										  };
 
-  struct mg_full_net_info mg_full_info = {
-											  .mgr = &mgr,
-											  .mgr_if = &mif
-									  	  };
+  mg_full_info.mgr =  &mgr;
+  mg_full_info.mgr_if =  &mif;
+
+
 
   mg_mgr_init(&mgr);        // Mongoose event manager
   mg_log_set(MG_LL_DEBUG);  // Set log level
@@ -270,12 +295,19 @@ void StartEthTask(void *argument)
   mg_http_listen(&mgr, "http://0.0.0.0:80", web_handler, &mg_full_info);
 
   while (mif.state != MG_TCPIP_STATE_READY) {
-    mg_mgr_poll(&mgr, 0);
+    mg_mgr_poll(&mgr, 1);
+    osDelay(1);
   }
+
+  logging(L_INFO, "IP addr: %lu.%lu.%lu.%lu", (mg_full_info.mgr_if->ip) & 0xFF, (mg_full_info.mgr_if->ip >> 8) & 0xFF,
+			(mg_full_info.mgr_if->ip >> 16) & 0xFF, (mg_full_info.mgr_if->ip >> 24) & 0xFF);
 
   RW_parameters_from_queue(&mqtt_conf, S_MQTT, S_READ);
   if (mqtt_conf.enable){
+	  logging(L_INFO, "MQTT function enabled.");
 	  mqtt_init(&mgr, &mif, mqtt_conf.uri, mqtt_conf.login, mqtt_conf.pass, RW_parameters_from_queue);
+  }else{
+	  logging(L_INFO, "MQTT function disabled");
   }
 
   TickType_t last_tick = xTaskGetTickCount(); // начальное значение тиков
@@ -381,10 +413,56 @@ void StartIOTask(void *argument)
 void StartDisplayTask(void *argument)
 {
   /* USER CODE BEGIN StartDisplayTask */
+	uint8_t x,y;
+	char buf[20];
+	osDelay(1000);//
+
+	SSD1306_Init (); // initialise the display
+	osDelay(100);//
+    SSD1306_GotoXY(x=1,y=0);
+    SSD1306_Fill(SSD1306_COLOR_BLACK);
+    SSD1306_Puts("Compiled: ", &Font_7x10, SSD1306_COLOR_WHITE);
+    //SSD1306_GotoXY(x=1,y=y+11);
+    SSD1306_Puts(__TIME__, &Font_7x10, SSD1306_COLOR_WHITE);
+    SSD1306_GotoXY(x=1,y=y+11);
+    SSD1306_Puts(__DATE__, &Font_7x10, SSD1306_COLOR_WHITE);
+    SSD1306_GotoXY(x=1,y=y+11);
+	SSD1306_Puts("MAC: ", &Font_7x10, SSD1306_COLOR_WHITE);
+	SSD1306_GotoXY(x=1,y=y+11);
+	sprintf((char *)buf,"%02X:%02X:%02X:%02X:%02X:%02X",
+			mg_full_info.mgr_if->mac[0], mg_full_info.mgr_if->mac[1],
+			mg_full_info.mgr_if->mac[2], mg_full_info.mgr_if->mac[3],
+			mg_full_info.mgr_if->mac[4], mg_full_info.mgr_if->mac[5]);
+	SSD1306_Puts((char *)buf, &Font_7x10, SSD1306_COLOR_WHITE);
+
+    SSD1306_UpdateScreen();
+    vTaskDelay(3000);
+    int i=0;
+
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+		SSD1306_GotoXY(x=1,y=0);
+		SSD1306_Fill(SSD1306_COLOR_BLACK);
+		SSD1306_Puts("IP:", &Font_7x10, SSD1306_COLOR_WHITE);
+	    sprintf(buf,"%lu.%lu.%lu.%lu",
+	    		(mg_full_info.mgr_if->ip) & 0xFF, (mg_full_info.mgr_if->ip >> 8) & 0xFF,
+				(mg_full_info.mgr_if->ip >> 16) & 0xFF, (mg_full_info.mgr_if->ip >> 24) & 0xFF);
+	    SSD1306_Puts(buf, &Font_7x10, SSD1306_COLOR_WHITE);
+	    SSD1306_GotoXY(x=1,y=10);
+	    SSD1306_Puts("I=", &Font_7x10, SSD1306_COLOR_WHITE);
+	    sprintf(buf,"%d", ++i);
+	    SSD1306_Puts(buf, &Font_7x10, SSD1306_COLOR_WHITE);
+		SSD1306_UpdateScreen();
+
+		if(HAL_I2C_IsDeviceReady(&hi2c1, SSD1306_I2C_ADDR, 1, 1000) != HAL_OK){
+			HAL_I2C_DeInit(&hi2c1);
+			vTaskDelay(1000);
+			MX_I2C1_Init();
+			vTaskDelay(1000);
+			SSD1306_Init ();
+		}
+		osDelay(1000);
   }
   /* USER CODE END StartDisplayTask */
 }
@@ -405,16 +483,19 @@ void StartSettingsTask(void *argument)
 	MQTT_cred_struct mqtt_config;
 
   SPI_flash_reg_cb(FlashBegin, FlashEnd, RecvBuffSPI2, SendByteSPI2);
-  lfs_fs_ll_init(FS_Lock, FS_Unlock);
-
-
-
+  if (lfs_fs_ll_init(FS_Lock, FS_Unlock) < 0){
+	  HAL_NVIC_SystemReset();
+  }
 
   mg_fs_lfs_mkdir("/web");
   mg_fs_lfs_remove("/firmware");
   mg_fs_lfs_remove("/firmware.bin");
   mg_fs_lfs_mkdir("/firmware");
   mg_fs_lfs_mkdir("/settings");
+  mg_fs_lfs_mkdir("/certs");
+  mg_fs_lfs_mkdir("/log");
+
+
 
   if (mg_fs_lfs_status("/settings/mqtt.conf", &f_size, NULL)){//file found
 	  f_pointer = mg_fs_lfs_open("/settings/mqtt.conf", MG_FS_READ);
@@ -448,6 +529,66 @@ void StartSettingsTask(void *argument)
   /* USER CODE END StartSettingsTask */
 }
 
+/* USER CODE BEGIN Header_StartLoggingTask */
+/**
+* @brief Function implementing the loggingTask thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartLoggingTask */
+void StartLoggingTask(void *argument)
+{
+  /* USER CODE BEGIN StartLoggingTask */
+
+	uint32_t count =0;
+	void *  f_pointer = NULL;
+	size_t fs_size;
+	HeapStats_t heap_status;
+
+	osDelay(2000);
+	reg_logging_fn(add_log_mess_to_q);
+
+  /* Infinite loop */
+  for(;;)
+  {
+	  //--------logging
+	  if (osMessageQueueGetCount(loggingQHandle)){
+		  log_message_t log;
+		  osMessageQueueGet(loggingQHandle, &log, 0, 0);
+		  f_pointer = mg_fs_lfs_open(LOG_FILE_LOCATION, MG_FS_WRITE);
+		  mg_fs_lfs_write(f_pointer, &log.log_text, log.log_len); //
+		  mg_fs_lfs_close(f_pointer);
+	  }
+	  //--------logging
+    osDelay(500);
+
+    count ++;
+    if (count == 2000){
+    	mg_fs_lfs_status(LOG_FILE_LOCATION, &fs_size, NULL);
+    	if (fs_size > LOG_FILE_MAX_SIZE){
+    		mg_fs_lfs_remove(LOG_FILE_LOCATION2);
+    		mg_fs_lfs_rename(LOG_FILE_LOCATION, LOG_FILE_LOCATION2);
+    		logging(L_INFO, "Log file rotated");
+    	}
+
+    	count = 0;
+    	vPortGetHeapStats(&heap_status);
+    	logging(L_INFO, "Free Heap: %u, LargestFreeBlock: %u, SmallestFeeBlock: %u, NumFreeBlock: %u,  MinEverFreeBytes: %u, NumOfSuccessAlloc: %u, NumOfSuccessFree: %u ",
+                (unsigned int)heap_status.xAvailableHeapSpaceInBytes,
+                (unsigned int)heap_status.xSizeOfLargestFreeBlockInBytes,
+                (unsigned int)heap_status.xSizeOfSmallestFreeBlockInBytes,
+                (unsigned int)heap_status.xNumberOfFreeBlocks,
+                (unsigned int)heap_status.xMinimumEverFreeBytesRemaining,
+                (unsigned int)heap_status.xNumberOfSuccessfulAllocations,
+                (unsigned int)heap_status.xNumberOfSuccessfulFrees);
+
+    	logging(L_INFO, "IP addr: %lu.%lu.%lu.%lu", (mg_full_info.mgr_if->ip) & 0xFF, (mg_full_info.mgr_if->ip >> 8) & 0xFF,
+				(mg_full_info.mgr_if->ip >> 16) & 0xFF, (mg_full_info.mgr_if->ip >> 24) & 0xFF);
+    }
+  }
+  /* USER CODE END StartLoggingTask */
+}
+
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
 void EthResetBegin(void){
@@ -461,11 +602,21 @@ void EthResetEnd(void){
 void EthBegin(void * param){
 	osMutexAcquire(SPI2MutexHandle, osWaitForever);
 	HAL_GPIO_WritePin(ETH_CS_GPIO_Port, ETH_CS_Pin, GPIO_PIN_RESET);
+	//osDelay(1);
+//	osThreadYield(); //for smal delay
+//	osThreadYield(); //for smal delay
+//	osThreadYield(); //for smal delay
 }
 
 void EthEnd(void * param){
-	osMutexRelease(SPI2MutexHandle);
+	//osDelay(1);
 	HAL_GPIO_WritePin(ETH_CS_GPIO_Port, ETH_CS_Pin, GPIO_PIN_SET);
+	osMutexRelease(SPI2MutexHandle);
+
+
+//	osThreadYield(); //for smal delay
+//	osThreadYield(); //for smal delay
+//	osThreadYield(); //for smal delay
 }
 
 uint8_t EthTxn(void *spi, uint8_t data) {
@@ -477,11 +628,21 @@ uint8_t EthTxn(void *spi, uint8_t data) {
 void FlashBegin(void){
 	osMutexAcquire(SPI2MutexHandle, osWaitForever);
 	HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_RESET);
+	//osDelay(1);
+//	osThreadYield(); //for smal delay
+//	osThreadYield(); //for smal delay
+//	osThreadYield(); //for smal delay
 }
 
 void FlashEnd(void){
-	osMutexRelease(SPI2MutexHandle);
+	//osDelay(1);
 	HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_SET);
+	osMutexRelease(SPI2MutexHandle);
+
+
+//	osThreadYield(); //for smal delay
+//	osThreadYield(); //for smal delay
+//	osThreadYield(); //for smal delay
 }
 
 void SendByteSPI2(uint8_t byte){
@@ -552,5 +713,12 @@ void RW_parameters_from_queue(void * param, sett_type_t param_type,  sett_direct
 			}
 	}
 }
+
+void add_log_mess_to_q(struct log_message mess){
+
+	osMessageQueuePut(loggingQHandle,  &mess, 0, 0);
+
+}
+
 /* USER CODE END Application */
 

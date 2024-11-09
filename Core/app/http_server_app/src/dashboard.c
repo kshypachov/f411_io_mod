@@ -17,6 +17,7 @@
 #include "data_types.h"
 #include "stm32f4xx_hal.h"
 #include "validation.h"
+#include "logger.h"
 
 struct mg_fs mg_fs_lfs = {
 	    .st = mg_fs_lfs_status,
@@ -42,6 +43,8 @@ static void (*r_w_parameter)(void * parameter, sett_type_t parameter_type,  sett
 static void handle_ram_status_get(struct mg_connection *c){
 	HeapStats_t heap_status;
 	vPortGetHeapStats(&heap_status);
+
+	logging(1, "Start execute API RAM status");
 
     // Формирование и отправка JSON ответа с помощью mg_http_reply
     mg_http_reply(c, 200, "Content-Type: application/json\r\n"
@@ -510,6 +513,26 @@ static void handle_fs_mkdir(struct mg_connection *c, struct mg_http_message *hm)
   }
 }
 
+// function for show logging
+static void handle_fs_get_log(struct mg_connection *c, struct mg_http_message *hm){
+
+	if (mg_match(hm->method, mg_str("GET"), NULL)){
+
+		struct mg_http_serve_opts opts = {
+			.root_dir = "/log",
+			.fs = &mg_fs_lfs
+		};
+
+		mg_http_serve_file(c, hm, LOG_FILE_LOCATION, &opts);
+
+	}else if (mg_match(hm->method, mg_str("POST"), NULL)){
+
+	}else{
+		mg_http_reply(c, 400, headers, //TODO delete for release,
+						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET and POST methods\"}\r\n");
+	}
+
+}
 
 static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
 
@@ -526,6 +549,8 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
 			handle_mqtt_conf(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/device/status"), NULL)){
 			handle_dev_status(c, hm);
+		}else if(mg_match(hm->uri, mg_str("/api/device/log"), NULL)){
+			handle_fs_get_log(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/device/restart"), NULL)){
 			handle_restart_mcu(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/upload"), NULL)){

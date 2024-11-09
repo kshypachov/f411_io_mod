@@ -24,6 +24,7 @@ C_UPPER_DEPS :=
 S_DEPS := 
 CXXM_DEPS := 
 C_DEPS := 
+OBJCOPY_BIN := 
 CC_DEPS := 
 SIZE_OUTPUT := 
 C++_DEPS := 
@@ -44,11 +45,13 @@ Core/app/http_server_app/src \
 Core/app/mqtt_client_app/src \
 Drivers/SPI_FLASH/src \
 Drivers/STM32F4xx_HAL_Driver/Src \
+Drivers/i2c_display/src \
 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 \
 Middlewares/Third_Party/FreeRTOS/Source \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang \
 Middlewares/Third_Party/LittleFS/src \
+Middlewares/Third_Party/crypto_lib_mbed_TLS/library \
 Middlewares/Third_Party/mongoose \
 Middlewares/Third_Party/validation/src \
 
