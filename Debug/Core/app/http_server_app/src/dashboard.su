@@ -12,7 +12,7 @@
 ../Core/app/http_server_app/src/dashboard.c:454:13:handle_firmware_deactivate	32	static
 ../Core/app/http_server_app/src/dashboard.c:471:13:handle_web_files_remove	32	static
 ../Core/app/http_server_app/src/dashboard.c:485:13:handle_fs_mkdir	288	static
-../Core/app/http_server_app/src/dashboard.c:517:13:handle_fs_get_log	64	static
-../Core/app/http_server_app/src/dashboard.c:537:13:dashboard	176	static
-../Core/app/http_server_app/src/dashboard.c:581:8:dash_hdl	4	static
-../Core/app/http_server_app/src/dashboard.c:586:6:reg_parameter_handler	16	static
+../Core/app/http_server_app/src/dashboard.c:518:13:handle_fs_get_log	72	static
+../Core/app/http_server_app/src/dashboard.c:548:13:dashboard	184	static
+../Core/app/http_server_app/src/dashboard.c:594:8:dash_hdl	4	static
+../Core/app/http_server_app/src/dashboard.c:599:6:reg_parameter_handler	16	static

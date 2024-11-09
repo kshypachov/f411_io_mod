@@ -17,6 +17,7 @@
 "./Core/app/mqtt_client_app/src/home_mqtt_gen.o"
 "./Core/app/mqtt_client_app/src/mqtt.o"
 "./Core/app/mqtt_client_app/src/mqtt_gen_strings.o"
+"./Core/app/sntp_app/src/sntp.o"
 "./Drivers/SPI_FLASH/src/SPI_flash.o"
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
 "./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"

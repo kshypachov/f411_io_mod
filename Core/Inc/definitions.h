@@ -40,8 +40,8 @@
 
 #define LOG_MES_TEXT_LEN    		256
 #define LOG_FILE_LOCATION			"/log/main.log"
-#define LOG_FILE_LOCATION2			"/log/main1.log"
-#define LOG_FILE_MAX_SIZE			10000
+#define LOG_FILE_LOCATION_OLD		"/log/main1.log"
+#define LOG_FILE_MAX_SIZE			50000
 
 /*-------------------------RE define mem managment functins ---*/
 

@@ -40,6 +40,7 @@
 #include "fonts.h"
 #include "i2c.h"
 #include "logger.h"
+#include "sntp.h"
 
 /* USER CODE END Includes */
 
@@ -309,7 +310,7 @@ void StartEthTask(void *argument)
   }else{
 	  logging(L_INFO, "MQTT function disabled");
   }
-
+  start_sntp(&mgr);
   TickType_t last_tick = xTaskGetTickCount(); // начальное значение тиков
 
   /* Infinite loop */
@@ -540,7 +541,7 @@ void StartLoggingTask(void *argument)
 {
   /* USER CODE BEGIN StartLoggingTask */
 
-	uint32_t count =0;
+	uint32_t count = 2000;
 	void *  f_pointer = NULL;
 	size_t fs_size;
 	HeapStats_t heap_status;
@@ -548,6 +549,7 @@ void StartLoggingTask(void *argument)
 	osDelay(2000);
 	reg_logging_fn(add_log_mess_to_q);
 
+	logging(L_INFO, "Device started...");
   /* Infinite loop */
   for(;;)
   {
@@ -562,12 +564,12 @@ void StartLoggingTask(void *argument)
 	  //--------logging
     osDelay(500);
 
-    count ++;
+
     if (count == 2000){
     	mg_fs_lfs_status(LOG_FILE_LOCATION, &fs_size, NULL);
     	if (fs_size > LOG_FILE_MAX_SIZE){
-    		mg_fs_lfs_remove(LOG_FILE_LOCATION2);
-    		mg_fs_lfs_rename(LOG_FILE_LOCATION, LOG_FILE_LOCATION2);
+    		mg_fs_lfs_remove(LOG_FILE_LOCATION_OLD);
+    		mg_fs_lfs_rename(LOG_FILE_LOCATION, LOG_FILE_LOCATION_OLD);
     		logging(L_INFO, "Log file rotated");
     	}
 
@@ -582,9 +584,17 @@ void StartLoggingTask(void *argument)
                 (unsigned int)heap_status.xNumberOfSuccessfulAllocations,
                 (unsigned int)heap_status.xNumberOfSuccessfulFrees);
 
-    	logging(L_INFO, "IP addr: %lu.%lu.%lu.%lu", (mg_full_info.mgr_if->ip) & 0xFF, (mg_full_info.mgr_if->ip >> 8) & 0xFF,
+    	logging(L_INFO, "IP addr: %lu.%lu.%lu.%lu",
+    			(mg_full_info.mgr_if->ip) & 0xFF, (mg_full_info.mgr_if->ip >> 8) & 0xFF,
 				(mg_full_info.mgr_if->ip >> 16) & 0xFF, (mg_full_info.mgr_if->ip >> 24) & 0xFF);
+
+    	logging(L_INFO, "MAC addr: %02X:%02X:%02X:%02X:%02X:%02X",
+			mg_full_info.mgr_if->mac[0], mg_full_info.mgr_if->mac[1],
+			mg_full_info.mgr_if->mac[2], mg_full_info.mgr_if->mac[3],
+			mg_full_info.mgr_if->mac[4], mg_full_info.mgr_if->mac[5]);
+
     }
+    count ++;
   }
   /* USER CODE END StartLoggingTask */
 }
@@ -602,21 +612,12 @@ void EthResetEnd(void){
 void EthBegin(void * param){
 	osMutexAcquire(SPI2MutexHandle, osWaitForever);
 	HAL_GPIO_WritePin(ETH_CS_GPIO_Port, ETH_CS_Pin, GPIO_PIN_RESET);
-	//osDelay(1);
-//	osThreadYield(); //for smal delay
-//	osThreadYield(); //for smal delay
-//	osThreadYield(); //for smal delay
 }
 
 void EthEnd(void * param){
 	//osDelay(1);
 	HAL_GPIO_WritePin(ETH_CS_GPIO_Port, ETH_CS_Pin, GPIO_PIN_SET);
 	osMutexRelease(SPI2MutexHandle);
-
-
-//	osThreadYield(); //for smal delay
-//	osThreadYield(); //for smal delay
-//	osThreadYield(); //for smal delay
 }
 
 uint8_t EthTxn(void *spi, uint8_t data) {
@@ -628,21 +629,11 @@ uint8_t EthTxn(void *spi, uint8_t data) {
 void FlashBegin(void){
 	osMutexAcquire(SPI2MutexHandle, osWaitForever);
 	HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_RESET);
-	//osDelay(1);
-//	osThreadYield(); //for smal delay
-//	osThreadYield(); //for smal delay
-//	osThreadYield(); //for smal delay
 }
 
 void FlashEnd(void){
-	//osDelay(1);
 	HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_SET);
 	osMutexRelease(SPI2MutexHandle);
-
-
-//	osThreadYield(); //for smal delay
-//	osThreadYield(); //for smal delay
-//	osThreadYield(); //for smal delay
 }
 
 void SendByteSPI2(uint8_t byte){

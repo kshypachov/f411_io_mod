@@ -20,6 +20,7 @@ RM := rm -rf
 -include Drivers/i2c_display/src/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Drivers/SPI_FLASH/src/subdir.mk
+-include Core/app/sntp_app/src/subdir.mk
 -include Core/app/mqtt_client_app/src/subdir.mk
 -include Core/app/http_server_app/src/subdir.mk
 -include Core/Startup/subdir.mk
@@ -100,7 +101,7 @@ main-build: f411_io_mod.elf secondary-outputs
 
 # Tool invocations
 f411_io_mod.elf f411_io_mod.map: $(OBJS) $(USER_OBJS) /Users/kiro/STM32CubeIDE/workspace_1.14.0/f411_io_mod/STM32F411CEUX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "f411_io_mod.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/kiro/STM32CubeIDE/workspace_1.14.0/f411_io_mod/STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f411_io_mod.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+	arm-none-eabi-g++ -o "f411_io_mod.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/Users/kiro/STM32CubeIDE/workspace_1.14.0/f411_io_mod/STM32F411CEUX_FLASH.ld" --specs=nosys.specs -Wl,-Map="f411_io_mod.map" -Wl,--gc-sections -static --specs=standard_c_nano_cpp.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

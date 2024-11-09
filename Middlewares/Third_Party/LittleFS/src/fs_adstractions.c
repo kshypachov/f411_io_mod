@@ -13,7 +13,7 @@ static struct lfs_config       cfg;
 // Структура для хранения данных файловой системы
 static struct lfs_file_data {
     lfs_file_t file;
-};
+}lfs_file_data_t;
 
 //struct mg_fs *mg_fs;
 

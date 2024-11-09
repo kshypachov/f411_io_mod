@@ -514,7 +514,8 @@ static void handle_fs_mkdir(struct mg_connection *c, struct mg_http_message *hm)
 }
 
 // function for show logging
-static void handle_fs_get_log(struct mg_connection *c, struct mg_http_message *hm){
+// function for show logging
+static void handle_fs_get_log(struct mg_connection *c, struct mg_http_message *hm, int number){
 
 	if (mg_match(hm->method, mg_str("GET"), NULL)){
 
@@ -523,7 +524,18 @@ static void handle_fs_get_log(struct mg_connection *c, struct mg_http_message *h
 			.fs = &mg_fs_lfs
 		};
 
-		mg_http_serve_file(c, hm, LOG_FILE_LOCATION, &opts);
+		switch (number) {
+			case 0:
+				mg_http_serve_file(c, hm, LOG_FILE_LOCATION, &opts);
+				break;
+			case 1:
+				mg_http_serve_file(c, hm, LOG_FILE_LOCATION_OLD, &opts);
+				break;
+			default:
+				mg_http_serve_file(c, hm, LOG_FILE_LOCATION, &opts);
+				break;
+		}
+
 
 	}else if (mg_match(hm->method, mg_str("POST"), NULL)){
 
@@ -531,7 +543,6 @@ static void handle_fs_get_log(struct mg_connection *c, struct mg_http_message *h
 		mg_http_reply(c, 400, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET and POST methods\"}\r\n");
 	}
-
 }
 
 static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
@@ -550,7 +561,9 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
 		}else if(mg_match(hm->uri, mg_str("/api/device/status"), NULL)){
 			handle_dev_status(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/device/log"), NULL)){
-			handle_fs_get_log(c, hm);
+			handle_fs_get_log(c, hm, 0);
+		}else if(mg_match(hm->uri, mg_str("/api/device/log_old"), NULL)){
+			handle_fs_get_log(c, hm, 1);
 		}else if(mg_match(hm->uri, mg_str("/api/device/restart"), NULL)){
 			handle_restart_mcu(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/upload"), NULL)){
