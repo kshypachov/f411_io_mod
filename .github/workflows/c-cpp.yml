@@ -1,0 +1,28 @@
+name: STM32CubeIDE Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install ARM GCC
+      run: |
+        sudo apt update
+        sudo apt install -y gcc-arm-none-eabi
+
+    - name: Build project with Makefile
+      run: |
+        cd Debug # Переход в папку с Makefile
+        make clean # Очистка предыдущих сборок
+        make all -j4 # Выполнение полной сборки
