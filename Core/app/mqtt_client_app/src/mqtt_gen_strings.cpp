@@ -137,10 +137,11 @@ mqtt_config_error set_device_conf_ip(char * chr_ip, unsigned int ip_len){
 		free(dev_conf_ip);
 	}
 
-	dev_conf_ip = (char *)calloc(ip_len, sizeof(char));
+	dev_conf_ip = (char *)calloc(ip_len+1, sizeof(char)); // +1 для нулевого символа
 
 	if(dev_conf_ip){
 		strncpy(dev_conf_ip, chr_ip, ip_len);
+		dev_conf_ip[ip_len] = '\0'; // Явно добавляем нулевой символ
 	}else{
 		return MEM_ALLOC_ERR; // Ошибка выделения памяти
 	}

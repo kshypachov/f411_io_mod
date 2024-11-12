@@ -49,14 +49,14 @@ static void mqtt_send_registration_data(struct mg_connection * arg, const Sensor
 	        int sensor_number = sensors[i].sensor_number;
 			get_config_topik_string(topik_buff, MQTT_TOPIK_MAX_LEN, sensor_type, sensor_number);
 
-			logging(L_INFO, "Sending registration data to: %s", topik_buff);
-
 			get_config_payload_string(payload_buff, MQTT_PAYLOAD_MAX_LEN, sensor_type, sensor_number);
 			mqtt_opts.topic = mg_str(topik_buff);
 			mqtt_opts.message = mg_str(payload_buff);
 			mqtt_opts.qos = 1;
 			mqtt_opts.retain = 1;
 			mg_mqtt_pub(arg, &mqtt_opts);
+
+			logging(L_INFO, "Sending registration data to: %s", topik_buff);
 
 	}
 }
@@ -122,11 +122,11 @@ static void mqtt_subscrabe_on_sw(struct mg_connection *conn, const SensorInfo * 
 			topik = (char * )calloc(MQTT_TOPIK_MAX_LEN,   sizeof(char));
 			generate_comand_topik_for_subscrabe(topik, MQTT_TOPIK_MAX_LEN, OUTPUT_SENSOR, sensors[i].sensor_number);
 
-			logging(L_INFO, "Subscribe on MQTT topik: %s", topik);
-
 			mqtt_opts.qos = 1;
 			mqtt_opts.topic = mg_str(topik);
 			mg_mqtt_sub(conn, &mqtt_opts);
+
+			logging(L_INFO, "Subscribe on MQTT topik: %s", topik);
 			free(topik);
 		}
 	}
