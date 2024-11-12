@@ -16,10 +16,12 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up ARM GCC
-      uses: cclauss/arm-none-eabi-gcc-action@v1
+    - name: Install ARM GCC
+      run: |
+        sudo apt update
+        sudo apt install -y gcc-arm-none-eabi
 
     - name: Build project with Makefile
       run: |
-        cd Debug # Переход в папку, где лежит Makefile
-        make -j4 # Запуск сборки с использованием make
+        cd Debug # Переход в папку с Makefile
+        make -j4
