@@ -1,2 +1,0 @@
-../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/platform_util.c:94:6:mbedtls_platform_zeroize	32	static,ignoring_inline_asm
-../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/platform_util.c:139:6:mbedtls_zeroize_and_free	16	static

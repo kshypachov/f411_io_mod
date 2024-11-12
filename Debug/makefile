@@ -11,7 +11,6 @@ RM := rm -rf
 -include sources.mk
 -include Middlewares/Third_Party/validation/src/subdir.mk
 -include Middlewares/Third_Party/mongoose/subdir.mk
--include Middlewares/Third_Party/crypto_lib_mbed_TLS/library/subdir.mk
 -include Middlewares/Third_Party/LittleFS/src/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/subdir.mk

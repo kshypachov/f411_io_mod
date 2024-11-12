@@ -52,7 +52,6 @@ Middlewares/Third_Party/FreeRTOS/Source \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F \
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang \
 Middlewares/Third_Party/LittleFS/src \
-Middlewares/Third_Party/crypto_lib_mbed_TLS/library \
 Middlewares/Third_Party/mongoose \
 Middlewares/Third_Party/validation/src \
 

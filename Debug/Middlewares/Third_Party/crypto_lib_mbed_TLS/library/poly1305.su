@@ -1,9 +1,0 @@
-../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/poly1305.c:46:24:mul64	32	static
-../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/poly1305.c:64:13:poly1305_process	528	static
-../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/poly1305.c:171:13:poly1305_compute_mac	264	static
-../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/poly1305.c:228:6:mbedtls_poly1305_init	16	static
-../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/poly1305.c:233:6:mbedtls_poly1305_free	16	static
-../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/poly1305.c:242:5:mbedtls_poly1305_starts	80	static
-../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/poly1305.c:270:5:mbedtls_poly1305_update	40	static
-../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/poly1305.c:326:5:mbedtls_poly1305_finish	16	static
-../Middlewares/Third_Party/crypto_lib_mbed_TLS/library/poly1305.c:349:5:mbedtls_poly1305_mac	104	static
