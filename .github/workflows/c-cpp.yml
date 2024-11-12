@@ -24,4 +24,4 @@ jobs:
     - name: Build project with Makefile
       run: |
         cd Debug # Переход в папку с Makefile
-        make -j4
+        make all -j4 # Выполнение полной сборки
