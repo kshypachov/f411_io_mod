@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/tmp/st/stm32cubeclt_1.16.0/Ninja/bin:/tmp/st/stm32cubeclt_1.16.0/CMake/bin:/tmp/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin
+      PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/runner/st/stm32cubeclt_1.16.0/Ninja/bin:/home/runner/st/stm32cubeclt_1.16.0/CMake/bin:/home/runner/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin
 
 
     steps:
@@ -23,13 +23,12 @@ jobs:
     - name: Download Cubectl
       run: |
         wget https://github.com/kshypachov/stm32_builder/raw/refs/heads/main/st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
-        mkdir /tmp/st
 
     - name: Install Cubectl
       run: |
         export LICENSE_ALREADY_ACCEPTED=1
         chmod +x st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
-        yes "/tmp/st" | ./st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
+        yes "" | ./st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
 
     - name: Install make
       run: |
