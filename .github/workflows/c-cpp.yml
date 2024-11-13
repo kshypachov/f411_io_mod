@@ -21,6 +21,10 @@ jobs:
         sudo apt update
         sudo apt install -y gcc-arm-none-eabi
 
+    - name: Install ARM Newlib
+      run: |
+        sudo apt install -y libnewlib-arm-none-eabi
+
     - name: Build project with Makefile
       run: |
         cd Debug # Переход в папку с Makefile
