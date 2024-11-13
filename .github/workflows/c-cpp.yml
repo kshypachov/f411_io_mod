@@ -12,6 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      PATH: ${{ runner.env.PATH }}:/tmp/stm32cubeclt_1.16.0/Ninja/bin:/tmp/stm32cubeclt_1.16.0/CMake/bin:/tmp/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin
+
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -24,10 +28,7 @@ jobs:
       run: |
         export LICENSE_ALREADY_ACCEPTED=1
         chmod +x st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
-        yes "" | ./st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
-        export PATH="$PATH:/home/runner/st/stm32cubeclt_1.16.0/Ninja/bin"
-        export PATH="$PATH:/home/runner/st/stm32cubeclt_1.16.0/CMake/bin"
-        export PATH="$PATH:/home/runner/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin"
+        yes "/tmp" | ./st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
 
     - name: Install make
       run: |
