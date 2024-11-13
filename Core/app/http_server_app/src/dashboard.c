@@ -410,7 +410,7 @@ static void handle_firmware_md5(struct mg_connection *c, struct mg_http_message 
 		char * md5_str = calloc(MD5_STR_LEN, sizeof(char));
 		if(calc_file_md5sum("/firmware/firmware.bin", md5_str) == 0){
 			mg_http_reply(c, 200, headers, //TODO delete for release,
-						"{\"status\":\"success\",\"message\":\"Firmware update file md5 sum: %s\"}\r\n", md5_str);
+						"{\"status\":\"success\",\"md5\":\" %s\"}\r\n", md5_str);
 		}else{
 			mg_http_reply(c, 404, headers, //TODO delete for release,
 							"{\"status\":\"error\",\"message\":\"Firmware update file not found\"}\r\n");
