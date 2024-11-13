@@ -42,3 +42,9 @@ jobs:
     - name: Build project with Makefile
       run: |
         make all -C ./Debug
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: build-artifacts
+        path: ./Debug/*.bin  # Укажите путь к файлам сборки или выходной директории
