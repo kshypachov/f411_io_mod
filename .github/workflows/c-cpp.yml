@@ -44,7 +44,7 @@ jobs:
         make all -C ./Debug
 
     - name: Upload Build Artifacts
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: build-artifacts
         path: ./Debug/*.bin  # Укажите путь к файлам сборки или выходной директории
