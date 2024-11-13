@@ -570,7 +570,7 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
 			handle_firmware_upload(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/md5"), NULL)){
 			handle_firmware_md5(c, hm);
-		}else if(mg_match(hm->uri, mg_str("/api/firmware/activate"), NULL)){
+		}else if(mg_match(hm->uri, mg_str("/api/firmware/activate_and_reboot"), NULL)){
 			handle_firmware_activate(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/deactivate"), NULL)){
 			handle_firmware_deactivate(c, hm);
