@@ -32,7 +32,7 @@ jobs:
     - name: Install make
       run: |
         sudo apt update
-        apt install make 
+        sudo apt install make 
 
     - name: Clear Build folder
       run: |
