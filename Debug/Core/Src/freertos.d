@@ -40,9 +40,7 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
- ../Core/Inc/definitions.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h \
- ../Middlewares/Third_Party/mongoose/mongoose.h \
+ ../Core/Inc/definitions.h ../Middlewares/Third_Party/mongoose/mongoose.h \
  ../Core/Inc/mongoose_config.h ../Core/Inc/spi.h ../Core/Inc/main.h \
  ../Core/Inc/data_types.h ../Core/Inc/definitions.h \
  ../Drivers/SPI_FLASH/inc/SPI_flash.h \
@@ -101,7 +99,6 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h:
 ../Core/Inc/definitions.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h:
 ../Middlewares/Third_Party/mongoose/mongoose.h:
 ../Core/Inc/mongoose_config.h:
 ../Core/Inc/spi.h:

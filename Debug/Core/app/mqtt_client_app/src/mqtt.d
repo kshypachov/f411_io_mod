@@ -13,7 +13,6 @@ Core/app/mqtt_client_app/src/mqtt.o: \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../Core/Inc/data_types.h ../Core/Inc/definitions.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h \
  ../Core/app/mqtt_client_app/inc/mqtt_gen_strings.hpp \
  ../Core/Inc/definitions.h ../Core/Inc/logger.h ../Core/Inc/data_types.h
 ../Core/app/mqtt_client_app/inc/mqtt.hpp:
@@ -30,7 +29,6 @@ Core/app/mqtt_client_app/src/mqtt.o: \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 ../Core/Inc/data_types.h:
 ../Core/Inc/definitions.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h:
 ../Core/app/mqtt_client_app/inc/mqtt_gen_strings.hpp:
 ../Core/Inc/definitions.h:
 ../Core/Inc/logger.h:

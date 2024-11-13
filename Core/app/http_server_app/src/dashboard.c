@@ -10,7 +10,7 @@
 #include "fs_adstractions.h"
 #include "mongoose.h"
 #include "definitions.h"
-#include "freertos.h"
+#include "FreeRTOS.h"
 #include "stdbool.h"
 #include "mqtt.hpp"
 #include "mqtt_gen_strings.hpp"

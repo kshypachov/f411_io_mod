@@ -2,7 +2,7 @@ Core/app/mqtt_client_app/src/mqtt_gen_strings.o: \
  ../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp \
  ../Core/app/mqtt_client_app/inc/mqtt_gen_strings.hpp \
  ../Core/Inc/definitions.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
@@ -11,7 +11,7 @@ Core/app/mqtt_client_app/src/mqtt_gen_strings.o: \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
 ../Core/app/mqtt_client_app/inc/mqtt_gen_strings.hpp:
 ../Core/Inc/definitions.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:

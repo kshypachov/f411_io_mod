@@ -2,7 +2,7 @@ Core/app/http_server_app/src/dashboard.o: \
  ../Core/app/http_server_app/src/dashboard.c \
  ../Core/app/http_server_app/inc/dashboard.h ../Core/Inc/data_types.h \
  ../Core/Inc/definitions.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
@@ -11,7 +11,6 @@ Core/app/http_server_app/src/dashboard.o: \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  ../Middlewares/Third_Party/mongoose/mongoose.h \
  ../Core/Inc/mongoose_config.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../Middlewares/Third_Party/LittleFS/inc/fs_adstractions.h \
@@ -54,7 +53,7 @@ Core/app/http_server_app/src/dashboard.o: \
 ../Core/app/http_server_app/inc/dashboard.h:
 ../Core/Inc/data_types.h:
 ../Core/Inc/definitions.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
@@ -63,7 +62,6 @@ Core/app/http_server_app/src/dashboard.o: \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 ../Middlewares/Third_Party/mongoose/mongoose.h:
 ../Core/Inc/mongoose_config.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 ../Middlewares/Third_Party/LittleFS/inc/fs_adstractions.h:

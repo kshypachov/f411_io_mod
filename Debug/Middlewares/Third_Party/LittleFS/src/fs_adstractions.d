@@ -4,7 +4,7 @@ Middlewares/Third_Party/LittleFS/src/fs_adstractions.o: \
  ../Middlewares/Third_Party/LittleFS/inc/lfs.h \
  ../Middlewares/Third_Party/LittleFS/inc/lfs_util.h \
  ../Core/Inc/definitions.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Core/Inc/FreeRTOSConfig.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
@@ -13,7 +13,6 @@ Middlewares/Third_Party/LittleFS/src/fs_adstractions.o: \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  ../Middlewares/Third_Party/mongoose/mongoose.h \
  ../Core/Inc/mongoose_config.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../Drivers/SPI_FLASH/inc/SPI_flash.h \
@@ -51,7 +50,7 @@ Middlewares/Third_Party/LittleFS/src/fs_adstractions.o: \
 ../Middlewares/Third_Party/LittleFS/inc/lfs.h:
 ../Middlewares/Third_Party/LittleFS/inc/lfs_util.h:
 ../Core/Inc/definitions.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h:
@@ -60,7 +59,6 @@ Middlewares/Third_Party/LittleFS/src/fs_adstractions.o: \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 ../Middlewares/Third_Party/mongoose/mongoose.h:
 ../Core/Inc/mongoose_config.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 ../Drivers/SPI_FLASH/inc/SPI_flash.h:

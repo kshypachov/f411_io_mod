@@ -45,7 +45,7 @@
 
 /*-------------------------RE define mem managment functins ---*/
 
-#include "freertos.h"
+#include "FreeRTOS.h"
 #include <string.h>
 
 

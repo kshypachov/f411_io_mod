@@ -11,8 +11,7 @@ Core/app/sntp_app/src/sntp.o: ../Core/app/sntp_app/src/sntp.c \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- ../Core/Inc/logger.h ../Core/Inc/data_types.h ../Core/Inc/definitions.h \
- ../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h
+ ../Core/Inc/logger.h ../Core/Inc/data_types.h ../Core/Inc/definitions.h
 ../Core/app/sntp_app/inc/sntp.h:
 ../Middlewares/Third_Party/mongoose/mongoose.h:
 ../Core/Inc/mongoose_config.h:
@@ -28,4 +27,3 @@ Core/app/sntp_app/src/sntp.o: ../Core/app/sntp_app/src/sntp.c \
 ../Core/Inc/logger.h:
 ../Core/Inc/data_types.h:
 ../Core/Inc/definitions.h:
-../Middlewares/Third_Party/FreeRTOS/Source/include/freertos.h:
