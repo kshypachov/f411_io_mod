@@ -12,21 +12,39 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    env:
+      PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/runner/st/stm32cubeclt_1.16.0/Ninja/bin:/home/runner/st/stm32cubeclt_1.16.0/CMake/bin:/home/runner/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin
+
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install ARM GCC
+    - name: Download Cubectl
+      run: |
+        wget https://github.com/kshypachov/stm32_builder/raw/refs/heads/main/st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
+
+    - name: Install Cubectl
+      run: |
+        export LICENSE_ALREADY_ACCEPTED=1
+        chmod +x st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
+        yes "" | ./st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
+
+    - name: Install make
       run: |
         sudo apt update
-        sudo apt install -y gcc-arm-none-eabi
+        sudo apt install -y make 
 
-    - name: Install ARM Newlib
+    - name: Clear Build folder
       run: |
-        sudo apt install -y libnewlib-arm-none-eabi
-
+        make clean -C ./Debug
+        
     - name: Build project with Makefile
       run: |
-        cd Debug # Переход в папку с Makefile
-        make clean # Очистка предыдущих сборок
-        make all -j4 # Выполнение полной сборки
+        make all -C ./Debug
+
+    - name: Upload Build Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-artifacts
+        path: ./Debug/*.bin  # Укажите путь к файлам сборки или выходной директории
