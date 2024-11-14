@@ -26,6 +26,7 @@ CXXM_DEPS :=
 C_DEPS := 
 OBJCOPY_BIN := 
 CC_DEPS := 
+OBJCOPY_HEX := 
 SIZE_OUTPUT := 
 C++_DEPS := 
 SU_FILES := 

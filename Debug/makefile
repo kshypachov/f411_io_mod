@@ -88,6 +88,9 @@ default.size.stdout \
 OBJDUMP_LIST += \
 f411_io_mod.list \
 
+OBJCOPY_HEX += \
+f411_io_mod.hex \
+
 OBJCOPY_BIN += \
 f411_io_mod.bin \
 
@@ -114,6 +117,11 @@ f411_io_mod.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+f411_io_mod.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O ihex $(EXECUTABLES) "f411_io_mod.hex"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 f411_io_mod.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "f411_io_mod.bin"
 	@echo 'Finished building: $@'
@@ -121,10 +129,10 @@ f411_io_mod.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 
 # Other Targets
 clean:
-	-$(RM) default.size.stdout f411_io_mod.bin f411_io_mod.elf f411_io_mod.list f411_io_mod.map
+	-$(RM) default.size.stdout f411_io_mod.bin f411_io_mod.elf f411_io_mod.hex f411_io_mod.list f411_io_mod.map
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_BIN)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'
