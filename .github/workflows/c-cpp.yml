@@ -43,8 +43,14 @@ jobs:
       run: |
         make all -C ./Debug
 
-    - name: Upload Build Artifacts
+    - name: Upload Build Artifacts bin
       uses: actions/upload-artifact@v3
       with:
-        name: build-artifacts
+        name: build_bin
         path: ./Debug/*.bin  # Укажите путь к файлам сборки или выходной директории
+
+    - name: Upload Build Artifacts hex
+      uses: actions/upload-artifact@v3
+      with:
+        name: build_hex
+        path: ./Debug/*.hex  # Укажите путь к файлам сборки или выходной директории
