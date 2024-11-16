@@ -45,6 +45,7 @@ Core/Startup \
 Core/app/http_server_app/src \
 Core/app/mqtt_client_app/src \
 Core/app/sntp_app/src \
+Core/app/ssdp_auto_discovery_app/src \
 Drivers/SPI_FLASH/src \
 Drivers/STM32F4xx_HAL_Driver/Src \
 Drivers/i2c_display/src \

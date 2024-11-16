@@ -16,8 +16,8 @@
 
 #define MAX_DOMAIN_NAME_LEN   	128
 
-#define dev_hw_ver				"0.1"
-#define dev_sw_ver				"0.1"
+#define dev_hw_ver				"0.2"
+#define dev_sw_ver				"1.0"
 
 #define FIRMWARE_FILE_NAME		"firmware.bin"
 #define FIRMWARE_FILE_MAX_SIZE  200000

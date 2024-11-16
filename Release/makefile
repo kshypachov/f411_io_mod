@@ -19,6 +19,7 @@ RM := rm -rf
 -include Drivers/i2c_display/src/subdir.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Drivers/SPI_FLASH/src/subdir.mk
+-include Core/app/ssdp_auto_discovery_app/src/subdir.mk
 -include Core/app/sntp_app/src/subdir.mk
 -include Core/app/mqtt_client_app/src/subdir.mk
 -include Core/app/http_server_app/src/subdir.mk
