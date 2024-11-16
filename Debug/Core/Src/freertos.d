@@ -55,7 +55,8 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Drivers/i2c_display/inc/ssd1306.h ../Drivers/i2c_display/inc/fonts.h \
  ../Drivers/i2c_display/inc/fonts.h ../Core/Inc/i2c.h \
  ../Core/Inc/logger.h ../Core/Inc/data_types.h \
- ../Core/app/sntp_app/inc/sntp.h
+ ../Core/app/sntp_app/inc/sntp.h \
+ ../Core/app/ssdp_auto_discovery_app/inc/ssdp.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -121,3 +122,4 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Core/Inc/logger.h:
 ../Core/Inc/data_types.h:
 ../Core/app/sntp_app/inc/sntp.h:
+../Core/app/ssdp_auto_discovery_app/inc/ssdp.h:

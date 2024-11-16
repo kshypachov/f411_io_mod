@@ -41,6 +41,7 @@
 #include "i2c.h"
 #include "logger.h"
 #include "sntp.h"
+#include "ssdp.h"
 
 /* USER CODE END Includes */
 
@@ -311,6 +312,7 @@ void StartEthTask(void *argument)
 	  logging(L_INFO, "MQTT function disabled");
   }
   start_sntp(&mgr);
+  ssdp_start_server(&mgr, &mif);
   TickType_t last_tick = xTaskGetTickCount(); // начальное значение тиков
 
   /* Infinite loop */

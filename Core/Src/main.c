@@ -69,7 +69,15 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	__disable_irq();
+	SCB->VTOR = (uint32_t)0x08000000 | (0x08010000 & (uint32_t)0x1FFFFF80);
+	 //NVIC_SetVectorTable(NVIC_VectTab_FLASH, 0x08010000);
+	__enable_irq();
 
+	volatile int i = 1000000;
+	while (i > 0){ //delay for startup
+		i--;
+	}
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/

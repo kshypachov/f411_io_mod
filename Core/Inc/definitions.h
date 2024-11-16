@@ -36,7 +36,7 @@
 #define IP_PORT_STR_LEN				6
 
 
-#define MQTT_CONF_FILE					"mqtt.conf"
+#define MQTT_CONF_FILE				"mqtt.conf"
 
 #define LOG_MES_TEXT_LEN    		256
 #define LOG_FILE_LOCATION			"/log/main.log"
