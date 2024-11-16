@@ -1,6 +1,7 @@
 ../Core/Inc/definitions.h:57:21:my_calloc	2
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:61:13:send_ssdp_notify	3
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:80:6:ssdp_set_id	6
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:98:13:dev_description_handler	2
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:109:13:ssdp_web_handler	3
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:121:6:ssdp_start_server	2
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:64:13:send_ssdp_notify	3
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:83:6:ssdp_set_id	6
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:101:13:dev_description_handler	2
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:112:13:dev_404_handler	1
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:119:13:ssdp_web_handler	4
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:133:6:ssdp_start_server	2

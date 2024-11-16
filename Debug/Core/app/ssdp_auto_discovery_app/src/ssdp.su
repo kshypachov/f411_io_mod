@@ -1,6 +1,7 @@
 ../Core/Inc/definitions.h:57:21:my_calloc	24	static
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:61:13:send_ssdp_notify	72	static
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:80:6:ssdp_set_id	24	static
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:98:13:dev_description_handler	48	static
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:109:13:ssdp_web_handler	48	static
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:121:6:ssdp_start_server	32	static
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:64:13:send_ssdp_notify	56	static
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:83:6:ssdp_set_id	24	static
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:101:13:dev_description_handler	48	static
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:112:13:dev_404_handler	16	static
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:119:13:ssdp_web_handler	56	static
+../Core/app/ssdp_auto_discovery_app/src/ssdp.c:133:6:ssdp_start_server	32	static
