@@ -1,0 +1,56 @@
+name: STM32CubeIDE Release Build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      PATH: /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/home/runner/st/stm32cubeclt_1.16.0/Ninja/bin:/home/runner/st/stm32cubeclt_1.16.0/CMake/bin:/home/runner/st/stm32cubeclt_1.16.0/GNU-tools-for-STM32/bin
+
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Download Cubectl
+      run: |
+        wget https://github.com/kshypachov/stm32_builder/raw/refs/heads/main/st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
+
+    - name: Install Cubectl
+      run: |
+        export LICENSE_ALREADY_ACCEPTED=1
+        chmod +x st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
+        yes "" | ./st-stm32cubeclt_1.16.0_21983_20240628_1741_amd64.sh
+
+    - name: Install make
+      run: |
+        sudo apt update
+        sudo apt install -y make 
+
+    - name: Clear Build folder
+      run: |
+        make clean -C ./Release
+        
+    - name: Build project with Makefile
+      run: |
+        make all -C ./Release
+
+    - name: Upload Build Artifacts bin Release
+      uses: actions/upload-artifact@v3
+      with:
+        name: Release_bin
+        path: ./Release/*.bin  # Укажите путь к файлам сборки или выходной директории
+
+    - name: Upload Build Artifacts hex Release
+      uses: actions/upload-artifact@v3
+      with:
+        name: Release_hex
+        path: ./Release/*.hex  # Укажите путь к файлам сборки или выходной директории
