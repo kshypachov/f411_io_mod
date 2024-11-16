@@ -76,6 +76,7 @@
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/crypto_lib_mbed_TLS/include"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/crypto_lib_mbed_TLS/library"/>
 									<listOptionValue builtIn="false" value="../Core/app/sntp_app/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ssdp_auto_discovery_app/inc"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.361741197" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -203,6 +204,7 @@
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/validation/inc"/>
 									<listOptionValue builtIn="false" value="../Drivers/i2c_display/inc"/>
 									<listOptionValue builtIn="false" value="../Core/app/sntp_app/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ssdp_auto_discovery_app/inc"/>
 								</option>
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.languagestandard.421092479" name="Language standard" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.languagestandard" useByScannerDiscovery="true" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.languagestandard.value.gnu18" valueType="enumerated"/>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.959035374" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
