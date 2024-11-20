@@ -18,4 +18,4 @@
 ../Drivers/SPI_FLASH/src/SPI_flash.c:528:13:sFLASH_SPI_ReadBuffer	1
 ../Drivers/SPI_FLASH/src/SPI_flash.c:538:6:sFLASH_SendByte	1
 ../Drivers/SPI_FLASH/src/SPI_flash.c:571:6:sFLASH_WriteEnable	1
-../Drivers/SPI_FLASH/src/SPI_flash.c:589:6:sFLASH_WaitForWriteEnd	2
+../Drivers/SPI_FLASH/src/SPI_flash.c:589:6:sFLASH_WaitForWriteEnd	3

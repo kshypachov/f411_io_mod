@@ -13,6 +13,7 @@ Core/app/ssdp_auto_discovery_app/src/ssdp.o: \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
  ../Core/app/mqtt_client_app/inc/mqtt_gen_strings.hpp \
+ ../Core/Inc/definitions.h ../Core/Inc/logger.h ../Core/Inc/data_types.h \
  ../Core/Inc/definitions.h
 ../Core/app/ssdp_auto_discovery_app/inc/ssdp.h:
 ../Middlewares/Third_Party/mongoose/mongoose.h:
@@ -27,4 +28,7 @@ Core/app/ssdp_auto_discovery_app/src/ssdp.o: \
 ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
 ../Core/app/mqtt_client_app/inc/mqtt_gen_strings.hpp:
+../Core/Inc/definitions.h:
+../Core/Inc/logger.h:
+../Core/Inc/data_types.h:
 ../Core/Inc/definitions.h:

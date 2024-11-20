@@ -34,7 +34,7 @@ static void sfn(struct mg_connection *c, int ev, void *ev_data) {
       logging(L_INFO,"Got SNTP time: %" PRIu64 " ms from epoch", t);
     }
   } else if (ev == MG_EV_CLOSE) {
-	  logging(L_ERR, "NTP connection is closed");
+	  logging(L_INFO, "NTP connection is closed");
     s_sntp_conn = NULL;
   }
   (void) c;

@@ -69,12 +69,20 @@ void Error_Handler(void);
 #define coil2_GPIO_Port GPIOA
 #define coil3_Pin GPIO_PIN_7
 #define coil3_GPIO_Port GPIOA
+#define LED1_Pin GPIO_PIN_0
+#define LED1_GPIO_Port GPIOB
+#define LED2_Pin GPIO_PIN_1
+#define LED2_GPIO_Port GPIOB
+#define LED3_Pin GPIO_PIN_2
+#define LED3_GPIO_Port GPIOB
 #define ETH_CS_Pin GPIO_PIN_12
 #define ETH_CS_GPIO_Port GPIOB
 #define ETH_RST_Pin GPIO_PIN_8
 #define ETH_RST_GPIO_Port GPIOA
-#define FLASH_CS_Pin GPIO_PIN_9
+#define FLASH_CS_Pin GPIO_PIN_15
 #define FLASH_CS_GPIO_Port GPIOA
+#define KEY_Pin GPIO_PIN_8
+#define KEY_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

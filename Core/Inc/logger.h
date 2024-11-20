@@ -32,7 +32,8 @@ typedef struct log_message{
 }log_message_t;
 
 void reg_logging_fn(void (* fn)(struct log_message));
-void logging(uint8_t level, const char *format, ...);
+void logger_set_level(logging_level_t l);
+void logging(logging_level_t level, const char *format, ...);
 
 #ifdef __cplusplus
 }

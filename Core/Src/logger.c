@@ -15,6 +15,9 @@
 
 #define time_ms_now() mg_now()
 
+logging_level_t _level_ = L_DEBUG;
+const char *level_strings[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
 static void proto(struct log_message mess ){};
 
 void (*_send_log_mess)(struct log_message mess) = proto;
@@ -26,7 +29,11 @@ void reg_logging_fn(void (* fn)(struct log_message)){
 	}
 }
 
-void logging(uint8_t level, const char *format, ...){
+void logger_set_level(logging_level_t l){
+	_level_ = l;
+}
+
+void logging(logging_level_t level, const char *format, ...){
     log_message_t mess;
     va_list args;
 
@@ -34,6 +41,9 @@ void logging(uint8_t level, const char *format, ...){
     int time_len;
 
     char * tmp_buf = NULL;
+
+    if (level < _level_) return;
+
     tmp_buf = calloc(LOG_MES_TEXT_LEN, sizeof(char));
 
     if (!tmp_buf){
@@ -84,20 +94,15 @@ void logging(uint8_t level, const char *format, ...){
     // Завершение работы со списком аргументов
     va_end(args);
 
-    snprintf(tmp_buf ,LOG_MES_TEXT_LEN, "%s %s\r\n", time_str, mess.log_text);
+    snprintf(tmp_buf ,LOG_MES_TEXT_LEN, "%s %s:%s\r\n", time_str, level_strings[mess.log_level], mess.log_text);
     // Проверка длины отформатированной строки
-     if (formatted_len >= 0 && formatted_len < LOG_MES_TEXT_LEN - 3) {
-         mess.log_len = time_len + formatted_len;
+     if (formatted_len >= 0 && formatted_len < LOG_MES_TEXT_LEN - 10) {
+         mess.log_len = strlen(tmp_buf);
      } else {
-         mess.log_len = LOG_MES_TEXT_LEN - 3;
+         mess.log_len = LOG_MES_TEXT_LEN - 10;
      }
 
      strncpy(mess.log_text, tmp_buf, LOG_MES_TEXT_LEN);
-     // Добавление символов \r\n\0
-//     mess.log_text[mess.log_len] = '\r';
-//     mess.log_text[mess.log_len + 1] = '\n';
-//     mess.log_text[mess.log_len + 2] = '\0';
-//     mess.log_len += 2;  // Обновление длины для учёта \r\n
 
     // Проверка на существование функции перед вызовом
     if (_send_log_mess) {

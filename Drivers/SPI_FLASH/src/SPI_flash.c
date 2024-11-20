@@ -590,15 +590,18 @@ void sFLASH_WaitForWriteEnd(void)
 {
   uint8_t flashstatus = 0;
 
+  int32_t timeout = 100000;
+
   /*!< Select the FLASH: Chip Select low */
-  sFLASH_CS_LOW();
+  //sFLASH_CS_LOW();
 
   /*!< Send "Read Status Register" instruction */
-  sFLASH_SendByte(sFLASH_CMD_RDSR);
+  //(sFLASH_CMD_RDSR);
 
   /*!< Loop as long as the memory is busy with a write cycle */
   do
   {
+	  sFLASH_CS_LOW();
 	  /*!< Send "Read Status Register" instruction */
 	  sFLASH_SendByte(sFLASH_CMD_RDSR);
 
@@ -606,11 +609,20 @@ void sFLASH_WaitForWriteEnd(void)
 	  and put the value of the status register in FLASH_Status variable */
 	  flashstatus = sFLASH_ReadByte();
 
+	  sFLASH_CS_HIGH();
+
+	  /*!< Decrement timeout to avoid infinite loop */
+	  if (timeout-- == 0)
+	  {
+		  //printf("Timeout waiting for Write End\n"); Logging
+		  return; //Exit if timeout
+	  }
+
   }
   while ((flashstatus & sFLASH_WIP_FLAG) == SET); /* Write in progress */
 
   /*!< Deselect the FLASH: Chip Select high */
-  sFLASH_CS_HIGH();
+  //sFLASH_CS_HIGH();
 }
 
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

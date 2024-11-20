@@ -76,21 +76,21 @@ osThreadId_t IOTaskHandle;
 const osThreadAttr_t IOTask_attributes = {
   .name = "IOTask",
   .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityLow,
+  .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for displayTask */
 osThreadId_t displayTaskHandle;
 const osThreadAttr_t displayTask_attributes = {
   .name = "displayTask",
   .stack_size = 256 * 4,
-  .priority = (osPriority_t) osPriorityLow,
+  .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for settingsTask */
 osThreadId_t settingsTaskHandle;
 const osThreadAttr_t settingsTask_attributes = {
   .name = "settingsTask",
   .stack_size = 512 * 4,
-  .priority = (osPriority_t) osPriorityLow,
+  .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for loggingTask */
 osThreadId_t loggingTaskHandle;
@@ -147,11 +147,14 @@ uint8_t EthTxn(void *spi, uint8_t data);
 uint8_t GetInputsStatus(void);
 uint8_t GetOutputsStatus(void);
 void SetOutputs(uint8_t outputs);
-void SendByteSPI2(uint8_t byte);
-int RecvBuffSPI2(uint8_t * buffer, uint16_t size);
+//void SendByteSPI2(uint8_t byte);
+//int RecvBuffSPI2(uint8_t * buffer, uint16_t size);
+void FlashSPIsendByte(uint8_t byte);
+int FlashSPIrecvBuff(uint8_t * buffer, uint16_t size);
+
 void FS_Lock(void * param);
 void FS_Unlock(void * param);
-uint8_t SPI_SendReceiveByte(SPI_HandleTypeDef *hspi, uint8_t data);
+uint8_t EthSPIsendReceiveByte(SPI_HandleTypeDef *hspi, uint8_t data);
 uint8_t spi_txn(void *spi, uint8_t data);
 void RW_parameters_from_queue(void * param, sett_type_t param_type,  sett_direction_t direction);
 void add_log_mess_to_q(struct log_message mess);
@@ -458,7 +461,7 @@ void StartDisplayTask(void *argument)
 	    SSD1306_Puts(buf, &Font_7x10, SSD1306_COLOR_WHITE);
 		SSD1306_UpdateScreen();
 
-		if(HAL_I2C_IsDeviceReady(&hi2c1, SSD1306_I2C_ADDR, 1, 1000) != HAL_OK){
+		while(HAL_I2C_IsDeviceReady(&hi2c1, SSD1306_I2C_ADDR, 1, 1000) != HAL_OK){
 			HAL_I2C_DeInit(&hi2c1);
 			vTaskDelay(1000);
 			MX_I2C1_Init();
@@ -485,8 +488,12 @@ void StartSettingsTask(void *argument)
 
 	MQTT_cred_struct mqtt_config;
 
-  SPI_flash_reg_cb(FlashBegin, FlashEnd, RecvBuffSPI2, SendByteSPI2);
+  SPI_flash_reg_cb(FlashBegin, FlashEnd, FlashSPIrecvBuff, FlashSPIsendByte);
   if (lfs_fs_ll_init(FS_Lock, FS_Unlock) < 0){
+//	  while (1){
+//		  osDelay(1000);
+//	  }
+
 	  HAL_NVIC_SystemReset();
   }
 
@@ -527,7 +534,7 @@ void StartSettingsTask(void *argument)
 		  }
 	  }
 
-    osDelay(1000);
+	  osDelay(1000);
   }
   /* USER CODE END StartSettingsTask */
 }
@@ -551,6 +558,7 @@ void StartLoggingTask(void *argument)
 	osDelay(2000);
 	reg_logging_fn(add_log_mess_to_q);
 
+	logger_set_level(L_INFO);
 	logging(L_INFO, "Device started...");
   /* Infinite loop */
   for(;;)
@@ -612,14 +620,13 @@ void EthResetEnd(void){
 }
 
 void EthBegin(void * param){
-	osMutexAcquire(SPI2MutexHandle, osWaitForever);
+	//osMutexAcquire(SPI2MutexHandle, osWaitForever);
 	HAL_GPIO_WritePin(ETH_CS_GPIO_Port, ETH_CS_Pin, GPIO_PIN_RESET);
 }
 
 void EthEnd(void * param){
-	//osDelay(1);
 	HAL_GPIO_WritePin(ETH_CS_GPIO_Port, ETH_CS_Pin, GPIO_PIN_SET);
-	osMutexRelease(SPI2MutexHandle);
+	//osMutexRelease(SPI2MutexHandle);
 }
 
 uint8_t EthTxn(void *spi, uint8_t data) {
@@ -629,22 +636,31 @@ uint8_t EthTxn(void *spi, uint8_t data) {
 }
 
 void FlashBegin(void){
-	osMutexAcquire(SPI2MutexHandle, osWaitForever);
+	//osMutexAcquire(SPI2MutexHandle, osWaitForever);
 	HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_RESET);
 }
 
 void FlashEnd(void){
 	HAL_GPIO_WritePin(FLASH_CS_GPIO_Port, FLASH_CS_Pin, GPIO_PIN_SET);
-	osMutexRelease(SPI2MutexHandle);
+	//osMutexRelease(SPI2MutexHandle);
 }
 
-void SendByteSPI2(uint8_t byte){
-	HAL_SPI_Transmit(&hspi2, &byte, 1, HAL_MAX_DELAY);
+void FlashSPIsendByte(uint8_t byte){
+	HAL_SPI_Transmit(&hspi1, &byte, 1, HAL_MAX_DELAY);
 }
 
-int RecvBuffSPI2(uint8_t * buffer, uint16_t size){
-	return HAL_SPI_Receive(&hspi2, buffer, size, HAL_MAX_DELAY);
+int FlashSPIrecvBuff(uint8_t * buffer, uint16_t size){
+	return HAL_SPI_Receive(&hspi1, buffer, size, HAL_MAX_DELAY);
 }
+
+
+//void SendByteSPI2(uint8_t byte){
+//	HAL_SPI_Transmit(&hspi2, &byte, 1, HAL_MAX_DELAY);
+//}
+//
+//int RecvBuffSPI2(uint8_t * buffer, uint16_t size){
+//	return HAL_SPI_Receive(&hspi2, buffer, size, HAL_MAX_DELAY);
+//}
 
 void FS_Lock(void * param){
 	osMutexAcquire(FSMutexHandle, HAL_MAX_DELAY);
@@ -654,7 +670,7 @@ void FS_Unlock(void * param){
 	osMutexRelease(FSMutexHandle);
 }
 
-uint8_t SPI_SendReceiveByte(SPI_HandleTypeDef *hspi, uint8_t data)
+uint8_t EthSPIsendReceiveByte(SPI_HandleTypeDef *hspi, uint8_t data)
 {
     uint8_t receivedData = 0;
 
@@ -674,7 +690,7 @@ uint8_t spi_txn(void *spi, uint8_t data)
     SPI_HandleTypeDef *hspi = (SPI_HandleTypeDef *)spi;
 
     // �?спользуем функцию отправки и приема байта
-    return SPI_SendReceiveByte(hspi, data);
+    return EthSPIsendReceiveByte(hspi, data);
 }
 
 void RW_parameters_from_queue(void * param, sett_type_t param_type,  sett_direction_t direction){
