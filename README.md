@@ -147,7 +147,20 @@ The device exposes a RESTful API for remote configuration and control.
     {
       "mqtt_conn_status": "connected",
       "local_addr": "192.168.1.10",
-      "server_addr": "broker.example.com"
+      "server_addr": "broker.example.com",
+      "pub_topics": [
+                "cedar_402258681939/input1/state",
+                "cedar_402258681939/input2/state",
+                "cedar_402258681939/input3/state",
+                "cedar_402258681939/switch1/state",
+                "cedar_402258681939/switch2/state",
+                "cedar_402258681939/switch3/state"
+                    ],
+     "subscr_topics": [
+                "cedar_402258681939/switch1/set",
+                "cedar_402258681939/switch2/set",
+                "cedar_402258681939/switch3/set"
+                     ]
     }
     ```
 
