@@ -67,6 +67,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "SPI_flash.h"
+#include <string.h>
 /** @addtogroup STM32F2xx_StdPeriph_Examples
   * @{
   */
@@ -80,7 +81,7 @@
 /* Private macro -------------------------------------------------------------*/
 /* Private variables ---------------------------------------------------------*/
 struct SPI_flash_config flash_conf;
-struct SPI_flash_info flash_info;
+struct SPI_flash_info flash_info = {0};
 /* Private function prototypes -----------------------------------------------*/
 
 uint8_t sFLASH_ReadByte(void);
@@ -146,6 +147,8 @@ struct SPI_flash_info sFLASH_GetInfo(void){
 			flash_info.erase_size = 4096;
 			flash_info.page_size = 256;
 			flash_info.block_count = 512;
+			strncpy(flash_info.model_name, "W25Q16", sizeof(flash_info.model_name) - 1);
+			flash_info.model_name[sizeof(flash_info.model_name) - 1] = '\0'; // Guarantee null-terminator
 			break;
 		case sFLASH_W25Q32BV_ID:
 			flash_info.flash_id = sFLASH_W25Q32BV_ID;
@@ -154,6 +157,8 @@ struct SPI_flash_info sFLASH_GetInfo(void){
 			flash_info.erase_size = 4096;
 			flash_info.page_size = 256;
 			flash_info.block_count = 1024;
+			strncpy(flash_info.model_name, "W25Q32", sizeof(flash_info.model_name) - 1);
+			flash_info.model_name[sizeof(flash_info.model_name) - 1] = '\0'; // Guarantee null-terminator
 			break;
 		case sFLASH_W25Q64BV_ID:
 			flash_info.flash_id = sFLASH_W25Q64BV_ID;
@@ -162,6 +167,8 @@ struct SPI_flash_info sFLASH_GetInfo(void){
 			flash_info.erase_size = 4096;
 			flash_info.page_size = 256;
 			flash_info.block_count = 2048;
+			strncpy(flash_info.model_name, "W25Q64", sizeof(flash_info.model_name) - 1);
+			flash_info.model_name[sizeof(flash_info.model_name) - 1] = '\0'; // Guarantee null-terminator
 			break;
 		case sFLASH_W25Q128BV_ID:
 			flash_info.flash_id = sFLASH_W25Q128BV_ID;
@@ -170,6 +177,8 @@ struct SPI_flash_info sFLASH_GetInfo(void){
 			flash_info.erase_size = 4096;
 			flash_info.page_size = 256;
 			flash_info.block_count = 4096;
+			strncpy(flash_info.model_name, "W25Q128", sizeof(flash_info.model_name) - 1);
+			flash_info.model_name[sizeof(flash_info.model_name) - 1] = '\0'; // Guarantee null-terminator
 			break;
 		case sFLASH_MX25L32xxx_ID:
 			flash_info.flash_id = sFLASH_MX25L32xxx_ID;
@@ -178,16 +187,22 @@ struct SPI_flash_info sFLASH_GetInfo(void){
 			flash_info.erase_size = 4096;
 			flash_info.page_size = 256;
 			flash_info.block_count = 1024;
+			strncpy(flash_info.model_name, "MX25L32", sizeof(flash_info.model_name) - 1);
+			flash_info.model_name[sizeof(flash_info.model_name) - 1] = '\0'; // Guarantee null-terminator
 			break;
 
 		default:
 			flash_info.flash_id = sFLASH_UNNOUN_ID;
 			break;
 	}
-
 	return flash_info;
-
 }
+
+struct SPI_flash_info flash_common_info(void){
+	return flash_info;
+}
+
+
 
 void sFLASH_CS_LOW(void){ //select chip
 

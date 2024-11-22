@@ -1,4 +1,4 @@
 ../Middlewares/Third_Party/validation/src/validation.c:19:5:has_mqtt_prefix	1
-../Middlewares/Third_Party/validation/src/validation.c:23:5:is_valid_ip_or_domain	14
-../Middlewares/Third_Party/validation/src/validation.c:65:5:is_valid_port	5
+../Middlewares/Third_Party/validation/src/validation.c:23:5:is_valid_ip_or_domain	13
+../Middlewares/Third_Party/validation/src/validation.c:65:5:is_valid_port	4
 ../Middlewares/Third_Party/validation/src/validation.c:80:5:is_valid_mqtt_url	5

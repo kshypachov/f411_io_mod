@@ -1,7 +1,0 @@
-../Core/Inc/definitions.h:57:21:my_calloc	16	static
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:101:13:dev_description_handler	48	static
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:112:13:dev_404_handler	8	static
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:119:13:ssdp_web_handler	40	static
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:64:13:send_ssdp_notify	32	static
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:83:6:ssdp_set_id	16	static
-../Core/app/ssdp_auto_discovery_app/src/ssdp.c:133:6:ssdp_start_server	32	static

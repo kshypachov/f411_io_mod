@@ -43,6 +43,11 @@ typedef struct MQTT_cred_t{
 	char pass[MAX_MQTT_PASS_LEN];
 }__attribute__((packed)) MQTT_cred_struct;
 
+typedef struct http_user_list{
+	char username[128] ;
+	char password[128] ;
+}http_user_list_t;
+
 //Define settings typt
 typedef enum sett_type{
 	S_MQTT,

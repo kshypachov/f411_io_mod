@@ -1,4 +1,0 @@
-../Core/Src/logger.c:18:13:proto	0	static
-../Middlewares/Third_Party/mongoose/mongoose.h:192:21:mg_calloc	16	static
-../Core/Src/logger.c:23:6:reg_logging_fn	0	static
-../Core/Src/logger.c:29:6:logging	644	static

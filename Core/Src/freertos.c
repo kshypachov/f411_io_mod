@@ -158,6 +158,7 @@ uint8_t EthSPIsendReceiveByte(SPI_HandleTypeDef *hspi, uint8_t data);
 uint8_t spi_txn(void *spi, uint8_t data);
 void RW_parameters_from_queue(void * param, sett_type_t param_type,  sett_direction_t direction);
 void add_log_mess_to_q(struct log_message mess);
+void empty_fn(void *data);
 /* USER CODE END FunctionPrototypes */
 
 void StartEthTask(void *argument);
@@ -494,7 +495,7 @@ void StartSettingsTask(void *argument)
 //		  osDelay(1000);
 //	  }
 
-	  HAL_NVIC_SystemReset();
+	  HAL_NVIC_SystemReset(); //TODO fo Release uncomment
   }
 
   mg_fs_lfs_mkdir("/web");
@@ -728,6 +729,8 @@ void add_log_mess_to_q(struct log_message mess){
 	osMessageQueuePut(loggingQHandle,  &mess, 0, 0);
 
 }
+
+void empty_fn(void *data){};
 
 /* USER CODE END Application */
 

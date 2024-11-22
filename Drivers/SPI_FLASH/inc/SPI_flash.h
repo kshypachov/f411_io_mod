@@ -76,9 +76,7 @@ struct SPI_flash_info{
 	//Number of erasable blocks on the device.
 	uint16_t block_count;
 	//Model name
-	//char     name[20];
-
-
+	char     model_name[50];
 };
  /* Exported constants --------------------------------------------------------*/
 
@@ -126,6 +124,7 @@ void sFLASH_ReadBuffer(uint8_t* pBuffer, uint32_t ReadAddr, uint16_t NumByteToRe
 uint32_t sFLASH_ReadID(void);
 void sFLASH_StartReadSequence(uint32_t ReadAddr);
 struct SPI_flash_info sFLASH_GetInfo(void);
+struct SPI_flash_info flash_common_info(void);
 
 /* Low layer functions */
 void SPI_flash_reg_cb(void (*chip_select)(void), void (*chip_deselect)(void), int (*receive_buffer)(uint8_t * buffer, uint16_t size), void (*send_byte)(uint8_t));

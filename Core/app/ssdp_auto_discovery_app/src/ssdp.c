@@ -26,6 +26,7 @@ char *buff = NULL;
 static char * ip_addr_str = NULL; //Переменная для хранения айпи адреса
 static struct mg_mgr *mgr = NULL;
 struct mg_tcpip_if *mif = NULL;
+struct mg_connection *udp_listen_conn = NULL;
 
 //struct mg_connection *udp_conn = NULL; //Varible for stor SSDP connection
 
@@ -61,6 +62,7 @@ static const char ssdp_notify_template[] =
     "USN:%s::upnp:rootdevice\r\n"
     "\r\n";
 
+static void ssdp_listener_handler(struct mg_connection *c, int ev, void *ev_data);
 
 void ip_to_string(uint32_t ip, char *buffer) {
     // Разбиваем IP-адрес на байты
@@ -150,29 +152,25 @@ static void ssdp_web_handler(struct mg_connection *c, int ev, void *ev_data){
 static void ssdp_timer_handler(void *param){
 	logging(L_DEBUG, "Call ssdp_timer_handler");
 	struct mg_connection *conn = mg_connect(mgr, ssdp_addr, NULL, NULL);
+	if (conn == NULL){
+		logging(L_ERR, "Call ssdp_timer_handler error open conn");
+		return ;
+	}
 	send_ssdp_notify(conn);
 	mg_close_conn(conn);
 }
 
 static void ssdp_listener_handler(struct mg_connection *c, int ev, void *ev_data){
-	char *buffer = NULL;
+	//char *buffer = NULL;
 
 	if (ev == MG_EV_READ) {
 		logging(L_DEBUG, "Call ssdp_listener_handler if (ev == MG_EV_READ)");
-		struct mg_str msg = mg_str_n((char *) c->recv.buf, c->recv.len);
-		// Получаем сообщение от клиента
-		buffer = (char *)calloc(msg.len + 1, sizeof(char));
-		if (!buffer) {
-			logging(L_ERR, "Failed to allocate memory for SSDP buffer");
-			return;
-		}
-
+		struct mg_str msg = mg_str_n((char *) udp_listen_conn->recv.buf, udp_listen_conn->recv.len);
 		if (mg_match(msg, mg_str("M-SEARCH#"), NULL) && mg_match(msg, mg_str("#ssdp:discover#"), NULL)) {
 			logging(L_DEBUG, "SSDP response on M-SEARCH ssdp:discover request");
-			//ssdp_timer_handler(NULL);
-			send_ssdp_notify(c);
+			send_ssdp_notify(udp_listen_conn);
 		}
-		free(buffer);
+		c->recv.len = 0;
 	}
 }
 
@@ -187,8 +185,6 @@ void ssdp_start_server(void * param_mgr, void * param_mif){
 	logging(L_INFO, "Starting SSDP service");
 	mg_timer_add(mgr, 60000, MG_TIMER_REPEAT | MG_TIMER_RUN_NOW, ssdp_timer_handler, NULL);
 	mg_http_listen(mgr, "http://0.0.0.0:40000", ssdp_web_handler, mif);
-	//mg_listen(mgr, ssdp_addr, ssdp_listener_handler, mif);
-	mg_listen(mgr, "udp://0.0.0.0:1900", ssdp_listener_handler, mif);
-
+	udp_listen_conn = mg_listen(mgr, ssdp_addr, ssdp_listener_handler, mif);
 }
 
