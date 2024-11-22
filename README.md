@@ -124,7 +124,8 @@ The device exposes a RESTful API for remote configuration and control.
   - **Request Body**:
     ```json
     {
-      "uri": "mqtt://broker.example.com",
+      "enabled": "true",
+      "broker": "mqtt://broker.example.com",
       "username": "user",
       "password": "pass"
     }
