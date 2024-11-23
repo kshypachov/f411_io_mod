@@ -43,7 +43,7 @@ This project is designed to run on the STM32F411CEUX microcontroller, handling i
 
 - Configure the input/output pins as needed for your application in `freertos.c` or in the STM32CubeMX `.ioc` file.
 
-3. Flash the binary to your STM32F411CEUX microcontroller using a compatible programmer (e.g., ST-Link).
+- Flash the binary to your STM32F411CEUX microcontroller using a compatible programmer (e.g., ST-Link).
 
 ### Configuration
 
@@ -173,6 +173,9 @@ The device exposes a RESTful API for remote configuration and control.
       "message": "Device is restarting"
     }
     ```
+### Logging
+- **`GET /api/device/log`** - Fetches the latest device logs.
+- **`GET /api/device/log_old`** - Fetches archived logs.
 
 ### Firmware Update
 
@@ -214,6 +217,16 @@ The device exposes a RESTful API for remote configuration and control.
     {
       "status": "success",
       "message": "Firmware activated"
+    }
+    ```
+
+- **`POST /api/firmware/activate_and_reboot`**
+  - **Description**: Activates the uploaded firmware and reboot.
+  - **Response**:
+      ```json
+    {
+      "status": "success",
+      "message": "Device is restarting"
     }
     ```
 

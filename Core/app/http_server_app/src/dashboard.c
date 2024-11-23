@@ -377,7 +377,7 @@ static void handle_restart_mcu(struct mg_connection *c, struct mg_http_message *
 		struct mg_full_net_info * param = (struct mg_full_net_info *)c->fn_data;
 
 
-		mg_timer_add(param->mgr, 2000 /* 05 seconds */, MG_TIMER_REPEAT, HAL_NVIC_SystemReset, NULL);
+		mg_timer_add(param->mgr, 2000 /* 2 seconds */, MG_TIMER_REPEAT, HAL_NVIC_SystemReset, NULL);
 
 		mg_http_reply(c, 200, headers, //TODO delete for release,
 							"{\"status\":\"success\",\"message\":\"Restarting...\"}\r\n");
@@ -448,6 +448,21 @@ static void handle_firmware_activate(struct mg_connection *c, struct mg_http_mes
 		mg_http_reply(c, 400, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET and POST methods\"}\r\n");
 
+	}
+}
+
+static void handle_activete_and_reboot(struct mg_connection *c, struct mg_http_message *hm){
+	if (mg_match(hm->method, mg_str("POST"), NULL)){
+		if (mg_fs_lfs.mv("/firmware/firmware.bin", "/firmware.bin")){
+			handle_restart_mcu(c, hm);
+
+		}else{
+			mg_http_reply(c, 500, headers, //TODO delete for release,
+					"{\"status\":\"fail\", \"message\": \"Fail during activating firmware\"}\r\n");
+		}
+	}else{
+		mg_http_reply(c, 400, headers, //TODO delete for release,
+						"{\"status\":\"error\",\"message\":\"Unsupported method, support only POST method\"}\r\n");
 	}
 }
 
@@ -571,7 +586,7 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/md5"), NULL)){
 			handle_firmware_md5(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/activate_and_reboot"), NULL)){
-			handle_firmware_activate(c, hm);
+			handle_activete_and_reboot(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/deactivate"), NULL)){
 			handle_firmware_deactivate(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/web_interface/remove"), NULL)){
