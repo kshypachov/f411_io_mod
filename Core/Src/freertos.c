@@ -283,6 +283,9 @@ void StartEthTask(void *argument)
   mg_full_info.mgr_if =  &mif;
 
 
+  while (mg_fs_mounted() == 0){
+	  osDelay(500);
+  }
 
   mg_mgr_init(&mgr);        // Mongoose event manager
   mg_log_set(MG_LL_DEBUG);  // Set log level
@@ -505,6 +508,7 @@ void StartSettingsTask(void *argument)
   mg_fs_lfs_mkdir("/settings");
   mg_fs_lfs_mkdir("/certs");
   mg_fs_lfs_mkdir("/log");
+  mg_fs_lfs_mkdir("/auth");
 
 
 
@@ -517,6 +521,32 @@ void StartSettingsTask(void *argument)
   }else{
 	  memset(&mqtt_config, 0, sizeof(mqtt_config));
 	  xQueueOverwrite(mqttQHandle, &mqtt_config);
+  }
+
+  if (mg_fs_lfs_status("/auth/pass.txt", &f_size, NULL) == 0){//file not found
+	  users_list_t *web_users = NULL;
+	  web_users = (users_list_t *)malloc(user_list_size * sizeof(users_list_t));
+
+	  if (web_users == NULL) {
+		  logging(L_ERR, "Failed to allocate memory for 'web_users' ");
+	  }else{
+		  logging(L_INFO, "Initialize default login pass for web (admin:admin)'");
+		  strcpy(web_users[0].user, "admin");
+
+		  unsigned char pass_digest[] = {
+		      208, 51, 226, 42, 227, 72, 174, 181, 102, 15,
+		      194, 20, 10, 236, 53, 133, 12, 77, 169, 151, 0
+		  };
+
+		  memcpy(web_users[0].pass_digest, pass_digest, sizeof(pass_digest));
+
+		  f_pointer = mg_fs_lfs_open("/auth/pass.txt", MG_FS_WRITE);
+
+		  mg_fs_lfs_write(f_pointer, web_users, user_list_size * sizeof(users_list_t));
+		  mg_fs_lfs_close(f_pointer);
+	  }
+
+	  free(web_users);
   }
 
 
@@ -556,11 +586,12 @@ void StartLoggingTask(void *argument)
 	size_t fs_size;
 	HeapStats_t heap_status;
 
-	osDelay(2000);
 	reg_logging_fn(add_log_mess_to_q);
-
 	logger_set_level(L_INFO);
 	logging(L_INFO, "Device started...");
+
+	osDelay(2000);
+
   /* Infinite loop */
   for(;;)
   {

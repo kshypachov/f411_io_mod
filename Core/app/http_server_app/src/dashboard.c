@@ -39,6 +39,111 @@ struct mg_fs mg_fs_lfs = {
 static void (*r_w_parameter)(void * parameter, sett_type_t parameter_type,  sett_direction_t direction) = NULL;
 
 
+//TEST---AUTH---------------------------------
+#define user_name 			"admin"
+#define user_cred_file		"/auth/pass.txt"
+
+
+
+
+
+users_list_t  web_users[user_list_size]= {0};
+tokens_list_t web_tokens[user_list_size]= {0};
+
+
+static bool load_users(const char *file_path, users_list_t * users, size_t count){
+	struct mg_fd *fd = mg_fs_open(&mg_fs_lfs, file_path, MG_FS_READ);
+	if (!fd) return false;
+
+	mg_fs_lfs.rd(fd->fd, users, sizeof(users_list_t) * count);
+	mg_fs_close(fd);
+	return true;
+}
+
+static bool write_users(const char *file_path, users_list_t * users, size_t count){
+	mg_fs_lfs.rm(file_path);
+	struct mg_fd *fd = mg_fs_open(&mg_fs_lfs, file_path, MG_FS_WRITE);
+
+	mg_fs_lfs.wr(fd->fd, users, sizeof(users_list_t) * count);
+	mg_fs_close(fd);
+}
+
+
+static void handle_login(struct mg_connection *c, tokens_list_t *u) {
+  char cookie[256];
+  const char *cookie_name = c->is_tls ? "secure_access_token" : "access_token";
+  mg_snprintf(cookie, sizeof(cookie),
+              "Set-Cookie: %s=%s; Path=/; "
+              "%sHttpOnly; SameSite=Lax; Max-Age=%d\r\n",
+              cookie_name, u->token,
+              c->is_tls ? "Secure; " : "", token_life_time / 1000);
+  mg_http_reply(c, 200, cookie, "{%m:%m}", MG_ESC("user"), MG_ESC(u->user));
+}
+
+static bool auth(struct mg_connection *c, struct mg_http_message *hm, bool set_cookie){
+	//users_list_t tmp_user_pass;
+	int i;
+	char pass_digest[sha1_str_len] = {0};
+	mg_sha1_ctx sha1_ctx;
+	char username[128];
+	char pass[128];
+
+	mg_http_creds(hm, username, sizeof(username), pass, sizeof(pass));
+
+	if (username[0] != '\0' && pass[0] != '\0') {
+	// Both user and password is set, search by user/password
+		mg_sha1_init(&sha1_ctx);
+		mg_sha1_update(&sha1_ctx, (const unsigned char *)pass, strlen(pass) * sizeof(char));
+		mg_sha1_final((unsigned char *)&pass_digest, &sha1_ctx); // calculate sha1 pass
+		for (i=0; i< user_list_size; i++ ){
+			if((strcmp(web_users[i].user, username) == 0) && (strcmp(web_users[i].pass_digest, pass_digest) == 0)){
+				for(int k=0; k < user_list_size; k++){
+					if(web_tokens[i].expare < mg_now()){
+						strncpy(web_tokens[i].user, username, sizeof(web_tokens[i].user));
+						web_tokens[i].expare = mg_now() + token_life_time;
+						mg_random_str(web_tokens[i].token, sha1_str_len -1);
+						if (set_cookie)handle_login(c, &web_tokens[i]);
+
+						return true;
+					}
+					strncpy(web_tokens[1].user, username, sizeof(web_tokens[1].user));
+					web_tokens[1].expare = mg_now() + token_life_time;
+					mg_random_str(web_tokens[1].token, sha1_str_len -1);
+					if (set_cookie)handle_login(c, &web_tokens[i]);
+
+					return true;
+				}
+			}
+		}
+
+	} else if (username[0] == '\0' && pass[0] != '\0') {
+	// Only password is set, search by token
+		for (i=0;i<user_list_size; i++){
+			if((strcmp(web_tokens[i].token, pass) == 0 && web_tokens[i].user[0] != 0)){// && (web_tokens[i].expare > mg_now())
+				if (set_cookie) mg_http_reply(c, 200, headers,
+				        		"{\"status\":\"OK\",\"message\":\"Token is valid\"}\r\n");
+
+				return true;
+			}
+		}
+	}
+	return false;
+}
+
+
+static void handler_authanticate(struct mg_connection *c,struct mg_http_message *hm){
+	if ( auth(c, hm, 1) ){
+
+//        mg_http_reply(c, 200, headers, //TODO delete for release,
+//        		"{\"status\":\"OK\",\"message\":\"Auth completed\"}\r\n");
+
+	}else{
+        mg_http_reply(c, 403, headers, //TODO delete for release,
+        		"{\"status\":\"error\",\"message\":\"Access deny\"}\r\n");
+
+	}
+}
+
 
 static void handle_ram_status_get(struct mg_connection *c){
 	HeapStats_t heap_status;
@@ -380,7 +485,7 @@ static void handle_restart_mcu(struct mg_connection *c, struct mg_http_message *
 		mg_timer_add(param->mgr, 2000 /* 2 seconds */, MG_TIMER_REPEAT, HAL_NVIC_SystemReset, NULL);
 
 		mg_http_reply(c, 200, headers, //TODO delete for release,
-							"{\"status\":\"success\",\"message\":\"Restarting...\"}\r\n");
+							"{\"status\":\"success\",\"message\":\"Device is restarting\"}\r\n");
 
 	}else{
 		mg_http_reply(c, 400, headers, //TODO delete for release,
@@ -560,14 +665,241 @@ static void handle_fs_get_log(struct mg_connection *c, struct mg_http_message *h
 	}
 }
 
+static void handle_manage_user(struct mg_connection *c, struct mg_http_message *hm){
+
+	if (mg_match(hm->method, mg_str("GET"), NULL)){
+
+		uint32_t response_len = 1024;
+		uint32_t user_entry_len = 160;
+	    char *response = calloc(response_len, sizeof(char));
+	    char *user_entry = calloc(user_entry_len, sizeof(char));
+	    size_t offset = 0;
+
+	    if (response && user_entry) {
+	        // Начало JSON-объекта
+	        offset += snprintf(response + offset, response_len - offset, "{ \"users\": [");
+
+	        // Проход по всем пользователям
+	        for (int i = 0; i < user_list_size; i++) {
+	            if (web_users[i].user[0] != '\0') {  // Проверяем, что имя пользователя не пустое
+	                // Формируем JSON-объект для пользователя
+	                snprintf(user_entry, user_entry_len, "{\"user\": \"%s\"}", web_users[i].user);
+
+	                // Добавляем запятую между объектами (но не перед первым)
+	                if (offset > 12) { // 12 символов — это длина строки "{ \"users\": ["
+	                    offset += snprintf(response + offset, response_len - offset, ",");
+	                }
+
+	                // Добавляем объект пользователя в JSON
+	                offset += snprintf(response + offset, response_len - offset, "%s", user_entry);
+	            }
+	        }
+
+	        // Завершаем JSON-объект
+	        offset += snprintf(response + offset, response_len - offset, "]}");
+
+	        // Отправляем JSON-ответ
+	        mg_http_reply(c, 200, headers, "%s", response);
+	    } else {
+	        // Если память не выделена, отправляем ошибку
+	    	logging(L_ERR, "Memory allocation failed in handle_manage_user GET");
+	        mg_http_reply(c, 500, headers, "{\"error\": \"Memory allocation failed\"}");
+	    }
+
+	    // Освобождаем память
+	    free(response);
+	    free(user_entry);
+
+	}else if (mg_match(hm->method, mg_str("POST"), NULL)){
+
+		char *username_add = NULL;
+		char *password_add = NULL;
+		int length;
+
+	    if (mg_json_get(hm->body, "$", &length) < 0) {
+	        // JSON validation error
+	        mg_http_reply(c, 400, headers,
+	                      "{\"status\":\"error\",\"message\":\"Incorrect JSON\"}\r\n");
+	        return;
+	    }
+
+	    username_add = mg_json_get_str(hm->body, "$.user");
+	    password_add = mg_json_get_str(hm->body, "$.pass");
+
+
+	    if (username_add && password_add && strlen(username_add) > 0 && strlen(password_add) > 0) {
+	        // Проверяем, существует ли пользователь с таким именем
+	        for (int i = 0; i < user_list_size; i++) {
+	            if (strcmp(web_users[i].user, username_add) == 0) {
+	                // Имя пользователя уже существует
+	                mg_http_reply(c, 400, headers,
+	                              "{\"status\":\"error\",\"message\":\"Username already exists\"}\r\n");
+	                free(username_add);
+	                free(password_add);
+	                return;
+	            }
+	        }
+
+			// Вычисляем SHA1 хэш для пароля
+			char add_pass_digest[sha1_str_len] = {0};
+			mg_sha1_ctx sha1_ctx;
+			mg_sha1_init(&sha1_ctx);
+			mg_sha1_update(&sha1_ctx, (const unsigned char *)password_add, strlen(password_add) * sizeof(char));
+			mg_sha1_final((unsigned char *)add_pass_digest, &sha1_ctx);
+
+	        // Ищем свободное место в массиве web_users
+	        bool user_added = false;
+	        for (int i = 0; i < user_list_size; i++) {
+	            if (web_users[i].user[0] == '\0') { // Пустая запись
+	                // Копируем данные в массив
+	                strncpy(web_users[i].user, username_add, sizeof(web_users[i].user) - 1);
+	                strncpy(web_users[i].pass_digest, add_pass_digest, sizeof(web_users[i].pass_digest) - 1);
+	                write_users(user_cred_file, web_users, user_list_size);
+	                user_added = true;
+	                break;
+	            }
+	        }
+
+	        if (user_added) {
+	            // Успешный ответ
+	            mg_http_reply(c, 200, headers,
+	                          "{\"status\":\"success\",\"message\":\"User added successfully\"}\r\n");
+	        } else {
+	            // Нет свободного места в массиве
+	            mg_http_reply(c, 400, headers,
+	                          "{\"status\":\"error\",\"message\":\"User list is full\"}\r\n");
+	        }
+	    } else {
+	        // Неполные данные
+	        mg_http_reply(c, 400, headers,
+	                      "{\"status\":\"error\",\"message\":\"Field user or pass is empty\"}\r\n");
+	    }
+
+		// Освобождаем память
+		free(username_add);
+		free(password_add);
+
+	}else if (mg_match(hm->method, mg_str("PUT"), NULL)){
+
+	    char *username_edit = NULL;
+	    char *new_password = NULL;
+	    int length;
+
+	    if (mg_json_get(hm->body, "$", &length) < 0) {
+	        // JSON validation error
+	        mg_http_reply(c, 400, headers,
+	                      "{\"status\":\"error\",\"message\":\"Incorrect JSON\"}\r\n");
+	    } else {
+	        // Extract username and new password
+	        username_edit = mg_json_get_str(hm->body, "$.user");
+	        new_password = mg_json_get_str(hm->body, "$.pass");
+
+	        if (username_edit && new_password && strlen(username_edit) > 0 && strlen(new_password) > 0) {
+	            bool user_found = false;
+
+	            // Calculate SHA1 hash for the new password
+	            char new_pass_digest[sha1_str_len] = {0};
+	            mg_sha1_ctx sha1_ctx;
+	            mg_sha1_init(&sha1_ctx);
+	            mg_sha1_update(&sha1_ctx, (const unsigned char *)new_password, strlen(new_password));
+	            mg_sha1_final((unsigned char *)new_pass_digest, &sha1_ctx);
+
+//	    		mg_sha1_init(&sha1_ctx);
+//	    		mg_sha1_update(&sha1_ctx, (const unsigned char *)pass, strlen(pass) * sizeof(char));
+//	    		mg_sha1_final((unsigned char *)&pass_digest, &sha1_ctx); // calculate sha1 pass
+
+
+	            // Search for the user in the array
+	            for (int i = 0; i < user_list_size; i++) {
+	                if (strcmp(web_users[i].user, username_edit) == 0) {
+	                    // Update the password hash
+	                    strncpy(web_users[i].pass_digest, new_pass_digest, sizeof(web_users[i].pass_digest) - 1);
+	                    web_users[i].pass_digest[sizeof(web_users[i].pass_digest) - 1] = '\0';
+	                    write_users(user_cred_file, web_users, user_list_size);
+	                    user_found = true;
+	                    break;
+	                }
+	            }
+
+	            if (user_found) {
+	                mg_http_reply(c, 200, headers,
+	                              "{\"status\":\"success\",\"message\":\"Password updated successfully\"}\r\n");
+	            } else {
+	                mg_http_reply(c, 404, headers,
+	                              "{\"status\":\"error\",\"message\":\"User not found\"}\r\n");
+	            }
+	        } else {
+	            mg_http_reply(c, 400, headers,
+	                          "{\"status\":\"error\",\"message\":\"Field user or new_pass is empty\"}\r\n");
+	        }
+	    }
+
+	    // Free allocated memory
+	    free(username_edit);
+	    free(new_password);
+
+
+	}if (mg_match(hm->method, mg_str("DELETE"), NULL)){
+		char *username_del = NULL;
+
+	    username_del = mg_json_get_str(hm->body, "$.user");
+
+	    if (username_del && strlen(username_del) > 0) {
+	        bool user_found = false;
+
+	        for (int i = 1; i < user_list_size; i++) { // Нельзя удалять пользователя под индексом 0
+
+	            if (strcmp(web_users[i].user, username_del) == 0) {
+	                // Удаляем пользователя, очищая запись
+	                memset(web_users[i].user, 0, sizeof(web_users[i].user));
+	                memset(web_users[i].pass_digest, 0, sizeof(web_users[i].pass_digest));
+
+	                write_users(user_cred_file, web_users, user_list_size);
+	                user_found = true;
+	                break;
+	            }
+	        }
+
+	        if (user_found) {
+	            // Успешный ответ
+	            mg_http_reply(c, 200, headers,
+	                          "{\"status\":\"success\",\"message\":\"User deleted successfully\"}\r\n");
+	        } else {
+	            // Пользователь не найден
+	            mg_http_reply(c, 400, headers,
+	                          "{\"status\":\"error\",\"message\":\"User not found or cannot delete user at index 0\"}\r\n");
+	        }
+	    } else {
+	        // Неполные данные
+	        mg_http_reply(c, 400, headers,
+	                      "{\"status\":\"error\",\"message\":\"Field user is empty or missing\"}\r\n");
+	    }
+
+	    // Освобождаем память
+	    free(username_del);
+
+	}else{
+		mg_http_reply(c, 400, headers, //TODO delete for release,
+						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET POST PUT DELETE methods\"}\r\n");
+
+	}
+}
+
+
 static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
 
 	if (ev == MG_EV_HTTP_MSG) {
     struct mg_http_message *hm = (struct mg_http_message *) ev_data;
 
+    bool authenticate = auth(c, hm, 0); //Check authentication status
+
         if (mg_match(hm->method, mg_str("OPTIONS"), NULL)) {
             	handle_OPTIONS_method(c);
-        }else if (mg_match(hm->uri, mg_str("/api/ram/status"), NULL)) { // Get free and allocated RAM space
+        }else if (mg_match(hm->uri, mg_str("/api/#"), NULL) && !authenticate ) { // All requests to /api should be authenticated
+        	mg_http_reply(c, 403, "", "Not Authorised\n");
+		}else if (mg_match(hm->uri, mg_str("/api/auth"), NULL)) {
+        	 handler_authanticate(c,hm);
+		}else if (mg_match(hm->uri, mg_str("/api/ram/status"), NULL)) { // Get free and allocated RAM space
 			handle_ram_status_get(c);
 		}else if(mg_match(hm->uri, mg_str("/api/io/status"), NULL)){
 			handle_io_status_get(c, hm);
@@ -579,6 +911,8 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
 			handle_fs_get_log(c, hm, 0);
 		}else if(mg_match(hm->uri, mg_str("/api/device/log_old"), NULL)){
 			handle_fs_get_log(c, hm, 1);
+		}else if(mg_match(hm->uri, mg_str("/api/device/user"), NULL)){
+			handle_manage_user(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/device/restart"), NULL)){
 			handle_restart_mcu(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/upload"), NULL)){
@@ -607,6 +941,9 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
 }
 
 void * dash_hdl (void){
+
+	load_users(user_cred_file, web_users, user_list_size);
+
 	return &dashboard;
 }
 

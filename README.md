@@ -279,6 +279,123 @@ The device exposes a RESTful API for remote configuration and control.
     }
     ```
 
+### Web user Management
+
+- **`GET /api/device/user`**
+  - **Description**: Retrieve a list of all registered users.
+  - **Response**:
+    ```json
+	{
+	  "users": [
+	    {
+	      "user": "admin"
+	    },
+	    {
+	      "user": "user1"
+	    },
+	    {
+	      "user": "user2"
+	    }
+	  ]
+	}
+   ```
+   
+- **`POST /api/device/user`**   
+  - **Description**: Add a new user to the system.
+  - **Request Body**:
+    ```json
+    {
+    	"user": "new_user",
+    	"pass": "new_password"
+    }
+    ```
+  - **Response Body (Success)**:
+    ```json
+    {
+    	"status": "success",
+    	"message": "User added successfully"
+    }
+    ```
+    
+  - **Response Body (Error)**:
+    ```json
+    {
+    	"status": "error",
+    	"message": "Field user or pass is empty"
+    }
+    ```
+  - **Response Body (Error)**:
+    ```json
+    {
+    	"status": "error",
+    	"message": "User list is full"
+    }
+    ```
+
+- **`PUT /api/device/user`**   
+  - **Description**: Update the password of an existing user.
+  - **Request Body**:
+    ```json
+    {
+    	"user": "user",
+    	"pass": "new_password"
+    }
+    ```
+  - **Response Body (Success)**:
+    ```json
+    {
+    	"status": "success",
+    	"message": "Password updated successfully"
+    }
+    ```
+    
+  - **Response Body (Error)**:
+    ```json
+    {
+    	"status": "error",
+    	"message": "Field user or pass is empty"
+    }
+    ```
+  - **Response Body (Error)**:
+    ```json
+    {
+    	"status": "error",
+    	"message": "User not found"
+    }
+    ```
+
+- **`DELETE /api/device/user`**   
+  - **Description**: Delete a user from the system. The user (admin) at index 0 cannot be deleted.
+  - **Request Body**:
+    ```json
+    {
+    	"user": "user_to_delete"
+    }
+    ```
+  - **Response Body (Success)**:
+    ```json
+    {
+    	"status": "success",
+    	"message": "User deleted successfully"
+    }
+    ```
+  - **Response Body (Error)**:
+    ```json
+    {
+    	"status": "error",
+    	"message": "User not found or cannot delete user at index 0"
+    }
+    ```
+  - **Response Body (Error)**:
+    ```json
+    {
+    	"status": "error",
+    	"message": "Field user is empty or missing"
+    }
+    ```
+
+
+
 ### CORS Support
 
 - **`OPTIONS`**: Handles CORS preflight requests, allowing cross-origin access for GET, POST, and OPTIONS methods.

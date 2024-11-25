@@ -1,4 +1,4 @@
-../Core/Inc/definitions.h:57:21:my_calloc	2
+../Core/Inc/definitions.h:64:21:my_calloc	2
 ../Core/app/ssdp_auto_discovery_app/src/ssdp.c:119:13:dev_description_handler	2
 ../Core/app/ssdp_auto_discovery_app/src/ssdp.c:131:13:dev_404_handler	1
 ../Core/app/ssdp_auto_discovery_app/src/ssdp.c:138:13:ssdp_web_handler	4

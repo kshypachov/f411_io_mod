@@ -15,7 +15,7 @@ static struct lfs_file_data {
     lfs_file_t file;
 }lfs_file_data_t;
 
-//struct mg_fs *mg_fs;
+bool fs_mounted = 0;
 
 void fs_proto(void){}; //function prototype
 
@@ -215,6 +215,10 @@ void set_lfs_config(lfs_t * lfs_conf){
 //	lfs = lfs_conf;
 }
 
+bool mg_fs_mounted(void){
+	return fs_mounted;
+}
+
 int block_device_read(const struct lfs_config *c, lfs_block_t block, lfs_off_t off, void *buffer, lfs_size_t size);
 int block_device_prog(const struct lfs_config *c, lfs_block_t block, lfs_off_t off, const void *buffer, lfs_size_t size);
 int block_device_erase(const struct lfs_config *c, lfs_block_t block);
@@ -261,11 +265,15 @@ int lfs_fs_ll_init(void (*lock)(void *), void (*unlock)(void *)){
     cfg.block_cycles 	= FLASH_BLOCK_CYCLES;
 
     if (lfs_mount(&lfs, &cfg)< 0){
+    	int err;
     	lfs_format(&lfs, &cfg);
-    	return lfs_mount(&lfs, &cfg);
+    	if((err = lfs_mount(&lfs, &cfg)) == 0) fs_mounted = 1;
+    	return err;
+    }else{
+    	fs_mounted = 1;
+    	return 0;
     }
 
-	return 0;
 }
 
 int block_device_read(const struct lfs_config *c, lfs_block_t block, lfs_off_t off, void *buffer, lfs_size_t size){

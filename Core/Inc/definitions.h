@@ -20,7 +20,7 @@
 #define dev_sw_ver				"1.0"
 
 #define FIRMWARE_FILE_NAME		"firmware.bin"
-#define FIRMWARE_FILE_MAX_SIZE  200000
+#define FIRMWARE_FILE_MAX_SIZE  250000
 
 #define MD5_STR_LEN             33
 
@@ -42,6 +42,13 @@
 #define LOG_FILE_LOCATION			"/log/main.log"
 #define LOG_FILE_LOCATION_OLD		"/log/main1.log"
 #define LOG_FILE_MAX_SIZE			50000
+
+
+#define user_list_size		10
+#define sha1_str_len		41
+#define token_life_time		3600000 // 1 hour
+#define WEB_USER_LEN    	128
+#define WEB_PASS_LEN		128
 
 /*-------------------------RE define mem managment functins ---*/
 

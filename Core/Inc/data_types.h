@@ -62,4 +62,15 @@ typedef enum sett_direction{
 }sett_direction_t;
 
 
+typedef struct users_list{
+	char user[128];
+	char pass_digest[sha1_str_len];
+}users_list_t;
+
+typedef struct tokens_list{
+	char user[128];
+	char token[sha1_str_len];
+	uint64_t expare;
+}tokens_list_t;
+
 #endif /* INC_DATA_TYPES_H_ */
