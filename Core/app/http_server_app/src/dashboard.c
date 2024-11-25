@@ -121,7 +121,7 @@ static bool auth(struct mg_connection *c, struct mg_http_message *hm, bool set_c
 		for (i=0;i<user_list_size; i++){
 			if((strcmp(web_tokens[i].token, pass) == 0 && web_tokens[i].user[0] != 0)){// && (web_tokens[i].expare > mg_now())
 				if (set_cookie) mg_http_reply(c, 200, headers,
-				        		"{\"status\":\"OK\",\"message\":\"Token is valid\"}\r\n");
+				        		"{\"status\":\"success\",\"message\":\"Token is valid\", \"user\": \"%s\"}\r\n", web_tokens[i].user);
 
 				return true;
 			}

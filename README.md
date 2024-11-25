@@ -394,6 +394,22 @@ The device exposes a RESTful API for remote configuration and control.
     }
     ```
 
+### Web cookies Management
+
+- **`GET, POST /api/auth`**
+  - **Description**: Get auth cookies, for auth used Basic Auth method.
+  - **Response**: For case when send login - password 
+	Authorization Cookies.
+	
+  - **Response**: For case when send authorization cookies 
+   ```json
+   {
+    	"status": "success",
+    	"message": "Token is valid",
+    	"user": "admin"
+   }
+   ```
+
 
 
 ### CORS Support
