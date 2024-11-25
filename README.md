@@ -298,7 +298,7 @@ The device exposes a RESTful API for remote configuration and control.
 	    }
 	  ]
 	}
-   ```
+    ```
    
 - **`POST /api/device/user`**   
   - **Description**: Add a new user to the system.
