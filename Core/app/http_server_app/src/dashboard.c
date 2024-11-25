@@ -40,8 +40,8 @@ static void (*r_w_parameter)(void * parameter, sett_type_t parameter_type,  sett
 
 
 //TEST---AUTH---------------------------------
-#define user_name 			"admin"
-#define user_cred_file		"/auth/pass.txt"
+#define user_name 			WEB_ADMIN_DEFAULT
+#define user_cred_file		WEB_USERS_FILE
 
 
 

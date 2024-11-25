@@ -489,6 +489,7 @@ void StartSettingsTask(void *argument)
   /* USER CODE BEGIN StartSettingsTask */
 	size_t  f_size = 0;
 	void *  f_pointer = NULL;
+	uint8_t press_time = 0;
 
 	MQTT_cred_struct mqtt_config;
 
@@ -523,7 +524,7 @@ void StartSettingsTask(void *argument)
 	  xQueueOverwrite(mqttQHandle, &mqtt_config);
   }
 
-  if (mg_fs_lfs_status("/auth/pass.txt", &f_size, NULL) == 0){//file not found
+  if (mg_fs_lfs_status(WEB_USERS_FILE, &f_size, NULL) == 0){//file not found
 	  users_list_t *web_users = NULL;
 	  web_users = (users_list_t *)malloc(user_list_size * sizeof(users_list_t));
 
@@ -531,16 +532,13 @@ void StartSettingsTask(void *argument)
 		  logging(L_ERR, "Failed to allocate memory for 'web_users' ");
 	  }else{
 		  logging(L_INFO, "Initialize default login pass for web (admin:admin)'");
-		  strcpy(web_users[0].user, "admin");
+		  strcpy(web_users[0].user, WEB_ADMIN_DEFAULT);
 
-		  unsigned char pass_digest[] = {
-		      208, 51, 226, 42, 227, 72, 174, 181, 102, 15,
-		      194, 20, 10, 236, 53, 133, 12, 77, 169, 151, 0
-		  };
+		  unsigned char pass_digest[] = WEB_ADMIN_PASS_DIGEST;
 
 		  memcpy(web_users[0].pass_digest, pass_digest, sizeof(pass_digest));
 
-		  f_pointer = mg_fs_lfs_open("/auth/pass.txt", MG_FS_WRITE);
+		  f_pointer = mg_fs_lfs_open(WEB_USERS_FILE, MG_FS_WRITE);
 
 		  mg_fs_lfs_write(f_pointer, web_users, user_list_size * sizeof(users_list_t));
 		  mg_fs_lfs_close(f_pointer);
@@ -564,6 +562,25 @@ void StartSettingsTask(void *argument)
 			  xQueueOverwrite(mqttQHandle, &mqtt_config);
 		  }
 	  }
+
+	 if(HAL_GPIO_ReadPin(KEY_GPIO_Port, KEY_Pin) == GPIO_PIN_RESET){ // If key pressed, more than 8 secons - reset auth file and reset mcu
+		 press_time++;
+		 HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET);
+		 osDelay(100);
+		 HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_RESET);
+
+		 if (press_time == 8){
+			 HAL_GPIO_WritePin(LED2_GPIO_Port, LED2_Pin, GPIO_PIN_SET);
+			 while (HAL_GPIO_ReadPin(KEY_GPIO_Port, KEY_Pin) == GPIO_PIN_RESET){
+				 osDelay(1);
+			 }
+			 osDelay(1000);
+			 mg_fs_lfs_remove(WEB_USERS_FILE);
+			 HAL_NVIC_SystemReset();
+		 }
+	 }else{
+		 press_time = 0;
+	 }
 
 	  osDelay(1000);
   }
