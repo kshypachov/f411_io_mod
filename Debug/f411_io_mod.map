@@ -12215,48 +12215,48 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  .debug_macro   0x0001f771      0x10b ./Middlewares/Third_Party/validation/src/validation.o
  .debug_macro   0x0001f87c       0x16 ./Middlewares/Third_Party/validation/src/validation.o
 
-.debug_line     0x00000000    0x433b0
- .debug_line    0x00000000     0x1389 ./Core/Src/freertos.o
- .debug_line    0x00001389      0x7e3 ./Core/Src/gpio.o
- .debug_line    0x00001b6c      0x800 ./Core/Src/i2c.o
- .debug_line    0x0000236c      0x865 ./Core/Src/logger.o
- .debug_line    0x00002bd1      0xa6e ./Core/Src/main.o
- .debug_line    0x0000363f      0x8ec ./Core/Src/spi.o
- .debug_line    0x00003f2b      0x720 ./Core/Src/stm32f4xx_hal_msp.o
- .debug_line    0x0000464b      0x7dd ./Core/Src/stm32f4xx_hal_timebase_tim.o
- .debug_line    0x00004e28      0x7ef ./Core/Src/stm32f4xx_it.o
- .debug_line    0x00005617      0x800 ./Core/Src/syscalls.o
- .debug_line    0x00005e17      0x471 ./Core/Src/sysmem.o
- .debug_line    0x00006288      0x7d3 ./Core/Src/system_stm32f4xx.o
- .debug_line    0x00006a5b       0x7a ./Core/Startup/startup_stm32f411ceux.o
- .debug_line    0x00006ad5     0x1a40 ./Core/app/http_server_app/src/dashboard.o
- .debug_line    0x00008515     0x11a8 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_line    0x000096bd      0x9b6 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_line    0x0000a073      0x86e ./Core/app/sntp_app/src/sntp.o
- .debug_line    0x0000a8e1      0xa4a ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- .debug_line    0x0000b32b      0xd63 ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_line    0x0000c08e      0xa77 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_line    0x0000cb05      0xda4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_line    0x0000d8a9      0xbff ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_line    0x0000e4a8     0x59b1 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_line    0x00013e59     0x1042 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_line    0x00014e9b     0x2bb5 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_line    0x00017a50     0x4eaa ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_line    0x0001c8fa     0x21dd ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_line    0x0001ead7      0x7f1 ./Drivers/i2c_display/src/fonts.o
- .debug_line    0x0001f2c8     0x128b ./Drivers/i2c_display/src/ssd1306.o
- .debug_line    0x00020553     0x304f ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_line    0x000235a2      0x719 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_line    0x00023cbb     0x22a5 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_line    0x00025f60     0x2f97 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_line    0x00028ef7     0x11f9 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_line    0x0002a0f0      0xa3c ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .debug_line    0x0002ab2c      0xa71 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_line    0x0002b59d     0x109f ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_line    0x0002c63c     0x76c0 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- .debug_line    0x00033cfc      0x69f ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
- .debug_line    0x0003439b     0xe92f ./Middlewares/Third_Party/mongoose/mongoose.o
- .debug_line    0x00042cca      0x6e6 ./Middlewares/Third_Party/validation/src/validation.o
+.debug_line     0x00000000    0x43362
+ .debug_line    0x00000000     0x1381 ./Core/Src/freertos.o
+ .debug_line    0x00001381      0x7e3 ./Core/Src/gpio.o
+ .debug_line    0x00001b64      0x800 ./Core/Src/i2c.o
+ .debug_line    0x00002364      0x85d ./Core/Src/logger.o
+ .debug_line    0x00002bc1      0xa6e ./Core/Src/main.o
+ .debug_line    0x0000362f      0x8ec ./Core/Src/spi.o
+ .debug_line    0x00003f1b      0x720 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_line    0x0000463b      0x7dd ./Core/Src/stm32f4xx_hal_timebase_tim.o
+ .debug_line    0x00004e18      0x7ef ./Core/Src/stm32f4xx_it.o
+ .debug_line    0x00005607      0x800 ./Core/Src/syscalls.o
+ .debug_line    0x00005e07      0x471 ./Core/Src/sysmem.o
+ .debug_line    0x00006278      0x7d3 ./Core/Src/system_stm32f4xx.o
+ .debug_line    0x00006a4b       0x7a ./Core/Startup/startup_stm32f411ceux.o
+ .debug_line    0x00006ac5     0x1a40 ./Core/app/http_server_app/src/dashboard.o
+ .debug_line    0x00008505     0x119a ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_line    0x0000969f      0x9ae ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_line    0x0000a04d      0x866 ./Core/app/sntp_app/src/sntp.o
+ .debug_line    0x0000a8b3      0xa42 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ .debug_line    0x0000b2f5      0xd63 ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_line    0x0000c058      0xa77 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_line    0x0000cacf      0xda4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_line    0x0000d873      0xbff ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_line    0x0000e472     0x59b1 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_line    0x00013e23     0x1042 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_line    0x00014e65     0x2bb5 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_line    0x00017a1a     0x4eaa ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_line    0x0001c8c4     0x21dd ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_line    0x0001eaa1      0x7f1 ./Drivers/i2c_display/src/fonts.o
+ .debug_line    0x0001f292     0x128b ./Drivers/i2c_display/src/ssd1306.o
+ .debug_line    0x0002051d     0x304f ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_line    0x0002356c      0x719 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_line    0x00023c85     0x22a5 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_line    0x00025f2a     0x2f97 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_line    0x00028ec1     0x11f9 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_line    0x0002a0ba      0xa3c ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_line    0x0002aaf6      0xa71 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_line    0x0002b567     0x1097 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_line    0x0002c5fe     0x76b8 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ .debug_line    0x00033cb6      0x697 ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+ .debug_line    0x0003434d     0xe92f ./Middlewares/Third_Party/mongoose/mongoose.o
+ .debug_line    0x00042c7c      0x6e6 ./Middlewares/Third_Party/validation/src/validation.o
 
 .debug_str      0x00000000    0xa8a3e
  .debug_str     0x00000000    0x9714d ./Core/Src/freertos.o
@@ -12345,19 +12345,19 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
 .comment        0x00000000       0x86
  .comment       0x00000000       0x43 ./Core/Src/freertos.o
                                  0x44 (size before relaxing)
- .comment       0x00000043       0x44 ./Core/Src/gpio.o
- .comment       0x00000043       0x44 ./Core/Src/i2c.o
- .comment       0x00000043       0x44 ./Core/Src/logger.o
- .comment       0x00000043       0x44 ./Core/Src/main.o
- .comment       0x00000043       0x44 ./Core/Src/spi.o
- .comment       0x00000043       0x44 ./Core/Src/stm32f4xx_hal_msp.o
- .comment       0x00000043       0x44 ./Core/Src/stm32f4xx_hal_timebase_tim.o
- .comment       0x00000043       0x44 ./Core/Src/stm32f4xx_it.o
- .comment       0x00000043       0x44 ./Core/Src/syscalls.o
- .comment       0x00000043       0x44 ./Core/Src/sysmem.o
- .comment       0x00000043       0x44 ./Core/Src/system_stm32f4xx.o
- .comment       0x00000043       0x43 ./Core/app/http_server_app/src/dashboard.o
+ .comment       0x00000043       0x43 ./Core/Src/gpio.o
                                  0x44 (size before relaxing)
+ .comment       0x00000086       0x44 ./Core/Src/i2c.o
+ .comment       0x00000086       0x44 ./Core/Src/logger.o
+ .comment       0x00000086       0x44 ./Core/Src/main.o
+ .comment       0x00000086       0x44 ./Core/Src/spi.o
+ .comment       0x00000086       0x44 ./Core/Src/stm32f4xx_hal_msp.o
+ .comment       0x00000086       0x44 ./Core/Src/stm32f4xx_hal_timebase_tim.o
+ .comment       0x00000086       0x44 ./Core/Src/stm32f4xx_it.o
+ .comment       0x00000086       0x44 ./Core/Src/syscalls.o
+ .comment       0x00000086       0x44 ./Core/Src/sysmem.o
+ .comment       0x00000086       0x44 ./Core/Src/system_stm32f4xx.o
+ .comment       0x00000086       0x44 ./Core/app/http_server_app/src/dashboard.o
  .comment       0x00000086       0x44 ./Core/app/mqtt_client_app/src/mqtt.o
  .comment       0x00000086       0x44 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
  .comment       0x00000086       0x44 ./Core/app/sntp_app/src/sntp.o
