@@ -46,7 +46,7 @@
 
 #define user_list_size		10
 #define sha1_str_len		41
-#define token_life_time		3600000 // 1 hour
+#define token_life_time		172800000 // 48 hour
 #define WEB_USER_LEN    	128
 #define WEB_PASS_LEN		128
 #define WEB_USERS_FILE		"/auth/pass.conf"

@@ -60,7 +60,7 @@ static bool load_users(const char *file_path, users_list_t * users, size_t count
 	return true;
 }
 
-static bool write_users(const char *file_path, users_list_t * users, size_t count){
+static void write_users(const char *file_path, users_list_t * users, size_t count){
 	mg_fs_lfs.rm(file_path);
 	struct mg_fd *fd = mg_fs_open(&mg_fs_lfs, file_path, MG_FS_WRITE);
 
@@ -144,6 +144,43 @@ static void handler_authanticate(struct mg_connection *c,struct mg_http_message 
 	}
 }
 
+static void handler_logout(struct mg_connection *c,struct mg_http_message *hm){
+
+	char username[128] = {0};
+	char pass[128] = {0};
+	int i;
+
+	mg_http_creds(hm, username, sizeof(username), pass, sizeof(pass));
+
+	if (username[0] != '\0' && pass[0] != '\0') {
+        mg_http_reply(c, 400, headers, //TODO delete for release,
+        		"{\"status\":\"error\",\"message\":\"Not found authentication cookie. Provided login and password but expected cookie access token\"}\r\n");
+        return;
+
+
+	}else if (username[0] == '\0' && pass[0] != '\0') {
+		for (i=0;i<user_list_size; i++){
+			if((strcmp(web_tokens[i].token, pass) == 0)){
+				web_tokens[i].token[0] = '\0';
+				web_tokens[i].expare = 0;
+				web_tokens[i].user[0] = '\0';
+		        mg_http_reply(c, 200, headers, //TODO delete for release,
+		        		"{\"status\":\"success\",\"message\":\"User successfully logout\"}\r\n");
+		        return;
+
+			}
+		}
+
+        mg_http_reply(c, 404, headers,
+                      "{\"status\":\"error\",\"message\":\"Token not found\"}\r\n");
+        return;
+
+
+	}else{
+        mg_http_reply(c, 404, headers, //TODO delete for release,
+        		"{\"status\":\"error\",\"message\":\"Not found authentication cookie. For logout please provide cookie with access token\"}\r\n");
+	}
+}
 
 static void handle_ram_status_get(struct mg_connection *c){
 	HeapStats_t heap_status;
@@ -897,8 +934,10 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
             	handle_OPTIONS_method(c);
         }else if (mg_match(hm->uri, mg_str("/api/#"), NULL) && !authenticate ) { // All requests to /api should be authenticated
         	mg_http_reply(c, 403, "", "Not Authorised\n");
-		}else if (mg_match(hm->uri, mg_str("/api/auth"), NULL)) {
+		}else if (mg_match(hm->uri, mg_str("/api/login"), NULL)) {
         	 handler_authanticate(c,hm);
+		}else if (mg_match(hm->uri, mg_str("/api/logout"), NULL)) {
+			handler_logout(c,hm);
 		}else if (mg_match(hm->uri, mg_str("/api/ram/status"), NULL)) { // Get free and allocated RAM space
 			handle_ram_status_get(c);
 		}else if(mg_match(hm->uri, mg_str("/api/io/status"), NULL)){
