@@ -44,14 +44,14 @@
 #define LOG_FILE_MAX_SIZE			50000
 
 
-#define user_list_size		10
-#define sha1_str_len		41
-#define token_life_time		172800000 // 48 hour
-#define WEB_USER_LEN    	128
-#define WEB_PASS_LEN		128
-#define WEB_USERS_FILE		"/auth/pass.conf"
-#define WEB_ADMIN_DEFAULT   "admin"
-#define	WEB_ADMIN_PASS_DIGEST	{ 208, 51, 226, 42, 227, 72, 174, 181, 102, 15, 194, 20, 10, 236, 53, 133, 12, 77, 169, 151, 0 }
+#define user_list_size				10
+#define sha1_str_len				41
+#define token_life_time				172800000 // 48 hour
+#define WEB_USER_LEN    			128
+#define WEB_PASS_LEN				128
+#define WEB_USERS_FILE				"/auth/pass.conf"
+#define WEB_ADMIN_DEFAULT   		"admin"
+#define	WEB_ADMIN_PASS_DIGEST		{ 208, 51, 226, 42, 227, 72, 174, 181, 102, 15, 194, 20, 10, 236, 53, 133, 12, 77, 169, 151, 0 }
 
 
 /*-------------------------RE define mem managment functins ---*/
