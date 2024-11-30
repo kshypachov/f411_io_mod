@@ -10093,7 +10093,7 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
 .iplt           0x08034d04        0x0
  .iplt          0x08034d04        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x08034d08     0x61c0
+.rodata         0x08034d08     0x61b0
                 0x08034d08                        . = ALIGN (0x4)
  *(.rodata)
  .rodata        0x08034d08       0x2c ./Core/Src/freertos.o
@@ -10224,717 +10224,717 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
                 0x08036480       0xb1 ./Core/app/http_server_app/src/dashboard.o
  *fill*         0x08036531        0x3 
  .rodata.dashboard.str1.4
-                0x08036534      0x189 ./Core/app/http_server_app/src/dashboard.o
- *fill*         0x080366bd        0x3 
+                0x08036534      0x179 ./Core/app/http_server_app/src/dashboard.o
+ *fill*         0x080366ad        0x3 
  .rodata._ZL18mqtt_timer_handlerPv.str1.4
-                0x080366c0       0x1e ./Core/app/mqtt_client_app/src/mqtt.o
- *fill*         0x080366de        0x2 
+                0x080366b0       0x1e ./Core/app/mqtt_client_app/src/mqtt.o
+ *fill*         0x080366ce        0x2 
  .rodata._ZL27mqtt_send_registration_dataP13mg_connectionPK10SensorInfoj.str1.4
-                0x080366e0       0x21 ./Core/app/mqtt_client_app/src/mqtt.o
+                0x080366d0       0x21 ./Core/app/mqtt_client_app/src/mqtt.o
                                  0x25 (size before relaxing)
- *fill*         0x08036701        0x3 
+ *fill*         0x080366f1        0x3 
  .rodata._ZL29mqtt_subscrabe_recv_cmd_parceP15mg_mqtt_message.str1.4
-                0x08036704      0x233 ./Core/app/mqtt_client_app/src/mqtt.o
- *fill*         0x08036937        0x1 
+                0x080366f4      0x233 ./Core/app/mqtt_client_app/src/mqtt.o
+ *fill*         0x08036927        0x1 
  .rodata._ZL20mqtt_subscrabe_on_swP13mg_connectionPK10SensorInfoj.str1.4
-                0x08036938       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
+                0x08036928       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
  .rodata._ZL18mqtt_event_handlerP13mg_connectioniPv.str1.4
-                0x08036954       0x7e ./Core/app/mqtt_client_app/src/mqtt.o
- *fill*         0x080369d2        0x2 
+                0x08036944       0x7e ./Core/app/mqtt_client_app/src/mqtt.o
+ *fill*         0x080369c2        0x2 
  .rodata.mqtt_init.str1.4
-                0x080369d4       0x2a ./Core/app/mqtt_client_app/src/mqtt.o
- *fill*         0x080369fe        0x2 
+                0x080369c4       0x2a ./Core/app/mqtt_client_app/src/mqtt.o
+ *fill*         0x080369ee        0x2 
  .rodata.set_device_id.str1.4
-                0x08036a00        0x5 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- *fill*         0x08036a05        0x3 
+                0x080369f0        0x5 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ *fill*         0x080369f5        0x3 
  .rodata.get_config_topik_string.str1.4
-                0x08036a08       0x80 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+                0x080369f8       0x80 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
                                  0x88 (size before relaxing)
  .rodata.get_config_payload_string.str1.4
-                0x08036a88      0x147 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+                0x08036a78      0x147 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
                                 0x14f (size before relaxing)
  .rodata.gen_bin_sensor_status_payload_JSON.str1.4
-                0x08036bcf        0x8 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- *fill*         0x08036bcf        0x1 
+                0x08036bbf        0x8 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ *fill*         0x08036bbf        0x1 
  .rodata.generate_comand_topik_for_subscrabe.str1.4
-                0x08036bd0        0xf ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- *fill*         0x08036bdf        0x1 
+                0x08036bc0        0xf ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ *fill*         0x08036bcf        0x1 
  .rodata.generate_status_topik.str1.4
-                0x08036be0       0x11 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- *fill*         0x08036bf1        0x3 
+                0x08036bd0       0x11 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ *fill*         0x08036be1        0x3 
  .rodata._ZL11io_template
-                0x08036bf4       0x10 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+                0x08036be4       0x10 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
  .rodata._ZL41universal_conf_template_comand_topik_part
-                0x08036c04       0x25 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- *fill*         0x08036c29        0x3 
+                0x08036bf4       0x25 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ *fill*         0x08036c19        0x3 
  .rodata._ZL23universal_conf_template
-                0x08036c2c      0x17e ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- *fill*         0x08036daa        0x2 
+                0x08036c1c      0x17e ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ *fill*         0x08036d9a        0x2 
  .rodata.sfn.str1.4
-                0x08036dac       0xd9 ./Core/app/sntp_app/src/sntp.o
- *fill*         0x08036e85        0x3 
+                0x08036d9c       0xd9 ./Core/app/sntp_app/src/sntp.o
+ *fill*         0x08036e75        0x3 
  .rodata.start_sntp.str1.4
-                0x08036e88       0x1c ./Core/app/sntp_app/src/sntp.o
+                0x08036e78       0x1c ./Core/app/sntp_app/src/sntp.o
  .rodata.__func__.0
-                0x08036ea4        0x4 ./Core/app/sntp_app/src/sntp.o
+                0x08036e94        0x4 ./Core/app/sntp_app/src/sntp.o
  .rodata.dev_description_handler.str1.4
-                0x08036ea8       0x1d ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x08036e98       0x1d ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
                                  0xb3 (size before relaxing)
- *fill*         0x08036ec5        0x3 
+ *fill*         0x08036eb5        0x3 
  .rodata.dev_404_handler.str1.4
-                0x08036ec8       0x43 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- *fill*         0x08036f0b        0x1 
+                0x08036eb8       0x43 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ *fill*         0x08036efb        0x1 
  .rodata.ssdp_web_handler.str1.4
-                0x08036f0c       0x43 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- *fill*         0x08036f4f        0x1 
+                0x08036efc       0x43 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ *fill*         0x08036f3f        0x1 
  .rodata.ip_to_string.str1.4
-                0x08036f50        0xc ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x08036f40        0xc ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.send_ssdp_notify.str1.4
-                0x08036f5c       0x56 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- *fill*         0x08036fb2        0x2 
+                0x08036f4c       0x56 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ *fill*         0x08036fa2        0x2 
  .rodata.ssdp_listener_handler.str1.4
-                0x08036fb4       0x80 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x08036fa4       0x80 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.ssdp_timer_handler.str1.4
-                0x08037034       0x40 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x08037024       0x40 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.ssdp_set_id.str1.4
-                0x08037074       0x11 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x08037064       0x11 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
                                  0x19 (size before relaxing)
- *fill*         0x08037085        0x3 
+ *fill*         0x08037075        0x3 
  .rodata.ssdp_start_server.str1.4
-                0x08037088       0x2d ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- *fill*         0x080370b5        0x3 
+                0x08037078       0x2d ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ *fill*         0x080370a5        0x3 
  .rodata.ssdp_notify_template
-                0x080370b8       0xf5 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- *fill*         0x080371ad        0x3 
+                0x080370a8       0xf5 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ *fill*         0x0803719d        0x3 
  .rodata.device_description
-                0x080371b0      0x1a1 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- *fill*         0x08037351        0x3 
+                0x080371a0      0x1a1 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ *fill*         0x08037341        0x3 
  .rodata.ssdp_addr
-                0x08037354       0x1b ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- *fill*         0x0803736f        0x1 
+                0x08037344       0x1b ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ *fill*         0x0803735f        0x1 
  .rodata.sFLASH_GetInfo.str1.4
-                0x08037370       0x28 ./Drivers/SPI_FLASH/src/SPI_flash.o
+                0x08037360       0x28 ./Drivers/SPI_FLASH/src/SPI_flash.o
  .rodata.Font7x10
-                0x08037398      0x76c ./Drivers/i2c_display/src/fonts.o
-                0x08037398                Font7x10
+                0x08037388      0x76c ./Drivers/i2c_display/src/fonts.o
+                0x08037388                Font7x10
  .rodata.vTaskStartScheduler.str1.4
-                0x08037b04        0x5 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- *fill*         0x08037b09        0x3 
+                0x08037af4        0x5 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ *fill*         0x08037af9        0x3 
  .rodata.prvCheckForValidListAndQueue.str1.4
-                0x08037b0c        0x5 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- *fill*         0x08037b11        0x3 
+                0x08037afc        0x5 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ *fill*         0x08037b01        0x3 
  .rodata.xTimerCreateTimerTask.str1.4
-                0x08037b14        0x8 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+                0x08037b04        0x8 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .rodata.block_device_read.str1.4
-                0x08037b1c       0x52 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- *fill*         0x08037b6e        0x2 
+                0x08037b0c       0x52 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ *fill*         0x08037b5e        0x2 
  .rodata.__func__.0
-                0x08037b70       0x12 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- *fill*         0x08037b82        0x2 
+                0x08037b60       0x12 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ *fill*         0x08037b72        0x2 
  .rodata.__func__.1
-                0x08037b84       0x13 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- *fill*         0x08037b97        0x1 
+                0x08037b74       0x13 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ *fill*         0x08037b87        0x1 
  .rodata.__func__.2
-                0x08037b98       0x12 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- *fill*         0x08037baa        0x2 
+                0x08037b88       0x12 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ *fill*         0x08037b9a        0x2 
  .rodata.lfs_bd_erase.str1.4
-                0x08037bac       0x39 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x08037b9c       0x39 ./Middlewares/Third_Party/LittleFS/src/lfs.o
                                  0x55 (size before relaxing)
- *fill*         0x08037be5        0x3 
+ *fill*         0x08037bd5        0x3 
  .rodata.lfs_fs_preporphans.str1.4
-                0x08037be8       0x6e ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037c56        0x2 
+                0x08037bd8       0x6e ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037c46        0x2 
  .rodata.lfs_bd_read.str1.4
-                0x08037c58       0x2e ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037c86        0x2 
+                0x08037c48       0x2e ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037c76        0x2 
  .rodata.lfs_dir_traverse.str1.4
-                0x08037c88        0x7 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037c8f        0x1 
+                0x08037c78        0x7 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037c7f        0x1 
  .rodata.lfs_bd_flush.str1.4
-                0x08037c90       0x21 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037cb1        0x3 
+                0x08037c80       0x21 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037ca1        0x3 
  .rodata.lfs_bd_prog.str1.4
-                0x08037cb4       0x7f ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037d33        0x1 
+                0x08037ca4       0x7f ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037d23        0x1 
  .rodata.lfs_dir_fetchmatch.str1.4
-                0x08037d34       0x35 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x08037d24       0x35 ./Middlewares/Third_Party/LittleFS/src/lfs.o
                                  0x39 (size before relaxing)
- *fill*         0x08037d69        0x3 
+ *fill*         0x08037d59        0x3 
  .rodata.lfs_fs_parent.str1.4
-                0x08037d6c       0x2b ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037d97        0x1 
+                0x08037d5c       0x2b ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037d87        0x1 
  .rodata.lfs_alloc.str1.4
-                0x08037d98       0x29 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037dc1        0x3 
+                0x08037d88       0x29 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037db1        0x3 
  .rodata.lfs_file_relocate.str1.4
-                0x08037dc4       0x23 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037de7        0x1 
+                0x08037db4       0x23 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037dd7        0x1 
  .rodata.lfs_file_read_.str1.4
-                0x08037de8       0x2d ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037e15        0x3 
+                0x08037dd8       0x2d ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037e05        0x3 
  .rodata.lfs_file_write_.str1.4
-                0x08037e18       0x2d ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037e45        0x3 
+                0x08037e08       0x2d ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037e35        0x3 
  .rodata.lfs_dir_compact.str1.4
-                0x08037e48       0x5e ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037ea6        0x2 
+                0x08037e38       0x5e ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037e96        0x2 
  .rodata.lfs_dir_splittingcompact.str1.4
-                0x08037ea8       0x8b ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037f33        0x1 
+                0x08037e98       0x8b ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037f23        0x1 
  .rodata.lfs_dir_relocatingcommit.str1.4
-                0x08037f34       0x15 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037f49        0x3 
+                0x08037f24       0x15 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037f39        0x3 
  .rodata.lfs_dir_orphaningcommit.str1.4
-                0x08037f4c       0xa5 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08037ff1        0x3 
+                0x08037f3c       0xa5 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08037fe1        0x3 
  .rodata.lfs_fs_deorphan.str1.4
-                0x08037ff4       0xb9 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x080380ad        0x3 
+                0x08037fe4       0xb9 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803809d        0x3 
  .rodata.lfs_fs_desuperblock.str1.4
-                0x080380b0       0x34 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x080380a0       0x34 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_fs_demove.str1.4
-                0x080380e4       0x65 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08038149        0x3 
+                0x080380d4       0x65 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08038139        0x3 
  .rodata.lfs_init.str1.4
-                0x0803814c      0x403 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803854f        0x1 
+                0x0803813c      0x403 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803853f        0x1 
  .rodata.lfs_format_.str1.4
-                0x08038550       0x21 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08038571        0x3 
+                0x08038540       0x21 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08038561        0x3 
  .rodata.lfs_mount_.str1.4
-                0x08038574      0x1af ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08038723        0x1 
+                0x08038564      0x1af ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08038713        0x1 
  .rodata.lfs_dir_find.str1.4
-                0x08038724        0x3 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x08038714        0x3 ./Middlewares/Third_Party/LittleFS/src/lfs.o
                                   0x7 (size before relaxing)
  .rodata.lfs_dir_read_.str1.4
-                0x08038727        0x3 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x08038717        0x3 ./Middlewares/Third_Party/LittleFS/src/lfs.o
                                   0x2 (size before relaxing)
- *fill*         0x08038727        0x1 
+ *fill*         0x08038717        0x1 
  .rodata.lfs_file_open.str1.4
-                0x08038728       0x37 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803875f        0x1 
+                0x08038718       0x37 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803874f        0x1 
  .rodata.lfs_file_close.str1.4
-                0x08038760       0x36 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08038796        0x2 
+                0x08038750       0x36 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08038786        0x2 
  .rodata.lfs_dir_open.str1.4
-                0x08038798       0x36 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x080387ce        0x2 
+                0x08038788       0x36 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x080387be        0x2 
  .rodata.__func__.1
-                0x080387d0        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x080387dd        0x3 
+                0x080387c0        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x080387cd        0x3 
  .rodata.__func__.3
+                0x080387d0        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x080387de        0x2 
+ .rodata.__func__.6
                 0x080387e0        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
  *fill*         0x080387ee        0x2 
- .rodata.__func__.6
-                0x080387f0        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x080387fe        0x2 
  .rodata.__func__.7
-                0x08038800       0x10 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x080387f0       0x10 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.8
+                0x08038800        0xf ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803880f        0x1 
+ .rodata.__func__.9
                 0x08038810        0xf ./Middlewares/Third_Party/LittleFS/src/lfs.o
  *fill*         0x0803881f        0x1 
- .rodata.__func__.9
-                0x08038820        0xf ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803882f        0x1 
  .rodata.__func__.10
-                0x08038830        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803883e        0x2 
+                0x08038820        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803882e        0x2 
  .rodata.__func__.12
-                0x08038840        0xf ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803884f        0x1 
+                0x08038830        0xf ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803883f        0x1 
  .rodata.defaults.14
-                0x08038850        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x08038840        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.15
+                0x0803884c        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803885a        0x2 
+ .rodata.__func__.16
                 0x0803885c        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
  *fill*         0x0803886a        0x2 
- .rodata.__func__.16
-                0x0803886c        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803887a        0x2 
  .rodata.__func__.17
-                0x0803887c       0x10 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803886c       0x10 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.18
-                0x0803888c        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803887c        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.19
-                0x08038898       0x11 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x080388a9        0x3 
+                0x08038888       0x11 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08038899        0x3 
  .rodata.__func__.20
-                0x080388ac       0x19 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x080388c5        0x3 
+                0x0803889c       0x19 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x080388b5        0x3 
  .rodata.__func__.21
-                0x080388c8       0x13 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x080388db        0x1 
+                0x080388b8       0x13 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x080388cb        0x1 
  .rodata.__func__.22
-                0x080388dc        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x080388e9        0x3 
+                0x080388cc        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x080388d9        0x3 
  .rodata.__func__.23
-                0x080388ec        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x080388dc        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.24
-                0x080388f8        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08038905        0x3 
+                0x080388e8        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x080388f5        0x3 
  .rodata.__func__.25
-                0x08038908       0x18 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x080388f8       0x18 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.26
-                0x08038920        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x08038910        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.27
-                0x0803892c        0x9 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x08038935        0x3 
+                0x0803891c        0x9 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x08038925        0x3 
  .rodata.__func__.28
-                0x08038938        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x08038928        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.rtable.0
-                0x08038944       0x40 ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+                0x08038934       0x40 ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
  .rodata.mg_lld.str1.4
-                0x08038984       0x11 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08038995        0x3 
+                0x08038974       0x11 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08038985        0x3 
  .rodata.mg_http_status_code_str.str1.4
-                0x08038998      0x496 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038988      0x496 ./Middlewares/Third_Party/mongoose/mongoose.o
                                 0x4a1 (size before relaxing)
- *fill*         0x08038e2e        0x2 
+ *fill*         0x08038e1e        0x2 
  .rodata.escapeseq.str1.4
-                0x08038e30       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038e20       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_json_get.str1.4
-                0x08038e40        0x5 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038e30        0x5 ./Middlewares/Third_Party/mongoose/mongoose.o
                                  0x16 (size before relaxing)
- *fill*         0x08038e45        0x3 
+ *fill*         0x08038e35        0x3 
  .rodata.mg_hexdump.str1.4
-                0x08038e48        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038e38        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_mgr_init.str1.4
-                0x08038e50       0x34 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038e40       0x34 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_dtoa.str1.4
-                0x08038e84       0x15 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038e74       0x15 ./Middlewares/Third_Party/mongoose/mongoose.o
                                  0x1d (size before relaxing)
- *fill*         0x08038e99        0x3 
+ *fill*         0x08038e89        0x3 
  .rodata.mg_vxprintf.str1.4
-                0x08038e9c        0x3 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08038e9f        0x1 
+                0x08038e8c        0x3 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08038e8f        0x1 
  .rodata.print_ip4.str1.4
-                0x08038ea0        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038e90        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_print_mac.str1.4
-                0x08038eac       0x1e ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038e9c       0x1e ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_log.str1.4
-                0x08038eca        0x3 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08038eca        0x2 
+                0x08038eba        0x3 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08038eba        0x2 
  .rodata.mg_http_reply.str1.4
-                0x08038ecc       0x3b ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08038f07        0x1 
+                0x08038ebc       0x3b ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08038ef7        0x1 
  .rodata.mg_http_etag.str1.4
-                0x08038f08        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038ef8        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_url_encode.str1.4
-                0x08038f14        0x5 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08038f19        0x3 
+                0x08038f04        0x5 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08038f09        0x3 
  .rodata.mg_http_serve_ssi.str1.4
-                0x08038f1c       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038f0c       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_http_parse.str1.4
-                0x08038f2c       0x1c ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038f1c       0x1c ./Middlewares/Third_Party/mongoose/mongoose.o
                                  0x28 (size before relaxing)
  .rodata.guess_content_type.str1.4
-                0x08038f48       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08038f62        0x2 
+                0x08038f38       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08038f52        0x2 
  .rodata.getrange.str1.4
-                0x08038f64        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08038f6b        0x1 
+                0x08038f54        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08038f5b        0x1 
  .rodata.mg_http_serve_file.str1.4
-                0x08038f6c       0xf5 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08038f5c       0xf5 ./Middlewares/Third_Party/mongoose/mongoose.o
                                  0xfd (size before relaxing)
- *fill*         0x08039061        0x3 
+ *fill*         0x08039051        0x3 
  .rodata.mg_http_creds.str1.4
-                0x08039064       0x27 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039054       0x27 ./Middlewares/Third_Party/mongoose/mongoose.o
                                  0x35 (size before relaxing)
- *fill*         0x0803908b        0x1 
+ *fill*         0x0803907b        0x1 
  .rodata.listdir.str1.4
-                0x0803908c      0x62d ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803907c      0x62d ./Middlewares/Third_Party/mongoose/mongoose.o
                                 0x63c (size before relaxing)
- *fill*         0x080396b9        0x3 
+ *fill*         0x080396a9        0x3 
  .rodata.mg_url_is_ssl.str1.4
-                0x080396bc       0x2e ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x080396ac       0x2e ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_url_uri.str1.4
-                0x080396ea        0x2 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x080396ea        0x2 
+                0x080396da        0x2 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x080396da        0x2 
  .rodata.mg_url_port.str1.4
-                0x080396ec       0x12 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x080396fe        0x2 
+                0x080396dc       0x12 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x080396ee        0x2 
  .rodata.mg_atonl.str1.4
-                0x08039700        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803970a        0x2 
+                0x080396f0        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x080396fa        0x2 
  .rodata.print_ip6.str1.4
-                0x0803970c       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039726        0x2 
+                0x080396fc       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039716        0x2 
  .rodata.mg_print_ip_port.str1.4
-                0x08039728        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803972f        0x1 
+                0x08039718        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803971f        0x1 
  .rodata.mg_log_prefix.str1.4
-                0x08039730       0x13 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039743        0x1 
+                0x08039720       0x13 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039733        0x1 
  .rodata.mg_dns_parse.str1.4
-                0x08039744       0x59 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803979d        0x3 
+                0x08039734       0x59 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803978d        0x3 
  .rodata.mg_error.str1.4
-                0x080397a0        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x080397ab        0x1 
+                0x08039790        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803979b        0x1 
  .rodata.handle_tls_recv.str1.4
-                0x080397ac        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x080397bb        0x1 
+                0x0803979c        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x080397ab        0x1 
  .rodata.http_cb.str1.4
-                0x080397bc       0x92 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x080397ac       0x92 ./Middlewares/Third_Party/mongoose/mongoose.o
                                  0xa6 (size before relaxing)
- *fill*         0x0803984e        0x2 
+ *fill*         0x0803983e        0x2 
  .rodata.uri_to_path2.str1.4
-                0x08039850       0x9f ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x080398ef        0x1 
+                0x08039840       0x9f ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x080398df        0x1 
  .rodata.printdirentry.str1.4
-                0x080398f0       0x94 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x080398e0       0x94 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_http_upload.str1.4
-                0x08039984       0x95 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039974       0x95 ./Middlewares/Third_Party/mongoose/mongoose.o
                                 0x10d (size before relaxing)
- *fill*         0x08039a19        0x3 
+ *fill*         0x08039a09        0x3 
  .rodata.mg_iobuf_resize.str1.4
-                0x08039a1c        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039a27        0x1 
+                0x08039a0c        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039a17        0x1 
  .rodata.rx_udp.str1.4
-                0x08039a28       0x20 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039a18       0x20 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_close_conn.str1.4
-                0x08039a48        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039a57        0x1 
+                0x08039a38        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039a47        0x1 
  .rodata.mg_listen.str1.4
-                0x08039a58       0x25 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039a7d        0x3 
+                0x08039a48       0x25 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039a6d        0x3 
  .rodata.trim_len.str1.4
-                0x08039a80       0x55 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039ad5        0x3 
+                0x08039a70       0x55 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039ac5        0x3 
  .rodata.mg_send.str1.4
-                0x08039ad8        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039ae1        0x3 
+                0x08039ac8        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039ad1        0x3 
  .rodata.mg_mqtt_pub.str1.4
-                0x08039ae4       0x15 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039af9        0x3 
+                0x08039ad4       0x15 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039ae9        0x3 
  .rodata.mqtt_cb.str1.4
-                0x08039afc       0x6a ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039b66        0x2 
+                0x08039aec       0x6a ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039b56        0x2 
  .rodata.tx_tcp.str1.4
-                0x08039b68       0x22 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039b8a        0x2 
+                0x08039b58       0x22 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039b7a        0x2 
  .rodata.settmout.str1.4
-                0x08039b8c        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039b9b        0x1 
+                0x08039b7c        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039b8b        0x1 
  .rodata.write_conn.str1.4
-                0x08039b9c        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039ba3        0x1 
+                0x08039b8c        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039b93        0x1 
  .rodata.mg_connect_resolved.str1.4
-                0x08039ba4       0x22 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039bc6        0x2 
+                0x08039b94       0x22 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039bb6        0x2 
  .rodata.dns_cb.str1.4
-                0x08039bc8       0x82 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039c4a        0x2 
+                0x08039bb8       0x82 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039c3a        0x2 
  .rodata.tx_dhcp_discover.str1.4
-                0x08039c4c       0x29 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039c75        0x3 
+                0x08039c3c       0x29 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039c65        0x3 
  .rodata.tx_dhcp_request_re.str1.4
-                0x08039c78        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039c86        0x2 
+                0x08039c68        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039c76        0x2 
  .rodata.rx_arp.str1.4
-                0x08039c88       0x32 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039cba        0x2 
+                0x08039c78       0x32 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039caa        0x2 
  .rodata.read_conn.str1.4
-                0x08039cbc       0x54 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039cac       0x54 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.accept_conn.str1.4
-                0x08039d10       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039d00       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
                                  0x14 (size before relaxing)
  .rodata.rx_tcp.str1.4
-                0x08039d20        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039d29        0x3 
+                0x08039d10        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039d19        0x3 
  .rodata.mg_sendnsreq.str1.4
-                0x08039d2c       0x71 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039d9d        0x3 
+                0x08039d1c       0x71 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039d8d        0x3 
  .rodata.mg_connect.str1.4
-                0x08039da0        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039da9        0x3 
+                0x08039d90        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039d99        0x3 
  .rodata.mg_tcpip_init.str1.4
-                0x08039dac       0x37 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039de3        0x1 
+                0x08039d9c       0x37 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039dd3        0x1 
  .rodata.onstatechange.str1.4
-                0x08039de4       0x42 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039e26        0x2 
+                0x08039dd4       0x42 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039e16        0x2 
  .rodata.rx_dhcp_client.str1.4
-                0x08039e28       0x15 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039e3d        0x3 
+                0x08039e18       0x15 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039e2d        0x3 
  .rodata.rx_ip.str1.4
-                0x08039e40       0x54 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039e30       0x54 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_tcpip_rx.str1.4
-                0x08039e94       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039e84       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_tcpip_poll.str1.4
-                0x08039ea8       0x4e ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039e98       0x4e ./Middlewares/Third_Party/mongoose/mongoose.o
                                  0x5a (size before relaxing)
- *fill*         0x08039ef6        0x2 
+ *fill*         0x08039ee6        0x2 
  .rodata.mg_mgr_poll.str1.4
-                0x08039ef8       0x12 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039f0a        0x2 
+                0x08039ee8       0x12 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039efa        0x2 
  .rodata.mg_sntp_parse.str1.4
-                0x08039f0c       0x57 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039f63        0x1 
+                0x08039efc       0x57 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039f53        0x1 
  .rodata.mg_sntp_request.str1.4
-                0x08039f64       0x18 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039f54       0x18 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.sntp_cb.str1.4
-                0x08039f7c       0x21 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039f9d        0x3 
+                0x08039f6c       0x21 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039f8d        0x3 
  .rodata.mg_sntp_connect.str1.4
-                0x08039fa0       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x08039fba        0x2 
+                0x08039f90       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x08039faa        0x2 
  .rodata.crclut.3
-                0x08039fbc       0x40 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039fac       0x40 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.5
-                0x08039ffc        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039fec        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.6
-                0x0803a004       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x08039ff4       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.7
-                0x0803a014        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a022        0x2 
+                0x0803a004        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a012        0x2 
  .rodata.__func__.8
-                0x0803a024        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803a014        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.9
-                0x0803a030        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a03a        0x2 
+                0x0803a020        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a02a        0x2 
  .rodata.__func__.10
-                0x0803a03c       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803a02c       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.11
-                0x0803a050        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a05f        0x1 
+                0x0803a040        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a04f        0x1 
  .rodata.__func__.12
-                0x0803a060        0x6 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a066        0x2 
+                0x0803a050        0x6 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a056        0x2 
  .rodata.__func__.13
-                0x0803a068        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a06f        0x1 
+                0x0803a058        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a05f        0x1 
  .rodata.__func__.14
-                0x0803a070        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803a060        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.15
-                0x0803a07c       0x13 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a08f        0x1 
+                0x0803a06c       0x13 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a07f        0x1 
  .rodata.__func__.16
-                0x0803a090        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a09e        0x2 
+                0x0803a080        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a08e        0x2 
  .rodata.__func__.17
-                0x0803a0a0       0x11 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a0b1        0x3 
+                0x0803a090       0x11 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a0a1        0x3 
  .rodata.__func__.18
-                0x0803a0b4        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a0c2        0x2 
+                0x0803a0a4        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a0b2        0x2 
  .rodata.__func__.19
-                0x0803a0c4        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803a0b4        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.20
-                0x0803a0d0       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803a0c0       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.21
-                0x0803a0e4        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a0f2        0x2 
+                0x0803a0d4        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a0e2        0x2 
  .rodata.__func__.22
-                0x0803a0f4        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a0fd        0x3 
+                0x0803a0e4        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a0ed        0x3 
  .rodata.__func__.23
-                0x0803a100        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a107        0x1 
+                0x0803a0f0        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a0f7        0x1 
  .rodata.__func__.24
-                0x0803a108        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a111        0x3 
+                0x0803a0f8        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a101        0x3 
  .rodata.__func__.26
-                0x0803a114        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a11e        0x2 
+                0x0803a104        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a10e        0x2 
  .rodata.__func__.27
-                0x0803a120        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a12b        0x1 
+                0x0803a110        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a11b        0x1 
  .rodata.__func__.28
-                0x0803a12c        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a13a        0x2 
+                0x0803a11c        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a12a        0x2 
  .rodata.__func__.29
-                0x0803a13c        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803a12c        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.30
-                0x0803a144        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803a134        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.31
-                0x0803a150       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803a140       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.32
-                0x0803a160        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a16f        0x1 
+                0x0803a150        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a15f        0x1 
  .rodata.__func__.33
-                0x0803a170        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a17e        0x2 
+                0x0803a160        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a16e        0x2 
  .rodata.__func__.34
-                0x0803a180        0xd ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a18d        0x3 
+                0x0803a170        0xd ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a17d        0x3 
  .rodata.__func__.35
-                0x0803a190        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803a180        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.37
-                0x0803a198        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a1a1        0x3 
+                0x0803a188        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a191        0x3 
  .rodata.__func__.38
-                0x0803a1a4        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a1ab        0x1 
+                0x0803a194        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a19b        0x1 
  .rodata.__func__.39
+                0x0803a19c        0xd ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a1a9        0x3 
+ .rodata.__func__.40
                 0x0803a1ac        0xd ./Middlewares/Third_Party/mongoose/mongoose.o
  *fill*         0x0803a1b9        0x3 
- .rodata.__func__.40
-                0x0803a1bc        0xd ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a1c9        0x3 
  .rodata.broadcast
-                0x0803a1cc        0x6 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a1d2        0x2 
+                0x0803a1bc        0x6 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a1c2        0x2 
  .rodata.s_prop_map
-                0x0803a1d4       0x36 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803a20a        0x2 
+                0x0803a1c4       0x36 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803a1fa        0x2 
  .rodata.str1.4
-                0x0803a20c      0x227 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803a1fc      0x227 ./Middlewares/Third_Party/mongoose/mongoose.o
                                 0x243 (size before relaxing)
- *fill*         0x0803a433        0x1 
+ *fill*         0x0803a423        0x1 
  .rodata.s_known_types
-                0x0803a434      0x1e8 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803a424      0x1e8 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.has_mqtt_prefix.str1.4
-                0x0803a61c        0x8 ./Middlewares/Third_Party/validation/src/validation.o
+                0x0803a60c        0x8 ./Middlewares/Third_Party/validation/src/validation.o
  .rodata.is_valid_mqtt_url.str1.4
-                0x0803a624       0x9f ./Middlewares/Third_Party/validation/src/validation.o
+                0x0803a614       0x9f ./Middlewares/Third_Party/validation/src/validation.o
  .rodata.__assert_func.str1.1
-                0x0803a6c3       0x3c /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-assert.o)
+                0x0803a6b3       0x3c /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-assert.o)
                                  0x3d (size before relaxing)
  .rodata._vfprintf_r.str1.1
-                0x0803a6ff       0x34 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfprintf.o)
+                0x0803a6ef       0x34 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfprintf.o)
  .rodata.zeroes.0
+                0x0803a723       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfprintf.o)
+ .rodata.blanks.1
                 0x0803a733       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfprintf.o)
- .rodata.blanks.1
-                0x0803a743       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfprintf.o)
  .rodata._vfiprintf_r.str1.1
-                0x0803a753       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
+                0x0803a743       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
  .rodata.zeroes.0
-                0x0803a753       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
+                0x0803a743       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
  .rodata.blanks.1
-                0x0803a763       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
+                0x0803a753       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
  .rodata._puts_r.str1.1
-                0x0803a773       0x34 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-puts.o)
+                0x0803a763       0x34 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-puts.o)
                                   0x2 (size before relaxing)
- *fill*         0x0803a773        0x1 
+ *fill*         0x0803a763        0x1 
  .rodata.__month_lengths
-                0x0803a774       0x60 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-month_lengths.o)
-                0x0803a774                __month_lengths
+                0x0803a764       0x60 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-month_lengths.o)
+                0x0803a764                __month_lengths
  .rodata.__strftime.isra.0.str1.1
-                0x0803a7d4       0x68 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strftime.o)
+                0x0803a7c4       0x68 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strftime.o)
                                  0x7a (size before relaxing)
  .rodata._tzset_unlocked_r.str1.1
-                0x0803a83c       0x4e /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-tzset_r.o)
+                0x0803a82c       0x4e /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-tzset_r.o)
                                  0x61 (size before relaxing)
  .rodata.str1.1
-                0x0803a88a        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-tzvars.o)
+                0x0803a87a        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-tzvars.o)
  .rodata._setlocale_r.str1.1
-                0x0803a88a        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-locale.o)
+                0x0803a87a        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-locale.o)
                                   0x9 (size before relaxing)
  .rodata.str1.1
-                0x0803a892        0x2 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-locale.o)
+                0x0803a882        0x2 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-locale.o)
  .rodata.str1.1
-                0x0803a894      0x12b /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-timelocal.o)
+                0x0803a884      0x12b /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-timelocal.o)
                                 0x12c (size before relaxing)
- *fill*         0x0803a9bf        0x1 
+ *fill*         0x0803a9af        0x1 
  .rodata._C_time_locale
-                0x0803a9c0       0xfc /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-timelocal.o)
-                0x0803a9c0                _C_time_locale
+                0x0803a9b0       0xfc /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-timelocal.o)
+                0x0803a9b0                _C_time_locale
  .rodata._ctype_
-                0x0803aabc      0x101 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-ctype_.o)
-                0x0803aabc                _ctype_
+                0x0803aaac      0x101 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-ctype_.o)
+                0x0803aaac                _ctype_
  .rodata._dtoa_r.str1.1
-                0x0803abbd       0x76 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-dtoa.o)
+                0x0803abad       0x76 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-dtoa.o)
                                  0x78 (size before relaxing)
  .rodata._svfiprintf_r.str1.1
-                0x0803ac33       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiprintf.o)
+                0x0803ac23       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiprintf.o)
  .rodata.zeroes.0
+                0x0803ac23       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiprintf.o)
+ .rodata.blanks.1
                 0x0803ac33       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiprintf.o)
- .rodata.blanks.1
-                0x0803ac43       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiprintf.o)
- *fill*         0x0803ac53        0x1 
+ *fill*         0x0803ac43        0x1 
  .rodata.basefix.0
-                0x0803ac54       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiscanf.o)
+                0x0803ac44       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiscanf.o)
  .rodata._svfprintf_r.str1.1
-                0x0803ac76       0x34 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
+                0x0803ac66       0x34 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
  .rodata.zeroes.0
-                0x0803ac76       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
+                0x0803ac66       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
  .rodata.blanks.1
-                0x0803ac86       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
+                0x0803ac76       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
  .rodata.__ssvfscanf_r.str1.1
-                0x0803ac96        0x5 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfscanf.o)
+                0x0803ac86        0x5 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfscanf.o)
                                   0x6 (size before relaxing)
- *fill*         0x0803ac9b        0x1 
+ *fill*         0x0803ac8b        0x1 
  .rodata.basefix.0
-                0x0803ac9c       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfscanf.o)
+                0x0803ac8c       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfscanf.o)
  .rodata.__multadd.str1.1
-                0x0803acbe       0x59 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
+                0x0803acae       0x59 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
                                  0x6a (size before relaxing)
- *fill*         0x0803ad17        0x1 
- .rodata.p05.0  0x0803ad18        0xc /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
- *fill*         0x0803ad24        0x4 
+ *fill*         0x0803ad07        0x1 
+ .rodata.p05.0  0x0803ad08        0xc /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
+ *fill*         0x0803ad14        0x4 
  .rodata.__mprec_bigtens
-                0x0803ad28       0x28 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
-                0x0803ad28                __mprec_bigtens
+                0x0803ad18       0x28 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
+                0x0803ad18                __mprec_bigtens
  .rodata.__mprec_tens
-                0x0803ad50       0xc8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
-                0x0803ad50                __mprec_tens
+                0x0803ad40       0xc8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
+                0x0803ad40                __mprec_tens
  .rodata._strtod_l.str1.1
-                0x0803ae18       0x59 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
+                0x0803ae08       0x59 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
                                   0xf (size before relaxing)
  .rodata.fpinan.0
-                0x0803ae18       0x14 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
- .rodata.fpi.1  0x0803ae2c       0x14 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
+                0x0803ae08       0x14 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
+ .rodata.fpi.1  0x0803ae1c       0x14 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
  .rodata.tinytens
-                0x0803ae40       0x28 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
+                0x0803ae30       0x28 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
  .rodata._mbrtowc_r.str1.1
-                0x0803ae68        0x1 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mbrtowc.o)
+                0x0803ae58        0x1 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mbrtowc.o)
  .rodata.__gethex.str1.1
-                0x0803ae68       0x60 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-gdtoa-gethex.o)
+                0x0803ae58       0x60 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-gdtoa-gethex.o)
                                  0x73 (size before relaxing)
-                0x0803aec8                        . = ALIGN (0x4)
+                0x0803aeb8                        . = ALIGN (0x4)
 
-.ARM.extab      0x0803aec8        0x0
-                0x0803aec8                        . = ALIGN (0x4)
+.ARM.extab      0x0803aeb8        0x0
+                0x0803aeb8                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0803aec8                        . = ALIGN (0x4)
+                0x0803aeb8                        . = ALIGN (0x4)
 
-.ARM            0x0803aec8        0x8
-                0x0803aec8                        . = ALIGN (0x4)
-                0x0803aec8                        __exidx_start = .
+.ARM            0x0803aeb8        0x8
+                0x0803aeb8                        . = ALIGN (0x4)
+                0x0803aeb8                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0803aec8        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strcmp.o)
- .ARM.exidx     0x0803aed0        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memchr.o)
+ .ARM.exidx     0x0803aeb8        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strcmp.o)
+ .ARM.exidx     0x0803aec0        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memchr.o)
                                   0x8 (size before relaxing)
- .ARM.exidx     0x0803aed0        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strlen.o)
+ .ARM.exidx     0x0803aec0        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strlen.o)
                                   0x8 (size before relaxing)
- .ARM.exidx     0x0803aed0        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x0803aec0        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
                                   0x8 (size before relaxing)
-                0x0803aed0                        __exidx_end = .
-                0x0803aed0                        . = ALIGN (0x4)
+                0x0803aec0                        __exidx_end = .
+                0x0803aec0                        . = ALIGN (0x4)
 
-.preinit_array  0x0803aed0        0x0
-                0x0803aed0                        . = ALIGN (0x4)
-                0x0803aed0                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0803aec0        0x0
+                0x0803aec0                        . = ALIGN (0x4)
+                0x0803aec0                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0803aed0                        PROVIDE (__preinit_array_end = .)
-                0x0803aed0                        . = ALIGN (0x4)
+                0x0803aec0                        PROVIDE (__preinit_array_end = .)
+                0x0803aec0                        . = ALIGN (0x4)
 
-.init_array     0x0803aed0        0x8
-                0x0803aed0                        . = ALIGN (0x4)
-                0x0803aed0                        PROVIDE (__init_array_start = .)
+.init_array     0x0803aec0        0x8
+                0x0803aec0                        . = ALIGN (0x4)
+                0x0803aec0                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x0803aed0        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
+                0x0803aec0        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x0803aed4        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x0803aed8                        PROVIDE (__init_array_end = .)
-                0x0803aed8                        . = ALIGN (0x4)
+ .init_array    0x0803aec4        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0803aec8                        PROVIDE (__init_array_end = .)
+                0x0803aec8                        . = ALIGN (0x4)
 
-.fini_array     0x0803aed8        0x4
-                0x0803aed8                        . = ALIGN (0x4)
-                0x0803aed8                        PROVIDE (__fini_array_start = .)
+.fini_array     0x0803aec8        0x4
+                0x0803aec8                        . = ALIGN (0x4)
+                0x0803aec8                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0803aed8        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x0803aedc                        PROVIDE (__fini_array_end = .)
-                0x0803aedc                        . = ALIGN (0x4)
-                0x0803aedc                        _sidata = LOADADDR (.data)
+ .fini_array    0x0803aec8        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0803aecc                        PROVIDE (__fini_array_end = .)
+                0x0803aecc                        . = ALIGN (0x4)
+                0x0803aecc                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x0803aedc        0x0
- .rel.iplt      0x0803aedc        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0803aecc        0x0
+ .rel.iplt      0x0803aecc        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000      0x7e8 load address 0x0803aedc
+.data           0x20000000      0x7e8 load address 0x0803aecc
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -11013,11 +11013,11 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
                 0x200007e8                        . = ALIGN (0x4)
                 0x200007e8                        _edata = .
 
-.igot.plt       0x200007e8        0x0 load address 0x0803b6c4
+.igot.plt       0x200007e8        0x0 load address 0x0803b6b4
  .igot.plt      0x200007e8        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.macos64_1.1.0.202410301201/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x200007e8                        . = ALIGN (0x4)
 
-.bss            0x200007e8    0x18940 load address 0x0803b6c4
+.bss            0x200007e8    0x18940 load address 0x0803b6b4
                 0x200007e8                        _sbss = .
                 0x200007e8                        __bss_start__ = _sbss
  *(.bss)
@@ -11319,7 +11319,7 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
                 0x20019128                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20019128      0xc00 load address 0x0803b6c4
+                0x20019128      0xc00 load address 0x0803b6b4
                 0x20019128                        . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 0x20019128                        PROVIDE (_end = .)

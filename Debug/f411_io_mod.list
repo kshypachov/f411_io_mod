@@ -7,23 +7,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   1 .text         00024b64  080101a0  080101a0  000011a0  2**4
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .rodata       000061c0  08034d08  08034d08  00025d08  2**3
+  2 .rodata       000061b0  08034d08  08034d08  00025d08  2**3
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  3 .ARM.extab    00000000  0803aec8  0803aec8  0002c7e8  2**0
+  3 .ARM.extab    00000000  0803aeb8  0803aeb8  0002c7e8  2**0
                   CONTENTS
-  4 .ARM          00000008  0803aec8  0803aec8  0002bec8  2**2
+  4 .ARM          00000008  0803aeb8  0803aeb8  0002beb8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .preinit_array 00000000  0803aed0  0803aed0  0002c7e8  2**0
+  5 .preinit_array 00000000  0803aec0  0803aec0  0002c7e8  2**0
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .init_array   00000008  0803aed0  0803aed0  0002bed0  2**2
+  6 .init_array   00000008  0803aec0  0803aec0  0002bec0  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  7 .fini_array   00000004  0803aed8  0803aed8  0002bed8  2**2
+  7 .fini_array   00000004  0803aec8  0803aec8  0002bec8  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  8 .data         000007e8  20000000  0803aedc  0002c000  2**3
+  8 .data         000007e8  20000000  0803aecc  0002c000  2**3
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          00018940  200007e8  0803b6c4  0002c7e8  2**3
+  9 .bss          00018940  200007e8  0803b6b4  0002c7e8  2**3
                   ALLOC
- 10 ._user_heap_stack 00000c00  20019128  0803b6c4  0002d128  2**0
+ 10 ._user_heap_stack 00000c00  20019128  0803b6b4  0002d128  2**0
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0002c7e8  2**0
                   CONTENTS, READONLY
@@ -1801,7 +1801,7 @@ void add_log_mess_to_q(struct log_message mess){
  80113f0:	08034fd0 	.word	0x08034fd0
  80113f4:	08034fd4 	.word	0x08034fd4
  80113f8:	08034fe4 	.word	0x08034fe4
- 80113fc:	08039f60 	.word	0x08039f60
+ 80113fc:	08039f50 	.word	0x08039f50
  8011400:	2000083c 	.word	0x2000083c
 
 08011404 <StartSettingsTask>:
@@ -4243,7 +4243,7 @@ LoopFillZerobss:
   ldr r1, =_edata
  8012340:	200007e8 	.word	0x200007e8
   ldr r2, =_sidata
- 8012344:	0803aedc 	.word	0x0803aedc
+ 8012344:	0803aecc 	.word	0x0803aecc
   ldr r2, =_sbss
  8012348:	200007e8 	.word	0x200007e8
   ldr r4, =_ebss
@@ -4280,7 +4280,7 @@ static void handle_OPTIONS_method(struct mg_connection *c){
 }
  8012360:	bd08      	pop	{r3, pc}
  8012362:	bf00      	nop
- 8012364:	080398c0 	.word	0x080398c0
+ 8012364:	080398b0 	.word	0x080398b0
  8012368:	08035470 	.word	0x08035470
 
 0801236c <handle_firmware_deactivate>:
@@ -5565,7 +5565,7 @@ static void handle_dev_status(struct mg_connection *c, struct mg_http_message *h
  8012e10:	08035e28 	.word	0x08035e28
  8012e14:	08035e3c 	.word	0x08035e3c
  8012e18:	08035e40 	.word	0x08035e40
- 8012e1c:	08039a50 	.word	0x08039a50
+ 8012e1c:	08039a40 	.word	0x08039a40
  8012e20:	08035e1c 	.word	0x08035e1c
  8012e24:	08035e30 	.word	0x08035e30
  8012e28:	08035e44 	.word	0x08035e44
@@ -6064,7 +6064,7 @@ static void handle_manage_user(struct mg_connection *c, struct mg_http_message *
  80131ca:	e788      	b.n	80130de <handle_manage_user+0x1b2>
  80131cc:	08035a5c 	.word	0x08035a5c
  80131d0:	08035f54 	.word	0x08035f54
- 80131d4:	08039a5c 	.word	0x08039a5c
+ 80131d4:	08039a4c 	.word	0x08039a4c
  80131d8:	200010c8 	.word	0x200010c8
  80131dc:	08035f64 	.word	0x08035f64
  80131e0:	08035f74 	.word	0x08035f74
@@ -6483,7 +6483,7 @@ static void handle_firmware_upload(struct mg_connection *c, struct mg_http_messa
  8013584:	b024      	add	sp, #144	@ 0x90
  8013586:	bd70      	pop	{r4, r5, r6, pc}
  8013588:	08035510 	.word	0x08035510
- 801358c:	080399ac 	.word	0x080399ac
+ 801358c:	0803999c 	.word	0x0803999c
  8013590:	08036360 	.word	0x08036360
  8013594:	0003d090 	.word	0x0003d090
  8013598:	08034ff0 	.word	0x08034ff0
@@ -7004,7 +7004,7 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
  80139e6:	4628      	mov	r0, r5
  80139e8:	f7ff fe9a 	bl	8013720 <handle_firmware_md5>
  80139ec:	e6f9      	b.n	80137e2 <dashboard+0x3a>
-		}else if(mg_match(hm->uri, mg_str("/api/firmware/activate_and_reboot"), NULL)){
+		}else if(mg_match(hm->uri, mg_str("/api/firmware/apply"), NULL)){
  80139ee:	ae24      	add	r6, sp, #144	@ 0x90
  80139f0:	492b      	ldr	r1, [pc, #172]	@ (8013aa0 <dashboard+0x2f8>)
  80139f2:	4630      	mov	r0, r6
@@ -7072,8 +7072,8 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
  8013a98:	08036600 	.word	0x08036600
  8013a9c:	08036618 	.word	0x08036618
  8013aa0:	0803662c 	.word	0x0803662c
- 8013aa4:	08036650 	.word	0x08036650
- 8013aa8:	0803666c 	.word	0x0803666c
+ 8013aa4:	08036640 	.word	0x08036640
+ 8013aa8:	0803665c 	.word	0x0803665c
 		}else if(mg_match(hm->uri, mg_str("/api/web_interface/upload"), NULL)){
  8013aac:	ae2a      	add	r6, sp, #168	@ 0xa8
  8013aae:	491d      	ldr	r1, [pc, #116]	@ (8013b24 <dashboard+0x37c>)
@@ -7132,11 +7132,11 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
 }
  8013b20:	e65f      	b.n	80137e2 <dashboard+0x3a>
  8013b22:	bf00      	nop
- 8013b24:	08036688 	.word	0x08036688
+ 8013b24:	08036678 	.word	0x08036678
  8013b28:	0016e360 	.word	0x0016e360
  8013b2c:	08034fe8 	.word	0x08034fe8
  8013b30:	2000001c 	.word	0x2000001c
- 8013b34:	080366a4 	.word	0x080366a4
+ 8013b34:	08036694 	.word	0x08036694
 
 08013b38 <dash_hdl>:
 
@@ -7234,7 +7234,7 @@ static void mqtt_timer_handler(void *arg){
  8013bc8:	bd30      	pop	{r4, r5, pc}
  8013bca:	bf00      	nop
  8013bcc:	20001788 	.word	0x20001788
- 8013bd0:	080366c0 	.word	0x080366c0
+ 8013bd0:	080366b0 	.word	0x080366b0
  8013bd4:	2000178c 	.word	0x2000178c
  8013bd8:	200017e0 	.word	0x200017e0
  8013bdc:	200017dc 	.word	0x200017dc
@@ -7329,7 +7329,7 @@ static void mqtt_send_registration_data(struct mg_connection * arg, const Sensor
  8013cac:	08035e3c 	.word	0x08035e3c
  8013cb0:	200017d8 	.word	0x200017d8
  8013cb4:	2000178c 	.word	0x2000178c
- 8013cb8:	080366e0 	.word	0x080366e0
+ 8013cb8:	080366d0 	.word	0x080366d0
  8013cbc:	200017d4 	.word	0x200017d4
 
 08013cc0 <_ZL29mqtt_subscrabe_recv_cmd_parceP15mg_mqtt_message>:
@@ -7578,23 +7578,23 @@ static void mqtt_subscrabe_recv_cmd_parce(mg_mqtt_message * mess){
  8013e92:	f00f f89b 	bl	8022fcc <mg_log>
  8013e96:	e7ed      	b.n	8013e74 <_ZL29mqtt_subscrabe_recv_cmd_parceP15mg_mqtt_message+0x1b4>
  8013e98:	20001770 	.word	0x20001770
- 8013e9c:	08036774 	.word	0x08036774
- 8013ea0:	0803677c 	.word	0x0803677c
+ 8013e9c:	08036764 	.word	0x08036764
+ 8013ea0:	0803676c 	.word	0x0803676c
  8013ea4:	200000a8 	.word	0x200000a8
- 8013ea8:	080368d0 	.word	0x080368d0
- 8013eac:	08036704 	.word	0x08036704
- 8013eb0:	08036724 	.word	0x08036724
- 8013eb4:	08036750 	.word	0x08036750
- 8013eb8:	080367b4 	.word	0x080367b4
- 8013ebc:	0803685c 	.word	0x0803685c
- 8013ec0:	08036788 	.word	0x08036788
- 8013ec4:	080367dc 	.word	0x080367dc
- 8013ec8:	0803682c 	.word	0x0803682c
- 8013ecc:	08036830 	.word	0x08036830
- 8013ed0:	08036844 	.word	0x08036844
- 8013ed4:	08036848 	.word	0x08036848
- 8013ed8:	08036898 	.word	0x08036898
- 8013edc:	08036908 	.word	0x08036908
+ 8013ea8:	080368c0 	.word	0x080368c0
+ 8013eac:	080366f4 	.word	0x080366f4
+ 8013eb0:	08036714 	.word	0x08036714
+ 8013eb4:	08036740 	.word	0x08036740
+ 8013eb8:	080367a4 	.word	0x080367a4
+ 8013ebc:	0803684c 	.word	0x0803684c
+ 8013ec0:	08036778 	.word	0x08036778
+ 8013ec4:	080367cc 	.word	0x080367cc
+ 8013ec8:	0803681c 	.word	0x0803681c
+ 8013ecc:	08036820 	.word	0x08036820
+ 8013ed0:	08036834 	.word	0x08036834
+ 8013ed4:	08036838 	.word	0x08036838
+ 8013ed8:	08036888 	.word	0x08036888
+ 8013edc:	080368f8 	.word	0x080368f8
 
 08013ee0 <_ZL9my_callocjj>:
 #define calloc(a, b) my_calloc(a, b)
@@ -7885,7 +7885,7 @@ static void mqtt_subscrabe_on_sw(struct mg_connection *conn, const SensorInfo * 
  801412c:	b003      	add	sp, #12
  801412e:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
  8014132:	bf00      	nop
- 8014134:	08036938 	.word	0x08036938
+ 8014134:	08036928 	.word	0x08036928
  8014138:	2000178c 	.word	0x2000178c
 
 0801413c <_ZL18mqtt_event_handlerP13mg_connectioniPv>:
@@ -7977,15 +7977,15 @@ static void mqtt_event_handler(struct mg_connection *conn, int ev, void *ev_data
  80141d4:	e7ba      	b.n	801414c <_ZL18mqtt_event_handlerP13mg_connectioniPv+0x10>
  80141d6:	bf00      	nop
  80141d8:	200000a8 	.word	0x200000a8
- 80141dc:	08036980 	.word	0x08036980
+ 80141dc:	08036970 	.word	0x08036970
  80141e0:	20001788 	.word	0x20001788
  80141e4:	20001774 	.word	0x20001774
  80141e8:	20000044 	.word	0x20000044
- 80141ec:	08036954 	.word	0x08036954
- 80141f0:	08036724 	.word	0x08036724
- 80141f4:	08036968 	.word	0x08036968
- 80141f8:	08036998 	.word	0x08036998
- 80141fc:	080369bc 	.word	0x080369bc
+ 80141ec:	08036944 	.word	0x08036944
+ 80141f0:	08036714 	.word	0x08036714
+ 80141f4:	08036958 	.word	0x08036958
+ 80141f8:	08036988 	.word	0x08036988
+ 80141fc:	080369ac 	.word	0x080369ac
 
 08014200 <get_mqtt_connection>:
 
@@ -8149,7 +8149,7 @@ void mqtt_init(void *mgr_parameter, void * mif_parameter, void * broker_url, voi
  8014338:	200017d4 	.word	0x200017d4
  801433c:	20001784 	.word	0x20001784
  8014340:	20001770 	.word	0x20001770
- 8014344:	080369d4 	.word	0x080369d4
+ 8014344:	080369c4 	.word	0x080369c4
  8014348:	200017d0 	.word	0x200017d0
  801434c:	200017cc 	.word	0x200017cc
  8014350:	2000178c 	.word	0x2000178c
@@ -8238,7 +8238,7 @@ mqtt_config_error set_device_id(const uint8_t* id, unsigned const int id_len){
 }
  80143d2:	bd70      	pop	{r4, r5, r6, pc}
  80143d4:	200017ec 	.word	0x200017ec
- 80143d8:	08036a00 	.word	0x08036a00
+ 80143d8:	080369f0 	.word	0x080369f0
 
 080143dc <set_device_conf_ip>:
 
@@ -8459,20 +8459,20 @@ int get_config_topik_string (char * buff, uint32_t buff_len, uint8_t topik_type,
 	switch (topik_type) {//%s/%s/%s_%s/%s%u/config
  801453a:	f04f 30ff 	mov.w	r0, #4294967295	@ 0xffffffff
  801453e:	e78a      	b.n	8014456 <get_config_topik_string+0x3e>
- 8014540:	08036a20 	.word	0x08036a20
+ 8014540:	08036a10 	.word	0x08036a10
  8014544:	200017ec 	.word	0x200017ec
- 8014548:	08036a28 	.word	0x08036a28
- 801454c:	08036a30 	.word	0x08036a30
+ 8014548:	08036a18 	.word	0x08036a18
+ 801454c:	08036a20 	.word	0x08036a20
  8014550:	20000074 	.word	0x20000074
- 8014554:	08036a08 	.word	0x08036a08
- 8014558:	08036774 	.word	0x08036774
- 801455c:	08036a40 	.word	0x08036a40
- 8014560:	08036a48 	.word	0x08036a48
- 8014564:	08036a50 	.word	0x08036a50
- 8014568:	08036a58 	.word	0x08036a58
- 801456c:	08036a60 	.word	0x08036a60
- 8014570:	08036a70 	.word	0x08036a70
- 8014574:	08036a80 	.word	0x08036a80
+ 8014554:	080369f8 	.word	0x080369f8
+ 8014558:	08036764 	.word	0x08036764
+ 801455c:	08036a30 	.word	0x08036a30
+ 8014560:	08036a38 	.word	0x08036a38
+ 8014564:	08036a40 	.word	0x08036a40
+ 8014568:	08036a48 	.word	0x08036a48
+ 801456c:	08036a50 	.word	0x08036a50
+ 8014570:	08036a60 	.word	0x08036a60
+ 8014574:	08036a70 	.word	0x08036a70
 
 08014578 <get_config_payload_string>:
 
@@ -8771,35 +8771,35 @@ int get_config_payload_string( char * payload, uint32_t payload_len, uint8_t pay
  80147b2:	f016 fd5b 	bl	802b26c <sprintf>
 			break;
  80147b6:	e7b5      	b.n	8014724 <get_config_payload_string+0x1ac>
- 80147b8:	08036a88 	.word	0x08036a88
- 80147bc:	08036a94 	.word	0x08036a94
+ 80147b8:	08036a78 	.word	0x08036a78
+ 80147bc:	08036a84 	.word	0x08036a84
  80147c0:	200017ec 	.word	0x200017ec
  80147c4:	200017e8 	.word	0x200017e8
- 80147c8:	08036a9c 	.word	0x08036a9c
- 80147cc:	08036aa0 	.word	0x08036aa0
- 80147d0:	08036aa4 	.word	0x08036aa4
- 80147d4:	08036ab4 	.word	0x08036ab4
- 80147d8:	08036ac8 	.word	0x08036ac8
- 80147dc:	08036a28 	.word	0x08036a28
+ 80147c8:	08036a8c 	.word	0x08036a8c
+ 80147cc:	08036a90 	.word	0x08036a90
+ 80147d0:	08036a94 	.word	0x08036a94
+ 80147d4:	08036aa4 	.word	0x08036aa4
+ 80147d8:	08036ab8 	.word	0x08036ab8
+ 80147dc:	08036a18 	.word	0x08036a18
  80147e0:	08035a58 	.word	0x08035a58
- 80147e4:	08036a20 	.word	0x08036a20
- 80147e8:	08038efc 	.word	0x08038efc
- 80147ec:	08036a58 	.word	0x08036a58
- 80147f0:	08036c2c 	.word	0x08036c2c
- 80147f4:	08036ad4 	.word	0x08036ad4
- 80147f8:	08036c04 	.word	0x08036c04
- 80147fc:	08036adc 	.word	0x08036adc
- 8014800:	08036a40 	.word	0x08036a40
- 8014804:	08036af0 	.word	0x08036af0
- 8014808:	08036af4 	.word	0x08036af4
- 801480c:	08036b04 	.word	0x08036b04
- 8014810:	08036b28 	.word	0x08036b28
- 8014814:	08036a50 	.word	0x08036a50
- 8014818:	08036b30 	.word	0x08036b30
- 801481c:	08036b34 	.word	0x08036b34
- 8014820:	08036b44 	.word	0x08036b44
- 8014824:	08036b48 	.word	0x08036b48
- 8014828:	08036774 	.word	0x08036774
+ 80147e4:	08036a10 	.word	0x08036a10
+ 80147e8:	08038eec 	.word	0x08038eec
+ 80147ec:	08036a48 	.word	0x08036a48
+ 80147f0:	08036c1c 	.word	0x08036c1c
+ 80147f4:	08036ac4 	.word	0x08036ac4
+ 80147f8:	08036bf4 	.word	0x08036bf4
+ 80147fc:	08036acc 	.word	0x08036acc
+ 8014800:	08036a30 	.word	0x08036a30
+ 8014804:	08036ae0 	.word	0x08036ae0
+ 8014808:	08036ae4 	.word	0x08036ae4
+ 801480c:	08036af4 	.word	0x08036af4
+ 8014810:	08036b18 	.word	0x08036b18
+ 8014814:	08036a40 	.word	0x08036a40
+ 8014818:	08036b20 	.word	0x08036b20
+ 801481c:	08036b24 	.word	0x08036b24
+ 8014820:	08036b34 	.word	0x08036b34
+ 8014824:	08036b38 	.word	0x08036b38
+ 8014828:	08036764 	.word	0x08036764
 			len = sprintf(payload, universal_conf_template, dev_class_apparent_power, dev_system, \
  801482c:	4b38      	ldr	r3, [pc, #224]	@ (8014910 <get_config_payload_string+0x398>)
  801482e:	6819      	ldr	r1, [r3, #0]
@@ -8918,25 +8918,25 @@ int get_config_payload_string( char * payload, uint32_t payload_len, uint8_t pay
  801490a:	f04f 30ff 	mov.w	r0, #4294967295	@ 0xffffffff
  801490e:	e684      	b.n	801461a <get_config_payload_string+0xa2>
  8014910:	200017ec 	.word	0x200017ec
- 8014914:	08036a28 	.word	0x08036a28
- 8014918:	08036a60 	.word	0x08036a60
+ 8014914:	08036a18 	.word	0x08036a18
+ 8014918:	08036a50 	.word	0x08036a50
  801491c:	200017e8 	.word	0x200017e8
- 8014920:	08036a9c 	.word	0x08036a9c
- 8014924:	08036aa0 	.word	0x08036aa0
- 8014928:	08036aa4 	.word	0x08036aa4
- 801492c:	08036ab4 	.word	0x08036ab4
- 8014930:	08036ac8 	.word	0x08036ac8
- 8014934:	08036b6c 	.word	0x08036b6c
- 8014938:	08036b70 	.word	0x08036b70
- 801493c:	08038efc 	.word	0x08038efc
- 8014940:	08036b28 	.word	0x08036b28
- 8014944:	08036c2c 	.word	0x08036c2c
- 8014948:	08036a70 	.word	0x08036a70
- 801494c:	08036b90 	.word	0x08036b90
- 8014950:	08036b94 	.word	0x08036b94
- 8014954:	08036a80 	.word	0x08036a80
- 8014958:	08036bc0 	.word	0x08036bc0
- 801495c:	08036bc4 	.word	0x08036bc4
+ 8014920:	08036a8c 	.word	0x08036a8c
+ 8014924:	08036a90 	.word	0x08036a90
+ 8014928:	08036a94 	.word	0x08036a94
+ 801492c:	08036aa4 	.word	0x08036aa4
+ 8014930:	08036ab8 	.word	0x08036ab8
+ 8014934:	08036b5c 	.word	0x08036b5c
+ 8014938:	08036b60 	.word	0x08036b60
+ 801493c:	08038eec 	.word	0x08038eec
+ 8014940:	08036b18 	.word	0x08036b18
+ 8014944:	08036c1c 	.word	0x08036c1c
+ 8014948:	08036a60 	.word	0x08036a60
+ 801494c:	08036b80 	.word	0x08036b80
+ 8014950:	08036b84 	.word	0x08036b84
+ 8014954:	08036a70 	.word	0x08036a70
+ 8014958:	08036bb0 	.word	0x08036bb0
+ 801495c:	08036bb4 	.word	0x08036bb4
 
 08014960 <gen_bin_sensor_status_payload_JSON>:
 
@@ -8991,11 +8991,11 @@ int gen_bin_sensor_status_payload_JSON(char * payload, uint32_t payload_len, uin
  8014994:	4a03      	ldr	r2, [pc, #12]	@ (80149a4 <gen_bin_sensor_status_payload_JSON+0x44>)
  8014996:	f016 fb01 	bl	802af9c <snprintf>
  801499a:	e7f2      	b.n	8014982 <gen_bin_sensor_status_payload_JSON+0x22>
- 801499c:	08036774 	.word	0x08036774
- 80149a0:	0803682c 	.word	0x0803682c
- 80149a4:	08036bf4 	.word	0x08036bf4
- 80149a8:	08036a20 	.word	0x08036a20
- 80149ac:	08036844 	.word	0x08036844
+ 801499c:	08036764 	.word	0x08036764
+ 80149a0:	0803681c 	.word	0x0803681c
+ 80149a4:	08036be4 	.word	0x08036be4
+ 80149a8:	08036a10 	.word	0x08036a10
+ 80149ac:	08036834 	.word	0x08036834
 
 080149b0 <generate_comand_topik_for_subscrabe>:
 //	strcat(buff, "\n}");
@@ -9026,10 +9026,10 @@ int generate_comand_topik_for_subscrabe(char * topik, uint32_t topik_len, uint8_
  80149c8:	b005      	add	sp, #20
  80149ca:	f85d fb04 	ldr.w	pc, [sp], #4
  80149ce:	bf00      	nop
- 80149d0:	08036774 	.word	0x08036774
+ 80149d0:	08036764 	.word	0x08036764
  80149d4:	200017ec 	.word	0x200017ec
- 80149d8:	08036a28 	.word	0x08036a28
- 80149dc:	08036bd0 	.word	0x08036bd0
+ 80149d8:	08036a18 	.word	0x08036a18
+ 80149dc:	08036bc0 	.word	0x08036bc0
 
 080149e0 <generate_status_topik>:
 
@@ -9078,11 +9078,11 @@ int generate_status_topik(char * topik, const uint32_t topik_len, const mqtt_sen
  8014a24:	f016 faba 	bl	802af9c <snprintf>
  8014a28:	e7e6      	b.n	80149f8 <generate_status_topik+0x18>
  8014a2a:	bf00      	nop
- 8014a2c:	08036a20 	.word	0x08036a20
+ 8014a2c:	08036a10 	.word	0x08036a10
  8014a30:	200017ec 	.word	0x200017ec
- 8014a34:	08036a28 	.word	0x08036a28
- 8014a38:	08036be0 	.word	0x08036be0
- 8014a3c:	08036774 	.word	0x08036774
+ 8014a34:	08036a18 	.word	0x08036a18
+ 8014a38:	08036bd0 	.word	0x08036bd0
+ 8014a3c:	08036764 	.word	0x08036764
 
 08014a40 <timer_fn>:
   }
@@ -9202,15 +9202,15 @@ static void sfn(struct mg_connection *c, int ev, void *ev_data) {
  8014b10:	601a      	str	r2, [r3, #0]
 }
  8014b12:	e7b0      	b.n	8014a76 <sfn+0xa>
- 8014b14:	08036dac 	.word	0x08036dac
+ 8014b14:	08036d9c 	.word	0x08036d9c
  8014b18:	200000a8 	.word	0x200000a8
- 8014b1c:	08036df0 	.word	0x08036df0
+ 8014b1c:	08036de0 	.word	0x08036de0
  8014b20:	200017f8 	.word	0x200017f8
- 8014b24:	08036e48 	.word	0x08036e48
- 8014b28:	08036ea4 	.word	0x08036ea4
- 8014b2c:	08036dd0 	.word	0x08036dd0
- 8014b30:	08036e24 	.word	0x08036e24
- 8014b34:	08036e6c 	.word	0x08036e6c
+ 8014b24:	08036e38 	.word	0x08036e38
+ 8014b28:	08036e94 	.word	0x08036e94
+ 8014b2c:	08036dc0 	.word	0x08036dc0
+ 8014b30:	08036e14 	.word	0x08036e14
+ 8014b34:	08036e5c 	.word	0x08036e5c
  8014b38:	200017f0 	.word	0x200017f0
 
 08014b3c <start_sntp>:
@@ -9249,7 +9249,7 @@ void start_sntp(void *arg){
  8014b72:	b005      	add	sp, #20
  8014b74:	bd30      	pop	{r4, r5, pc}
  8014b76:	bf00      	nop
- 8014b78:	08036e88 	.word	0x08036e88
+ 8014b78:	08036e78 	.word	0x08036e78
  8014b7c:	08014a41 	.word	0x08014a41
  8014b80:	00107ac0 	.word	0x00107ac0
 
@@ -9332,15 +9332,15 @@ static void dev_description_handler(struct mg_connection *c, struct mg_http_mess
  8014c02:	f00e fa37 	bl	8023074 <mg_http_reply>
 }
  8014c06:	e7f5      	b.n	8014bf4 <dev_description_handler+0x54>
- 8014c08:	08036ea8 	.word	0x08036ea8
+ 8014c08:	08036e98 	.word	0x08036e98
  8014c0c:	08035a5c 	.word	0x08035a5c
  8014c10:	2000180c 	.word	0x2000180c
  8014c14:	20001814 	.word	0x20001814
- 8014c18:	08036a9c 	.word	0x08036a9c
- 8014c1c:	08036ab4 	.word	0x08036ab4
- 8014c20:	08036aa4 	.word	0x08036aa4
- 8014c24:	08036ac8 	.word	0x08036ac8
- 8014c28:	080371b0 	.word	0x080371b0
+ 8014c18:	08036a8c 	.word	0x08036a8c
+ 8014c1c:	08036aa4 	.word	0x08036aa4
+ 8014c20:	08036a94 	.word	0x08036a94
+ 8014c24:	08036ab8 	.word	0x08036ab8
+ 8014c28:	080371a0 	.word	0x080371a0
  8014c2c:	08035a58 	.word	0x08035a58
  8014c30:	08035efc 	.word	0x08035efc
 
@@ -9364,8 +9364,8 @@ static void dev_404_handler(struct mg_connection *c, struct mg_http_message *hm)
 
 }
  8014c4e:	bd10      	pop	{r4, pc}
- 8014c50:	08036ec8 	.word	0x08036ec8
- 8014c54:	08036ee0 	.word	0x08036ee0
+ 8014c50:	08036eb8 	.word	0x08036eb8
+ 8014c54:	08036ed0 	.word	0x08036ed0
  8014c58:	08035a58 	.word	0x08035a58
 
 08014c5c <ssdp_web_handler>:
@@ -9430,9 +9430,9 @@ static void ssdp_web_handler(struct mg_connection *c, int ev, void *ev_data){
 }
  8014cc4:	e7e8      	b.n	8014c98 <ssdp_web_handler+0x3c>
  8014cc6:	bf00      	nop
- 8014cc8:	08036f0c 	.word	0x08036f0c
- 8014ccc:	08036f34 	.word	0x08036f34
- 8014cd0:	08036f4c 	.word	0x08036f4c
+ 8014cc8:	08036efc 	.word	0x08036efc
+ 8014ccc:	08036f24 	.word	0x08036f24
+ 8014cd0:	08036f3c 	.word	0x08036f3c
 
 08014cd4 <ip_to_string>:
 void ip_to_string(uint32_t ip, char *buffer) {
@@ -9463,7 +9463,7 @@ void ip_to_string(uint32_t ip, char *buffer) {
  8014d02:	b004      	add	sp, #16
  8014d04:	bd10      	pop	{r4, pc}
  8014d06:	bf00      	nop
- 8014d08:	08036f50 	.word	0x08036f50
+ 8014d08:	08036f40 	.word	0x08036f40
 
 08014d0c <send_ssdp_notify>:
 static void send_ssdp_notify(void *param){
@@ -9532,15 +9532,15 @@ static void send_ssdp_notify(void *param){
  8014d86:	f7fd f80f 	bl	8011da8 <logging>
 		return; //TODO add log
  8014d8a:	e7f8      	b.n	8014d7e <send_ssdp_notify+0x72>
- 8014d8c:	08036f5c 	.word	0x08036f5c
+ 8014d8c:	08036f4c 	.word	0x08036f4c
  8014d90:	20001814 	.word	0x20001814
  8014d94:	20001810 	.word	0x20001810
  8014d98:	20001804 	.word	0x20001804
  8014d9c:	2000180c 	.word	0x2000180c
- 8014da0:	08036fac 	.word	0x08036fac
- 8014da4:	08036fa4 	.word	0x08036fa4
- 8014da8:	080370b8 	.word	0x080370b8
- 8014dac:	08036f74 	.word	0x08036f74
+ 8014da0:	08036f9c 	.word	0x08036f9c
+ 8014da4:	08036f94 	.word	0x08036f94
+ 8014da8:	080370a8 	.word	0x080370a8
+ 8014dac:	08036f64 	.word	0x08036f64
 
 08014db0 <ssdp_listener_handler>:
 }
@@ -9611,11 +9611,11 @@ static void ssdp_listener_handler(struct mg_connection *c, int ev, void *ev_data
  8014e20:	6818      	ldr	r0, [r3, #0]
  8014e22:	f7ff ff73 	bl	8014d0c <send_ssdp_notify>
  8014e26:	e7e3      	b.n	8014df0 <ssdp_listener_handler+0x40>
- 8014e28:	08036fb4 	.word	0x08036fb4
+ 8014e28:	08036fa4 	.word	0x08036fa4
  8014e2c:	20001800 	.word	0x20001800
- 8014e30:	08036fe8 	.word	0x08036fe8
- 8014e34:	08036ff4 	.word	0x08036ff4
- 8014e38:	08037004 	.word	0x08037004
+ 8014e30:	08036fd8 	.word	0x08036fd8
+ 8014e34:	08036fe4 	.word	0x08036fe4
+ 8014e38:	08036ff4 	.word	0x08036ff4
 
 08014e3c <ssdp_timer_handler>:
 static void ssdp_timer_handler(void *param){
@@ -9648,10 +9648,10 @@ static void ssdp_timer_handler(void *param){
 		return ;
  8014e6c:	e7f9      	b.n	8014e62 <ssdp_timer_handler+0x26>
  8014e6e:	bf00      	nop
- 8014e70:	08037034 	.word	0x08037034
- 8014e74:	08037354 	.word	0x08037354
+ 8014e70:	08037024 	.word	0x08037024
+ 8014e74:	08037344 	.word	0x08037344
  8014e78:	20001808 	.word	0x20001808
- 8014e7c:	0803704c 	.word	0x0803704c
+ 8014e7c:	0803703c 	.word	0x0803703c
 
 08014e80 <ssdp_set_id>:
 void ssdp_set_id(const uint8_t* id, uint8_t id_len){
@@ -9695,9 +9695,9 @@ void ssdp_set_id(const uint8_t* id, uint8_t id_len){
  8014ec4:	d8f4      	bhi.n	8014eb0 <ssdp_set_id+0x30>
 }
  8014ec6:	bd70      	pop	{r4, r5, r6, pc}
- 8014ec8:	08037074 	.word	0x08037074
+ 8014ec8:	08037064 	.word	0x08037064
  8014ecc:	20001814 	.word	0x20001814
- 8014ed0:	08036a00 	.word	0x08036a00
+ 8014ed0:	080369f0 	.word	0x080369f0
 
 08014ed4 <ssdp_start_server>:
 
@@ -9762,12 +9762,12 @@ void ssdp_start_server(void * param_mgr, void * param_mif){
  8014f3c:	20001808 	.word	0x20001808
  8014f40:	20001804 	.word	0x20001804
  8014f44:	2000180c 	.word	0x2000180c
- 8014f48:	08037088 	.word	0x08037088
+ 8014f48:	08037078 	.word	0x08037078
  8014f4c:	08014e3d 	.word	0x08014e3d
  8014f50:	08014c5d 	.word	0x08014c5d
- 8014f54:	080370a0 	.word	0x080370a0
+ 8014f54:	08037090 	.word	0x08037090
  8014f58:	08014db1 	.word	0x08014db1
- 8014f5c:	08037354 	.word	0x08037354
+ 8014f5c:	08037344 	.word	0x08037344
  8014f60:	20001800 	.word	0x20001800
 
 08014f64 <function_prototype>:
@@ -10205,13 +10205,13 @@ struct SPI_flash_info sFLASH_GetInfo(void){
  8015240:	ff10bfeb 	.word	0xff10bfeb
  8015244:	20001818 	.word	0x20001818
  8015248:	00ef4015 	.word	0x00ef4015
- 801524c:	08037370 	.word	0x08037370
+ 801524c:	08037360 	.word	0x08037360
  8015250:	00ef4016 	.word	0x00ef4016
- 8015254:	08037378 	.word	0x08037378
+ 8015254:	08037368 	.word	0x08037368
  8015258:	00ef4017 	.word	0x00ef4017
- 801525c:	08037380 	.word	0x08037380
- 8015260:	08037388 	.word	0x08037388
- 8015264:	08037390 	.word	0x08037390
+ 801525c:	08037370 	.word	0x08037370
+ 8015260:	08037378 	.word	0x08037378
+ 8015264:	08037380 	.word	0x08037380
 
 08015268 <sFLASH_WriteEnable>:
   * @brief  Enables the write access to the FLASH.
@@ -19189,7 +19189,7 @@ const TickType_t xConstTickCount = xTickCount;
 		configASSERT( xReturn != errCOULD_NOT_ALLOCATE_REQUIRED_MEMORY );
  8018b58:	e7fe      	b.n	8018b58 <vTaskStartScheduler+0x88>
  8018b5a:	bf00      	nop
- 8018b5c:	08037b04 	.word	0x08037b04
+ 8018b5c:	08037af4 	.word	0x08037af4
  8018b60:	0801894d 	.word	0x0801894d
  8018b64:	200025c0 	.word	0x200025c0
  8018b68:	20002ab8 	.word	0x20002ab8
@@ -20293,7 +20293,7 @@ static void prvCheckForValidListAndQueue( void )
  801930c:	20002bb8 	.word	0x20002bb8
  8019310:	20002abc 	.word	0x20002abc
  8019314:	20002b0c 	.word	0x20002b0c
- 8019318:	08037b0c 	.word	0x08037b0c
+ 8019318:	08037afc 	.word	0x08037afc
 
 0801931c <xTimerCreateTimerTask>:
 {
@@ -20342,7 +20342,7 @@ static void prvCheckForValidListAndQueue( void )
 	configASSERT( xReturn );
  801936e:	e7fe      	b.n	801936e <xTimerCreateTimerTask+0x52>
  8019370:	20002bb4 	.word	0x20002bb4
- 8019374:	08037b14 	.word	0x08037b14
+ 8019374:	08037b04 	.word	0x08037b04
  8019378:	08019681 	.word	0x08019681
  801937c:	20002bb0 	.word	0x20002bb0
 
@@ -21743,9 +21743,9 @@ int block_device_read(const struct lfs_config *c, lfs_block_t block, lfs_off_t o
  8019d24:	4803      	ldr	r0, [pc, #12]	@ (8019d34 <block_device_read+0x3c>)
  8019d26:	f00f f911 	bl	8028f4c <__assert_func>
  8019d2a:	bf00      	nop
- 8019d2c:	08037b1c 	.word	0x08037b1c
- 8019d30:	08037b98 	.word	0x08037b98
- 8019d34:	08037b34 	.word	0x08037b34
+ 8019d2c:	08037b0c 	.word	0x08037b0c
+ 8019d30:	08037b88 	.word	0x08037b88
+ 8019d34:	08037b24 	.word	0x08037b24
 
 08019d38 <block_device_erase>:
 int block_device_erase(const struct lfs_config *c, lfs_block_t block){
@@ -21767,9 +21767,9 @@ int block_device_erase(const struct lfs_config *c, lfs_block_t block){
  8019d52:	f240 1121 	movw	r1, #289	@ 0x121
  8019d56:	4803      	ldr	r0, [pc, #12]	@ (8019d64 <block_device_erase+0x2c>)
  8019d58:	f00f f8f8 	bl	8028f4c <__assert_func>
- 8019d5c:	08037b1c 	.word	0x08037b1c
- 8019d60:	08037b84 	.word	0x08037b84
- 8019d64:	08037b34 	.word	0x08037b34
+ 8019d5c:	08037b0c 	.word	0x08037b0c
+ 8019d60:	08037b74 	.word	0x08037b74
+ 8019d64:	08037b24 	.word	0x08037b24
 
 08019d68 <block_device_prog>:
 int block_device_prog(const struct lfs_config *c, lfs_block_t block, lfs_off_t off, const void *buffer, lfs_size_t size){
@@ -21796,9 +21796,9 @@ int block_device_prog(const struct lfs_config *c, lfs_block_t block, lfs_off_t o
  8019d94:	4803      	ldr	r0, [pc, #12]	@ (8019da4 <block_device_prog+0x3c>)
  8019d96:	f00f f8d9 	bl	8028f4c <__assert_func>
  8019d9a:	bf00      	nop
- 8019d9c:	08037b1c 	.word	0x08037b1c
- 8019da0:	08037b70 	.word	0x08037b70
- 8019da4:	08037b34 	.word	0x08037b34
+ 8019d9c:	08037b0c 	.word	0x08037b0c
+ 8019da0:	08037b60 	.word	0x08037b60
+ 8019da4:	08037b24 	.word	0x08037b24
 
 08019da8 <mg_fs_lfs_status>:
 int mg_fs_lfs_status(const char *path, size_t *size, time_t *mtime) {
@@ -22753,10 +22753,10 @@ static int lfs_bd_erase(lfs_t *lfs, lfs_block_t block) {
  801a2de:	f44f 718b 	mov.w	r1, #278	@ 0x116
  801a2e2:	4803      	ldr	r0, [pc, #12]	@ (801a2f0 <lfs_bd_erase+0x38>)
  801a2e4:	f00e fe32 	bl	8028f4c <__assert_func>
- 801a2e8:	08037c98 	.word	0x08037c98
- 801a2ec:	080388f8 	.word	0x080388f8
- 801a2f0:	08037bac 	.word	0x08037bac
- 801a2f4:	08037bdc 	.word	0x08037bdc
+ 801a2e8:	08037c88 	.word	0x08037c88
+ 801a2ec:	080388e8 	.word	0x080388e8
+ 801a2f0:	08037b9c 	.word	0x08037b9c
+ 801a2f4:	08037bcc 	.word	0x08037bcc
 
 0801a2f8 <lfs_fs_preporphans>:
 static int lfs_fs_preporphans(lfs_t *lfs, int8_t orphans) {
@@ -22803,10 +22803,10 @@ static int lfs_fs_preporphans(lfs_t *lfs, int8_t orphans) {
  801a33e:	f241 21e3 	movw	r1, #4835	@ 0x12e3
  801a342:	4803      	ldr	r0, [pc, #12]	@ (801a350 <lfs_fs_preporphans+0x58>)
  801a344:	f00e fe02 	bl	8028f4c <__assert_func>
- 801a348:	08037be8 	.word	0x08037be8
- 801a34c:	080388c8 	.word	0x080388c8
- 801a350:	08037bac 	.word	0x08037bac
- 801a354:	08037c20 	.word	0x08037c20
+ 801a348:	08037bd8 	.word	0x08037bd8
+ 801a34c:	080388b8 	.word	0x080388b8
+ 801a350:	08037b9c 	.word	0x08037b9c
+ 801a354:	08037c10 	.word	0x08037c10
 
 0801a358 <lfs_cache_zero>:
 static inline void lfs_cache_zero(lfs_t *lfs, lfs_cache_t *pcache) {
@@ -23117,10 +23117,10 @@ static inline uint32_t lfs_popc(uint32_t a) {
  801a576:	e7e6      	b.n	801a546 <lfs_bd_read+0x19a>
  801a578:	4618      	mov	r0, r3
  801a57a:	e7e4      	b.n	801a546 <lfs_bd_read+0x19a>
- 801a57c:	08037c58 	.word	0x08037c58
- 801a580:	08038920 	.word	0x08038920
- 801a584:	08037bac 	.word	0x08037bac
- 801a588:	08037bdc 	.word	0x08037bdc
+ 801a57c:	08037c48 	.word	0x08037c48
+ 801a580:	08038910 	.word	0x08038910
+ 801a584:	08037b9c 	.word	0x08037b9c
+ 801a588:	08037bcc 	.word	0x08037bcc
 
 0801a58c <lfs_dir_getslice>:
         lfs_off_t goff, void *gbuffer, lfs_size_t gsize) {
@@ -23879,9 +23879,9 @@ static inline uint32_t lfs_frombe32(uint32_t a) {
  801ab42:	bf00      	nop
  801ab44:	7ff00000 	.word	0x7ff00000
  801ab48:	0801a165 	.word	0x0801a165
- 801ab4c:	08037c88 	.word	0x08037c88
- 801ab50:	08038898 	.word	0x08038898
- 801ab54:	08037bac 	.word	0x08037bac
+ 801ab4c:	08037c78 	.word	0x08037c78
+ 801ab50:	08038888 	.word	0x08038888
+ 801ab54:	08037b9c 	.word	0x08037b9c
  801ab58:	600ffc00 	.word	0x600ffc00
 
 0801ab5c <lfs_dir_getread>:
@@ -24207,10 +24207,10 @@ static inline uint32_t lfs_frombe32(uint32_t a) {
                 return LFS_ERR_CORRUPT;
  801ad8e:	f06f 0553 	mvn.w	r5, #83	@ 0x53
  801ad92:	e7f6      	b.n	801ad82 <lfs_bd_flush+0x92>
- 801ad94:	08037c90 	.word	0x08037c90
- 801ad98:	080388dc 	.word	0x080388dc
- 801ad9c:	08037bac 	.word	0x08037bac
- 801ada0:	08037bdc 	.word	0x08037bdc
+ 801ad94:	08037c80 	.word	0x08037c80
+ 801ad98:	080388cc 	.word	0x080388cc
+ 801ad9c:	08037b9c 	.word	0x08037b9c
+ 801ada0:	08037bcc 	.word	0x08037bcc
 
 0801ada4 <lfs_bd_prog>:
         const void *buffer, lfs_size_t size) {
@@ -24336,11 +24336,11 @@ static inline uint32_t lfs_frombe32(uint32_t a) {
 }
  801ae7e:	b003      	add	sp, #12
  801ae80:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
- 801ae84:	08037cec 	.word	0x08037cec
- 801ae88:	080388ec 	.word	0x080388ec
- 801ae8c:	08037bac 	.word	0x08037bac
- 801ae90:	08037cb4 	.word	0x08037cb4
- 801ae94:	08037d10 	.word	0x08037d10
+ 801ae84:	08037cdc 	.word	0x08037cdc
+ 801ae88:	080388dc 	.word	0x080388dc
+ 801ae8c:	08037b9c 	.word	0x08037b9c
+ 801ae90:	08037ca4 	.word	0x08037ca4
+ 801ae94:	08037d00 	.word	0x08037d00
 
 0801ae98 <lfs_bd_sync>:
         lfs_cache_t *pcache, lfs_cache_t *rcache, bool validate) {
@@ -24370,9 +24370,9 @@ static inline uint32_t lfs_frombe32(uint32_t a) {
  801aebc:	21dd      	movs	r1, #221	@ 0xdd
  801aebe:	4803      	ldr	r0, [pc, #12]	@ (801aecc <lfs_bd_sync+0x34>)
  801aec0:	f00e f844 	bl	8028f4c <__assert_func>
- 801aec4:	08037bdc 	.word	0x08037bdc
- 801aec8:	0803888c 	.word	0x0803888c
- 801aecc:	08037bac 	.word	0x08037bac
+ 801aec4:	08037bcc 	.word	0x08037bcc
+ 801aec8:	0803887c 	.word	0x0803887c
+ 801aecc:	08037b9c 	.word	0x08037b9c
 
 0801aed0 <lfs_dir_find_match>:
         lfs_tag_t tag, const void *buffer) {
@@ -25334,8 +25334,8 @@ static inline uint32_t lfs_frombe32(uint32_t a) {
  801b5e8:	e7f5      	b.n	801b5d6 <lfs_dir_fetchmatch+0x4c6>
  801b5ea:	bf00      	nop
  801b5ec:	08035a58 	.word	0x08035a58
- 801b5f0:	08037bac 	.word	0x08037bac
- 801b5f4:	08037d34 	.word	0x08037d34
+ 801b5f0:	08037b9c 	.word	0x08037b9c
+ 801b5f4:	08037d24 	.word	0x08037d24
 
 0801b5f8 <lfs_fs_parent>:
         lfs_mdir_t *parent) {
@@ -25443,8 +25443,8 @@ static inline uint32_t lfs_frombe32(uint32_t a) {
  801b6b2:	bf00      	nop
  801b6b4:	08034d34 	.word	0x08034d34
  801b6b8:	08035a58 	.word	0x08035a58
- 801b6bc:	08037bac 	.word	0x08037bac
- 801b6c0:	08037d6c 	.word	0x08037d6c
+ 801b6bc:	08037b9c 	.word	0x08037b9c
+ 801b6c0:	08037d5c 	.word	0x08037d5c
  801b6c4:	0801a7e1 	.word	0x0801a7e1
  801b6c8:	20000008 	.word	0x20000008
  801b6cc:	7ff003ff 	.word	0x7ff003ff
@@ -25687,8 +25687,8 @@ static inline uint32_t lfs_frombe32(uint32_t a) {
  801b892:	bf00      	nop
  801b894:	08034d34 	.word	0x08034d34
  801b898:	08035a58 	.word	0x08035a58
- 801b89c:	08037bac 	.word	0x08037bac
- 801b8a0:	08037d6c 	.word	0x08037d6c
+ 801b89c:	08037b9c 	.word	0x08037b9c
+ 801b8a0:	08037d5c 	.word	0x08037d5c
  801b8a4:	700ffc00 	.word	0x700ffc00
 
 0801b8a8 <lfs_alloc_scan>:
@@ -25837,8 +25837,8 @@ static int lfs_alloc(lfs_t *lfs, lfs_block_t *block) {
  801b99c:	bd30      	pop	{r4, r5, pc}
  801b99e:	bf00      	nop
  801b9a0:	08035a58 	.word	0x08035a58
- 801b9a4:	08037bac 	.word	0x08037bac
- 801b9a8:	08037d98 	.word	0x08037d98
+ 801b9a4:	08037b9c 	.word	0x08037b9c
+ 801b9a8:	08037d88 	.word	0x08037d88
 
 0801b9ac <lfs_dir_alloc>:
 static int lfs_dir_alloc(lfs_t *lfs, lfs_mdir_t *dir) {
@@ -26069,8 +26069,8 @@ static int lfs_file_relocate(lfs_t *lfs, lfs_file_t *file) {
  801bb4a:	bf00      	nop
  801bb4c:	fff7fc00 	.word	0xfff7fc00
  801bb50:	08035a58 	.word	0x08035a58
- 801bb54:	08037bac 	.word	0x08037bac
- 801bb58:	08037dc4 	.word	0x08037dc4
+ 801bb54:	08037b9c 	.word	0x08037b9c
+ 801bb58:	08037db4 	.word	0x08037db4
 
 0801bb5c <lfs_file_outline>:
 static int lfs_file_outline(lfs_t *lfs, lfs_file_t *file) {
@@ -26308,8 +26308,8 @@ static int lfs_file_outline(lfs_t *lfs, lfs_file_t *file) {
  801bcec:	4682      	mov	sl, r0
  801bcee:	e7b8      	b.n	801bc62 <lfs_ctz_extend+0xe2>
  801bcf0:	08035a58 	.word	0x08035a58
- 801bcf4:	08037bac 	.word	0x08037bac
- 801bcf8:	08037dc4 	.word	0x08037dc4
+ 801bcf4:	08037b9c 	.word	0x08037b9c
+ 801bcf8:	08037db4 	.word	0x08037db4
 
 0801bcfc <lfs_file_flushedwrite>:
         const void *buffer, lfs_size_t size) {
@@ -26653,8 +26653,8 @@ static int lfs_file_flush(lfs_t *lfs, lfs_file_t *file) {
  801bf5c:	b018      	add	sp, #96	@ 0x60
  801bf5e:	bd70      	pop	{r4, r5, r6, pc}
  801bf60:	08035a58 	.word	0x08035a58
- 801bf64:	08037bac 	.word	0x08037bac
- 801bf68:	08037dc4 	.word	0x08037dc4
+ 801bf64:	08037b9c 	.word	0x08037b9c
+ 801bf68:	08037db4 	.word	0x08037db4
 
 0801bf6c <lfs_file_read_>:
         void *buffer, lfs_size_t size) {
@@ -26689,9 +26689,9 @@ static int lfs_file_flush(lfs_t *lfs, lfs_file_t *file) {
  801bfa0:	4803      	ldr	r0, [pc, #12]	@ (801bfb0 <lfs_file_read_+0x44>)
  801bfa2:	f00c ffd3 	bl	8028f4c <__assert_func>
  801bfa6:	bf00      	nop
- 801bfa8:	08037de8 	.word	0x08037de8
- 801bfac:	08038820 	.word	0x08038820
- 801bfb0:	08037bac 	.word	0x08037bac
+ 801bfa8:	08037dd8 	.word	0x08037dd8
+ 801bfac:	08038810 	.word	0x08038810
+ 801bfb0:	08037b9c 	.word	0x08037b9c
 
 0801bfb4 <lfs_file_seek_>:
         lfs_soff_t off, int whence) {
@@ -26883,9 +26883,9 @@ static int lfs_file_flush(lfs_t *lfs, lfs_file_t *file) {
  801c0e8:	f06f 001a 	mvn.w	r0, #26
  801c0ec:	e7f9      	b.n	801c0e2 <lfs_file_write_+0x96>
  801c0ee:	bf00      	nop
- 801c0f0:	08037e18 	.word	0x08037e18
- 801c0f4:	08038800 	.word	0x08038800
- 801c0f8:	08037bac 	.word	0x08037bac
+ 801c0f0:	08037e08 	.word	0x08037e08
+ 801c0f4:	080387f0 	.word	0x080387f0
+ 801c0f8:	08037b9c 	.word	0x08037b9c
 
 0801c0fc <lfs_fs_size_>:
 
@@ -27015,8 +27015,8 @@ static lfs_ssize_t lfs_fs_size_(lfs_t *lfs) {
  801c1ce:	e7f6      	b.n	801c1be <lfs_fs_pred+0xa2>
  801c1d0:	08034d34 	.word	0x08034d34
  801c1d4:	08035a58 	.word	0x08035a58
- 801c1d8:	08037bac 	.word	0x08037bac
- 801c1dc:	08037d6c 	.word	0x08037d6c
+ 801c1d8:	08037b9c 	.word	0x08037b9c
+ 801c1dc:	08037d5c 	.word	0x08037d5c
 
 0801c1e0 <lfs_dir_commitprog>:
         const void *buffer, lfs_size_t size) {
@@ -27770,12 +27770,12 @@ static int lfs_dir_commitcrc(lfs_t *lfs, struct lfs_commit *commit) {
  801c77c:	400ffc00 	.word	0x400ffc00
  801c780:	000ffc08 	.word	0x000ffc08
  801c784:	7ffffc0c 	.word	0x7ffffc0c
- 801c788:	08037e48 	.word	0x08037e48
- 801c78c:	0803887c 	.word	0x0803887c
- 801c790:	08037bac 	.word	0x08037bac
+ 801c788:	08037e38 	.word	0x08037e38
+ 801c78c:	0803886c 	.word	0x0803886c
+ 801c790:	08037b9c 	.word	0x08037b9c
  801c794:	08035a58 	.word	0x08035a58
- 801c798:	08037dc4 	.word	0x08037dc4
- 801c79c:	08037e70 	.word	0x08037e70
+ 801c798:	08037db4 	.word	0x08037db4
+ 801c79c:	08037e60 	.word	0x08037e60
 
 0801c7a0 <lfs_dir_split>:
         lfs_mdir_t *source, uint16_t split, uint16_t end) {
@@ -28051,10 +28051,10 @@ static int lfs_dir_commitcrc(lfs_t *lfs, struct lfs_commit *commit) {
  801c9ac:	0801a1e1 	.word	0x0801a1e1
  801c9b0:	400ffc00 	.word	0x400ffc00
  801c9b4:	08035a58 	.word	0x08035a58
- 801c9b8:	08037bac 	.word	0x08037bac
- 801c9bc:	08037ea8 	.word	0x08037ea8
- 801c9c0:	08037ed8 	.word	0x08037ed8
- 801c9c4:	08037f08 	.word	0x08037f08
+ 801c9b8:	08037b9c 	.word	0x08037b9c
+ 801c9bc:	08037e98 	.word	0x08037e98
+ 801c9c0:	08037ec8 	.word	0x08037ec8
+ 801c9c4:	08037ef8 	.word	0x08037ef8
 
 0801c9c8 <lfs_dir_relocatingcommit>:
         lfs_mdir_t *pdir) {
@@ -28458,13 +28458,13 @@ static int lfs_dir_commitcrc(lfs_t *lfs, struct lfs_commit *commit) {
  801ccb6:	80a3      	strh	r3, [r4, #4]
  801ccb8:	e7df      	b.n	801cc7a <lfs_dir_relocatingcommit+0x2b2>
  801ccba:	bf00      	nop
- 801ccbc:	08037f34 	.word	0x08037f34
- 801ccc0:	080388ac 	.word	0x080388ac
- 801ccc4:	08037bac 	.word	0x08037bac
- 801ccc8:	08037f44 	.word	0x08037f44
+ 801ccbc:	08037f24 	.word	0x08037f24
+ 801ccc0:	0803889c 	.word	0x0803889c
+ 801ccc4:	08037b9c 	.word	0x08037b9c
+ 801ccc8:	08037f34 	.word	0x08037f34
  801cccc:	0801c2db 	.word	0x0801c2db
  801ccd0:	7ffffc0c 	.word	0x7ffffc0c
- 801ccd4:	08037e48 	.word	0x08037e48
+ 801ccd4:	08037e38 	.word	0x08037e38
     for (struct lfs_mlist *d = lfs->mlist; d; d = d->next) {
  801ccd8:	6824      	ldr	r4, [r4, #0]
  801ccda:	b1d4      	cbz	r4, 801cd12 <lfs_dir_relocatingcommit+0x34a>
@@ -28961,11 +28961,11 @@ static int lfs_dir_commitcrc(lfs_t *lfs, struct lfs_commit *commit) {
  801d0ae:	e027      	b.n	801d100 <lfs_dir_orphaningcommit+0x3d8>
  801d0b0:	000ffc08 	.word	0x000ffc08
  801d0b4:	08035a58 	.word	0x08035a58
- 801d0b8:	08037bac 	.word	0x08037bac
- 801d0bc:	08037f4c 	.word	0x08037f4c
- 801d0c0:	08037f88 	.word	0x08037f88
- 801d0c4:	08037fcc 	.word	0x08037fcc
- 801d0c8:	08038908 	.word	0x08038908
+ 801d0b8:	08037b9c 	.word	0x08037b9c
+ 801d0bc:	08037f3c 	.word	0x08037f3c
+ 801d0c0:	08037f78 	.word	0x08037f78
+ 801d0c4:	08037fbc 	.word	0x08037fbc
+ 801d0c8:	080388f8 	.word	0x080388f8
                 moveid = lfs_tag_id(lfs->gstate.tag);
  801d0cc:	6b2c      	ldr	r4, [r5, #48]	@ 0x30
     return (tag & 0x000ffc00) >> 10;
@@ -29007,8 +29007,8 @@ static int lfs_dir_commitcrc(lfs_t *lfs, struct lfs_commit *commit) {
  801d110:	4607      	mov	r7, r0
  801d112:	e7f5      	b.n	801d100 <lfs_dir_orphaningcommit+0x3d8>
  801d114:	08035a58 	.word	0x08035a58
- 801d118:	08037bac 	.word	0x08037bac
- 801d11c:	08037f88 	.word	0x08037f88
+ 801d118:	08037b9c 	.word	0x08037b9c
+ 801d11c:	08037f78 	.word	0x08037f78
 
 0801d120 <lfs_fs_deorphan>:
 static int lfs_fs_deorphan(lfs_t *lfs, bool powerloss) {
@@ -29255,13 +29255,13 @@ static int lfs_fs_deorphan(lfs_t *lfs, bool powerloss) {
  801d30a:	b024      	add	sp, #144	@ 0x90
  801d30c:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
  801d310:	08035a58 	.word	0x08035a58
- 801d314:	08037bac 	.word	0x08037bac
- 801d318:	08038080 	.word	0x08038080
+ 801d314:	08037b9c 	.word	0x08037b9c
+ 801d318:	08038070 	.word	0x08038070
  801d31c:	000ffc08 	.word	0x000ffc08
  801d320:	7ffffc00 	.word	0x7ffffc00
- 801d324:	08037ff4 	.word	0x08037ff4
+ 801d324:	08037fe4 	.word	0x08037fe4
  801d328:	600ffc08 	.word	0x600ffc08
- 801d32c:	08038038 	.word	0x08038038
+ 801d32c:	08038028 	.word	0x08038028
 
 0801d330 <lfs_dir_commit>:
         const struct lfs_mattr *attrs, int attrcount) {
@@ -29366,8 +29366,8 @@ static int lfs_fs_desuperblock(lfs_t *lfs) {
     return 0;
  801d3ca:	e7c6      	b.n	801d35a <lfs_fs_desuperblock+0xe>
  801d3cc:	08035a58 	.word	0x08035a58
- 801d3d0:	08037bac 	.word	0x08037bac
- 801d3d4:	080380b0 	.word	0x080380b0
+ 801d3d0:	08037b9c 	.word	0x08037b9c
+ 801d3d4:	080380a0 	.word	0x080380a0
  801d3d8:	20100018 	.word	0x20100018
 
 0801d3dc <lfs_fs_demove>:
@@ -29448,10 +29448,10 @@ static int lfs_fs_demove(lfs_t *lfs) {
  801d468:	e7de      	b.n	801d428 <lfs_fs_demove+0x4c>
  801d46a:	bf00      	nop
  801d46c:	08035a58 	.word	0x08035a58
- 801d470:	08037bac 	.word	0x08037bac
- 801d474:	080380e4 	.word	0x080380e4
- 801d478:	08038118 	.word	0x08038118
- 801d47c:	0803886c 	.word	0x0803886c
+ 801d470:	08037b9c 	.word	0x08037b9c
+ 801d474:	080380d4 	.word	0x080380d4
+ 801d478:	08038108 	.word	0x08038108
+ 801d47c:	0803885c 	.word	0x0803885c
 
 0801d480 <lfs_fs_forceconsistency>:
 static int lfs_fs_forceconsistency(lfs_t *lfs) {
@@ -30033,27 +30033,27 @@ static int lfs_init(lfs_t *lfs, const struct lfs_config *cfg) {
  801d8ce:	08db      	lsrs	r3, r3, #3
  801d8d0:	e73f      	b.n	801d752 <lfs_init+0x162>
  801d8d2:	bf00      	nop
- 801d8d4:	0803814c 	.word	0x0803814c
- 801d8d8:	0803892c 	.word	0x0803892c
- 801d8dc:	08037bac 	.word	0x08037bac
- 801d8e0:	08038168 	.word	0x08038168
- 801d8e4:	08038184 	.word	0x08038184
- 801d8e8:	080381a0 	.word	0x080381a0
- 801d8ec:	080381d0 	.word	0x080381d0
- 801d8f0:	08038200 	.word	0x08038200
- 801d8f4:	08038234 	.word	0x08038234
- 801d8f8:	08038250 	.word	0x08038250
- 801d8fc:	0803829c 	.word	0x0803829c
- 801d900:	080382b8 	.word	0x080382b8
- 801d904:	0803830c 	.word	0x0803830c
- 801d908:	0803836c 	.word	0x0803836c
- 801d90c:	0803838c 	.word	0x0803838c
- 801d910:	080383a8 	.word	0x080383a8
- 801d914:	080383cc 	.word	0x080383cc
- 801d918:	080383e8 	.word	0x080383e8
- 801d91c:	08038418 	.word	0x08038418
- 801d920:	08038470 	.word	0x08038470
- 801d924:	080384c0 	.word	0x080384c0
+ 801d8d4:	0803813c 	.word	0x0803813c
+ 801d8d8:	0803891c 	.word	0x0803891c
+ 801d8dc:	08037b9c 	.word	0x08037b9c
+ 801d8e0:	08038158 	.word	0x08038158
+ 801d8e4:	08038174 	.word	0x08038174
+ 801d8e8:	08038190 	.word	0x08038190
+ 801d8ec:	080381c0 	.word	0x080381c0
+ 801d8f0:	080381f0 	.word	0x080381f0
+ 801d8f4:	08038224 	.word	0x08038224
+ 801d8f8:	08038240 	.word	0x08038240
+ 801d8fc:	0803828c 	.word	0x0803828c
+ 801d900:	080382a8 	.word	0x080382a8
+ 801d904:	080382fc 	.word	0x080382fc
+ 801d908:	0803835c 	.word	0x0803835c
+ 801d90c:	0803837c 	.word	0x0803837c
+ 801d910:	08038398 	.word	0x08038398
+ 801d914:	080383bc 	.word	0x080383bc
+ 801d918:	080383d8 	.word	0x080383d8
+ 801d91c:	08038408 	.word	0x08038408
+ 801d920:	08038460 	.word	0x08038460
+ 801d924:	080384b0 	.word	0x080384b0
 
 0801d928 <lfs_format_>:
 static int lfs_format_(lfs_t *lfs, const struct lfs_config *cfg) {
@@ -30185,12 +30185,12 @@ static int lfs_format_(lfs_t *lfs, const struct lfs_config *cfg) {
         if (err) {
  801d9fc:	e7b8      	b.n	801d970 <lfs_format_+0x48>
  801d9fe:	bf00      	nop
- 801da00:	08038550 	.word	0x08038550
- 801da04:	08038938 	.word	0x08038938
- 801da08:	08037bac 	.word	0x08037bac
+ 801da00:	08038540 	.word	0x08038540
+ 801da04:	08038928 	.word	0x08038928
+ 801da08:	08037b9c 	.word	0x08037b9c
  801da0c:	40100000 	.word	0x40100000
  801da10:	0ff00008 	.word	0x0ff00008
- 801da14:	08038568 	.word	0x08038568
+ 801da14:	08038558 	.word	0x08038558
  801da18:	20100018 	.word	0x20100018
 
 0801da1c <lfs_unmount_>:
@@ -30558,20 +30558,20 @@ static int lfs_mount_(lfs_t *lfs, const struct lfs_config *cfg) {
  801dcc6:	bf00      	nop
  801dcc8:	08034d34 	.word	0x08034d34
  801dccc:	08035a58 	.word	0x08035a58
- 801dcd0:	08037bac 	.word	0x08037bac
- 801dcd4:	08037d6c 	.word	0x08037d6c
- 801dcd8:	08038574 	.word	0x08038574
- 801dcdc:	080385ac 	.word	0x080385ac
- 801dce0:	080385ec 	.word	0x080385ec
- 801dce4:	08038620 	.word	0x08038620
- 801dce8:	08038654 	.word	0x08038654
- 801dcec:	08038568 	.word	0x08038568
+ 801dcd0:	08037b9c 	.word	0x08037b9c
+ 801dcd4:	08037d5c 	.word	0x08037d5c
+ 801dcd8:	08038564 	.word	0x08038564
+ 801dcdc:	0803859c 	.word	0x0803859c
+ 801dce0:	080385dc 	.word	0x080385dc
+ 801dce4:	08038610 	.word	0x08038610
+ 801dce8:	08038644 	.word	0x08038644
+ 801dcec:	08038558 	.word	0x08038558
  801dcf0:	0801aed1 	.word	0x0801aed1
  801dcf4:	0ff00008 	.word	0x0ff00008
  801dcf8:	7ffffc00 	.word	0x7ffffc00
  801dcfc:	20100018 	.word	0x20100018
- 801dd00:	08038688 	.word	0x08038688
- 801dd04:	080386bc 	.word	0x080386bc
+ 801dd00:	08038678 	.word	0x08038678
+ 801dd04:	080386ac 	.word	0x080386ac
         LFS_DEBUG("Found pending gstate 0x%08"PRIx32"%08"PRIx32"%08"PRIx32,
  801dd08:	4b06      	ldr	r3, [pc, #24]	@ (801dd24 <lfs_mount_+0x300>)
  801dd0a:	9302      	str	r3, [sp, #8]
@@ -30586,8 +30586,8 @@ static int lfs_mount_(lfs_t *lfs, const struct lfs_config *cfg) {
  801dd1e:	f00b f949 	bl	8028fb4 <printf>
  801dd22:	e7ba      	b.n	801dc9a <lfs_mount_+0x276>
  801dd24:	08035a58 	.word	0x08035a58
- 801dd28:	08037bac 	.word	0x08037bac
- 801dd2c:	080386ec 	.word	0x080386ec
+ 801dd28:	08037b9c 	.word	0x08037b9c
+ 801dd2c:	080386dc 	.word	0x080386dc
 
 0801dd30 <lfs_file_close_>:
 static int lfs_file_close_(lfs_t *lfs, lfs_file_t *file) {
@@ -30808,8 +30808,8 @@ static int lfs_file_close_(lfs_t *lfs, lfs_file_t *file) {
  801deb6:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
  801deba:	bf00      	nop
  801debc:	002ffc00 	.word	0x002ffc00
- 801dec0:	08038f40 	.word	0x08038f40
- 801dec4:	08038724 	.word	0x08038724
+ 801dec0:	08038f30 	.word	0x08038f30
+ 801dec4:	08038714 	.word	0x08038714
  801dec8:	700ffc00 	.word	0x700ffc00
  801decc:	0801aed1 	.word	0x0801aed1
 
@@ -31680,7 +31680,7 @@ static int lfs_rename_(lfs_t *lfs, const char *oldpath, const char *newpath) {
 }
  801e564:	b002      	add	sp, #8
  801e566:	bd10      	pop	{r4, pc}
- 801e568:	08038850 	.word	0x08038850
+ 801e568:	08038840 	.word	0x08038840
 
 0801e56c <lfs_mkdir_>:
 static int lfs_mkdir_(lfs_t *lfs, const char *path) {
@@ -31943,7 +31943,7 @@ static int lfs_mkdir_(lfs_t *lfs, const char *path) {
  801e75a:	e7f4      	b.n	801e746 <lfs_dir_getinfo+0x72>
  801e75c:	780ffc00 	.word	0x780ffc00
  801e760:	700ffc00 	.word	0x700ffc00
- 801e764:	08038f40 	.word	0x08038f40
+ 801e764:	08038f30 	.word	0x08038f30
 
 0801e768 <lfs_stat_>:
 static int lfs_stat_(lfs_t *lfs, const char *path, struct lfs_info *info) {
@@ -32071,7 +32071,7 @@ static int lfs_dir_read_(lfs_t *lfs, lfs_dir_t *dir, struct lfs_info *info) {
  801e83c:	f04f 0c00 	mov.w	ip, #0
  801e840:	e7fa      	b.n	801e838 <lfs_dir_read_+0xa4>
  801e842:	bf00      	nop
- 801e844:	08038724 	.word	0x08038724
+ 801e844:	08038714 	.word	0x08038714
  801e848:	080350e8 	.word	0x080350e8
 
 0801e84c <lfs_format>:
@@ -32308,9 +32308,9 @@ int lfs_file_open(lfs_t *lfs, lfs_file_t *file, const char *path, int flags) {
  801e958:	4803      	ldr	r0, [pc, #12]	@ (801e968 <lfs_file_open+0x54>)
  801e95a:	f00a faf7 	bl	8028f4c <__assert_func>
  801e95e:	bf00      	nop
- 801e960:	08038728 	.word	0x08038728
- 801e964:	0803885c 	.word	0x0803885c
- 801e968:	08037bac 	.word	0x08037bac
+ 801e960:	08038718 	.word	0x08038718
+ 801e964:	0803884c 	.word	0x0803884c
+ 801e968:	08037b9c 	.word	0x08037b9c
 
 0801e96c <lfs_file_close>:
     LFS_TRACE("lfs_file_opencfg -> %d", err);
@@ -32360,9 +32360,9 @@ int lfs_file_close(lfs_t *lfs, lfs_file_t *file) {
  801e9a4:	4803      	ldr	r0, [pc, #12]	@ (801e9b4 <lfs_file_close+0x48>)
  801e9a6:	f00a fad1 	bl	8028f4c <__assert_func>
  801e9aa:	bf00      	nop
- 801e9ac:	08038760 	.word	0x08038760
- 801e9b0:	08038840 	.word	0x08038840
- 801e9b4:	08037bac 	.word	0x08037bac
+ 801e9ac:	08038750 	.word	0x08038750
+ 801e9b0:	08038830 	.word	0x08038830
+ 801e9b4:	08037b9c 	.word	0x08037b9c
 
 0801e9b8 <lfs_file_read>:
     return err;
@@ -32416,9 +32416,9 @@ lfs_ssize_t lfs_file_read(lfs_t *lfs, lfs_file_t *file,
  801e9fc:	4803      	ldr	r0, [pc, #12]	@ (801ea0c <lfs_file_read+0x54>)
  801e9fe:	f00a faa5 	bl	8028f4c <__assert_func>
  801ea02:	bf00      	nop
- 801ea04:	08038760 	.word	0x08038760
- 801ea08:	08038830 	.word	0x08038830
- 801ea0c:	08037bac 	.word	0x08037bac
+ 801ea04:	08038750 	.word	0x08038750
+ 801ea08:	08038820 	.word	0x08038820
+ 801ea0c:	08037b9c 	.word	0x08037b9c
 
 0801ea10 <lfs_file_write>:
 
@@ -32470,9 +32470,9 @@ lfs_ssize_t lfs_file_write(lfs_t *lfs, lfs_file_t *file,
  801ea54:	4803      	ldr	r0, [pc, #12]	@ (801ea64 <lfs_file_write+0x54>)
  801ea56:	f00a fa79 	bl	8028f4c <__assert_func>
  801ea5a:	bf00      	nop
- 801ea5c:	08038760 	.word	0x08038760
- 801ea60:	08038810 	.word	0x08038810
- 801ea64:	08037bac 	.word	0x08037bac
+ 801ea5c:	08038750 	.word	0x08038750
+ 801ea60:	08038800 	.word	0x08038800
+ 801ea64:	08037b9c 	.word	0x08037b9c
 
 0801ea68 <lfs_file_seek>:
 #endif
@@ -32524,9 +32524,9 @@ lfs_soff_t lfs_file_seek(lfs_t *lfs, lfs_file_t *file,
  801eaac:	4803      	ldr	r0, [pc, #12]	@ (801eabc <lfs_file_seek+0x54>)
  801eaae:	f00a fa4d 	bl	8028f4c <__assert_func>
  801eab2:	bf00      	nop
- 801eab4:	08038760 	.word	0x08038760
- 801eab8:	080387f0 	.word	0x080387f0
- 801eabc:	08037bac 	.word	0x08037bac
+ 801eab4:	08038750 	.word	0x08038750
+ 801eab8:	080387e0 	.word	0x080387e0
+ 801eabc:	08037b9c 	.word	0x08037b9c
 
 0801eac0 <lfs_file_tell>:
     LFS_UNLOCK(lfs->cfg);
@@ -32576,9 +32576,9 @@ lfs_soff_t lfs_file_tell(lfs_t *lfs, lfs_file_t *file) {
  801eaf8:	4803      	ldr	r0, [pc, #12]	@ (801eb08 <lfs_file_tell+0x48>)
  801eafa:	f00a fa27 	bl	8028f4c <__assert_func>
  801eafe:	bf00      	nop
- 801eb00:	08038760 	.word	0x08038760
- 801eb04:	080387e0 	.word	0x080387e0
- 801eb08:	08037bac 	.word	0x08037bac
+ 801eb00:	08038750 	.word	0x08038750
+ 801eb04:	080387d0 	.word	0x080387d0
+ 801eb08:	08037b9c 	.word	0x08037b9c
 
 0801eb0c <lfs_mkdir>:
     LFS_UNLOCK(lfs->cfg);
@@ -32665,9 +32665,9 @@ int lfs_dir_open(lfs_t *lfs, lfs_dir_t *dir, const char *path) {
  801eb70:	4803      	ldr	r0, [pc, #12]	@ (801eb80 <lfs_dir_open+0x4c>)
  801eb72:	f00a f9eb 	bl	8028f4c <__assert_func>
  801eb76:	bf00      	nop
- 801eb78:	08038798 	.word	0x08038798
- 801eb7c:	080387d0 	.word	0x080387d0
- 801eb80:	08037bac 	.word	0x08037bac
+ 801eb78:	08038788 	.word	0x08038788
+ 801eb7c:	080387c0 	.word	0x080387c0
+ 801eb80:	08037b9c 	.word	0x08037b9c
 
 0801eb84 <lfs_dir_close>:
 
@@ -32771,7 +32771,7 @@ uint32_t lfs_crc(uint32_t crc, const void *buffer, size_t size) {
 }
  801ec0c:	bd30      	pop	{r4, r5, pc}
  801ec0e:	4770      	bx	lr
- 801ec10:	08038944 	.word	0x08038944
+ 801ec10:	08038934 	.word	0x08038934
 
 0801ec14 <mg_base64_decode_single>:
     return c == 62 ? '+' : '/';
@@ -33101,7 +33101,7 @@ static size_t mg_lld(char *buf, int64_t val, bool is_signed, bool is_hex) {
 }
  801ee5a:	1928      	adds	r0, r5, r4
  801ee5c:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
- 801ee60:	08038984 	.word	0x08038984
+ 801ee60:	08038974 	.word	0x08038974
  801ee64:	cccccccd 	.word	0xcccccccd
 
 0801ee68 <scpy>:
@@ -34049,70 +34049,70 @@ static const char *mg_http_status_code_str(int status_code) {
   }
 }
  801f5f6:	4770      	bx	lr
- 801f5f8:	08038998 	.word	0x08038998
- 801f5fc:	080389b8 	.word	0x080389b8
- 801f600:	080389c4 	.word	0x080389c4
- 801f604:	080389c8 	.word	0x080389c8
- 801f608:	080389d0 	.word	0x080389d0
- 801f60c:	080389dc 	.word	0x080389dc
- 801f610:	080389fc 	.word	0x080389fc
- 801f614:	08038a08 	.word	0x08038a08
- 801f618:	08038a18 	.word	0x08038a18
- 801f61c:	08038a28 	.word	0x08038a28
- 801f620:	08038a38 	.word	0x08038a38
- 801f624:	08038a4c 	.word	0x08038a4c
- 801f628:	08038a54 	.word	0x08038a54
- 801f62c:	08038a68 	.word	0x08038a68
- 801f630:	08038b0c 	.word	0x08038b0c
- 801f634:	08038a7c 	.word	0x08038a7c
- 801f638:	08038a88 	.word	0x08038a88
- 801f63c:	08038a98 	.word	0x08038a98
- 801f640:	08038aa4 	.word	0x08038aa4
- 801f644:	08038ab8 	.word	0x08038ab8
- 801f648:	08038acc 	.word	0x08038acc
- 801f64c:	08038ad8 	.word	0x08038ad8
- 801f650:	08038ae8 	.word	0x08038ae8
- 801f654:	08038afc 	.word	0x08038afc
- 801f658:	08038b08 	.word	0x08038b08
- 801f65c:	08038b14 	.word	0x08038b14
- 801f660:	08038b28 	.word	0x08038b28
- 801f664:	08038b38 	.word	0x08038b38
- 801f668:	08038b58 	.word	0x08038b58
- 801f66c:	08038b68 	.word	0x08038b68
- 801f670:	08038b74 	.word	0x08038b74
- 801f674:	08038b7c 	.word	0x08038b7c
- 801f678:	08038b8c 	.word	0x08038b8c
- 801f67c:	08038ba0 	.word	0x08038ba0
- 801f680:	08038bb4 	.word	0x08038bb4
- 801f684:	08038bcc 	.word	0x08038bcc
- 801f688:	08038be4 	.word	0x08038be4
- 801f68c:	08038c04 	.word	0x08038c04
- 801f690:	08038c18 	.word	0x08038c18
- 801f694:	08038c28 	.word	0x08038c28
- 801f698:	08038c3c 	.word	0x08038c3c
- 801f69c:	08038c54 	.word	0x08038c54
- 801f6a0:	08038c5c 	.word	0x08038c5c
- 801f6a4:	08038c70 	.word	0x08038c70
- 801f6a8:	08038c84 	.word	0x08038c84
- 801f6ac:	08038c9c 	.word	0x08038c9c
- 801f6b0:	08038cb0 	.word	0x08038cb0
- 801f6b4:	08038cd0 	.word	0x08038cd0
- 801f6b8:	08038cf4 	.word	0x08038cf4
- 801f6bc:	08038d14 	.word	0x08038d14
- 801f6c0:	08038d2c 	.word	0x08038d2c
- 801f6c4:	08038d44 	.word	0x08038d44
- 801f6c8:	08038d54 	.word	0x08038d54
- 801f6cc:	08038d60 	.word	0x08038d60
- 801f6d0:	08038d74 	.word	0x08038d74
- 801f6d4:	08038d84 	.word	0x08038d84
- 801f6d8:	08038da0 	.word	0x08038da0
- 801f6dc:	08038db8 	.word	0x08038db8
- 801f6e0:	08038dd0 	.word	0x08038dd0
- 801f6e4:	08038de0 	.word	0x08038de0
- 801f6e8:	08038df0 	.word	0x08038df0
- 801f6ec:	08038e10 	.word	0x08038e10
+ 801f5f8:	08038988 	.word	0x08038988
+ 801f5fc:	080389a8 	.word	0x080389a8
+ 801f600:	080389b4 	.word	0x080389b4
+ 801f604:	080389b8 	.word	0x080389b8
+ 801f608:	080389c0 	.word	0x080389c0
+ 801f60c:	080389cc 	.word	0x080389cc
+ 801f610:	080389ec 	.word	0x080389ec
+ 801f614:	080389f8 	.word	0x080389f8
+ 801f618:	08038a08 	.word	0x08038a08
+ 801f61c:	08038a18 	.word	0x08038a18
+ 801f620:	08038a28 	.word	0x08038a28
+ 801f624:	08038a3c 	.word	0x08038a3c
+ 801f628:	08038a44 	.word	0x08038a44
+ 801f62c:	08038a58 	.word	0x08038a58
+ 801f630:	08038afc 	.word	0x08038afc
+ 801f634:	08038a6c 	.word	0x08038a6c
+ 801f638:	08038a78 	.word	0x08038a78
+ 801f63c:	08038a88 	.word	0x08038a88
+ 801f640:	08038a94 	.word	0x08038a94
+ 801f644:	08038aa8 	.word	0x08038aa8
+ 801f648:	08038abc 	.word	0x08038abc
+ 801f64c:	08038ac8 	.word	0x08038ac8
+ 801f650:	08038ad8 	.word	0x08038ad8
+ 801f654:	08038aec 	.word	0x08038aec
+ 801f658:	08038af8 	.word	0x08038af8
+ 801f65c:	08038b04 	.word	0x08038b04
+ 801f660:	08038b18 	.word	0x08038b18
+ 801f664:	08038b28 	.word	0x08038b28
+ 801f668:	08038b48 	.word	0x08038b48
+ 801f66c:	08038b58 	.word	0x08038b58
+ 801f670:	08038b64 	.word	0x08038b64
+ 801f674:	08038b6c 	.word	0x08038b6c
+ 801f678:	08038b7c 	.word	0x08038b7c
+ 801f67c:	08038b90 	.word	0x08038b90
+ 801f680:	08038ba4 	.word	0x08038ba4
+ 801f684:	08038bbc 	.word	0x08038bbc
+ 801f688:	08038bd4 	.word	0x08038bd4
+ 801f68c:	08038bf4 	.word	0x08038bf4
+ 801f690:	08038c08 	.word	0x08038c08
+ 801f694:	08038c18 	.word	0x08038c18
+ 801f698:	08038c2c 	.word	0x08038c2c
+ 801f69c:	08038c44 	.word	0x08038c44
+ 801f6a0:	08038c4c 	.word	0x08038c4c
+ 801f6a4:	08038c60 	.word	0x08038c60
+ 801f6a8:	08038c74 	.word	0x08038c74
+ 801f6ac:	08038c8c 	.word	0x08038c8c
+ 801f6b0:	08038ca0 	.word	0x08038ca0
+ 801f6b4:	08038cc0 	.word	0x08038cc0
+ 801f6b8:	08038ce4 	.word	0x08038ce4
+ 801f6bc:	08038d04 	.word	0x08038d04
+ 801f6c0:	08038d1c 	.word	0x08038d1c
+ 801f6c4:	08038d34 	.word	0x08038d34
+ 801f6c8:	08038d44 	.word	0x08038d44
+ 801f6cc:	08038d50 	.word	0x08038d50
+ 801f6d0:	08038d64 	.word	0x08038d64
+ 801f6d4:	08038d74 	.word	0x08038d74
+ 801f6d8:	08038d90 	.word	0x08038d90
+ 801f6dc:	08038da8 	.word	0x08038da8
+ 801f6e0:	08038dc0 	.word	0x08038dc0
+ 801f6e4:	08038dd0 	.word	0x08038dd0
+ 801f6e8:	08038de0 	.word	0x08038de0
+ 801f6ec:	08038e00 	.word	0x08038e00
  801f6f0:	08035a58 	.word	0x08035a58
- 801f6f4:	080389a4 	.word	0x080389a4
+ 801f6f4:	08038994 	.word	0x08038994
 
 0801f6f8 <mg_is_url_safe>:
     mg_http_serve_file(c, hm, path, opts);
@@ -34223,8 +34223,8 @@ static const char *escapeseq(int esc) {
 }
  801f78c:	4770      	bx	lr
  801f78e:	bf00      	nop
- 801f790:	08038e30 	.word	0x08038e30
- 801f794:	08038e38 	.word	0x08038e38
+ 801f790:	08038e20 	.word	0x08038e20
+ 801f794:	08038e28 	.word	0x08038e28
 
 0801f798 <json_esc>:
 
@@ -35479,7 +35479,7 @@ static int mqtt_prop_type_by_id(uint8_t prop_id) {
  8020202:	f04f 30ff 	mov.w	r0, #4294967295	@ 0xffffffff
 }
  8020206:	4770      	bx	lr
- 8020208:	0803a1d4 	.word	0x0803a1d4
+ 8020208:	0803a1c4 	.word	0x0803a1c4
 
 0802020c <get_properties_length>:
 
@@ -35829,8 +35829,8 @@ static char mg_esc(int c, bool esc) {
  80203e8:	f85d 4b04 	ldr.w	r4, [sp], #4
  80203ec:	4770      	bx	lr
  80203ee:	bf00      	nop
- 80203f0:	08038e30 	.word	0x08038e30
- 80203f4:	08038e38 	.word	0x08038e38
+ 80203f0:	08038e20 	.word	0x08038e20
+ 80203f4:	08038e28 	.word	0x08038e28
 
 080203f8 <mg_escape>:
 
@@ -35941,7 +35941,7 @@ size_t mg_print_hex(void (*out)(char, void *), void *arg, va_list *ap) {
  8020492:	ea4f 0049 	mov.w	r0, r9, lsl #1
  8020496:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
  802049a:	bf00      	nop
- 802049c:	08038984 	.word	0x08038984
+ 802049c:	08038974 	.word	0x08038974
 
 080204a0 <blk0>:
   uint32_t l[16];
@@ -39273,7 +39273,7 @@ int mg_json_get(struct mg_str json, const char *path, int *toklen) {
  8022162:	f06f 0502 	mvn.w	r5, #2
  8022166:	e020      	b.n	80221aa <mg_json_get+0x482>
  8022168:	08035bac 	.word	0x08035bac
- 802216c:	08038e40 	.word	0x08038e40
+ 802216c:	08038e30 	.word	0x08038e30
  8022170:	08035bb4 	.word	0x08035bb4
  8022174:	9a02      	ldr	r2, [sp, #8]
  8022176:	9904      	ldr	r1, [sp, #16]
@@ -39529,8 +39529,8 @@ void mg_hexdump(const void *buf, size_t len) {
 }
  8022368:	b005      	add	sp, #20
  802236a:	bdf0      	pop	{r4, r5, r6, r7, pc}
- 802236c:	08038e4c 	.word	0x08038e4c
- 8022370:	08038e48 	.word	0x08038e48
+ 802236c:	08038e3c 	.word	0x08038e3c
+ 8022370:	08038e38 	.word	0x08038e38
 
 08022374 <mg_md5_init>:
   ctx->buf[0] = 0x67452301;
@@ -39967,8 +39967,8 @@ void mg_mgr_init(struct mg_mgr *mgr) {
  8022668:	60e3      	str	r3, [r4, #12]
 }
  802266a:	bd10      	pop	{r4, pc}
- 802266c:	08038e50 	.word	0x08038e50
- 8022670:	08038e64 	.word	0x08038e64
+ 802266c:	08038e40 	.word	0x08038e40
+ 8022670:	08038e54 	.word	0x08038e54
 
 08022674 <mg_snprintf>:
 size_t mg_snprintf(char *buf, size_t len, const char *fmt, ...) {
@@ -40358,14 +40358,14 @@ static size_t mg_dtoa(char *dst, size_t dstlen, double d, int width, bool tz) {
  80229c8:	9999999a 	.word	0x9999999a
  80229cc:	3fb99999 	.word	0x3fb99999
  80229d0:	3ff00000 	.word	0x3ff00000
- 80229d4:	0803819c 	.word	0x0803819c
- 80229d8:	08039a5c 	.word	0x08039a5c
- 80229dc:	08038e84 	.word	0x08038e84
- 80229e0:	08038e88 	.word	0x08038e88
- 80229e4:	08038e90 	.word	0x08038e90
+ 80229d4:	0803818c 	.word	0x0803818c
+ 80229d8:	08039a4c 	.word	0x08039a4c
+ 80229dc:	08038e74 	.word	0x08038e74
+ 80229e0:	08038e78 	.word	0x08038e78
+ 80229e4:	08038e80 	.word	0x08038e80
  80229e8:	40240000 	.word	0x40240000
  80229ec:	40140000 	.word	0x40140000
- 80229f0:	08038e94 	.word	0x08038e94
+ 80229f0:	08038e84 	.word	0x08038e84
       int ch = (int) (d / t);
  80229f4:	4622      	mov	r2, r4
  80229f6:	462b      	mov	r3, r5
@@ -40453,7 +40453,7 @@ static size_t mg_dtoa(char *dst, size_t dstlen, double d, int width, bool tz) {
  8022aa8:	3e01      	subs	r6, #1
  8022aaa:	e7e9      	b.n	8022a80 <mg_dtoa+0x3e8>
  8022aac:	40240000 	.word	0x40240000
- 8022ab0:	08039a5c 	.word	0x08039a5c
+ 8022ab0:	08039a4c 	.word	0x08039a4c
 
 08022ab4 <mg_vxprintf>:
                    va_list *ap) {
@@ -41011,7 +41011,7 @@ static size_t mg_dtoa(char *dst, size_t dstlen, double d, int width, bool tz) {
  8022f40:	b013      	add	sp, #76	@ 0x4c
  8022f42:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
  8022f46:	bf00      	nop
- 8022f48:	08038e9c 	.word	0x08038e9c
+ 8022f48:	08038e8c 	.word	0x08038e8c
 
 08022f4c <mg_xprintf>:
 size_t mg_xprintf(void (*out)(char, void *), void *ptr, const char *fmt, ...) {
@@ -41049,7 +41049,7 @@ static size_t print_ip4(void (*out)(char, void *), void *arg, uint8_t *p) {
 }
  8022f84:	b005      	add	sp, #20
  8022f86:	bd30      	pop	{r4, r5, pc}
- 8022f88:	08038ea0 	.word	0x08038ea0
+ 8022f88:	08038e90 	.word	0x08038e90
 
 08022f8c <mg_print_ip4>:
 size_t mg_print_ip4(void (*out)(char, void *), void *arg, va_list *ap) {
@@ -41092,7 +41092,7 @@ size_t mg_print_mac(void (*out)(char, void *), void *arg, va_list *ap) {
 }
  8022fc4:	b007      	add	sp, #28
  8022fc6:	bdf0      	pop	{r4, r5, r6, r7, pc}
- 8022fc8:	08038eac 	.word	0x08038eac
+ 8022fc8:	08038e9c 	.word	0x08038e9c
 
 08022fcc <mg_log>:
 void mg_log(const char *fmt, ...) {
@@ -41122,7 +41122,7 @@ void mg_log(const char *fmt, ...) {
  8022ffa:	bf00      	nop
  8022ffc:	20018df0 	.word	0x20018df0
  8023000:	200000a4 	.word	0x200000a4
- 8023004:	080398c0 	.word	0x080398c0
+ 8023004:	080398b0 	.word	0x080398b0
 
 08023008 <mg_vprintf>:
 size_t mg_vprintf(struct mg_connection *c, const char *fmt, va_list *ap) {
@@ -41250,10 +41250,10 @@ size_t mg_vsnprintf(char *buf, size_t len, const char *fmt, va_list *ap) {
  80230e2:	2220      	movs	r2, #32
  80230e4:	555a      	strb	r2, [r3, r5]
  80230e6:	e7e3      	b.n	80230b0 <mg_http_reply+0x3c>
- 80230e8:	08038ecc 	.word	0x08038ecc
+ 80230e8:	08038ebc 	.word	0x08038ebc
  80230ec:	080260c7 	.word	0x080260c7
  80230f0:	08035a58 	.word	0x08035a58
- 80230f4:	08038f00 	.word	0x08038f00
+ 80230f4:	08038ef0 	.word	0x08038ef0
 
 080230f8 <mg_http_etag>:
 char *mg_http_etag(char *buf, size_t len, size_t size, time_t mtime) {
@@ -41272,7 +41272,7 @@ char *mg_http_etag(char *buf, size_t len, size_t size, time_t mtime) {
  8023112:	4620      	mov	r0, r4
  8023114:	b004      	add	sp, #16
  8023116:	bd10      	pop	{r4, pc}
- 8023118:	08038f08 	.word	0x08038f08
+ 8023118:	08038ef8 	.word	0x08038ef8
 
 0802311c <mg_url_encode>:
 size_t mg_url_encode(const char *s, size_t sl, char *buf, size_t len) {
@@ -41338,7 +41338,7 @@ size_t mg_url_encode(const char *s, size_t sl, char *buf, size_t len) {
  802318e:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
  8023192:	bf00      	nop
  8023194:	08020451 	.word	0x08020451
- 8023198:	08038f14 	.word	0x08038f14
+ 8023198:	08038f04 	.word	0x08038f04
 
 0802319c <mg_vmprintf>:
 char *mg_vmprintf(const char *fmt, va_list *ap) {
@@ -41616,7 +41616,7 @@ void mg_sha1_final(unsigned char digest[20], mg_sha1_ctx *context) {
  802337e:	f7ff fe79 	bl	8023074 <mg_http_reply>
 }
  8023382:	bd08      	pop	{r3, pc}
- 8023384:	08038f1c 	.word	0x08038f1c
+ 8023384:	08038f0c 	.word	0x08038f0c
 
 08023388 <mg_str_s>:
 struct mg_str mg_str_s(const char *s) {
@@ -42212,11 +42212,11 @@ int mg_http_parse(const char *s, size_t len, struct mg_http_message *hm) {
  80237b0:	f04f 37ff 	mov.w	r7, #4294967295	@ 0xffffffff
  80237b4:	e7b2      	b.n	802371c <mg_http_parse+0x140>
  80237b6:	bf00      	nop
- 80237b8:	08038f2c 	.word	0x08038f2c
- 80237bc:	08038f3c 	.word	0x08038f3c
+ 80237b8:	08038f1c 	.word	0x08038f1c
+ 80237bc:	08038f2c 	.word	0x08038f2c
  80237c0:	080360d4 	.word	0x080360d4
  80237c4:	08035510 	.word	0x08035510
- 80237c8:	08038f44 	.word	0x08038f44
+ 80237c8:	08038f34 	.word	0x08038f34
 
 080237cc <mg_match>:
 bool mg_match(struct mg_str s, struct mg_str p, struct mg_str *caps) {
@@ -42608,8 +42608,8 @@ static struct mg_str guess_content_type(struct mg_str path, const char *extra) {
  8023a9e:	4620      	mov	r0, r4
  8023aa0:	b00d      	add	sp, #52	@ 0x34
  8023aa2:	bd30      	pop	{r4, r5, pc}
- 8023aa4:	0803a434 	.word	0x0803a434
- 8023aa8:	08038f48 	.word	0x08038f48
+ 8023aa4:	0803a424 	.word	0x0803a424
+ 8023aa8:	08038f38 	.word	0x08038f38
 
 08023aac <getrange>:
 static int getrange(struct mg_str *s, size_t *a, size_t *b) {
@@ -42693,7 +42693,7 @@ static int getrange(struct mg_str *s, size_t *a, size_t *b) {
  8023b3a:	2400      	movs	r4, #0
  8023b3c:	e7e3      	b.n	8023b06 <getrange+0x5a>
  8023b3e:	bf00      	nop
- 8023b40:	08038f64 	.word	0x08038f64
+ 8023b40:	08038f54 	.word	0x08038f54
 
 08023b44 <mg_http_serve_file>:
                         const struct mg_http_serve_opts *opts) {
@@ -43020,21 +43020,21 @@ static int getrange(struct mg_str *s, size_t *a, size_t *b) {
  8023dd0:	f7fd feda 	bl	8021b88 <mg_fs_close>
  8023dd4:	e71c      	b.n	8023c10 <mg_http_serve_file+0xcc>
  8023dd6:	bf00      	nop
- 8023dd8:	08038f88 	.word	0x08038f88
- 8023ddc:	08038e94 	.word	0x08038e94
- 8023de0:	0803a348 	.word	0x0803a348
- 8023de4:	08038f98 	.word	0x08038f98
- 8023de8:	08038fa0 	.word	0x08038fa0
- 8023dec:	08038fac 	.word	0x08038fac
- 8023df0:	08038fbc 	.word	0x08038fbc
- 8023df4:	08038fc4 	.word	0x08038fc4
+ 8023dd8:	08038f78 	.word	0x08038f78
+ 8023ddc:	08038e84 	.word	0x08038e84
+ 8023de0:	0803a338 	.word	0x0803a338
+ 8023de4:	08038f88 	.word	0x08038f88
+ 8023de8:	08038f90 	.word	0x08038f90
+ 8023dec:	08038f9c 	.word	0x08038f9c
+ 8023df0:	08038fac 	.word	0x08038fac
+ 8023df4:	08038fb4 	.word	0x08038fb4
  8023df8:	08035a58 	.word	0x08035a58
- 8023dfc:	08038fe4 	.word	0x08038fe4
- 8023e00:	0803900c 	.word	0x0803900c
- 8023e04:	0803905c 	.word	0x0803905c
+ 8023dfc:	08038fd4 	.word	0x08038fd4
+ 8023e00:	08038ffc 	.word	0x08038ffc
+ 8023e04:	0803904c 	.word	0x0803904c
  8023e08:	08025f1d 	.word	0x08025f1d
  8023e0c:	200000ac 	.word	0x200000ac
- 8023e10:	08038f6c 	.word	0x08038f6c
+ 8023e10:	08038f5c 	.word	0x08038f5c
 
 08023e14 <mg_str_to_num>:
 bool mg_str_to_num(struct mg_str str, int base, void *val, size_t val_len) {
@@ -43648,12 +43648,12 @@ bool mg_str_to_num(struct mg_str str, int base, void *val, size_t val_len) {
  80242de:	f7ff ff40 	bl	8024162 <mg_http_get_var>
 }
  80242e2:	e7b8      	b.n	8024256 <mg_http_creds+0x7e>
- 80242e4:	08039064 	.word	0x08039064
- 80242e8:	08039074 	.word	0x08039074
- 80242ec:	0803907c 	.word	0x0803907c
- 80242f0:	08039084 	.word	0x08039084
+ 80242e4:	08039054 	.word	0x08039054
+ 80242e8:	08039064 	.word	0x08039064
+ 80242ec:	0803906c 	.word	0x0803906c
+ 80242f0:	08039074 	.word	0x08039074
  80242f4:	0803581c 	.word	0x0803581c
- 80242f8:	08038e94 	.word	0x08038e94
+ 80242f8:	08038e84 	.word	0x08038e84
 
 080242fc <listdir>:
                     const struct mg_http_serve_opts *opts, char *dir) {
@@ -43762,16 +43762,16 @@ bool mg_str_to_num(struct mg_str str, int base, void *val, size_t val_len) {
   mg_printf(c,
  80243c8:	4a0a      	ldr	r2, [pc, #40]	@ (80243f4 <listdir+0xf8>)
  80243ca:	e7b8      	b.n	802433e <listdir+0x42>
- 80243cc:	0803908c 	.word	0x0803908c
- 80243d0:	0803926c 	.word	0x0803926c
- 80243d4:	08039430 	.word	0x08039430
- 80243d8:	080390e4 	.word	0x080390e4
- 80243dc:	080395f8 	.word	0x080395f8
- 80243e0:	08039a5c 	.word	0x08039a5c
+ 80243cc:	0803907c 	.word	0x0803907c
+ 80243d0:	0803925c 	.word	0x0803925c
+ 80243d4:	08039420 	.word	0x08039420
+ 80243d8:	080390d4 	.word	0x080390d4
+ 80243dc:	080395e8 	.word	0x080395e8
+ 80243e0:	08039a4c 	.word	0x08039a4c
  80243e4:	08025b2d 	.word	0x08025b2d
- 80243e8:	08036fa4 	.word	0x08036fa4
- 80243ec:	08039648 	.word	0x08039648
- 80243f0:	08039d0c 	.word	0x08039d0c
+ 80243e8:	08036f94 	.word	0x08036f94
+ 80243ec:	08039638 	.word	0x08039638
+ 80243f0:	08039cfc 	.word	0x08039cfc
  80243f4:	08035a58 	.word	0x08035a58
  80243f8:	200000ac 	.word	0x200000ac
 
@@ -44470,12 +44470,12 @@ int mg_url_is_ssl(const char *url) {
  80248f2:	2000      	movs	r0, #0
  80248f4:	e7f4      	b.n	80248e0 <mg_url_is_ssl+0x50>
  80248f6:	bf00      	nop
- 80248f8:	080396bc 	.word	0x080396bc
- 80248fc:	080396c4 	.word	0x080396c4
- 8024900:	080396cc 	.word	0x080396cc
- 8024904:	080396d4 	.word	0x080396d4
- 8024908:	080396dc 	.word	0x080396dc
- 802490c:	080396e4 	.word	0x080396e4
+ 80248f8:	080396ac 	.word	0x080396ac
+ 80248fc:	080396b4 	.word	0x080396b4
+ 8024900:	080396bc 	.word	0x080396bc
+ 8024904:	080396c4 	.word	0x080396c4
+ 8024908:	080396cc 	.word	0x080396cc
+ 802490c:	080396d4 	.word	0x080396d4
 
 08024910 <mg_url_host>:
 struct mg_str mg_url_host(const char *url) {
@@ -44590,12 +44590,12 @@ unsigned short mg_url_port(const char *url) {
  80249ce:	b285      	uxth	r5, r0
  80249d0:	e7f7      	b.n	80249c2 <mg_url_port+0x76>
  80249d2:	bf00      	nop
- 80249d4:	080396ec 	.word	0x080396ec
- 80249d8:	080396f4 	.word	0x080396f4
- 80249dc:	080396bc 	.word	0x080396bc
- 80249e0:	080396c4 	.word	0x080396c4
- 80249e4:	080396f8 	.word	0x080396f8
- 80249e8:	080396cc 	.word	0x080396cc
+ 80249d4:	080396dc 	.word	0x080396dc
+ 80249d8:	080396e4 	.word	0x080396e4
+ 80249dc:	080396ac 	.word	0x080396ac
+ 80249e0:	080396b4 	.word	0x080396b4
+ 80249e4:	080396e8 	.word	0x080396e8
+ 80249e8:	080396bc 	.word	0x080396bc
 
 080249ec <mg_bzero>:
   if (buf != NULL) {
@@ -44776,7 +44776,7 @@ static bool mg_atonl(struct mg_str str, struct mg_addr *addr) {
  8024b18:	2000      	movs	r0, #0
  8024b1a:	e7fb      	b.n	8024b14 <mg_atonl+0x34>
  8024b1c:	7f000001 	.word	0x7f000001
- 8024b20:	08039700 	.word	0x08039700
+ 8024b20:	080396f0 	.word	0x080396f0
 
 08024b24 <mg_aton>:
 bool mg_aton(struct mg_str str, struct mg_addr *addr) {
@@ -45514,7 +45514,7 @@ static size_t print_ip6(void (*out)(char, void *), void *arg, uint16_t *p) {
  80250fc:	b00b      	add	sp, #44	@ 0x2c
  80250fe:	e8bd 8ff0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, pc}
  8025102:	bf00      	nop
- 8025104:	0803970c 	.word	0x0803970c
+ 8025104:	080396fc 	.word	0x080396fc
 
 08025108 <mg_print_ip>:
 size_t mg_print_ip(void (*out)(char, void *), void *arg, va_list *ap) {
@@ -45562,7 +45562,7 @@ size_t mg_print_ip_port(void (*out)(char, void *), void *arg, va_list *ap) {
  802514c:	bd70      	pop	{r4, r5, r6, pc}
  802514e:	bf00      	nop
  8025150:	08025109 	.word	0x08025109
- 8025154:	08039728 	.word	0x08039728
+ 8025154:	08039718 	.word	0x08039718
 
 08025158 <mg_crc32>:
   crc = ~crc;
@@ -45597,7 +45597,7 @@ uint32_t mg_crc32(uint32_t crc, const char *buf, size_t len) {
  802519a:	43c0      	mvns	r0, r0
  802519c:	4770      	bx	lr
  802519e:	bf00      	nop
- 80251a0:	08039fbc 	.word	0x08039fbc
+ 80251a0:	08039fac 	.word	0x08039fac
 
 080251a4 <mg_path_is_sane>:
 bool mg_path_is_sane(const struct mg_str path) {
@@ -45711,7 +45711,7 @@ void mg_log_prefix(int level, const char *file, int line, const char *fname) {
  8025264:	b012      	add	sp, #72	@ 0x48
  8025266:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
  802526a:	bf00      	nop
- 802526c:	08039730 	.word	0x08039730
+ 802526c:	08039720 	.word	0x08039720
 
 08025270 <mg_dns_parse>:
 bool mg_dns_parse(const uint8_t *buf, size_t len, struct mg_dns_message *dm) {
@@ -45882,9 +45882,9 @@ bool mg_dns_parse(const uint8_t *buf, size_t len, struct mg_dns_message *dm) {
  80253b4:	2000      	movs	r0, #0
  80253b6:	e7f6      	b.n	80253a6 <mg_dns_parse+0x136>
  80253b8:	200000a8 	.word	0x200000a8
- 80253bc:	0803a1bc 	.word	0x0803a1bc
- 80253c0:	08039744 	.word	0x08039744
- 80253c4:	08039774 	.word	0x08039774
+ 80253bc:	0803a1ac 	.word	0x0803a1ac
+ 80253c0:	08039734 	.word	0x08039734
+ 80253c4:	08039764 	.word	0x08039764
 
 080253c8 <mg_error>:
 void mg_error(struct mg_connection *c, const char *fmt, ...) {
@@ -45934,9 +45934,9 @@ void mg_error(struct mg_connection *c, const char *fmt, ...) {
  8025424:	e7e1      	b.n	80253ea <mg_error+0x22>
  8025426:	bf00      	nop
  8025428:	200000a8 	.word	0x200000a8
- 802542c:	0803a198 	.word	0x0803a198
- 8025430:	08039744 	.word	0x08039744
- 8025434:	080397a0 	.word	0x080397a0
+ 802542c:	0803a188 	.word	0x0803a188
+ 8025430:	08039734 	.word	0x08039734
+ 8025434:	08039790 	.word	0x08039790
 
 08025438 <handle_tls_recv>:
 static void handle_tls_recv(struct mg_connection *c, struct mg_iobuf *io) {
@@ -45976,7 +45976,7 @@ static void handle_tls_recv(struct mg_connection *c, struct mg_iobuf *io) {
  8025472:	f7fc fb61 	bl	8021b38 <mg_call>
 }
  8025476:	e7f0      	b.n	802545a <handle_tls_recv+0x22>
- 8025478:	080397ac 	.word	0x080397ac
+ 8025478:	0803979c 	.word	0x0803979c
 
 0802547c <http_cb>:
 static void http_cb(struct mg_connection *c, int ev, void *ev_data) {
@@ -46305,22 +46305,22 @@ static void http_cb(struct mg_connection *c, int ev, void *ev_data) {
  8025736:	f7ff f964 	bl	8024a02 <mg_iobuf_del>
  802573a:	e787      	b.n	802564c <http_cb+0x1d0>
  802573c:	200000a8 	.word	0x200000a8
- 8025740:	0803a190 	.word	0x0803a190
- 8025744:	08039744 	.word	0x08039744
- 8025748:	080397bc 	.word	0x080397bc
- 802574c:	080397d4 	.word	0x080397d4
- 8025750:	080397dc 	.word	0x080397dc
- 8025754:	08038f3c 	.word	0x08038f3c
+ 8025740:	0803a180 	.word	0x0803a180
+ 8025744:	08039734 	.word	0x08039734
+ 8025748:	080397ac 	.word	0x080397ac
+ 802574c:	080397c4 	.word	0x080397c4
+ 8025750:	080397cc 	.word	0x080397cc
+ 8025754:	08038f2c 	.word	0x08038f2c
  8025758:	08035510 	.word	0x08035510
  802575c:	08035a58 	.word	0x08035a58
- 8025760:	08039808 	.word	0x08039808
- 8025764:	08039a5c 	.word	0x08039a5c
+ 8025760:	080397f8 	.word	0x080397f8
+ 8025764:	08039a4c 	.word	0x08039a4c
  8025768:	080360d4 	.word	0x080360d4
- 802576c:	0803982c 	.word	0x0803982c
- 8025770:	080397e4 	.word	0x080397e4
- 8025774:	080397f8 	.word	0x080397f8
- 8025778:	0803983c 	.word	0x0803983c
- 802577c:	08039848 	.word	0x08039848
+ 802576c:	0803981c 	.word	0x0803981c
+ 8025770:	080397d4 	.word	0x080397d4
+ 8025774:	080397e8 	.word	0x080397e8
+ 8025778:	0803982c 	.word	0x0803982c
+ 802577c:	08039838 	.word	0x08039838
 
 08025780 <uri_to_path2>:
                         char *path, size_t path_size) {
@@ -46559,19 +46559,19 @@ static void http_cb(struct mg_connection *c, int ev, void *ev_data) {
  8025952:	4682      	mov	sl, r0
  8025954:	e7a2      	b.n	802589c <uri_to_path2+0x11c>
  8025956:	bf00      	nop
- 8025958:	08038e94 	.word	0x08038e94
- 802595c:	08039850 	.word	0x08039850
+ 8025958:	08038e84 	.word	0x08038e84
+ 802595c:	08039840 	.word	0x08039840
  8025960:	08035a58 	.word	0x08035a58
- 8025964:	08039864 	.word	0x08039864
- 8025968:	08038f40 	.word	0x08038f40
+ 8025964:	08039854 	.word	0x08039854
+ 8025968:	08038f30 	.word	0x08038f30
  802596c:	200000a8 	.word	0x200000a8
- 8025970:	0803a180 	.word	0x0803a180
- 8025974:	08039744 	.word	0x08039744
- 8025978:	08039874 	.word	0x08039874
- 802597c:	08039888 	.word	0x08039888
- 8025980:	080398c4 	.word	0x080398c4
- 8025984:	080398d0 	.word	0x080398d0
- 8025988:	080398e0 	.word	0x080398e0
+ 8025970:	0803a170 	.word	0x0803a170
+ 8025974:	08039734 	.word	0x08039734
+ 8025978:	08039864 	.word	0x08039864
+ 802597c:	08039878 	.word	0x08039878
+ 8025980:	080398b4 	.word	0x080398b4
+ 8025984:	080398c0 	.word	0x080398c0
+ 8025988:	080398d0 	.word	0x080398d0
 
 0802598c <uri_to_path>:
                        size_t path_size) {
@@ -46689,7 +46689,7 @@ static void http_cb(struct mg_connection *c, int ev, void *ev_data) {
 }
  8025a9e:	b016      	add	sp, #88	@ 0x58
  8025aa0:	e8bd 87f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, r9, sl, pc}
- 8025aa4:	08038f40 	.word	0x08038f40
+ 8025aa4:	08038f30 	.word	0x08038f30
  8025aa8:	200000ac 	.word	0x200000ac
 
 08025aac <mg_http_serve_dir>:
@@ -46895,20 +46895,20 @@ static void printdirentry(const char *name, void *userdata) {
  8025c3a:	461c      	mov	r4, r3
  8025c3c:	e7e0      	b.n	8025c00 <printdirentry+0xd4>
  8025c3e:	bf00      	nop
- 8025c40:	080398f0 	.word	0x080398f0
+ 8025c40:	080398e0 	.word	0x080398e0
  8025c44:	200000a8 	.word	0x200000a8
  8025c48:	200000ac 	.word	0x200000ac
- 8025c4c:	0803a170 	.word	0x0803a170
- 8025c50:	08039744 	.word	0x08039744
- 8025c54:	080398f8 	.word	0x080398f8
- 8025c58:	08039908 	.word	0x08039908
- 8025c5c:	08038f40 	.word	0x08038f40
- 8025c60:	0803991c 	.word	0x0803991c
- 8025c64:	08039a5c 	.word	0x08039a5c
- 8025c68:	08039d0c 	.word	0x08039d0c
- 8025c6c:	0803992c 	.word	0x0803992c
+ 8025c4c:	0803a160 	.word	0x0803a160
+ 8025c50:	08039734 	.word	0x08039734
+ 8025c54:	080398e8 	.word	0x080398e8
+ 8025c58:	080398f8 	.word	0x080398f8
+ 8025c5c:	08038f30 	.word	0x08038f30
+ 8025c60:	0803990c 	.word	0x0803990c
+ 8025c64:	08039a4c 	.word	0x08039a4c
+ 8025c68:	08039cfc 	.word	0x08039cfc
+ 8025c6c:	0803991c 	.word	0x0803991c
  8025c70:	08035a58 	.word	0x08035a58
- 8025c74:	08039924 	.word	0x08039924
+ 8025c74:	08039914 	.word	0x08039914
 
 08025c78 <mg_http_upload>:
                     struct mg_fs *fs, const char *dir, size_t max_size) {
@@ -47121,22 +47121,22 @@ static void printdirentry(const char *name, void *userdata) {
       res = -6;
  8025e2a:	f06f 0405 	mvn.w	r4, #5
  8025e2e:	e79a      	b.n	8025d66 <mg_http_upload+0xee>
- 8025e30:	08039984 	.word	0x08039984
- 8025e34:	080399ac 	.word	0x080399ac
- 8025e38:	080398f0 	.word	0x080398f0
+ 8025e30:	08039974 	.word	0x08039974
+ 8025e34:	0803999c 	.word	0x0803999c
+ 8025e38:	080398e0 	.word	0x080398e0
  8025e3c:	200000a8 	.word	0x200000a8
- 8025e40:	0803998c 	.word	0x0803998c
+ 8025e40:	0803997c 	.word	0x0803997c
  8025e44:	08035554 	.word	0x08035554
- 8025e48:	08039990 	.word	0x08039990
+ 8025e48:	08039980 	.word	0x08039980
  8025e4c:	08035a58 	.word	0x08035a58
- 8025e50:	080399a0 	.word	0x080399a0
- 8025e54:	080399b4 	.word	0x080399b4
- 8025e58:	080399c4 	.word	0x080399c4
- 8025e5c:	0803a160 	.word	0x0803a160
- 8025e60:	08039744 	.word	0x08039744
- 8025e64:	080399e0 	.word	0x080399e0
- 8025e68:	080399f8 	.word	0x080399f8
- 8025e6c:	08039a0c 	.word	0x08039a0c
+ 8025e50:	08039990 	.word	0x08039990
+ 8025e54:	080399a4 	.word	0x080399a4
+ 8025e58:	080399b4 	.word	0x080399b4
+ 8025e5c:	0803a150 	.word	0x0803a150
+ 8025e60:	08039734 	.word	0x08039734
+ 8025e64:	080399d0 	.word	0x080399d0
+ 8025e68:	080399e8 	.word	0x080399e8
+ 8025e6c:	080399fc 	.word	0x080399fc
 
 08025e70 <mg_iobuf_resize>:
 int mg_iobuf_resize(struct mg_iobuf *io, size_t new_size) {
@@ -47233,9 +47233,9 @@ int mg_iobuf_resize(struct mg_iobuf *io, size_t new_size) {
  8025f08:	e7bf      	b.n	8025e8a <mg_iobuf_resize+0x1a>
  8025f0a:	bf00      	nop
  8025f0c:	200000a8 	.word	0x200000a8
- 8025f10:	0803a150 	.word	0x0803a150
- 8025f14:	08039744 	.word	0x08039744
- 8025f18:	08039a1c 	.word	0x08039a1c
+ 8025f10:	0803a140 	.word	0x0803a140
+ 8025f14:	08039734 	.word	0x08039734
+ 8025f18:	08039a0c 	.word	0x08039a0c
 
 08025f1c <static_cb>:
 static void static_cb(struct mg_connection *c, int ev, void *ev_data) {
@@ -47433,8 +47433,8 @@ static void rx_udp(struct mg_tcpip_if *ifp, struct pkt *pkt) {
  8026070:	f7ff f9aa 	bl	80253c8 <mg_error>
  8026074:	e7f5      	b.n	8026062 <rx_udp+0x6a>
  8026076:	bf00      	nop
- 8026078:	08039a28 	.word	0x08039a28
- 802607c:	08039a44 	.word	0x08039a44
+ 8026078:	08039a18 	.word	0x08039a18
+ 802607c:	08039a34 	.word	0x08039a34
 
 08026080 <mg_pfn_iobuf_private>:
 static void mg_pfn_iobuf_private(char ch, void *param, bool expand) {
@@ -47574,9 +47574,9 @@ void mg_close_conn(struct mg_connection *c) {
  802615e:	f7fc ff35 	bl	8022fcc <mg_log>
  8026162:	e7d8      	b.n	8026116 <mg_close_conn+0x3a>
  8026164:	200000a8 	.word	0x200000a8
- 8026168:	0803a12c 	.word	0x0803a12c
- 802616c:	08039744 	.word	0x08039744
- 8026170:	08039a48 	.word	0x08039a48
+ 8026168:	0803a11c 	.word	0x0803a11c
+ 802616c:	08039734 	.word	0x08039734
+ 8026170:	08039a38 	.word	0x08039a38
 
 08026174 <close_conn>:
 static void close_conn(struct mg_connection *c) {
@@ -47701,13 +47701,13 @@ static void close_conn(struct mg_connection *c) {
  802626c:	4807      	ldr	r0, [pc, #28]	@ (802628c <mg_listen+0x104>)
  802626e:	f7fc fead 	bl	8022fcc <mg_log>
  8026272:	e7eb      	b.n	802624c <mg_listen+0xc4>
- 8026274:	08039a78 	.word	0x08039a78
+ 8026274:	08039a68 	.word	0x08039a68
  8026278:	200000a8 	.word	0x200000a8
- 802627c:	0803a114 	.word	0x0803a114
- 8026280:	08039744 	.word	0x08039744
- 8026284:	080397a0 	.word	0x080397a0
- 8026288:	08039a58 	.word	0x08039a58
- 802628c:	08039a60 	.word	0x08039a60
+ 802627c:	0803a104 	.word	0x0803a104
+ 8026280:	08039734 	.word	0x08039734
+ 8026284:	08039790 	.word	0x08039790
+ 8026288:	08039a48 	.word	0x08039a48
+ 802628c:	08039a50 	.word	0x08039a50
 
 08026290 <mg_http_listen>:
                                      mg_event_handler_t fn, void *fn_data) {
@@ -47806,10 +47806,10 @@ static size_t trim_len(struct mg_connection *c, size_t len) {
  8026348:	e7e1      	b.n	802630e <trim_len+0x6a>
  802634a:	bf00      	nop
  802634c:	200000a8 	.word	0x200000a8
- 8026350:	0803a108 	.word	0x0803a108
- 8026354:	08039744 	.word	0x08039744
- 8026358:	08039a80 	.word	0x08039a80
- 802635c:	08039aac 	.word	0x08039aac
+ 8026350:	0803a0f8 	.word	0x0803a0f8
+ 8026354:	08039734 	.word	0x08039734
+ 8026358:	08039a70 	.word	0x08039a70
+ 802635c:	08039a9c 	.word	0x08039a9c
 
 08026360 <mg_send>:
 bool mg_send(struct mg_connection *c, const void *buf, size_t len) {
@@ -47868,7 +47868,7 @@ bool mg_send(struct mg_connection *c, const void *buf, size_t len) {
  80263c2:	bf18      	it	ne
  80263c4:	2001      	movne	r0, #1
  80263c6:	e7dd      	b.n	8026384 <mg_send+0x24>
- 80263c8:	08039ad8 	.word	0x08039ad8
+ 80263c8:	08039ac8 	.word	0x08039ac8
 
 080263cc <mg_dns_send>:
                         uint16_t txnid, bool ipv6) {
@@ -48611,9 +48611,9 @@ uint16_t mg_mqtt_pub(struct mg_connection *c, const struct mg_mqtt_opts *opts) {
  80269dc:	e7d6      	b.n	802698c <mg_mqtt_pub+0xc8>
  80269de:	bf00      	nop
  80269e0:	200000a8 	.word	0x200000a8
- 80269e4:	0803a144 	.word	0x0803a144
- 80269e8:	08039744 	.word	0x08039744
- 80269ec:	08039ae4 	.word	0x08039ae4
+ 80269e4:	0803a134 	.word	0x0803a134
+ 80269e8:	08039734 	.word	0x08039734
+ 80269ec:	08039ad4 	.word	0x08039ad4
 
 080269f0 <mqtt_cb>:
 static void mqtt_cb(struct mg_connection *c, int ev, void *ev_data) {
@@ -48836,12 +48836,12 @@ static void mqtt_cb(struct mg_connection *c, int ev, void *ev_data) {
             break;
  8026bd2:	e797      	b.n	8026b04 <mqtt_cb+0x114>
  8026bd4:	200000a8 	.word	0x200000a8
- 8026bd8:	0803a13c 	.word	0x0803a13c
- 8026bdc:	08039744 	.word	0x08039744
- 8026be0:	08039afc 	.word	0x08039afc
- 8026be4:	08039b18 	.word	0x08039b18
- 8026be8:	08039b38 	.word	0x08039b38
- 8026bec:	08039b48 	.word	0x08039b48
+ 8026bd8:	0803a12c 	.word	0x0803a12c
+ 8026bdc:	08039734 	.word	0x08039734
+ 8026be0:	08039aec 	.word	0x08039aec
+ 8026be4:	08039b08 	.word	0x08039b08
+ 8026be8:	08039b28 	.word	0x08039b28
+ 8026bec:	08039b38 	.word	0x08039b38
 
 08026bf0 <tx_tcp>:
                      uint32_t seq, uint32_t ack, const void *buf, size_t len) {
@@ -48970,10 +48970,10 @@ static void mqtt_cb(struct mg_connection *c, int ev, void *ev_data) {
  8026cf6:	f7fc f969 	bl	8022fcc <mg_log>
  8026cfa:	e7d1      	b.n	8026ca0 <tx_tcp+0xb0>
  8026cfc:	200000a8 	.word	0x200000a8
- 8026d00:	0803a100 	.word	0x0803a100
- 8026d04:	08039744 	.word	0x08039744
+ 8026d00:	0803a0f0 	.word	0x0803a0f0
+ 8026d04:	08039734 	.word	0x08039734
  8026d08:	08022f8d 	.word	0x08022f8d
- 8026d0c:	08039b68 	.word	0x08039b68
+ 8026d0c:	08039b58 	.word	0x08039b58
 
 08026d10 <send_syn>:
 static void send_syn(struct mg_connection *c) {
@@ -49110,9 +49110,9 @@ static void settmout(struct mg_connection *c, uint8_t type) {
 }
  8026e1e:	e7e2      	b.n	8026de6 <settmout+0x3e>
  8026e20:	200000a8 	.word	0x200000a8
- 8026e24:	0803a0f4 	.word	0x0803a0f4
- 8026e28:	08039744 	.word	0x08039744
- 8026e2c:	08039b8c 	.word	0x08039b8c
+ 8026e24:	0803a0e4 	.word	0x0803a0e4
+ 8026e28:	08039734 	.word	0x08039734
+ 8026e2c:	08039b7c 	.word	0x08039b7c
 
 08026e30 <mg_io_send>:
 long mg_io_send(struct mg_connection *c, const void *buf, size_t len) {
@@ -49241,7 +49241,7 @@ static void write_conn(struct mg_connection *c) {
  8026f32:	f7fa fe01 	bl	8021b38 <mg_call>
 }
  8026f36:	e7e7      	b.n	8026f08 <write_conn+0x24>
- 8026f38:	08039b9c 	.word	0x08039b9c
+ 8026f38:	08039b8c 	.word	0x08039b8c
 
 08026f3c <init_closure>:
   if (c->is_udp == false && c->is_listening == false &&
@@ -49462,11 +49462,11 @@ void mg_connect_resolved(struct mg_connection *c) {
 }
  8027126:	e7b0      	b.n	802708a <mg_connect_resolved+0xe6>
  8027128:	200000a8 	.word	0x200000a8
- 802712c:	0803a0d0 	.word	0x0803a0d0
- 8027130:	08039744 	.word	0x08039744
+ 802712c:	0803a0c0 	.word	0x0803a0c0
+ 8027130:	08039734 	.word	0x08039734
  8027134:	08025125 	.word	0x08025125
- 8027138:	08039ba4 	.word	0x08039ba4
- 802713c:	08039bb4 	.word	0x08039bb4
+ 8027138:	08039b94 	.word	0x08039b94
+ 802713c:	08039ba4 	.word	0x08039ba4
  8027140:	08034d3c 	.word	0x08034d3c
 
 08027144 <dns_cb>:
@@ -49658,17 +49658,17 @@ static void dns_cb(struct mg_connection *c, int ev, void *ev_data) {
     for (d = *head; d != NULL; d = tmp) {
  80272ac:	462c      	mov	r4, r5
  80272ae:	e7f1      	b.n	8027294 <dns_cb+0x150>
- 80272b0:	08039bc8 	.word	0x08039bc8
+ 80272b0:	08039bb8 	.word	0x08039bb8
  80272b4:	200000a8 	.word	0x200000a8
- 80272b8:	0803a1a4 	.word	0x0803a1a4
- 80272bc:	08039744 	.word	0x08039744
- 80272c0:	08039bd4 	.word	0x08039bd4
+ 80272b8:	0803a194 	.word	0x0803a194
+ 80272bc:	08039734 	.word	0x08039734
+ 80272c0:	08039bc4 	.word	0x08039bc4
  80272c4:	08025109 	.word	0x08025109
- 80272c8:	08039bf0 	.word	0x08039bf0
- 80272cc:	08039c00 	.word	0x08039c00
- 80272d0:	08039c18 	.word	0x08039c18
- 80272d4:	08039c30 	.word	0x08039c30
- 80272d8:	08039c40 	.word	0x08039c40
+ 80272c8:	08039be0 	.word	0x08039be0
+ 80272cc:	08039bf0 	.word	0x08039bf0
+ 80272d0:	08039c08 	.word	0x08039c08
+ 80272d4:	08039c20 	.word	0x08039c20
+ 80272d8:	08039c30 	.word	0x08039c30
 
 080272dc <tx_dhcp_discover>:
 static void tx_dhcp_discover(struct mg_tcpip_if *ifp) {
@@ -49711,13 +49711,13 @@ static void tx_dhcp_discover(struct mg_tcpip_if *ifp) {
 }
  8027328:	e7f0      	b.n	802730c <tx_dhcp_discover+0x30>
  802732a:	bf00      	nop
- 802732c:	08039c6c 	.word	0x08039c6c
- 8027330:	0803a1cc 	.word	0x0803a1cc
+ 802732c:	08039c5c 	.word	0x08039c5c
+ 8027330:	0803a1bc 	.word	0x0803a1bc
  8027334:	200000a8 	.word	0x200000a8
- 8027338:	0803a0a0 	.word	0x0803a0a0
- 802733c:	08039744 	.word	0x08039744
+ 8027338:	0803a090 	.word	0x0803a090
+ 802733c:	08039734 	.word	0x08039734
  8027340:	08022f9d 	.word	0x08022f9d
- 8027344:	08039c4c 	.word	0x08039c4c
+ 8027344:	08039c3c 	.word	0x08039c3c
 
 08027348 <tx_dhcp_request_re>:
                                uint32_t ip_src, uint32_t ip_dst) {
@@ -49755,9 +49755,9 @@ static void tx_dhcp_discover(struct mg_tcpip_if *ifp) {
  8027382:	bf00      	nop
  8027384:	ff030135 	.word	0xff030135
  8027388:	200000a8 	.word	0x200000a8
- 802738c:	0803a07c 	.word	0x0803a07c
- 8027390:	08039744 	.word	0x08039744
- 8027394:	08039c78 	.word	0x08039c78
+ 802738c:	0803a06c 	.word	0x0803a06c
+ 8027390:	08039734 	.word	0x08039734
+ 8027394:	08039c68 	.word	0x08039c68
 
 08027398 <rx_arp>:
 static void rx_arp(struct mg_tcpip_if *ifp, struct pkt *pkt) {
@@ -49933,12 +49933,12 @@ static void rx_arp(struct mg_tcpip_if *ifp, struct pkt *pkt) {
  8027502:	f7fb fd63 	bl	8022fcc <mg_log>
  8027506:	e7d8      	b.n	80274ba <rx_arp+0x122>
  8027508:	200000a8 	.word	0x200000a8
- 802750c:	0803a068 	.word	0x0803a068
- 8027510:	08039744 	.word	0x08039744
+ 802750c:	0803a058 	.word	0x0803a058
+ 8027510:	08039734 	.word	0x08039734
  8027514:	08022f9d 	.word	0x08022f9d
  8027518:	08022f8d 	.word	0x08022f8d
- 802751c:	08039c88 	.word	0x08039c88
- 8027520:	08039ca0 	.word	0x08039ca0
+ 802751c:	08039c78 	.word	0x08039c78
+ 8027520:	08039c90 	.word	0x08039c90
 
 08027524 <tx_dhcp_request_sel>:
                                 uint32_t ip_srv) {
@@ -50013,11 +50013,11 @@ static void rx_arp(struct mg_tcpip_if *ifp, struct pkt *pkt) {
 }
  80275ba:	e7f0      	b.n	802759e <tx_dhcp_request_sel+0x7a>
  80275bc:	08034f68 	.word	0x08034f68
- 80275c0:	0803a1cc 	.word	0x0803a1cc
+ 80275c0:	0803a1bc 	.word	0x0803a1bc
  80275c4:	200000a8 	.word	0x200000a8
- 80275c8:	0803a03c 	.word	0x0803a03c
- 80275cc:	08039744 	.word	0x08039744
- 80275d0:	08039c78 	.word	0x08039c78
+ 80275c8:	0803a02c 	.word	0x0803a02c
+ 80275cc:	08039734 	.word	0x08039734
+ 80275d0:	08039c68 	.word	0x08039c68
 
 080275d4 <read_conn>:
 static void read_conn(struct mg_connection *c, struct pkt *pkt) {
@@ -50352,13 +50352,13 @@ static void read_conn(struct mg_connection *c, struct pkt *pkt) {
  80278c6:	e6d6      	b.n	8027676 <read_conn+0xa2>
  80278c8:	08035a58 	.word	0x08035a58
  80278cc:	200000a8 	.word	0x200000a8
- 80278d0:	0803a030 	.word	0x0803a030
- 80278d4:	08039744 	.word	0x08039744
- 80278d8:	08039cbc 	.word	0x08039cbc
- 80278dc:	08039cd4 	.word	0x08039cd4
- 80278e0:	08039a44 	.word	0x08039a44
- 80278e4:	08039cec 	.word	0x08039cec
- 80278e8:	08039d00 	.word	0x08039d00
+ 80278d0:	0803a020 	.word	0x0803a020
+ 80278d4:	08039734 	.word	0x08039734
+ 80278d8:	08039cac 	.word	0x08039cac
+ 80278dc:	08039cc4 	.word	0x08039cc4
+ 80278e0:	08039a34 	.word	0x08039a34
+ 80278e4:	08039cdc 	.word	0x08039cdc
+ 80278e8:	08039cf0 	.word	0x08039cf0
 
 080278ec <accept_conn>:
                                          struct pkt *pkt) {
@@ -50479,11 +50479,11 @@ static void read_conn(struct mg_connection *c, struct pkt *pkt) {
  80279e6:	f7fb faf1 	bl	8022fcc <mg_log>
  80279ea:	e7aa      	b.n	8027942 <accept_conn+0x56>
  80279ec:	200000a8 	.word	0x200000a8
- 80279f0:	0803a024 	.word	0x0803a024
- 80279f4:	08039744 	.word	0x08039744
- 80279f8:	08039d6c 	.word	0x08039d6c
+ 80279f0:	0803a014 	.word	0x0803a014
+ 80279f4:	08039734 	.word	0x08039734
+ 80279f8:	08039d5c 	.word	0x08039d5c
  80279fc:	08025125 	.word	0x08025125
- 8027a00:	08039d10 	.word	0x08039d10
+ 8027a00:	08039d00 	.word	0x08039d00
 
 08027a04 <rx_tcp>:
 static void rx_tcp(struct mg_tcpip_if *ifp, struct pkt *pkt) {
@@ -50685,7 +50685,7 @@ static void rx_tcp(struct mg_tcpip_if *ifp, struct pkt *pkt) {
  8027b9c:	f7ff fea6 	bl	80278ec <accept_conn>
  8027ba0:	e789      	b.n	8027ab6 <rx_tcp+0xb2>
  8027ba2:	bf00      	nop
- 8027ba4:	08039d20 	.word	0x08039d20
+ 8027ba4:	08039d10 	.word	0x08039d10
 
 08027ba8 <mg_sendnsreq>:
                          struct mg_dns *dnsc, bool ipv6) {
@@ -50811,14 +50811,14 @@ static void rx_tcp(struct mg_tcpip_if *ifp, struct pkt *pkt) {
 }
  8027c92:	e7c8      	b.n	8027c26 <mg_sendnsreq+0x7e>
  8027c94:	200000a8 	.word	0x200000a8
- 8027c98:	08039d2c 	.word	0x08039d2c
+ 8027c98:	08039d1c 	.word	0x08039d1c
  8027c9c:	08027145 	.word	0x08027145
- 8027ca0:	08039d58 	.word	0x08039d58
- 8027ca4:	08039d64 	.word	0x08039d64
- 8027ca8:	0803a1ac 	.word	0x0803a1ac
- 8027cac:	08039744 	.word	0x08039744
- 8027cb0:	08039d70 	.word	0x08039d70
- 8027cb4:	08039d94 	.word	0x08039d94
+ 8027ca0:	08039d48 	.word	0x08039d48
+ 8027ca4:	08039d54 	.word	0x08039d54
+ 8027ca8:	0803a19c 	.word	0x0803a19c
+ 8027cac:	08039734 	.word	0x08039734
+ 8027cb0:	08039d60 	.word	0x08039d60
+ 8027cb4:	08039d84 	.word	0x08039d84
 
 08027cb8 <mg_resolve>:
 void mg_resolve(struct mg_connection *c, const char *url) {
@@ -50964,12 +50964,12 @@ void mg_resolve(struct mg_connection *c, const char *url) {
  8027dd6:	f7fb f8f9 	bl	8022fcc <mg_log>
  8027dda:	e7d8      	b.n	8027d8e <mg_connect+0x86>
  8027ddc:	200000a8 	.word	0x200000a8
- 8027de0:	0803a120 	.word	0x0803a120
- 8027de4:	08039744 	.word	0x08039744
- 8027de8:	08039da0 	.word	0x08039da0
- 8027dec:	08039a78 	.word	0x08039a78
- 8027df0:	08039d6c 	.word	0x08039d6c
- 8027df4:	080397a0 	.word	0x080397a0
+ 8027de0:	0803a110 	.word	0x0803a110
+ 8027de4:	08039734 	.word	0x08039734
+ 8027de8:	08039d90 	.word	0x08039d90
+ 8027dec:	08039a68 	.word	0x08039a68
+ 8027df0:	08039d5c 	.word	0x08039d5c
+ 8027df4:	08039790 	.word	0x08039790
 
 08027df8 <mg_mqtt_connect>:
                                       mg_event_handler_t fn, void *fn_data) {
@@ -51136,12 +51136,12 @@ void mg_tcpip_init(struct mg_mgr *mgr, struct mg_tcpip_if *ifp) {
 }
  8027f3a:	e7ec      	b.n	8027f16 <mg_tcpip_init+0xe2>
  8027f3c:	200000a8 	.word	0x200000a8
- 8027f40:	0803a0e4 	.word	0x0803a0e4
- 8027f44:	08039744 	.word	0x08039744
- 8027f48:	08039dd0 	.word	0x08039dd0
+ 8027f40:	0803a0d4 	.word	0x0803a0d4
+ 8027f44:	08039734 	.word	0x08039734
+ 8027f48:	08039dc0 	.word	0x08039dc0
  8027f4c:	08022f9d 	.word	0x08022f9d
- 8027f50:	08039dac 	.word	0x08039dac
- 8027f54:	08039d6c 	.word	0x08039d6c
+ 8027f50:	08039d9c 	.word	0x08039d9c
+ 8027f54:	08039d5c 	.word	0x08039d5c
 
 08027f58 <onstatechange>:
 static void onstatechange(struct mg_tcpip_if *ifp) {
@@ -51247,15 +51247,15 @@ static void onstatechange(struct mg_tcpip_if *ifp) {
  802802a:	f7fa ffcf 	bl	8022fcc <mg_log>
  802802e:	e7ef      	b.n	8028010 <onstatechange+0xb8>
  8028030:	200000a8 	.word	0x200000a8
- 8028034:	0803a090 	.word	0x0803a090
- 8028038:	08039744 	.word	0x08039744
- 802803c:	08039e1c 	.word	0x08039e1c
+ 8028034:	0803a080 	.word	0x0803a080
+ 8028038:	08039734 	.word	0x08039734
+ 802803c:	08039e0c 	.word	0x08039e0c
  8028040:	08022f8d 	.word	0x08022f8d
- 8028044:	08039de4 	.word	0x08039de4
- 8028048:	08039df4 	.word	0x08039df4
+ 8028044:	08039dd4 	.word	0x08039dd4
+ 8028048:	08039de4 	.word	0x08039de4
  802804c:	08022f9d 	.word	0x08022f9d
- 8028050:	08039e04 	.word	0x08039e04
- 8028054:	08039e14 	.word	0x08039e14
+ 8028050:	08039df4 	.word	0x08039df4
+ 8028054:	08039e04 	.word	0x08039e04
 
 08028058 <rx_dhcp_client>:
 static void rx_dhcp_client(struct mg_tcpip_if *ifp, struct pkt *pkt) {
@@ -51584,9 +51584,9 @@ static void rx_dhcp_client(struct mg_tcpip_if *ifp, struct pkt *pkt) {
  80282e0:	e747      	b.n	8028172 <rx_dhcp_client+0x11a>
  80282e2:	bf00      	nop
  80282e4:	200000a8 	.word	0x200000a8
- 80282e8:	0803a050 	.word	0x0803a050
- 80282ec:	08039744 	.word	0x08039744
- 80282f0:	08039e28 	.word	0x08039e28
+ 80282e8:	0803a040 	.word	0x0803a040
+ 80282ec:	08039734 	.word	0x08039734
+ 80282f0:	08039e18 	.word	0x08039e18
 
 080282f4 <rx_ip>:
 static void rx_ip(struct mg_tcpip_if *ifp, struct pkt *pkt) {
@@ -51803,13 +51803,13 @@ static void rx_ip(struct mg_tcpip_if *ifp, struct pkt *pkt) {
  80284a8:	4807      	ldr	r0, [pc, #28]	@ (80284c8 <rx_ip+0x1d4>)
  80284aa:	f7fa fd8f 	bl	8022fcc <mg_log>
  80284ae:	e768      	b.n	8028382 <rx_ip+0x8e>
- 80284b0:	08039e40 	.word	0x08039e40
+ 80284b0:	08039e30 	.word	0x08039e30
  80284b4:	200000a8 	.word	0x200000a8
- 80284b8:	0803a060 	.word	0x0803a060
- 80284bc:	08039744 	.word	0x08039744
+ 80284b8:	0803a050 	.word	0x0803a050
+ 80284bc:	08039734 	.word	0x08039734
  80284c0:	08022f8d 	.word	0x08022f8d
- 80284c4:	08039e5c 	.word	0x08039e5c
- 80284c8:	08039e78 	.word	0x08039e78
+ 80284c4:	08039e4c 	.word	0x08039e4c
+ 80284c8:	08039e68 	.word	0x08039e68
 
 080284cc <mg_tcpip_rx>:
 static void mg_tcpip_rx(struct mg_tcpip_if *ifp, void *buf, size_t len) {
@@ -51987,11 +51987,11 @@ static void mg_tcpip_rx(struct mg_tcpip_if *ifp, void *buf, size_t len) {
  8028610:	4620      	mov	r0, r4
  8028612:	f7f9 fe3b 	bl	802228c <mg_hexdump>
  8028616:	e7a9      	b.n	802856c <mg_tcpip_rx+0xa0>
- 8028618:	0803a1cc 	.word	0x0803a1cc
+ 8028618:	0803a1bc 	.word	0x0803a1bc
  802861c:	200000a8 	.word	0x200000a8
- 8028620:	0803a070 	.word	0x0803a070
- 8028624:	08039744 	.word	0x08039744
- 8028628:	08039e94 	.word	0x08039e94
+ 8028620:	0803a060 	.word	0x0803a060
+ 8028624:	08039734 	.word	0x08039734
+ 8028628:	08039e84 	.word	0x08039e84
 
 0802862c <mg_tcpip_poll>:
 static void mg_tcpip_poll(struct mg_tcpip_if *ifp, uint64_t now) {
@@ -52358,15 +52358,15 @@ static void mg_tcpip_poll(struct mg_tcpip_if *ifp, uint64_t now) {
  8028938:	001b7740 	.word	0x001b7740
  802893c:	88888889 	.word	0x88888889
  8028940:	eeeeeeef 	.word	0xeeeeeeef
- 8028944:	0803a1cc 	.word	0x0803a1cc
- 8028948:	0803a0b4 	.word	0x0803a0b4
- 802894c:	08039744 	.word	0x08039744
- 8028950:	08039ea8 	.word	0x08039ea8
- 8028954:	08039eb8 	.word	0x08039eb8
- 8028958:	08039ec8 	.word	0x08039ec8
- 802895c:	08039ed4 	.word	0x08039ed4
- 8028960:	08039eec 	.word	0x08039eec
- 8028964:	08039ee8 	.word	0x08039ee8
+ 8028944:	0803a1bc 	.word	0x0803a1bc
+ 8028948:	0803a0a4 	.word	0x0803a0a4
+ 802894c:	08039734 	.word	0x08039734
+ 8028950:	08039e98 	.word	0x08039e98
+ 8028954:	08039ea8 	.word	0x08039ea8
+ 8028958:	08039eb8 	.word	0x08039eb8
+ 802895c:	08039ec4 	.word	0x08039ec4
+ 8028960:	08039edc 	.word	0x08039edc
+ 8028964:	08039ed8 	.word	0x08039ed8
 
 08028968 <mg_mgr_poll>:
 void mg_mgr_poll(struct mg_mgr *mgr, int ms) {
@@ -52501,9 +52501,9 @@ void mg_mgr_poll(struct mg_mgr *mgr, int ms) {
  8028a7a:	b007      	add	sp, #28
  8028a7c:	bdf0      	pop	{r4, r5, r6, r7, pc}
  8028a7e:	bf00      	nop
- 8028a80:	0803a0c4 	.word	0x0803a0c4
- 8028a84:	08039744 	.word	0x08039744
- 8028a88:	08039ef8 	.word	0x08039ef8
+ 8028a80:	0803a0b4 	.word	0x0803a0b4
+ 8028a84:	08039734 	.word	0x08039734
+ 8028a88:	08039ee8 	.word	0x08039ee8
  8028a8c:	200000a8 	.word	0x200000a8
 
 08028a90 <mg_now>:
@@ -52682,14 +52682,14 @@ int64_t mg_sntp_parse(const unsigned char *buf, size_t len) {
  8028bf0:	4601      	mov	r1, r0
  8028bf2:	e76f      	b.n	8028ad4 <mg_sntp_parse+0x2c>
  8028bf4:	200000a8 	.word	0x200000a8
- 8028bf8:	0803a014 	.word	0x0803a014
- 8028bfc:	08039744 	.word	0x08039744
- 8028c00:	08039f0c 	.word	0x08039f0c
- 8028c04:	08039a5c 	.word	0x08039a5c
- 8028c08:	08039f1c 	.word	0x08039f1c
- 8028c0c:	08039f30 	.word	0x08039f30
+ 8028bf8:	0803a004 	.word	0x0803a004
+ 8028bfc:	08039734 	.word	0x08039734
+ 8028c00:	08039efc 	.word	0x08039efc
+ 8028c04:	08039a4c 	.word	0x08039a4c
+ 8028c08:	08039f0c 	.word	0x08039f0c
+ 8028c0c:	08039f20 	.word	0x08039f20
  8028c10:	20018de8 	.word	0x20018de8
- 8028c14:	08039f4c 	.word	0x08039f4c
+ 8028c14:	08039f3c 	.word	0x08039f3c
 
 08028c18 <mg_sntp_request>:
 void mg_sntp_request(struct mg_connection *c) {
@@ -52775,9 +52775,9 @@ void mg_sntp_request(struct mg_connection *c) {
  8028cd0:	ffe00000 	.word	0xffe00000
  8028cd4:	41efffff 	.word	0x41efffff
  8028cd8:	200000a8 	.word	0x200000a8
- 8028cdc:	0803a004 	.word	0x0803a004
- 8028ce0:	08039744 	.word	0x08039744
- 8028ce4:	08039f64 	.word	0x08039f64
+ 8028cdc:	08039ff4 	.word	0x08039ff4
+ 8028ce0:	08039734 	.word	0x08039734
+ 8028ce4:	08039f54 	.word	0x08039f54
  8028ce8:	408f4000 	.word	0x408f4000
 
 08028cec <sntp_cb>:
@@ -52865,9 +52865,9 @@ static void sntp_cb(struct mg_connection *c, int ev, void *ev_data) {
  8028da6:	e7b8      	b.n	8028d1a <sntp_cb+0x2e>
  8028da8:	20018de8 	.word	0x20018de8
  8028dac:	200000a8 	.word	0x200000a8
- 8028db0:	08039ffc 	.word	0x08039ffc
- 8028db4:	08039744 	.word	0x08039744
- 8028db8:	08039f7c 	.word	0x08039f7c
+ 8028db0:	08039fec 	.word	0x08039fec
+ 8028db4:	08039734 	.word	0x08039734
+ 8028db8:	08039f6c 	.word	0x08039f6c
 
 08028dbc <mg_sntp_connect>:
                                       mg_event_handler_t fn, void *fnd) {
@@ -52895,7 +52895,7 @@ static void sntp_cb(struct mg_connection *c, int ev, void *ev_data) {
  8028de0:	e7ef      	b.n	8028dc2 <mg_sntp_connect+0x6>
  8028de2:	bf00      	nop
  8028de4:	08028ced 	.word	0x08028ced
- 8028de8:	08039fa0 	.word	0x08039fa0
+ 8028de8:	08039f90 	.word	0x08039f90
 
 08028dec <has_mqtt_prefix>:
 #include <ctype.h>
@@ -52914,7 +52914,7 @@ int has_mqtt_prefix(const char *url) {
  8028dfa:	0940      	lsrs	r0, r0, #5
  8028dfc:	bd08      	pop	{r3, pc}
  8028dfe:	bf00      	nop
- 8028e00:	0803a61c 	.word	0x0803a61c
+ 8028e00:	0803a60c 	.word	0x0803a60c
 
 08028e04 <is_valid_ip_or_domain>:
 
@@ -53031,7 +53031,7 @@ int is_valid_ip_or_domain(const char *host) {
  8028e8a:	2500      	movs	r5, #0
  8028e8c:	e7fb      	b.n	8028e86 <is_valid_ip_or_domain+0x82>
  8028e8e:	bf00      	nop
- 8028e90:	0803aabd 	.word	0x0803aabd
+ 8028e90:	0803aaad 	.word	0x0803aaad
 
 08028e94 <is_valid_port>:
 
@@ -53072,7 +53072,7 @@ int is_valid_port(const char *port_str) {
             return 0;
  8028ec0:	2000      	movs	r0, #0
  8028ec2:	e7fc      	b.n	8028ebe <is_valid_port+0x2a>
- 8028ec4:	0803aabd 	.word	0x0803aabd
+ 8028ec4:	0803aaad 	.word	0x0803aaad
 
 08028ec8 <is_valid_mqtt_url>:
 
@@ -53159,10 +53159,10 @@ int is_valid_mqtt_url(const char *url) {
  8028f34:	f06f 0003 	mvn.w	r0, #3
  8028f38:	e7e5      	b.n	8028f06 <is_valid_mqtt_url+0x3e>
  8028f3a:	bf00      	nop
- 8028f3c:	0803a624 	.word	0x0803a624
- 8028f40:	0803a650 	.word	0x0803a650
- 8028f44:	0803a684 	.word	0x0803a684
- 8028f48:	0803a6a8 	.word	0x0803a6a8
+ 8028f3c:	0803a614 	.word	0x0803a614
+ 8028f40:	0803a640 	.word	0x0803a640
+ 8028f44:	0803a674 	.word	0x0803a674
+ 8028f48:	0803a698 	.word	0x0803a698
 
 08028f4c <__assert_func>:
  8028f4c:	b51f      	push	{r0, r1, r2, r3, r4, lr}
@@ -53185,9 +53185,9 @@ int is_valid_mqtt_url(const char *url) {
  8028f74:	e7f4      	b.n	8028f60 <__assert_func+0x14>
  8028f76:	bf00      	nop
  8028f78:	20000254 	.word	0x20000254
- 8028f7c:	0803a6fe 	.word	0x0803a6fe
- 8028f80:	0803a6d0 	.word	0x0803a6d0
- 8028f84:	0803a6c3 	.word	0x0803a6c3
+ 8028f7c:	0803a6ee 	.word	0x0803a6ee
+ 8028f80:	0803a6c0 	.word	0x0803a6c0
+ 8028f84:	0803a6b3 	.word	0x0803a6b3
 
 08028f88 <atoi>:
  8028f88:	220a      	movs	r2, #10
@@ -53511,7 +53511,7 @@ int is_valid_mqtt_url(const char *url) {
  80292fa:	e7b5      	b.n	8029268 <_vfprintf_r+0x290>
  80292fc:	f3af 8000 	nop.w
 	...
- 8029308:	0803a70f 	.word	0x0803a70f
+ 8029308:	0803a6ff 	.word	0x0803a6ff
  802930c:	9b0c      	ldr	r3, [sp, #48]	@ 0x30
  802930e:	781b      	ldrb	r3, [r3, #0]
  8029310:	2b68      	cmp	r3, #104	@ 0x68
@@ -53792,12 +53792,12 @@ int is_valid_mqtt_url(const char *url) {
  80295f0:	9f1d      	ldr	r7, [sp, #116]	@ 0x74
  80295f2:	e7a7      	b.n	8029544 <_vfprintf_r+0x56c>
  80295f4:	7fefffff 	.word	0x7fefffff
- 80295f8:	0803a6ff 	.word	0x0803a6ff
- 80295fc:	0803a703 	.word	0x0803a703
- 8029600:	0803a707 	.word	0x0803a707
- 8029604:	0803a70b 	.word	0x0803a70b
- 8029608:	0803a70f 	.word	0x0803a70f
- 802960c:	0803a720 	.word	0x0803a720
+ 80295f8:	0803a6ef 	.word	0x0803a6ef
+ 80295fc:	0803a6f3 	.word	0x0803a6f3
+ 8029600:	0803a6f7 	.word	0x0803a6f7
+ 8029604:	0803a6fb 	.word	0x0803a6fb
+ 8029608:	0803a6ff 	.word	0x0803a6ff
+ 802960c:	0803a710 	.word	0x0803a710
  8029610:	40300000 	.word	0x40300000
  8029614:	3fe00000 	.word	0x3fe00000
  8029618:	9b10      	ldr	r3, [sp, #64]	@ 0x40
@@ -54187,8 +54187,8 @@ int is_valid_mqtt_url(const char *url) {
  80299d6:	e7d3      	b.n	8029980 <_vfprintf_r+0x9a8>
  80299d8:	46b1      	mov	r9, r6
  80299da:	e7d0      	b.n	802997e <_vfprintf_r+0x9a6>
- 80299dc:	0803a743 	.word	0x0803a743
- 80299e0:	0803a733 	.word	0x0803a733
+ 80299dc:	0803a733 	.word	0x0803a733
+ 80299e0:	0803a723 	.word	0x0803a723
  80299e4:	2366      	movs	r3, #102	@ 0x66
  80299e6:	9306      	str	r3, [sp, #24]
  80299e8:	f04f 0901 	mov.w	r9, #1
@@ -54538,8 +54538,8 @@ int is_valid_mqtt_url(const char *url) {
  8029d46:	e570      	b.n	802982a <_vfprintf_r+0x852>
  8029d48:	460c      	mov	r4, r1
  8029d4a:	e58b      	b.n	8029864 <_vfprintf_r+0x88c>
- 8029d4c:	0803a70f 	.word	0x0803a70f
- 8029d50:	0803a720 	.word	0x0803a720
+ 8029d4c:	0803a6ff 	.word	0x0803a6ff
+ 8029d50:	0803a710 	.word	0x0803a710
  8029d54:	9b06      	ldr	r3, [sp, #24]
  8029d56:	2b65      	cmp	r3, #101	@ 0x65
  8029d58:	f340 8245 	ble.w	802a1e6 <_vfprintf_r+0x120e>
@@ -54744,8 +54744,8 @@ int is_valid_mqtt_url(const char *url) {
  8029f36:	461a      	mov	r2, r3
  8029f38:	e7b0      	b.n	8029e9c <_vfprintf_r+0xec4>
  8029f3a:	bf00      	nop
- 8029f3c:	0803a731 	.word	0x0803a731
- 8029f40:	0803a733 	.word	0x0803a733
+ 8029f3c:	0803a721 	.word	0x0803a721
+ 8029f40:	0803a723 	.word	0x0803a723
  8029f44:	9b04      	ldr	r3, [sp, #16]
  8029f46:	4443      	add	r3, r8
  8029f48:	9313      	str	r3, [sp, #76]	@ 0x4c
@@ -55131,7 +55131,7 @@ int is_valid_mqtt_url(const char *url) {
  802a2e2:	460e      	mov	r6, r1
  802a2e4:	e7cd      	b.n	802a282 <_vfprintf_r+0x12aa>
  802a2e6:	bf00      	nop
- 802a2e8:	0803a733 	.word	0x0803a733
+ 802a2e8:	0803a723 	.word	0x0803a723
  802a2ec:	3210      	adds	r2, #16
  802a2ee:	2b07      	cmp	r3, #7
  802a2f0:	e9cd 3227 	strd	r3, r2, [sp, #156]	@ 0x9c
@@ -55252,7 +55252,7 @@ int is_valid_mqtt_url(const char *url) {
  802a422:	f8cd a020 	str.w	sl, [sp, #32]
  802a426:	4656      	mov	r6, sl
  802a428:	f7ff b978 	b.w	802971c <_vfprintf_r+0x744>
- 802a42c:	0803a743 	.word	0x0803a743
+ 802a42c:	0803a733 	.word	0x0803a733
 
 0802a430 <__sbprintf>:
  802a430:	b5f0      	push	{r4, r5, r6, r7, lr}
@@ -55747,7 +55747,7 @@ int is_valid_mqtt_url(const char *url) {
  802a95e:	2302      	movs	r3, #2
  802a960:	e7c9      	b.n	802a8f6 <_vfiprintf_r+0x3e2>
  802a962:	bf00      	nop
- 802a964:	0803a70f 	.word	0x0803a70f
+ 802a964:	0803a6ff 	.word	0x0803a6ff
  802a968:	9b01      	ldr	r3, [sp, #4]
  802a96a:	46a8      	mov	r8, r5
  802a96c:	1c5c      	adds	r4, r3, #1
@@ -56047,9 +56047,9 @@ int is_valid_mqtt_url(const char *url) {
  802ac68:	f88d 4033 	strb.w	r4, [sp, #51]	@ 0x33
  802ac6c:	46a8      	mov	r8, r5
  802ac6e:	e5e0      	b.n	802a832 <_vfiprintf_r+0x31e>
- 802ac70:	0803a763 	.word	0x0803a763
- 802ac74:	0803a753 	.word	0x0803a753
- 802ac78:	0803a720 	.word	0x0803a720
+ 802ac70:	0803a753 	.word	0x0803a753
+ 802ac74:	0803a743 	.word	0x0803a743
+ 802ac78:	0803a710 	.word	0x0803a710
  802ac7c:	2110      	movs	r1, #16
  802ac7e:	6071      	str	r1, [r6, #4]
  802ac80:	2a07      	cmp	r2, #7
@@ -56222,8 +56222,8 @@ int is_valid_mqtt_url(const char *url) {
  802ae14:	f8dd a010 	ldr.w	sl, [sp, #16]
  802ae18:	9301      	str	r3, [sp, #4]
  802ae1a:	e5bb      	b.n	802a994 <_vfiprintf_r+0x480>
- 802ae1c:	0803a763 	.word	0x0803a763
- 802ae20:	0803a753 	.word	0x0803a753
+ 802ae1c:	0803a753 	.word	0x0803a753
+ 802ae20:	0803a743 	.word	0x0803a743
 
 0802ae24 <__sbprintf>:
  802ae24:	b5f0      	push	{r4, r5, r6, r7, lr}
@@ -56345,7 +56345,7 @@ int is_valid_mqtt_url(const char *url) {
  802af36:	b009      	add	sp, #36	@ 0x24
  802af38:	bd30      	pop	{r4, r5, pc}
  802af3a:	bf00      	nop
- 802af3c:	0803a6fd 	.word	0x0803a6fd
+ 802af3c:	0803a6ed 	.word	0x0803a6ed
 
 0802af40 <puts>:
  802af40:	4b02      	ldr	r3, [pc, #8]	@ (802af4c <puts+0xc>)
@@ -56529,7 +56529,7 @@ int is_valid_mqtt_url(const char *url) {
  802b0ec:	d1f6      	bne.n	802b0dc <_strtol_l.constprop.0+0xd8>
  802b0ee:	f8c8 1000 	str.w	r1, [r8]
  802b0f2:	e794      	b.n	802b01e <_strtol_l.constprop.0+0x1a>
- 802b0f4:	0803aabd 	.word	0x0803aabd
+ 802b0f4:	0803aaad 	.word	0x0803aaad
 
 0802b0f8 <_strtol_r>:
  802b0f8:	f7ff bf84 	b.w	802b004 <_strtol_l.constprop.0>
@@ -57866,7 +57866,7 @@ int is_valid_mqtt_url(const char *url) {
  802bcea:	e7de      	b.n	802bcaa <localtime_r+0x18e>
  802bcec:	2301      	movs	r3, #1
  802bcee:	e7f9      	b.n	802bce4 <localtime_r+0x1c8>
- 802bcf0:	0803a774 	.word	0x0803a774
+ 802bcf0:	0803a764 	.word	0x0803a764
  802bcf4:	20018f50 	.word	0x20018f50
 
 0802bcf8 <iso_year_adjust>:
@@ -58290,18 +58290,18 @@ int is_valid_mqtt_url(const char *url) {
  802c18c:	bfb8      	it	lt
  802c18e:	f04f 3aff 	movlt.w	sl, #4294967295	@ 0xffffffff
  802c192:	e7d6      	b.n	802c142 <__strftime.isra.0+0x3a6>
- 802c194:	0803a9c0 	.word	0x0803a9c0
+ 802c194:	0803a9b0 	.word	0x0803a9b0
  802c198:	fffff894 	.word	0xfffff894
- 802c19c:	0803a7e3 	.word	0x0803a7e3
- 802c1a0:	0803a6fe 	.word	0x0803a6fe
- 802c1a4:	0803a7e5 	.word	0x0803a7e5
- 802c1a8:	0803a7e7 	.word	0x0803a7e7
- 802c1ac:	0803a7f5 	.word	0x0803a7f5
- 802c1b0:	0803a7eb 	.word	0x0803a7eb
- 802c1b4:	0803a7fe 	.word	0x0803a7fe
- 802c1b8:	0803a7fa 	.word	0x0803a7fa
- 802c1bc:	0803a7db 	.word	0x0803a7db
- 802c1c0:	0803a7d4 	.word	0x0803a7d4
+ 802c19c:	0803a7d3 	.word	0x0803a7d3
+ 802c1a0:	0803a6ee 	.word	0x0803a6ee
+ 802c1a4:	0803a7d5 	.word	0x0803a7d5
+ 802c1a8:	0803a7d7 	.word	0x0803a7d7
+ 802c1ac:	0803a7e5 	.word	0x0803a7e5
+ 802c1b0:	0803a7db 	.word	0x0803a7db
+ 802c1b4:	0803a7ee 	.word	0x0803a7ee
+ 802c1b8:	0803a7ea 	.word	0x0803a7ea
+ 802c1bc:	0803a7cb 	.word	0x0803a7cb
+ 802c1c0:	0803a7c4 	.word	0x0803a7c4
  802c1c4:	6971      	ldr	r1, [r6, #20]
  802c1c6:	48bc      	ldr	r0, [pc, #752]	@ (802c4b8 <__strftime.isra.0+0x71c>)
  802c1c8:	9205      	str	r2, [sp, #20]
@@ -58571,17 +58571,17 @@ int is_valid_mqtt_url(const char *url) {
  802c4b4:	4a0b      	ldr	r2, [pc, #44]	@ (802c4e4 <__strftime.isra.0+0x748>)
  802c4b6:	e5d1      	b.n	802c05c <__strftime.isra.0+0x2c0>
  802c4b8:	fffff894 	.word	0xfffff894
- 802c4bc:	0803a806 	.word	0x0803a806
+ 802c4bc:	0803a7f6 	.word	0x0803a7f6
  802c4c0:	fffff895 	.word	0xfffff895
- 802c4c4:	0803a7f5 	.word	0x0803a7f5
- 802c4c8:	0803a7e7 	.word	0x0803a7e7
- 802c4cc:	0803a80a 	.word	0x0803a80a
- 802c4d0:	0803a9c0 	.word	0x0803a9c0
- 802c4d4:	0803aabd 	.word	0x0803aabd
- 802c4d8:	0803a80f 	.word	0x0803a80f
- 802c4dc:	0803a81e 	.word	0x0803a81e
- 802c4e0:	0803a814 	.word	0x0803a814
- 802c4e4:	0803a819 	.word	0x0803a819
+ 802c4c4:	0803a7e5 	.word	0x0803a7e5
+ 802c4c8:	0803a7d7 	.word	0x0803a7d7
+ 802c4cc:	0803a7fa 	.word	0x0803a7fa
+ 802c4d0:	0803a9b0 	.word	0x0803a9b0
+ 802c4d4:	0803aaad 	.word	0x0803aaad
+ 802c4d8:	0803a7ff 	.word	0x0803a7ff
+ 802c4dc:	0803a80e 	.word	0x0803a80e
+ 802c4e0:	0803a804 	.word	0x0803a804
+ 802c4e4:	0803a809 	.word	0x0803a809
  802c4e8:	1e6b      	subs	r3, r5, #1
  802c4ea:	429c      	cmp	r4, r3
  802c4ec:	f4bf ade6 	bcs.w	802c0bc <__strftime.isra.0+0x320>
@@ -58807,11 +58807,11 @@ int is_valid_mqtt_url(const char *url) {
  802c722:	4649      	mov	r1, r9
  802c724:	e778      	b.n	802c618 <__strftime.isra.0+0x87c>
  802c726:	bf00      	nop
- 802c728:	0803a828 	.word	0x0803a828
- 802c72c:	0803a990 	.word	0x0803a990
- 802c730:	0803a7fa 	.word	0x0803a7fa
+ 802c728:	0803a818 	.word	0x0803a818
+ 802c72c:	0803a980 	.word	0x0803a980
+ 802c730:	0803a7ea 	.word	0x0803a7ea
  802c734:	fffff894 	.word	0xfffff894
- 802c738:	0803a830 	.word	0x0803a830
+ 802c738:	0803a820 	.word	0x0803a820
  802c73c:	200000e0 	.word	0x200000e0
 
 0802c740 <strftime>:
@@ -58937,7 +58937,7 @@ int is_valid_mqtt_url(const char *url) {
  802c88c:	e7b7      	b.n	802c7fe <__tzcalc_limits+0xba>
  802c88e:	bf00      	nop
  802c890:	00015180 	.word	0x00015180
- 802c894:	0803a770 	.word	0x0803a770
+ 802c894:	0803a760 	.word	0x0803a760
 
 0802c898 <__tz_lock>:
  802c898:	4801      	ldr	r0, [pc, #4]	@ (802c8a0 <__tz_lock+0x8>)
@@ -59236,20 +59236,20 @@ int is_valid_mqtt_url(const char *url) {
  802cbb6:	6525      	str	r5, [r4, #80]	@ 0x50
  802cbb8:	e6ae      	b.n	802c918 <_tzset_unlocked_r+0x5c>
  802cbba:	bf00      	nop
- 802cbbc:	0803a83c 	.word	0x0803a83c
+ 802cbbc:	0803a82c 	.word	0x0803a82c
  802cbc0:	20018f30 	.word	0x20018f30
  802cbc4:	20018f4c 	.word	0x20018f4c
- 802cbc8:	0803a83f 	.word	0x0803a83f
+ 802cbc8:	0803a82f 	.word	0x0803a82f
  802cbcc:	20018f50 	.word	0x20018f50
  802cbd0:	200000e0 	.word	0x200000e0
- 802cbd4:	0803a6fe 	.word	0x0803a6fe
+ 802cbd4:	0803a6ee 	.word	0x0803a6ee
  802cbd8:	20018f40 	.word	0x20018f40
- 802cbdc:	0803a843 	.word	0x0803a843
- 802cbe0:	0803a878 	.word	0x0803a878
+ 802cbdc:	0803a833 	.word	0x0803a833
+ 802cbe0:	0803a868 	.word	0x0803a868
  802cbe4:	20018f34 	.word	0x20018f34
- 802cbe8:	0803a856 	.word	0x0803a856
- 802cbec:	0803a864 	.word	0x0803a864
- 802cbf0:	0803a877 	.word	0x0803a877
+ 802cbe8:	0803a846 	.word	0x0803a846
+ 802cbec:	0803a854 	.word	0x0803a854
+ 802cbf0:	0803a867 	.word	0x0803a867
  802cbf4:	4a3e      	ldr	r2, [pc, #248]	@ (802ccf0 <_tzset_unlocked_r+0x434>)
  802cbf6:	493f      	ldr	r1, [pc, #252]	@ (802ccf4 <_tzset_unlocked_r+0x438>)
  802cbf8:	ab0a      	add	r3, sp, #40	@ 0x28
@@ -59345,7 +59345,7 @@ int is_valid_mqtt_url(const char *url) {
  802ccec:	6013      	str	r3, [r2, #0]
  802ccee:	e613      	b.n	802c918 <_tzset_unlocked_r+0x5c>
  802ccf0:	20018f34 	.word	0x20018f34
- 802ccf4:	0803a856 	.word	0x0803a856
+ 802ccf4:	0803a846 	.word	0x0803a846
  802ccf8:	20018f40 	.word	0x20018f40
  802ccfc:	20018f50 	.word	0x20018f50
 
@@ -59511,10 +59511,10 @@ int is_valid_mqtt_url(const char *url) {
  802ce46:	4798      	blx	r3
  802ce48:	3601      	adds	r6, #1
  802ce4a:	e7f2      	b.n	802ce32 <__libc_init_array+0x1e>
- 802ce4c:	0803aed0 	.word	0x0803aed0
- 802ce50:	0803aed0 	.word	0x0803aed0
- 802ce54:	0803aed0 	.word	0x0803aed0
- 802ce58:	0803aed8 	.word	0x0803aed8
+ 802ce4c:	0803aec0 	.word	0x0803aec0
+ 802ce50:	0803aec0 	.word	0x0803aec0
+ 802ce54:	0803aec0 	.word	0x0803aec0
+ 802ce58:	0803aec8 	.word	0x0803aec8
 
 0802ce5c <__retarget_lock_init_recursive>:
  802ce5c:	4770      	bx	lr
@@ -60013,13 +60013,13 @@ int is_valid_mqtt_url(const char *url) {
  802d300:	509f79fb 	.word	0x509f79fb
  802d304:	3fd34413 	.word	0x3fd34413
  802d308:	7ff00000 	.word	0x7ff00000
- 802d30c:	0803a732 	.word	0x0803a732
+ 802d30c:	0803a722 	.word	0x0803a722
  802d310:	3ff80000 	.word	0x3ff80000
- 802d314:	0803ad50 	.word	0x0803ad50
- 802d318:	0803abca 	.word	0x0803abca
- 802d31c:	0803abdb 	.word	0x0803abdb
- 802d320:	0803abc6 	.word	0x0803abc6
- 802d324:	0803a731 	.word	0x0803a731
+ 802d314:	0803ad40 	.word	0x0803ad40
+ 802d318:	0803abba 	.word	0x0803abba
+ 802d31c:	0803abcb 	.word	0x0803abcb
+ 802d320:	0803abb6 	.word	0x0803abb6
+ 802d324:	0803a721 	.word	0x0803a721
  802d328:	9b07      	ldr	r3, [sp, #28]
  802d32a:	f8cb 0038 	str.w	r0, [fp, #56]	@ 0x38
  802d32e:	2b0e      	cmp	r3, #14
@@ -60271,8 +60271,8 @@ int is_valid_mqtt_url(const char *url) {
  802d5f0:	e9cd 0102 	strd	r0, r1, [sp, #8]
  802d5f4:	e7c4      	b.n	802d580 <_dtoa_r+0x518>
  802d5f6:	bf00      	nop
- 802d5f8:	0803ad50 	.word	0x0803ad50
- 802d5fc:	0803ad28 	.word	0x0803ad28
+ 802d5f8:	0803ad40 	.word	0x0803ad40
+ 802d5fc:	0803ad18 	.word	0x0803ad18
  802d600:	3ff00000 	.word	0x3ff00000
  802d604:	40240000 	.word	0x40240000
  802d608:	401c0000 	.word	0x401c0000
@@ -60872,8 +60872,8 @@ int is_valid_mqtt_url(const char *url) {
  802dbb2:	4681      	mov	r9, r0
  802dbb4:	e7ea      	b.n	802db8c <_dtoa_r+0xb24>
  802dbb6:	bf00      	nop
- 802dbb8:	0803abca 	.word	0x0803abca
- 802dbbc:	0803abbd 	.word	0x0803abbd
+ 802dbb8:	0803abba 	.word	0x0803abba
+ 802dbbc:	0803abad 	.word	0x0803abad
 
 0802dbc0 <_malloc_trim_r>:
  802dbc0:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -62153,7 +62153,7 @@ int is_valid_mqtt_url(const char *url) {
  802e8ca:	2302      	movs	r3, #2
  802e8cc:	e7ca      	b.n	802e864 <_svfiprintf_r+0x378>
  802e8ce:	bf00      	nop
- 802e8d0:	0803a70f 	.word	0x0803a70f
+ 802e8d0:	0803a6ff 	.word	0x0803a6ff
  802e8d4:	9b00      	ldr	r3, [sp, #0]
  802e8d6:	462f      	mov	r7, r5
  802e8d8:	1c5a      	adds	r2, r3, #1
@@ -62445,9 +62445,9 @@ int is_valid_mqtt_url(const char *url) {
  802ebda:	462f      	mov	r7, r5
  802ebdc:	e5e0      	b.n	802e7a0 <_svfiprintf_r+0x2b4>
  802ebde:	bf00      	nop
- 802ebe0:	0803ac43 	.word	0x0803ac43
- 802ebe4:	0803ac33 	.word	0x0803ac33
- 802ebe8:	0803a720 	.word	0x0803a720
+ 802ebe0:	0803ac33 	.word	0x0803ac33
+ 802ebe4:	0803ac23 	.word	0x0803ac23
+ 802ebe8:	0803a710 	.word	0x0803a710
  802ebec:	2110      	movs	r1, #16
  802ebee:	6071      	str	r1, [r6, #4]
  802ebf0:	2a07      	cmp	r2, #7
@@ -62609,8 +62609,8 @@ int is_valid_mqtt_url(const char *url) {
  802ed76:	46d1      	mov	r9, sl
  802ed78:	e5c2      	b.n	802e900 <_svfiprintf_r+0x414>
  802ed7a:	bf00      	nop
- 802ed7c:	0803ac43 	.word	0x0803ac43
- 802ed80:	0803ac33 	.word	0x0803ac33
+ 802ed7c:	0803ac33 	.word	0x0803ac33
+ 802ed80:	0803ac23 	.word	0x0803ac23
 
 0802ed84 <_sungetc_r>:
  802ed84:	b538      	push	{r3, r4, r5, lr}
@@ -62952,7 +62952,7 @@ int is_valid_mqtt_url(const char *url) {
  802f0c6:	60fb      	str	r3, [r7, #12]
  802f0c8:	2310      	movs	r3, #16
  802f0ca:	e7f2      	b.n	802f0b2 <__ssvfiscanf_r+0x20a>
- 802f0cc:	0803aabd 	.word	0x0803aabd
+ 802f0cc:	0803aaad 	.word	0x0803aaad
  802f0d0:	0802b0f9 	.word	0x0802b0f9
  802f0d4:	08033ef9 	.word	0x08033ef9
  802f0d8:	f046 0601 	orr.w	r6, r6, #1
@@ -63309,7 +63309,7 @@ int is_valid_mqtt_url(const char *url) {
  802f46c:	62fb      	str	r3, [r7, #44]	@ 0x2c
  802f46e:	e780      	b.n	802f372 <__ssvfiscanf_r+0x4ca>
  802f470:	0802b0f9 	.word	0x0802b0f9
- 802f474:	0803aabd 	.word	0x0803aabd
+ 802f474:	0803aaad 	.word	0x0803aaad
  802f478:	2b00      	cmp	r3, #0
  802f47a:	bf08      	it	eq
  802f47c:	f04f 33ff 	moveq.w	r3, #4294967295	@ 0xffffffff
@@ -63935,7 +63935,7 @@ int is_valid_mqtt_url(const char *url) {
  802fae6:	e4bf      	b.n	802f468 <__ssvfiscanf_r+0x5c0>
  802fae8:	46b2      	mov	sl, r6
  802faea:	e7b7      	b.n	802fa5c <__ssvfiscanf_r+0xbb4>
- 802faec:	0803aabd 	.word	0x0803aabd
+ 802faec:	0803aaad 	.word	0x0803aaad
  802faf0:	6abb      	ldr	r3, [r7, #40]	@ 0x28
  802faf2:	3b01      	subs	r3, #1
  802faf4:	2b26      	cmp	r3, #38	@ 0x26
@@ -64129,7 +64129,7 @@ int is_valid_mqtt_url(const char *url) {
  802fcd2:	4626      	mov	r6, r4
  802fcd4:	e7f1      	b.n	802fcba <__ssvfiscanf_r+0xe12>
  802fcd6:	bf00      	nop
- 802fcd8:	0803ac54 	.word	0x0803ac54
+ 802fcd8:	0803ac44 	.word	0x0803ac44
  802fcdc:	08033ef9 	.word	0x08033ef9
 
 0802fce0 <_svfprintf_r>:
@@ -64370,7 +64370,7 @@ int is_valid_mqtt_url(const char *url) {
  802ff7a:	bf00      	nop
  802ff7c:	f3af 8000 	nop.w
 	...
- 802ff88:	0803a70f 	.word	0x0803a70f
+ 802ff88:	0803a6ff 	.word	0x0803a6ff
  802ff8c:	9b0c      	ldr	r3, [sp, #48]	@ 0x30
  802ff8e:	781b      	ldrb	r3, [r3, #0]
  802ff90:	2b68      	cmp	r3, #104	@ 0x68
@@ -64646,12 +64646,12 @@ int is_valid_mqtt_url(const char *url) {
  8030260:	e7a7      	b.n	80301b2 <_svfprintf_r+0x4d2>
  8030262:	bf00      	nop
  8030264:	7fefffff 	.word	0x7fefffff
- 8030268:	0803a6ff 	.word	0x0803a6ff
- 803026c:	0803a703 	.word	0x0803a703
- 8030270:	0803a707 	.word	0x0803a707
- 8030274:	0803a70b 	.word	0x0803a70b
- 8030278:	0803a70f 	.word	0x0803a70f
- 803027c:	0803a720 	.word	0x0803a720
+ 8030268:	0803a6ef 	.word	0x0803a6ef
+ 803026c:	0803a6f3 	.word	0x0803a6f3
+ 8030270:	0803a6f7 	.word	0x0803a6f7
+ 8030274:	0803a6fb 	.word	0x0803a6fb
+ 8030278:	0803a6ff 	.word	0x0803a6ff
+ 803027c:	0803a710 	.word	0x0803a710
  8030280:	40300000 	.word	0x40300000
  8030284:	3fe00000 	.word	0x3fe00000
  8030288:	9b10      	ldr	r3, [sp, #64]	@ 0x40
@@ -65040,8 +65040,8 @@ int is_valid_mqtt_url(const char *url) {
  8030642:	e7d3      	b.n	80305ec <_svfprintf_r+0x90c>
  8030644:	46b0      	mov	r8, r6
  8030646:	e7d0      	b.n	80305ea <_svfprintf_r+0x90a>
- 8030648:	0803ac86 	.word	0x0803ac86
- 803064c:	0803ac76 	.word	0x0803ac76
+ 8030648:	0803ac76 	.word	0x0803ac76
+ 803064c:	0803ac66 	.word	0x0803ac66
  8030650:	2366      	movs	r3, #102	@ 0x66
  8030652:	9306      	str	r3, [sp, #24]
  8030654:	f04f 0801 	mov.w	r8, #1
@@ -65393,8 +65393,8 @@ int is_valid_mqtt_url(const char *url) {
  80309ba:	460c      	mov	r4, r1
  80309bc:	e58a      	b.n	80304d4 <_svfprintf_r+0x7f4>
  80309be:	bf00      	nop
- 80309c0:	0803a70f 	.word	0x0803a70f
- 80309c4:	0803a720 	.word	0x0803a720
+ 80309c0:	0803a6ff 	.word	0x0803a6ff
+ 80309c4:	0803a710 	.word	0x0803a710
  80309c8:	9b06      	ldr	r3, [sp, #24]
  80309ca:	2b65      	cmp	r3, #101	@ 0x65
  80309cc:	f340 8246 	ble.w	8030e5c <_svfprintf_r+0x117c>
@@ -65599,8 +65599,8 @@ int is_valid_mqtt_url(const char *url) {
  8030baa:	461a      	mov	r2, r3
  8030bac:	e7b0      	b.n	8030b10 <_svfprintf_r+0xe30>
  8030bae:	bf00      	nop
- 8030bb0:	0803a731 	.word	0x0803a731
- 8030bb4:	0803ac76 	.word	0x0803ac76
+ 8030bb0:	0803a721 	.word	0x0803a721
+ 8030bb4:	0803ac66 	.word	0x0803ac66
  8030bb8:	9b04      	ldr	r3, [sp, #16]
  8030bba:	444b      	add	r3, r9
  8030bbc:	9306      	str	r3, [sp, #24]
@@ -65881,7 +65881,7 @@ int is_valid_mqtt_url(const char *url) {
  8030e52:	ac29      	add	r4, sp, #164	@ 0xa4
  8030e54:	e724      	b.n	8030ca0 <_svfprintf_r+0xfc0>
  8030e56:	bf00      	nop
- 8030e58:	0803ac76 	.word	0x0803ac76
+ 8030e58:	0803ac66 	.word	0x0803ac66
  8030e5c:	9904      	ldr	r1, [sp, #16]
  8030e5e:	9b10      	ldr	r3, [sp, #64]	@ 0x40
  8030e60:	9a27      	ldr	r2, [sp, #156]	@ 0x9c
@@ -66101,8 +66101,8 @@ int is_valid_mqtt_url(const char *url) {
  803108a:	f8cd a020 	str.w	sl, [sp, #32]
  803108e:	4656      	mov	r6, sl
  8031090:	f7ff b97c 	b.w	803038c <_svfprintf_r+0x6ac>
- 8031094:	0803ac76 	.word	0x0803ac76
- 8031098:	0803ac86 	.word	0x0803ac86
+ 8031094:	0803ac66 	.word	0x0803ac66
+ 8031098:	0803ac76 	.word	0x0803ac76
 
 0803109c <__swhatbuf_r>:
  803109c:	b570      	push	{r4, r5, r6, lr}
@@ -66406,7 +66406,7 @@ int is_valid_mqtt_url(const char *url) {
  80313b6:	61bb      	str	r3, [r7, #24]
  80313b8:	2310      	movs	r3, #16
  80313ba:	e7f1      	b.n	80313a0 <__ssvfscanf_r+0x23c>
- 80313bc:	0803aabd 	.word	0x0803aabd
+ 80313bc:	0803aaad 	.word	0x0803aaad
  80313c0:	0802b0f9 	.word	0x0802b0f9
  80313c4:	08033ef9 	.word	0x08033ef9
  80313c8:	f04f 0804 	mov.w	r8, #4
@@ -66711,7 +66711,7 @@ int is_valid_mqtt_url(const char *url) {
  80316cc:	6022      	str	r2, [r4, #0]
  80316ce:	e7f4      	b.n	80316ba <__ssvfscanf_r+0x556>
  80316d0:	0802b0f9 	.word	0x0802b0f9
- 80316d4:	0803aabd 	.word	0x0803aabd
+ 80316d4:	0803aaad 	.word	0x0803aaad
  80316d8:	46a9      	mov	r9, r5
  80316da:	f016 0680 	ands.w	r6, r6, #128	@ 0x80
  80316de:	f859 5b04 	ldr.w	r5, [r9], #4
@@ -67438,7 +67438,7 @@ int is_valid_mqtt_url(const char *url) {
  8031e12:	46b2      	mov	sl, r6
  8031e14:	e7b3      	b.n	8031d7e <__ssvfscanf_r+0xc1a>
  8031e16:	bf00      	nop
- 8031e18:	0803aabd 	.word	0x0803aabd
+ 8031e18:	0803aaad 	.word	0x0803aaad
  8031e1c:	6afb      	ldr	r3, [r7, #44]	@ 0x2c
  8031e1e:	3b01      	subs	r3, #1
  8031e20:	f5b3 7fae 	cmp.w	r3, #348	@ 0x15c
@@ -67756,7 +67756,7 @@ int is_valid_mqtt_url(const char *url) {
  803219a:	46e0      	mov	r8, ip
  803219c:	46e3      	mov	fp, ip
  803219e:	e7d3      	b.n	8032148 <__ssvfscanf_r+0xfe4>
- 80321a0:	0803ac9c 	.word	0x0803ac9c
+ 80321a0:	0803ac8c 	.word	0x0803ac8c
  80321a4:	08033ef9 	.word	0x08033ef9
  80321a8:	f1bb 0f01 	cmp.w	fp, #1
  80321ac:	d06e      	beq.n	803228c <__ssvfscanf_r+0x1128>
@@ -67992,8 +67992,8 @@ int is_valid_mqtt_url(const char *url) {
  8032438:	e7f2      	b.n	8032420 <__ssvfscanf_r+0x12bc>
  803243a:	f04f 0a00 	mov.w	sl, #0
  803243e:	e6bb      	b.n	80321b8 <__ssvfscanf_r+0x1054>
- 8032440:	0803ac96 	.word	0x0803ac96
- 8032444:	0803a6fe 	.word	0x0803a6fe
+ 8032440:	0803ac86 	.word	0x0803ac86
+ 8032444:	0803a6ee 	.word	0x0803a6ee
 
 08032448 <_putc_r>:
  8032448:	b570      	push	{r4, r5, r6, lr}
@@ -68150,8 +68150,8 @@ int is_valid_mqtt_url(const char *url) {
  80325a0:	6125      	str	r5, [r4, #16]
  80325a2:	4620      	mov	r0, r4
  80325a4:	e8bd 81f0 	ldmia.w	sp!, {r4, r5, r6, r7, r8, pc}
- 80325a8:	0803abca 	.word	0x0803abca
- 80325ac:	0803acbe 	.word	0x0803acbe
+ 80325a8:	0803abba 	.word	0x0803abba
+ 80325ac:	0803acae 	.word	0x0803acae
 
 080325b0 <__s2b>:
  80325b0:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -68212,8 +68212,8 @@ int is_valid_mqtt_url(const char *url) {
  8032634:	f7ff ff76 	bl	8032524 <__multadd>
  8032638:	e7ee      	b.n	8032618 <__s2b+0x68>
  803263a:	bf00      	nop
- 803263c:	0803abca 	.word	0x0803abca
- 8032640:	0803acbe 	.word	0x0803acbe
+ 803263c:	0803abba 	.word	0x0803abba
+ 8032640:	0803acae 	.word	0x0803acae
 
 08032644 <__hi0bits>:
  8032644:	f5b0 3f80 	cmp.w	r0, #65536	@ 0x10000
@@ -68303,8 +68303,8 @@ int is_valid_mqtt_url(const char *url) {
  80326fa:	6103      	str	r3, [r0, #16]
  80326fc:	bd10      	pop	{r4, pc}
  80326fe:	bf00      	nop
- 8032700:	0803abca 	.word	0x0803abca
- 8032704:	0803acbe 	.word	0x0803acbe
+ 8032700:	0803abba 	.word	0x0803abba
+ 8032704:	0803acae 	.word	0x0803acae
 
 08032708 <__multiply>:
  8032708:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -68423,8 +68423,8 @@ int is_valid_mqtt_url(const char *url) {
  803284e:	e799      	b.n	8032784 <__multiply+0x7c>
  8032850:	3e01      	subs	r6, #1
  8032852:	e79b      	b.n	803278c <__multiply+0x84>
- 8032854:	0803abca 	.word	0x0803abca
- 8032858:	0803acbe 	.word	0x0803acbe
+ 8032854:	0803abba 	.word	0x0803abba
+ 8032858:	0803acae 	.word	0x0803acae
 
 0803285c <__pow5mult>:
  803285c:	e92d 43f8 	stmdb	sp!, {r3, r4, r5, r6, r7, r8, r9, lr}
@@ -68477,7 +68477,7 @@ int is_valid_mqtt_url(const char *url) {
  80328d0:	4630      	mov	r0, r6
  80328d2:	e8bd 83f8 	ldmia.w	sp!, {r3, r4, r5, r6, r7, r8, r9, pc}
  80328d6:	bf00      	nop
- 80328d8:	0803ad18 	.word	0x0803ad18
+ 80328d8:	0803ad08 	.word	0x0803ad08
 
 080328dc <__lshift>:
  80328dc:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -68556,8 +68556,8 @@ int is_valid_mqtt_url(const char *url) {
  80329a6:	d8f9      	bhi.n	803299c <__lshift+0xc0>
  80329a8:	e7ea      	b.n	8032980 <__lshift+0xa4>
  80329aa:	bf00      	nop
- 80329ac:	0803abca 	.word	0x0803abca
- 80329b0:	0803acbe 	.word	0x0803acbe
+ 80329ac:	0803abba 	.word	0x0803abba
+ 80329b0:	0803acae 	.word	0x0803acae
 
 080329b4 <__mcmp>:
  80329b4:	690a      	ldr	r2, [r1, #16]
@@ -68693,8 +68693,8 @@ int is_valid_mqtt_url(const char *url) {
  8032b06:	3f01      	subs	r7, #1
  8032b08:	e7e7      	b.n	8032ada <__mdiff+0xee>
  8032b0a:	bf00      	nop
- 8032b0c:	0803abca 	.word	0x0803abca
- 8032b10:	0803acbe 	.word	0x0803acbe
+ 8032b0c:	0803abba 	.word	0x0803abba
+ 8032b10:	0803acae 	.word	0x0803acae
 
 08032b14 <__ulp>:
  8032b14:	b082      	sub	sp, #8
@@ -68844,8 +68844,8 @@ int is_valid_mqtt_url(const char *url) {
  8032c92:	f7ff fcd7 	bl	8032644 <__hi0bits>
  8032c96:	ebc0 1042 	rsb	r0, r0, r2, lsl #5
  8032c9a:	e7e5      	b.n	8032c68 <__d2b+0x74>
- 8032c9c:	0803abca 	.word	0x0803abca
- 8032ca0:	0803acbe 	.word	0x0803acbe
+ 8032c9c:	0803abba 	.word	0x0803abba
+ 8032ca0:	0803acae 	.word	0x0803acae
 
 08032ca4 <__ratio>:
  8032ca4:	e92d 4ff0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -69719,8 +69719,8 @@ int is_valid_mqtt_url(const char *url) {
  80334cc:	e785      	b.n	80333da <_strtod_l+0x192>
  80334ce:	f04f 0c01 	mov.w	ip, #1
  80334d2:	e7f8      	b.n	80334c6 <_strtod_l+0x27e>
- 80334d4:	0803ae2c 	.word	0x0803ae2c
- 80334d8:	0803a892 	.word	0x0803a892
+ 80334d4:	0803ae1c 	.word	0x0803ae1c
+ 80334d8:	0803a882 	.word	0x0803a882
  80334dc:	7ff00000 	.word	0x7ff00000
  80334e0:	9a19      	ldr	r2, [sp, #100]	@ 0x64
  80334e2:	1c51      	adds	r1, r2, #1
@@ -70013,13 +70013,13 @@ int is_valid_mqtt_url(const char *url) {
  80337be:	6013      	str	r3, [r2, #0]
  80337c0:	e768      	b.n	8033694 <_strtod_l+0x44c>
  80337c2:	bf00      	nop
- 80337c4:	0803a895 	.word	0x0803a895
- 80337c8:	0803ae18 	.word	0x0803ae18
- 80337cc:	0803a704 	.word	0x0803a704
- 80337d0:	0803abc0 	.word	0x0803abc0
- 80337d4:	0803a6fe 	.word	0x0803a6fe
- 80337d8:	0803ad50 	.word	0x0803ad50
- 80337dc:	0803ad28 	.word	0x0803ad28
+ 80337c4:	0803a885 	.word	0x0803a885
+ 80337c8:	0803ae08 	.word	0x0803ae08
+ 80337cc:	0803a6f4 	.word	0x0803a6f4
+ 80337d0:	0803abb0 	.word	0x0803abb0
+ 80337d4:	0803a6ee 	.word	0x0803a6ee
+ 80337d8:	0803ad40 	.word	0x0803ad40
+ 80337dc:	0803ad18 	.word	0x0803ad18
  80337e0:	7ff00000 	.word	0x7ff00000
  80337e4:	7ca00000 	.word	0x7ca00000
  80337e8:	7fefffff 	.word	0x7fefffff
@@ -70305,7 +70305,7 @@ int is_valid_mqtt_url(const char *url) {
  8033a96:	6013      	str	r3, [r2, #0]
  8033a98:	e600      	b.n	803369c <_strtod_l+0x454>
  8033a9a:	bf00      	nop
- 8033a9c:	0803ae40 	.word	0x0803ae40
+ 8033a9c:	0803ae30 	.word	0x0803ae30
  8033aa0:	fffffc02 	.word	0xfffffc02
  8033aa4:	39500000 	.word	0x39500000
  8033aa8:	7ff00000 	.word	0x7ff00000
@@ -70719,7 +70719,7 @@ int is_valid_mqtt_url(const char *url) {
  8033eee:	1e69      	subs	r1, r5, #1
  8033ef0:	6011      	str	r1, [r2, #0]
  8033ef2:	e7f5      	b.n	8033ee0 <_strtoul_l.constprop.0+0xc4>
- 8033ef4:	0803aabd 	.word	0x0803aabd
+ 8033ef4:	0803aaad 	.word	0x0803aaad
 
 08033ef8 <_strtoul_r>:
  8033ef8:	f7ff bf90 	b.w	8033e1c <_strtoul_l.constprop.0>
@@ -71215,7 +71215,7 @@ int is_valid_mqtt_url(const char *url) {
  803439a:	f105 39ff 	add.w	r9, r5, #4294967295	@ 0xffffffff
  803439e:	f8c8 9000 	str.w	r9, [r8]
  80343a2:	e7ef      	b.n	8034384 <_strtoll_l.constprop.0+0xf8>
- 80343a4:	0803aabd 	.word	0x0803aabd
+ 80343a4:	0803aaad 	.word	0x0803aaad
 
 080343a8 <_strtoll_r>:
  80343a8:	f7ff bf70 	b.w	803428c <_strtoll_l.constprop.0>
@@ -71234,8 +71234,8 @@ int is_valid_mqtt_url(const char *url) {
  80343c6:	4798      	blx	r3
  80343c8:	e7f5      	b.n	80343b6 <__libc_fini_array+0xa>
  80343ca:	bf00      	nop
- 80343cc:	0803aed8 	.word	0x0803aed8
- 80343d0:	0803aedc 	.word	0x0803aedc
+ 80343cc:	0803aec8 	.word	0x0803aec8
+ 80343d0:	0803aecc 	.word	0x0803aecc
 
 080343d4 <_strtoull_l.constprop.0>:
  80343d4:	e92d 4ff7 	stmdb	sp!, {r0, r1, r2, r4, r5, r6, r7, r8, r9, sl, fp, lr}
@@ -71355,7 +71355,7 @@ int is_valid_mqtt_url(const char *url) {
  80344f4:	f8c9 a000 	str.w	sl, [r9]
  80344f8:	e7ef      	b.n	80344da <_strtoull_l.constprop.0+0x106>
  80344fa:	bf00      	nop
- 80344fc:	0803aabd 	.word	0x0803aabd
+ 80344fc:	0803aaad 	.word	0x0803aaad
 
 08034500 <_strtoull_r>:
  8034500:	f7ff bf68 	b.w	80343d4 <_strtoull_l.constprop.0>
@@ -71383,7 +71383,7 @@ int is_valid_mqtt_url(const char *url) {
  803452c:	bdf0      	pop	{r4, r5, r6, r7, pc}
  803452e:	bf00      	nop
  8034530:	200000e8 	.word	0x200000e8
- 8034534:	0803a6fe 	.word	0x0803a6fe
+ 8034534:	0803a6ee 	.word	0x0803a6ee
 
 08034538 <iswspace>:
  8034538:	2100      	movs	r1, #0
@@ -71398,7 +71398,7 @@ int is_valid_mqtt_url(const char *url) {
  8034548:	f000 0008 	andls.w	r0, r0, #8
  803454c:	2000      	movhi	r0, #0
  803454e:	4770      	bx	lr
- 8034550:	0803aabd 	.word	0x0803aabd
+ 8034550:	0803aaad 	.word	0x0803aaad
 
 08034554 <__register_exitproc>:
  8034554:	e92d 47f0 	stmdb	sp!, {r4, r5, r6, r7, r8, r9, sl, lr}
@@ -71883,9 +71883,9 @@ int is_valid_mqtt_url(const char *url) {
  80349f2:	2b00      	cmp	r3, #0
  80349f4:	d1dd      	bne.n	80349b2 <__gethex+0x26a>
  80349f6:	e7ee      	b.n	80349d6 <__gethex+0x28e>
- 80349f8:	0803a892 	.word	0x0803a892
- 80349fc:	0803abca 	.word	0x0803abca
- 8034a00:	0803ae68 	.word	0x0803ae68
+ 80349f8:	0803a882 	.word	0x0803a882
+ 80349fc:	0803abba 	.word	0x0803abba
+ 8034a00:	0803ae58 	.word	0x0803ae58
  8034a04:	1e6f      	subs	r7, r5, #1
  8034a06:	f1b9 0f00 	cmp.w	r9, #0
  8034a0a:	d130      	bne.n	8034a6e <__gethex+0x326>
@@ -72020,7 +72020,7 @@ int is_valid_mqtt_url(const char *url) {
  8034b5e:	42b0      	cmp	r0, r6
  8034b60:	dbe7      	blt.n	8034b32 <__gethex+0x3ea>
  8034b62:	e7f0      	b.n	8034b46 <__gethex+0x3fe>
- 8034b64:	0803abca 	.word	0x0803abca
+ 8034b64:	0803abba 	.word	0x0803abba
 
 08034b68 <L_shift>:
  8034b68:	f1c2 0208 	rsb	r2, r2, #8
