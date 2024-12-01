@@ -68,7 +68,7 @@ struct mg_full_net_info mg_full_info;
 osThreadId_t ethTaskHandle;
 const osThreadAttr_t ethTask_attributes = {
   .name = "ethTask",
-  .stack_size = 1500 * 4,
+  .stack_size = 3000 * 4,
   .priority = (osPriority_t) osPriorityNormal,
 };
 /* Definitions for IOTask */
@@ -96,7 +96,7 @@ const osThreadAttr_t settingsTask_attributes = {
 osThreadId_t loggingTaskHandle;
 const osThreadAttr_t loggingTask_attributes = {
   .name = "loggingTask",
-  .stack_size = 512 * 4,
+  .stack_size = 1024 * 4,
   .priority = (osPriority_t) osPriorityLow,
 };
 /* Definitions for inputReadQ */
@@ -211,7 +211,7 @@ void MX_FREERTOS_Init(void) {
   mqttQHandle = osMessageQueueNew (1, sizeof(MQTT_cred_struct), &mqttQ_attributes);
 
   /* creation of loggingQ */
-  loggingQHandle = osMessageQueueNew (15, sizeof(log_message_t), &loggingQ_attributes);
+  loggingQHandle = osMessageQueueNew (20, sizeof(log_message_t), &loggingQ_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */

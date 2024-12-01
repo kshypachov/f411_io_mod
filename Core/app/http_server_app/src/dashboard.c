@@ -53,10 +53,14 @@ tokens_list_t web_tokens[user_list_size]= {0};
 
 static bool load_users(const char *file_path, users_list_t * users, size_t count){
 	struct mg_fd *fd = mg_fs_open(&mg_fs_lfs, file_path, MG_FS_READ);
-	if (!fd) return false;
+	if (!fd) {
+		logging(L_ERR, "Can't open file with users");
+		return false;
+	}
 
 	mg_fs_lfs.rd(fd->fd, users, sizeof(users_list_t) * count);
 	mg_fs_close(fd);
+	logging(L_INFO, "Loaded web users from file");
 	return true;
 }
 
@@ -66,6 +70,7 @@ static void write_users(const char *file_path, users_list_t * users, size_t coun
 
 	mg_fs_lfs.wr(fd->fd, users, sizeof(users_list_t) * count);
 	mg_fs_close(fd);
+	logging(L_INFO, "Saved web users to file");
 }
 
 
@@ -78,6 +83,7 @@ static void handle_login(struct mg_connection *c, tokens_list_t *u) {
               cookie_name, u->token,
               c->is_tls ? "Secure; " : "", token_life_time / 1000);
   mg_http_reply(c, 200, cookie, "{%m:%m}", MG_ESC("user"), MG_ESC(u->user));
+  logging(L_INFO, "Authenticated web user: %s ", u->user);
 }
 
 static bool auth(struct mg_connection *c, struct mg_http_message *hm, bool set_cookie){
@@ -91,6 +97,7 @@ static bool auth(struct mg_connection *c, struct mg_http_message *hm, bool set_c
 	mg_http_creds(hm, username, sizeof(username), pass, sizeof(pass));
 
 	if (username[0] != '\0' && pass[0] != '\0') {
+		logging(L_INFO, "Try to authenticate user: %s", username);
 	// Both user and password is set, search by user/password
 		mg_sha1_init(&sha1_ctx);
 		mg_sha1_update(&sha1_ctx, (const unsigned char *)pass, strlen(pass) * sizeof(char));
@@ -103,13 +110,15 @@ static bool auth(struct mg_connection *c, struct mg_http_message *hm, bool set_c
 						web_tokens[i].expare = mg_now() + token_life_time;
 						mg_random_str(web_tokens[i].token, sha1_str_len -1);
 						if (set_cookie)handle_login(c, &web_tokens[i]);
+						logging(L_INFO, "User: %s is authenticated", web_tokens[i].user);
 
 						return true;
 					}
 					strncpy(web_tokens[1].user, username, sizeof(web_tokens[1].user));
 					web_tokens[1].expare = mg_now() + token_life_time;
 					mg_random_str(web_tokens[1].token, sha1_str_len -1);
-					if (set_cookie)handle_login(c, &web_tokens[i]);
+					if (set_cookie)handle_login(c, &web_tokens[1]);
+					logging(L_INFO, "User: %s is authenticated", web_tokens[i].user);
 
 					return true;
 				}
@@ -161,9 +170,11 @@ static void handler_logout(struct mg_connection *c,struct mg_http_message *hm){
 	}else if (username[0] == '\0' && pass[0] != '\0') {
 		for (i=0;i<user_list_size; i++){
 			if((strcmp(web_tokens[i].token, pass) == 0)){
+				logging(L_INFO, "User: %s is logout", web_tokens[i].user);
 				web_tokens[i].token[0] = '\0';
 				web_tokens[i].expare = 0;
 				web_tokens[i].user[0] = '\0';
+
 		        mg_http_reply(c, 200, headers, //TODO delete for release,
 		        		"{\"status\":\"success\",\"message\":\"User successfully logout\"}\r\n");
 		        return;
@@ -185,8 +196,6 @@ static void handler_logout(struct mg_connection *c,struct mg_http_message *hm){
 static void handle_ram_status_get(struct mg_connection *c){
 	HeapStats_t heap_status;
 	vPortGetHeapStats(&heap_status);
-
-	logging(1, "Start execute API RAM status");
 
     // Формирование и отправка JSON ответа с помощью mg_http_reply
     mg_http_reply(c, 200, "Content-Type: application/json\r\n"
@@ -536,6 +545,7 @@ static void handle_firmware_upload(struct mg_connection *c, struct mg_http_messa
 		mg_http_get_var(&hm->query, "file", file, sizeof(file));
 		if(strcmp(file, FIRMWARE_FILE_NAME) == 0){
 			mg_http_upload(c, hm, &mg_fs_lfs, "/firmware", FIRMWARE_FILE_MAX_SIZE);
+			vTaskDelay(1);
 		}else{
 			mg_http_reply(c, 400, headers, //TODO delete for release,
 							"{\"status\":\"error\",\"message\":\"Incorrect file name. Expected file name %s\"}\r\n", FIRMWARE_FILE_NAME);
@@ -747,6 +757,8 @@ static void handle_manage_user(struct mg_connection *c, struct mg_http_message *
 	    free(response);
 	    free(user_entry);
 
+	    return;
+
 	}else if (mg_match(hm->method, mg_str("POST"), NULL)){
 
 		char *username_add = NULL;
@@ -816,6 +828,8 @@ static void handle_manage_user(struct mg_connection *c, struct mg_http_message *
 		free(username_add);
 		free(password_add);
 
+		return;
+
 	}else if (mg_match(hm->method, mg_str("PUT"), NULL)){
 
 	    char *username_edit = NULL;
@@ -875,8 +889,10 @@ static void handle_manage_user(struct mg_connection *c, struct mg_http_message *
 	    free(username_edit);
 	    free(new_password);
 
+	    return;
 
-	}if (mg_match(hm->method, mg_str("DELETE"), NULL)){
+
+	}else if (mg_match(hm->method, mg_str("DELETE"), NULL)){
 		char *username_del = NULL;
 
 	    username_del = mg_json_get_str(hm->body, "$.user");
@@ -915,10 +931,25 @@ static void handle_manage_user(struct mg_connection *c, struct mg_http_message *
 	    // Освобождаем память
 	    free(username_del);
 
-	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
-						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET POST PUT DELETE methods\"}\r\n");
+	    return;
 
+	}else{
+		logging(L_ERR, "Call API /api/device/user 400 error");
+		char * method = calloc(hm->method.len + 2, sizeof(char));
+		if (method){
+			strncpy(method, hm->method.buf, hm->method.len);
+
+			mg_http_reply(c, 400, headers, //TODO delete for release,
+						"{\"status\":\"error\",\"message\":\"Unsupported method: %s, support only GET POST PUT DELETE methods\"}\r\n", method);
+		}else{
+			mg_http_reply(c, 400, headers, //TODO delete for release,
+						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET POST PUT DELETE methods\"}\r\n", method);
+
+		}
+
+		free(method);
+
+		return;
 	}
 }
 
@@ -935,30 +966,42 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
         }else if (mg_match(hm->uri, mg_str("/api/#"), NULL) && !authenticate ) { // All requests to /api should be authenticated
         	mg_http_reply(c, 403, "", "Not Authorised\n");
 		}else if (mg_match(hm->uri, mg_str("/api/login"), NULL)) {
+			 logging(L_INFO, "Call API /api/login");
         	 handler_authanticate(c,hm);
 		}else if (mg_match(hm->uri, mg_str("/api/logout"), NULL)) {
+			logging(L_INFO, "Call API /api/logout");
 			handler_logout(c,hm);
 		}else if (mg_match(hm->uri, mg_str("/api/ram/status"), NULL)) { // Get free and allocated RAM space
+			logging(L_INFO, "Call API /api/ram/status");
 			handle_ram_status_get(c);
 		}else if(mg_match(hm->uri, mg_str("/api/io/status"), NULL)){
+			logging(L_INFO, "Call API /api/io/status");
 			handle_io_status_get(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/mqtt/settings"), NULL)){
+			logging(L_INFO, "Call API /api/mqtt/settings");
 			handle_mqtt_conf(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/device/status"), NULL)){
+			logging(L_INFO, "Call API /api/device/status");
 			handle_dev_status(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/device/log"), NULL)){
+			logging(L_INFO, "Call API /api/device/log");
 			handle_fs_get_log(c, hm, 0);
 		}else if(mg_match(hm->uri, mg_str("/api/device/log_old"), NULL)){
+			logging(L_INFO, "Call API /api/device/log_old");
 			handle_fs_get_log(c, hm, 1);
 		}else if(mg_match(hm->uri, mg_str("/api/device/user"), NULL)){
+			logging(L_INFO, "Call API /api/device/user");
 			handle_manage_user(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/device/restart"), NULL)){
+			logging(L_INFO, "Call API /api/device/restart");
 			handle_restart_mcu(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/upload"), NULL)){
 			handle_firmware_upload(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/md5"), NULL)){
+			logging(L_INFO, "Call API /api/firmware/md5");
 			handle_firmware_md5(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/apply"), NULL)){
+			logging(L_INFO, "Call API /api/firmware/apply");
 			handle_activete_and_reboot(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/deactivate"), NULL)){
 			handle_firmware_deactivate(c, hm);
