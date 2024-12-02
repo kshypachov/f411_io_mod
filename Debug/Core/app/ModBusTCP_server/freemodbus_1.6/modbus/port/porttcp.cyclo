@@ -1,0 +1,7 @@
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:61:13:handler_mb_tcp	4
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:85:6:init_mb_tcp	1
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:92:7:xMBTCPPortInit	1
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:99:7:xMBTCPPortGetRequest	1
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:109:6:xMBTCPPortSendResponse	1
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:118:7:vMBTCPPortClose	1
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:122:6:vMBTCPPortDisable	1

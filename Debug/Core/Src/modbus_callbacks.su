@@ -1,0 +1,4 @@
+../Core/Src/modbus_callbacks.c:16:14:eMBRegHoldingCB	12	static
+../Core/Src/modbus_callbacks.c:36:14:eMBRegCoilsCB	0	static
+../Core/Src/modbus_callbacks.c:41:14:eMBRegInputCB	0	static
+../Core/Src/modbus_callbacks.c:46:14:eMBRegDiscreteCB	0	static

@@ -56,7 +56,13 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
  ../Drivers/i2c_display/inc/fonts.h ../Core/Inc/i2c.h \
  ../Core/Inc/logger.h ../Core/Inc/data_types.h \
  ../Core/app/sntp_app/inc/sntp.h \
- ../Core/app/ssdp_auto_discovery_app/inc/ssdp.h
+ ../Core/app/ssdp_auto_discovery_app/inc/ssdp.h \
+ ../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include/mb.h \
+ ../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/port.h \
+ ../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h \
+ ../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include/mbport.h \
+ ../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include/mbproto.h \
+ ../Core/app/ModBusTCP_server/inc/mb_tcp_app.h
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -123,3 +129,9 @@ Core/Src/freertos.o: ../Core/Src/freertos.c \
 ../Core/Inc/data_types.h:
 ../Core/app/sntp_app/inc/sntp.h:
 ../Core/app/ssdp_auto_discovery_app/inc/ssdp.h:
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include/mb.h:
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/port.h:
+../Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h:
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include/mbport.h:
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include/mbproto.h:
+../Core/app/ModBusTCP_server/inc/mb_tcp_app.h:

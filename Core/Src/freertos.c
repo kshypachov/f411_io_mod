@@ -42,6 +42,9 @@
 #include "logger.h"
 #include "sntp.h"
 #include "ssdp.h"
+#include "mb.h"
+#include "mb_tcp_app.h"
+//#include "mbport.h"
 
 /* USER CODE END Includes */
 
@@ -320,6 +323,7 @@ void StartEthTask(void *argument)
   }
   start_sntp(&mgr);
   ssdp_start_server(&mgr, &mif);
+  init_mb_tcp(&mgr);
   TickType_t last_tick = xTaskGetTickCount(); // начальное значение тиков
 
   /* Infinite loop */

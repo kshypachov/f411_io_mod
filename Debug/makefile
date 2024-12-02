@@ -23,6 +23,13 @@ RM := rm -rf
 -include Core/app/sntp_app/src/subdir.mk
 -include Core/app/mqtt_client_app/src/subdir.mk
 -include Core/app/http_server_app/src/subdir.mk
+-include Core/app/ModBusTCP_server/src/subdir.mk
+-include Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/subdir.mk
+-include Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/subdir.mk
+-include Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/subdir.mk
+-include Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/subdir.mk
+-include Core/app/ModBusTCP_server/freemodbus_1.6/modbus/ascii/subdir.mk
+-include Core/app/ModBusTCP_server/freemodbus_1.6/modbus/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include objects.mk
