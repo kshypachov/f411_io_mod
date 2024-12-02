@@ -1,4 +1,4 @@
-name: STM32CubeIDE Build
+name: STM32CubeIDE Debug Build
 
 on:
   push:
