@@ -29,7 +29,6 @@
 "./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbcrc.o"
 "./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbrtu.o"
 "./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o"
-"./Core/app/ModBusTCP_server/src/mb_tcp_app.o"
 "./Core/app/http_server_app/src/dashboard.o"
 "./Core/app/mqtt_client_app/src/home_mqtt_gen.o"
 "./Core/app/mqtt_client_app/src/mqtt.o"

@@ -20,8 +20,7 @@ Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o: \
  ../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include/mbport.h \
  ../Middlewares/Third_Party/mongoose/mongoose.h \
  ../Core/Inc/mongoose_config.h \
- ../Core/app/ModBusTCP_server/inc/mb_tcp_app.h \
- ../Core/app/ModBusTCP_server/inc/mb_add.h
+ ../Core/app/ModBusTCP_server/inc/mb_tcp_app.h
 ../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/port.h:
 ../Core/Inc/FreeRTOSConfig.h:
 ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
@@ -43,4 +42,3 @@ Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o: \
 ../Middlewares/Third_Party/mongoose/mongoose.h:
 ../Core/Inc/mongoose_config.h:
 ../Core/app/ModBusTCP_server/inc/mb_tcp_app.h:
-../Core/app/ModBusTCP_server/inc/mb_add.h:

@@ -51,7 +51,7 @@
 #define WEB_PASS_LEN				128
 #define WEB_USERS_FILE				"/auth/pass.conf"
 #define WEB_ADMIN_DEFAULT   		"admin"
-#define	WEB_ADMIN_PASS_DIGEST		{ 208, 51, 226, 42, 227, 72, 174, 181, 102, 15, 194, 20, 10, 236, 53, 133, 12, 77, 169, 151, 0 }
+#define	WEB_ADMIN_PASS_DIGEST		{ 208, 51, 226, 42, 227, 72, 174, 181, 102, 15, 194, 20, 10, 236, 53, 133, 12, 77, 169, 151, 0 } // Digest for password "admin"
 
 
 /*-------------------------RE define mem managment functins ---*/

@@ -44,6 +44,8 @@
 #include "ssdp.h"
 #include "mb.h"
 #include "mb_tcp_app.h"
+#include "mb.h"
+#include "mbutils.h"
 //#include "mbport.h"
 
 /* USER CODE END Includes */
@@ -783,6 +785,27 @@ void add_log_mess_to_q(struct log_message mess){
 }
 
 void empty_fn(void *data){};
+
+eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNDiscrete){
+
+	eMBErrorCode eStatus = MB_ENOERR;
+
+	//usAddress --; /* to c-style address */
+
+	if (((int16_t) usAddress >= INPUTS_FIRST_INDEX) && (usAddress + usNDiscrete <= INPUTS_FIRST_INDEX + INPUTS_COUNT)){
+		inputs_state_t input;
+		usAddress --; /* to c-style address */
+		RW_parameters_from_queue(input, S_INPUTS, S_READ);
+
+		for(int i = usAddress; i < usNDiscrete; i++){
+			xMBUtilSetBits( pucRegBuffer, i, 1, input[i] );
+		}
+	}else{
+		eStatus = MB_ENOREG;
+	}
+	return eStatus;
+
+}
 
 /* USER CODE END Application */
 

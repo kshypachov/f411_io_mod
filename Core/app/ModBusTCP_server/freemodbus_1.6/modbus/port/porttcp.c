@@ -5,10 +5,7 @@
 #include "mbport.h"
 #include "mongoose.h"
 #include "mb_tcp_app.h"
-#include "mb_add.h"
-
-//#include "socket.h"
-//#include "definition.h"
+#include <string.h>
 
 #ifndef MB_TCP_BUF_SIZE
 	#define MB_TCP_BUF_SIZE  2048
@@ -60,11 +57,12 @@ uint8_t bFrameSent = FALSE;
 
 static void handler_mb_tcp(struct mg_connection *c, int ev, void *ev_data){
 
-	if (ev == MG_EV_READ) {
+	if (ev == MG_EV_READ){
 		struct mg_iobuf *r = &c->recv;
 
 		ucTCPRequestLen = r->len;
 		if(ucTCPRequestLen>0){
+			memcpy(ucTCPRequestFrame, r->buf, sizeof(uint8_t) * ucTCPRequestLen);
 			xMBPortEventPost (EV_FRAME_RECEIVED);
 			eMBPoll ();
 			eMBPoll ();
@@ -87,13 +85,15 @@ void init_mb_tcp(void * param){
 	struct mg_mgr *mgr = (struct mg_mgr *)param;  // Event manager
 	mg_listen(mgr, s_lsn, handler_mb_tcp, NULL);  // Create server connection
 
+	eMBTCPInit(0);
+	eMBEnable();
 }
 
 BOOL  xMBTCPPortInit( USHORT usTCPPort )
 {
 
 
-    return FALSE;
+    return TRUE;
 }
 
 BOOL  xMBTCPPortGetRequest( UCHAR **ppucMBTCPFrame, USHORT * usTCPLength )

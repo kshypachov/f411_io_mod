@@ -48,7 +48,6 @@ Core/app/ModBusTCP_server/freemodbus_1.6/modbus \
 Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port \
 Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu \
 Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp \
-Core/app/ModBusTCP_server/src \
 Core/app/http_server_app/src \
 Core/app/mqtt_client_app/src \
 Core/app/sntp_app/src \
