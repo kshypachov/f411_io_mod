@@ -791,7 +791,6 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 	eMBErrorCode eStatus = MB_ENOERR;
 
 	//usAddress --; /* to c-style address */
-
 	if (((int16_t) usAddress >= INPUTS_FIRST_INDEX) && (usAddress + usNDiscrete <= INPUTS_FIRST_INDEX + INPUTS_COUNT)){
 		inputs_state_t input;
 		usAddress --; /* to c-style address */
@@ -804,7 +803,52 @@ eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT us
 		eStatus = MB_ENOREG;
 	}
 	return eStatus;
+}
 
+eMBErrorCode eMBRegCoilsCB(UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils, eMBRegisterMode eMode)
+{
+	eMBErrorCode eStatus = MB_ENOERR;
+
+	if (((int16_t) usAddress >= OUTPUTS_FIRST_INDEX) && (usAddress + usNCoils <= OUTPUTS_FIRST_INDEX + OUTPUTS_COUNT)){
+		outputs_state_t outputs;
+
+		switch (eMode) {
+
+			case MB_REG_WRITE:
+				usAddress --; /* to c-style address */
+				RW_parameters_from_queue(outputs, S_OUTPUTS, S_READ);
+				for(int i = usAddress; i < usNCoils + usAddress; i++){
+					UCHAR wbit = xMBUtilGetBits(pucRegBuffer, i, 1 );
+					outputs[i] = xMBUtilGetBits(pucRegBuffer, 0, 1 );
+					//xMBUtilSetBits( pucRegBuffer, i, 1, outputs[i] );
+				}
+				RW_parameters_from_queue(outputs, S_OUTPUTS, S_WRITE);
+				return MB_ENOERR;
+				break;
+			case MB_REG_READ:
+				usAddress --; /* to c-style address */
+				RW_parameters_from_queue(outputs, S_OUTPUTS, S_READ);
+				for(int i = usAddress; i < usNCoils; i++){
+					xMBUtilSetBits( pucRegBuffer, i, 1, outputs[i] );
+				}
+				return MB_ENOERR;
+				break;
+			default:
+				return MB_ENOREG;
+				break;
+		}
+	}
+	return MB_ENOREG;
+}
+
+eMBErrorCode eMBRegInputCB(UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
+{
+	return MB_ENOREG;
+}
+
+eMBErrorCode eMBRegHoldingCB(UCHAR *pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegisterMode eMode)
+{
+	return MB_ENOREG;
 }
 
 /* USER CODE END Application */

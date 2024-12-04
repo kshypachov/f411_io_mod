@@ -876,7 +876,7 @@ static void handle_manage_user(struct mg_connection *c, struct mg_http_message *
 	    free(new_password);
 
 
-	}if (mg_match(hm->method, mg_str("DELETE"), NULL)){
+	}else if (mg_match(hm->method, mg_str("DELETE"), NULL)){
 		char *username_del = NULL;
 
 	    username_del = mg_json_get_str(hm->body, "$.user");

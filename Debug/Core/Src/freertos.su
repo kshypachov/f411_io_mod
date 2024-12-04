@@ -21,3 +21,6 @@
 ../Core/Src/freertos.c:742:9:spi_txn	8	static
 ../Core/Src/freertos.c:787:6:empty_fn	0	static
 ../Core/Src/freertos.c:789:14:eMBRegDiscreteCB	24	static
+../Core/Src/freertos.c:808:14:eMBRegCoilsCB	32	static
+../Core/Src/freertos.c:844:14:eMBRegInputCB	0	static
+../Core/Src/freertos.c:849:14:eMBRegHoldingCB	0	static

@@ -71,10 +71,12 @@ static void handler_mb_tcp(struct mg_connection *c, int ev, void *ev_data){
 				mg_send(c, ucTCPResponseFrame, ucTCPResponseLen);
 				r->len = 0;                  // Tell Mongoose we've consumed data
 
+			}else{
+				c->is_closing = 1;
 			}
+		}else{
+			c->is_closing = 1;
 		}
-
-
 	}
 }
 

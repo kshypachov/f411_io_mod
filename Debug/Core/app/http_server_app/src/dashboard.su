@@ -12,7 +12,7 @@
 ../Core/app/http_server_app/src/dashboard.c:419:13:handle_dev_status	320	static
 ../Core/app/http_server_app/src/dashboard.c:675:13:handle_fs_get_log	72	static
 ../Core/app/http_server_app/src/dashboard.c:63:13:write_users	24	static
-../Core/app/http_server_app/src/dashboard.c:705:13:handle_manage_user	216	static
+../Core/app/http_server_app/src/dashboard.c:705:13:handle_manage_user	208	static
 ../Core/app/http_server_app/src/dashboard.c:54:13:load_users	16	static
 ../Core/app/http_server_app/src/dashboard.c:515:13:handle_restart_mcu	40	static
 ../Core/app/http_server_app/src/dashboard.c:596:13:handle_activete_and_reboot	32	static
