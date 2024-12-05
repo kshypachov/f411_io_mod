@@ -6285,7 +6285,7 @@ static void handler_dev_version(struct mg_connection *c, struct mg_http_message 
  8012d80:	21c8      	movs	r1, #200	@ 0xc8
  8012d82:	4628      	mov	r0, r5
  8012d84:	f011 f882 	bl	8023e8c <mg_http_reply>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET method\"}\r\n");
 		return;
 
@@ -6293,10 +6293,10 @@ static void handler_dev_version(struct mg_connection *c, struct mg_http_message 
 }
  8012d88:	b004      	add	sp, #16
  8012d8a:	bd70      	pop	{r4, r5, r6, pc}
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  8012d8c:	4b08      	ldr	r3, [pc, #32]	@ (8012db0 <handler_dev_version+0x60>)
  8012d8e:	4a07      	ldr	r2, [pc, #28]	@ (8012dac <handler_dev_version+0x5c>)
- 8012d90:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 8012d90:	f240 1195 	movw	r1, #405	@ 0x195
  8012d94:	4628      	mov	r0, r5
  8012d96:	f011 f879 	bl	8023e8c <mg_http_reply>
 		return;
@@ -6347,10 +6347,10 @@ static void handle_firmware_deactivate(struct mg_connection *c, struct mg_http_m
  8012df8:	4628      	mov	r0, r5
  8012dfa:	f011 f847 	bl	8023e8c <mg_http_reply>
  8012dfe:	e7f6      	b.n	8012dee <handle_firmware_deactivate+0x3a>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  8012e00:	4b09      	ldr	r3, [pc, #36]	@ (8012e28 <handle_firmware_deactivate+0x74>)
  8012e02:	4a07      	ldr	r2, [pc, #28]	@ (8012e20 <handle_firmware_deactivate+0x6c>)
- 8012e04:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 8012e04:	f240 1195 	movw	r1, #405	@ 0x195
  8012e08:	4628      	mov	r0, r5
  8012e0a:	f011 f83f 	bl	8023e8c <mg_http_reply>
 }
@@ -6399,10 +6399,10 @@ static void handle_web_files_remove(struct mg_connection *c, struct mg_http_mess
 }
  8012e6c:	b004      	add	sp, #16
  8012e6e:	bd70      	pop	{r4, r5, r6, pc}
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  8012e70:	4b08      	ldr	r3, [pc, #32]	@ (8012e94 <handle_web_files_remove+0x68>)
  8012e72:	4a07      	ldr	r2, [pc, #28]	@ (8012e90 <handle_web_files_remove+0x64>)
- 8012e74:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 8012e74:	f240 1195 	movw	r1, #405	@ 0x195
  8012e78:	4628      	mov	r0, r5
  8012e7a:	f011 f807 	bl	8023e8c <mg_http_reply>
 }
@@ -6459,10 +6459,10 @@ static void handler_logout(struct mg_connection *c,struct mg_http_message *hm){
 }
  8012eec:	b043      	add	sp, #268	@ 0x10c
  8012eee:	bdf0      	pop	{r4, r5, r6, r7, pc}
-        mg_http_reply(c, 400, headers, //TODO delete for release,
+        mg_http_reply(c, 404, headers, //TODO delete for release,
  8012ef0:	4b1b      	ldr	r3, [pc, #108]	@ (8012f60 <handler_logout+0xc8>)
  8012ef2:	4a1a      	ldr	r2, [pc, #104]	@ (8012f5c <handler_logout+0xc4>)
- 8012ef4:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 8012ef4:	f44f 71ca 	mov.w	r1, #404	@ 0x194
  8012ef8:	4630      	mov	r0, r6
  8012efa:	f010 ffc7 	bl	8023e8c <mg_http_reply>
         return;
@@ -6979,10 +6979,10 @@ static void handle_io_status_get(struct mg_connection *c, struct mg_http_message
  8013336:	4630      	mov	r0, r6
  8013338:	f010 fda8 	bl	8023e8c <mg_http_reply>
  801333c:	e7a2      	b.n	8013284 <handle_io_status_get+0x6c>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  801333e:	4b0e      	ldr	r3, [pc, #56]	@ (8013378 <handle_io_status_get+0x160>)
  8013340:	4a06      	ldr	r2, [pc, #24]	@ (801335c <handle_io_status_get+0x144>)
- 8013342:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 8013342:	f240 1195 	movw	r1, #405	@ 0x195
  8013346:	4630      	mov	r0, r6
  8013348:	f010 fda0 	bl	8023e8c <mg_http_reply>
 }
@@ -7269,10 +7269,10 @@ static void handle_mqtt_conf(struct mg_connection *c, struct mg_http_message *hm
  801359e:	f010 fc75 	bl	8023e8c <mg_http_reply>
 							break;
  80135a2:	e7d8      	b.n	8013556 <handle_mqtt_conf+0x1be>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  80135a4:	4b17      	ldr	r3, [pc, #92]	@ (8013604 <handle_mqtt_conf+0x26c>)
  80135a6:	4a07      	ldr	r2, [pc, #28]	@ (80135c4 <handle_mqtt_conf+0x22c>)
- 80135a8:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 80135a8:	f240 1195 	movw	r1, #405	@ 0x195
  80135ac:	4630      	mov	r0, r6
  80135ae:	f010 fc6d 	bl	8023e8c <mg_http_reply>
  80135b2:	e731      	b.n	8013418 <handle_mqtt_conf+0x80>
@@ -7477,10 +7477,10 @@ static void handle_mb_tcp_access_list(struct mg_connection *c, struct mg_http_me
  8013774:	f010 fb8a 	bl	8023e8c <mg_http_reply>
 			return;
  8013778:	e781      	b.n	801367e <handle_mb_tcp_access_list+0x76>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  801377a:	4b12      	ldr	r3, [pc, #72]	@ (80137c4 <handle_mb_tcp_access_list+0x1bc>)
  801377c:	4a06      	ldr	r2, [pc, #24]	@ (8013798 <handle_mb_tcp_access_list+0x190>)
- 801377e:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 801377e:	f240 1195 	movw	r1, #405	@ 0x195
  8013782:	4630      	mov	r0, r6
  8013784:	f010 fb82 	bl	8023e8c <mg_http_reply>
 		return;
@@ -7739,17 +7739,17 @@ static void handle_dev_status(struct mg_connection *c, struct mg_http_message *h
  80139c6:	4648      	mov	r0, r9
  80139c8:	f010 fa60 	bl	8023e8c <mg_http_reply>
  80139cc:	e00e      	b.n	80139ec <handle_dev_status+0x224>
-			mg_http_reply(c, 400, headers, //TODO delete for release,
+			mg_http_reply(c, 405, headers, //TODO delete for release,
  80139ce:	4b1a      	ldr	r3, [pc, #104]	@ (8013a38 <handle_dev_status+0x270>)
  80139d0:	4a18      	ldr	r2, [pc, #96]	@ (8013a34 <handle_dev_status+0x26c>)
- 80139d2:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 80139d2:	f240 1195 	movw	r1, #405	@ 0x195
  80139d6:	4648      	mov	r0, r9
  80139d8:	f010 fa58 	bl	8023e8c <mg_http_reply>
  80139dc:	e006      	b.n	80139ec <handle_dev_status+0x224>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 500, headers, //TODO delete for release,
  80139de:	4b17      	ldr	r3, [pc, #92]	@ (8013a3c <handle_dev_status+0x274>)
  80139e0:	4a14      	ldr	r2, [pc, #80]	@ (8013a34 <handle_dev_status+0x26c>)
- 80139e2:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 80139e2:	f44f 71fa 	mov.w	r1, #500	@ 0x1f4
  80139e6:	4648      	mov	r0, r9
  80139e8:	f010 fa50 	bl	8023e8c <mg_http_reply>
 	free(mqtt_status_str);
@@ -7855,10 +7855,10 @@ static void handle_fs_get_log(struct mg_connection *c, struct mg_http_message *h
  8013ac8:	f010 fd8c 	bl	80245e4 <mg_match>
  8013acc:	2800      	cmp	r0, #0
  8013ace:	d1e7      	bne.n	8013aa0 <handle_fs_get_log+0x5c>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  8013ad0:	4b09      	ldr	r3, [pc, #36]	@ (8013af8 <handle_fs_get_log+0xb4>)
  8013ad2:	4a0a      	ldr	r2, [pc, #40]	@ (8013afc <handle_fs_get_log+0xb8>)
- 8013ad4:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 8013ad4:	f240 1195 	movw	r1, #405	@ 0x195
  8013ad8:	4638      	mov	r0, r7
  8013ada:	f010 f9d7 	bl	8023e8c <mg_http_reply>
 }
@@ -8404,10 +8404,10 @@ static void handle_manage_user(struct mg_connection *c, struct mg_http_message *
  8013f7e:	4638      	mov	r0, r7
  8013f80:	f00f ff84 	bl	8023e8c <mg_http_reply>
  8013f84:	e7c9      	b.n	8013f1a <handle_manage_user+0x3e6>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  8013f86:	4b0e      	ldr	r3, [pc, #56]	@ (8013fc0 <handle_manage_user+0x48c>)
  8013f88:	4a06      	ldr	r2, [pc, #24]	@ (8013fa4 <handle_manage_user+0x470>)
- 8013f8a:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 8013f8a:	f240 1195 	movw	r1, #405	@ 0x195
  8013f8e:	4638      	mov	r0, r7
  8013f90:	f00f ff7c 	bl	8023e8c <mg_http_reply>
  8013f94:	e63e      	b.n	8013c14 <handle_manage_user+0xe0>
@@ -8497,10 +8497,10 @@ static void handle_restart_mcu(struct mg_connection *c, struct mg_http_message *
 }
  8014046:	b006      	add	sp, #24
  8014048:	bd70      	pop	{r4, r5, r6, pc}
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  801404a:	4b08      	ldr	r3, [pc, #32]	@ (801406c <handle_restart_mcu+0x70>)
  801404c:	4a06      	ldr	r2, [pc, #24]	@ (8014068 <handle_restart_mcu+0x6c>)
- 801404e:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 801404e:	f240 1195 	movw	r1, #405	@ 0x195
  8014052:	4628      	mov	r0, r5
  8014054:	f00f ff1a 	bl	8023e8c <mg_http_reply>
 }
@@ -8550,10 +8550,10 @@ static void handle_activete_and_reboot(struct mg_connection *c, struct mg_http_m
  80140b4:	4628      	mov	r0, r5
  80140b6:	f00f fee9 	bl	8023e8c <mg_http_reply>
  80140ba:	e7f5      	b.n	80140a8 <handle_activete_and_reboot+0x38>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  80140bc:	4b09      	ldr	r3, [pc, #36]	@ (80140e4 <handle_activete_and_reboot+0x74>)
  80140be:	4a08      	ldr	r2, [pc, #32]	@ (80140e0 <handle_activete_and_reboot+0x70>)
- 80140c0:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 80140c0:	f240 1195 	movw	r1, #405	@ 0x195
  80140c4:	4628      	mov	r0, r5
  80140c6:	f00f fee1 	bl	8023e8c <mg_http_reply>
 }
@@ -8612,10 +8612,10 @@ static void handle_firmware_upload(struct mg_connection *c, struct mg_http_messa
  8014142:	4628      	mov	r0, r5
  8014144:	f00f fea2 	bl	8023e8c <mg_http_reply>
  8014148:	e006      	b.n	8014158 <handle_firmware_upload+0x70>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  801414a:	4b0c      	ldr	r3, [pc, #48]	@ (801417c <handle_firmware_upload+0x94>)
  801414c:	4a0a      	ldr	r2, [pc, #40]	@ (8014178 <handle_firmware_upload+0x90>)
- 801414e:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 801414e:	f240 1195 	movw	r1, #405	@ 0x195
  8014152:	4628      	mov	r0, r5
  8014154:	f00f fe9a 	bl	8023e8c <mg_http_reply>
 }
@@ -8689,10 +8689,10 @@ static void handle_fs_mkdir(struct mg_connection *c, struct mg_http_message *hm)
  80141f2:	4630      	mov	r0, r6
  80141f4:	f00f fe4a 	bl	8023e8c <mg_http_reply>
  80141f8:	e006      	b.n	8014208 <handle_fs_mkdir+0x88>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  80141fa:	4b0c      	ldr	r3, [pc, #48]	@ (801422c <handle_fs_mkdir+0xac>)
  80141fc:	4a08      	ldr	r2, [pc, #32]	@ (8014220 <handle_fs_mkdir+0xa0>)
- 80141fe:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 80141fe:	f240 1195 	movw	r1, #405	@ 0x195
  8014202:	4630      	mov	r0, r6
  8014204:	f00f fe42 	bl	8023e8c <mg_http_reply>
 }
@@ -8859,10 +8859,10 @@ static void handle_firmware_md5(struct mg_connection *c, struct mg_http_message 
  801434c:	4628      	mov	r0, r5
  801434e:	f00f fd9d 	bl	8023e8c <mg_http_reply>
  8014352:	e7f2      	b.n	801433a <handle_firmware_md5+0x46>
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
  8014354:	4b08      	ldr	r3, [pc, #32]	@ (8014378 <handle_firmware_md5+0x84>)
  8014356:	4a06      	ldr	r2, [pc, #24]	@ (8014370 <handle_firmware_md5+0x7c>)
- 8014358:	f44f 71c8 	mov.w	r1, #400	@ 0x190
+ 8014358:	f240 1195 	movw	r1, #405	@ 0x195
  801435c:	4628      	mov	r0, r5
  801435e:	f00f fd95 	bl	8023e8c <mg_http_reply>
 }

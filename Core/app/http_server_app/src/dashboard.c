@@ -153,7 +153,7 @@ static void handler_logout(struct mg_connection *c,struct mg_http_message *hm){
 	mg_http_creds(hm, username, sizeof(username), pass, sizeof(pass));
 
 	if (username[0] != '\0' && pass[0] != '\0') {
-        mg_http_reply(c, 400, headers, //TODO delete for release,
+        mg_http_reply(c, 404, headers, //TODO delete for release,
         		"{\"status\":\"error\",\"message\":\"Not found authentication cookie. Provided login and password but expected cookie access token\"}\r\n");
         return;
 
@@ -305,7 +305,7 @@ static void handle_io_status_get(struct mg_connection *c, struct mg_http_message
         }
 
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 				"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET, POST methods\"}\r\n");
 
 	}
@@ -411,7 +411,7 @@ static void handle_mqtt_conf(struct mg_connection *c, struct mg_http_message *hm
 		free(mqtt_config);
 
 	}else{//error, unsupported method
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 				"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET, POST methods\"}\r\n");
 	}
 }
@@ -486,11 +486,11 @@ static void handle_dev_status(struct mg_connection *c, struct mg_http_message *h
 					dev_status_template, mqtt_status_str, mqtt_local_addr, mqtt_server_addr, pub_topics_str, subscr_topics_str);
 
 		}else{//error, unsupported method
-			mg_http_reply(c, 400, headers, //TODO delete for release,
+			mg_http_reply(c, 405, headers, //TODO delete for release,
 					"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET, POST methods\"}\r\n");
 		}
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 500, headers, //TODO delete for release,
 				"{\"status\":\"error\",\"message\":\"Memory allocation error\"}\r\n");
 
 	}
@@ -525,7 +525,7 @@ static void handle_restart_mcu(struct mg_connection *c, struct mg_http_message *
 							"{\"status\":\"success\",\"message\":\"Device is restarting\"}\r\n");
 
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 				"{\"status\":\"error\",\"message\":\"Unsupported method, support only POST method\"}\r\n");
 	}
 }
@@ -542,7 +542,7 @@ static void handle_firmware_upload(struct mg_connection *c, struct mg_http_messa
 		}
 
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only POST method\"}\r\n");
 	}
 }
@@ -560,7 +560,7 @@ static void handle_firmware_md5(struct mg_connection *c, struct mg_http_message 
 
 		free(md5_str);
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET method\"}\r\n");
 	}
 }
@@ -587,7 +587,7 @@ static void handle_firmware_activate(struct mg_connection *c, struct mg_http_mes
 	    }
 
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET and POST methods\"}\r\n");
 
 	}
@@ -603,7 +603,7 @@ static void handle_activete_and_reboot(struct mg_connection *c, struct mg_http_m
 					"{\"status\":\"fail\", \"message\": \"Fail during activating firmware\"}\r\n");
 		}
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only POST method\"}\r\n");
 	}
 }
@@ -620,7 +620,7 @@ static void handle_firmware_deactivate(struct mg_connection *c, struct mg_http_m
 							"{\"status\":\"fail\", \"message\": \"Fail during deactivate firmware\"}\r\n");
 				}
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only POST method\"}\r\n");
 	}
 }
@@ -633,7 +633,7 @@ static void handle_web_files_remove(struct mg_connection *c, struct mg_http_mess
 	        mg_http_reply(c, 200, headers, //TODO delete for release,
 			    "{\"status\":\"success\",\"message\":\"All web interface files are deleted\"}\r\n");
     }else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only POST method\"}\r\n");
     }
 }
@@ -665,7 +665,7 @@ static void handle_fs_mkdir(struct mg_connection *c, struct mg_http_message *hm)
 				"{\"status\":\"error\",\"message\":\"Directory name is required\"}");
 	  }
   }else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only POST method\"}\r\n");
   }
 }
@@ -697,7 +697,7 @@ static void handle_fs_get_log(struct mg_connection *c, struct mg_http_message *h
 	}else if (mg_match(hm->method, mg_str("POST"), NULL)){
 
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET and POST methods\"}\r\n");
 	}
 }
@@ -916,7 +916,7 @@ static void handle_manage_user(struct mg_connection *c, struct mg_http_message *
 	    free(username_del);
 
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET POST PUT DELETE methods\"}\r\n");
 	}
 }
@@ -993,7 +993,7 @@ static void handle_mb_tcp_access_list(struct mg_connection *c, struct mg_http_me
 		}
 
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET POST methods\"}\r\n");
 		return;
 	}
@@ -1005,7 +1005,7 @@ static void handler_dev_version(struct mg_connection *c, struct mg_http_message 
 					  "{\"status\":\"success\",\"sw_ver\": \"%s\",\"hw_ver\": \"%s\"}\r\n", dev_sw_ver, dev_hw_ver);
 		return;
 	}else{
-		mg_http_reply(c, 400, headers, //TODO delete for release,
+		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET method\"}\r\n");
 		return;
 
