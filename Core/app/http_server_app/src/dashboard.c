@@ -918,10 +918,99 @@ static void handle_manage_user(struct mg_connection *c, struct mg_http_message *
 	}else{
 		mg_http_reply(c, 400, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET POST PUT DELETE methods\"}\r\n");
-
 	}
 }
 
+static void handle_mb_tcp_access_list(struct mg_connection *c, struct mg_http_message *hm){
+
+	if (mg_match(hm->method, mg_str("GET"), NULL)){
+		char * acl = NULL;
+		size_t acl_size = 0;
+
+		mg_fs_lfs_status(ACL_FILE, &acl_size, NULL);
+		if (acl_size && (acl_size < ACL_FILE_MAX_SIZE)){
+			acl = calloc(acl_size + 1, sizeof(char));
+			if (acl == NULL){
+		        // Если память не выделена, отправляем ошибку
+		    	logging(L_ERR, "Memory allocation failed in handle_manage_user GET");
+		        mg_http_reply(c, 500, headers, "{\"error\": \"Memory allocation failed\"}");
+		        return;
+			}
+			void *fd = mg_fs_lfs_open(ACL_FILE, MG_FS_READ);
+			mg_fs_lfs_read(fd, acl, acl_size);
+			mg_fs_lfs_close(fd);
+	        mg_http_reply(c, 200, headers,
+	                      "{\"status\":\"success\",\"access_list\":\"%s\"}\r\n", acl);
+	        free(acl);
+	        return;
+		}else{
+	        mg_http_reply(c, 500, headers,
+	                      "{\"status\":\"error\",\"message\":\"ACL file corrupted\"}\r\n");
+	        return;
+		}
+
+	}else if (mg_match(hm->method, mg_str("POST"), NULL)){
+		int length;
+
+		if (mg_json_get(hm->body, "$", &length) < 0) {
+			// JSON validation error
+			mg_http_reply(c, 400, headers,
+						  "{\"status\":\"error\",\"message\":\"Incorrect JSON\"}\r\n");
+			return;
+		}
+
+		char *acl = NULL;
+
+		acl = mg_json_get_str(hm->body, "$.access_list");
+
+		if (acl){
+			//Validate access list
+			if(mg_check_ip_acl(mg_str(acl),  &c->rem) < 0){
+				//Invalid Access list
+				mg_http_reply(c, 400, headers,
+							  "{\"status\":\"error\",\"message\":\"Access list is invalid\"}\r\n");
+				free(acl);
+				return;
+
+			}else{
+				//Save access list
+				mg_fs_lfs_remove(ACL_FILE);
+				void *fd1 = mg_fs_lfs_open(ACL_FILE, MG_FS_WRITE);
+				mg_fs_lfs_write(fd1, acl, (strlen(acl) * sizeof(char)) + 1);
+				mg_fs_lfs_close(fd1);
+				//Replay OK
+				mg_http_reply(c, 200, headers,
+							  "{\"status\":\"success\",\"message\":\"Modbus TCP access list saved, reboot for apply\"}\r\n");
+				free(acl);
+				return;
+			}
+
+		}else{
+			// Неполные данные
+			mg_http_reply(c, 400, headers,
+						  "{\"status\":\"error\",\"message\":\"Field access_list is empty or missing\"}\r\n");
+			return;
+		}
+
+	}else{
+		mg_http_reply(c, 400, headers, //TODO delete for release,
+						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET POST methods\"}\r\n");
+		return;
+	}
+}
+
+static void handler_dev_version(struct mg_connection *c, struct mg_http_message *hm){
+	if (mg_match(hm->method, mg_str("GET"), NULL)){
+		mg_http_reply(c, 200, headers,
+					  "{\"status\":\"success\",\"sw_ver\": \"%s\",\"hw_ver\": \"%s\"}\r\n", dev_sw_ver, dev_hw_ver);
+		return;
+	}else{
+		mg_http_reply(c, 400, headers, //TODO delete for release,
+						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET method\"}\r\n");
+		return;
+
+	}
+}
 
 static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
 
@@ -935,30 +1024,48 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
         }else if (mg_match(hm->uri, mg_str("/api/#"), NULL) && !authenticate ) { // All requests to /api should be authenticated
         	mg_http_reply(c, 403, "", "Not Authorised\n");
 		}else if (mg_match(hm->uri, mg_str("/api/login"), NULL)) {
+			logging(L_INFO, "Call API /api/login");
         	 handler_authanticate(c,hm);
 		}else if (mg_match(hm->uri, mg_str("/api/logout"), NULL)) {
+			logging(L_INFO, "Call API /api/logout");
 			handler_logout(c,hm);
 		}else if (mg_match(hm->uri, mg_str("/api/ram/status"), NULL)) { // Get free and allocated RAM space
+			logging(L_INFO, "Call API /api/ram/status");
 			handle_ram_status_get(c);
 		}else if(mg_match(hm->uri, mg_str("/api/io/status"), NULL)){
+			logging(L_INFO, "Call API /api/io/status");
 			handle_io_status_get(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/mqtt/settings"), NULL)){
+			logging(L_INFO, "Call API /api/mqtt/settings");
 			handle_mqtt_conf(c, hm);
+		}else if(mg_match(hm->uri, mg_str("/api/modbus/acl"), NULL)){
+			logging(L_INFO, "Call API /api/modbus/acl");
+			handle_mb_tcp_access_list(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/device/status"), NULL)){
+			logging(L_INFO, "Call API /api/device/status");
 			handle_dev_status(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/device/log"), NULL)){
+			logging(L_INFO, "Call API /api/device/log");
 			handle_fs_get_log(c, hm, 0);
 		}else if(mg_match(hm->uri, mg_str("/api/device/log_old"), NULL)){
+			logging(L_INFO, "Call API /api/device/log_old");
 			handle_fs_get_log(c, hm, 1);
 		}else if(mg_match(hm->uri, mg_str("/api/device/user"), NULL)){
+			logging(L_INFO, "Call API /api/device/user");
 			handle_manage_user(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/device/restart"), NULL)){
+			logging(L_INFO, "Call API /api/device/restart");
 			handle_restart_mcu(c, hm);
+		}else if(mg_match(hm->uri, mg_str("/api/device/version"), NULL)){
+			logging(L_INFO, "Call API /api/device/version");
+			handler_dev_version(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/upload"), NULL)){
 			handle_firmware_upload(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/md5"), NULL)){
+			logging(L_INFO, "Call API /api/firmware/md5");
 			handle_firmware_md5(c, hm);
-		}else if(mg_match(hm->uri, mg_str("/api/firmware/activate_and_reboot"), NULL)){
+		}else if(mg_match(hm->uri, mg_str("/api/firmware/apply"), NULL)){
+			logging(L_INFO, "Call API /api/firmware/apply");
 			handle_activete_and_reboot(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/deactivate"), NULL)){
 			handle_firmware_deactivate(c, hm);

@@ -46,6 +46,7 @@
 #include "mb_tcp_app.h"
 #include "mb.h"
 #include "mbutils.h"
+#include "iwdg.h"
 //#include "mbport.h"
 
 /* USER CODE END Includes */
@@ -103,6 +104,13 @@ const osThreadAttr_t loggingTask_attributes = {
   .name = "loggingTask",
   .stack_size = 512 * 4,
   .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for WatchDog */
+osThreadId_t WatchDogHandle;
+const osThreadAttr_t WatchDog_attributes = {
+  .name = "WatchDog",
+  .stack_size = 265 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
 };
 /* Definitions for inputReadQ */
 osMessageQueueId_t inputReadQHandle;
@@ -171,6 +179,7 @@ void StartIOTask(void *argument);
 void StartDisplayTask(void *argument);
 void StartSettingsTask(void *argument);
 void StartLoggingTask(void *argument);
+void StartWatchDogTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -237,6 +246,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of loggingTask */
   loggingTaskHandle = osThreadNew(StartLoggingTask, NULL, &loggingTask_attributes);
+
+  /* creation of WatchDog */
+  WatchDogHandle = osThreadNew(StartWatchDogTask, NULL, &WatchDog_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -662,6 +674,25 @@ void StartLoggingTask(void *argument)
     count ++;
   }
   /* USER CODE END StartLoggingTask */
+}
+
+/* USER CODE BEGIN Header_StartWatchDogTask */
+/**
+* @brief Function implementing the WatchDog thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartWatchDogTask */
+void StartWatchDogTask(void *argument)
+{
+  /* USER CODE BEGIN StartWatchDogTask */
+  /* Infinite loop */
+  for(;;)
+  {
+	HAL_IWDG_Refresh(&hiwdg);
+    osDelay(500);
+  }
+  /* USER CODE END StartWatchDogTask */
 }
 
 /* Private application code --------------------------------------------------*/

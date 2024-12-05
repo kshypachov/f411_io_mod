@@ -6,10 +6,14 @@
 #include "mongoose.h"
 #include "mb_tcp_app.h"
 #include <string.h>
+#include "definitions.h"
+#include "fs_adstractions.h"
 
 #ifndef MB_TCP_BUF_SIZE
 	#define MB_TCP_BUF_SIZE  2048
 #endif
+
+#define DEFAULT_ACL			"-0.0.0.0/0"
 
 uint8_t ucTCPRequestFrame [MB_TCP_BUF_SIZE];
 uint16_t ucTCPRequestLen;
@@ -17,47 +21,20 @@ uint8_t ucTCPResponseFrame [MB_TCP_BUF_SIZE];
 uint16_t ucTCPResponseLen;
 uint8_t bFrameSent = FALSE;
 
+struct mg_str mg_acl;
+static const char *s_lsn = "tcp://0.0.0.0:502";   // Listening address ModBusTCP
 
-//void modbus_tcps(USHORT sn, USHORT port)
-//{
-//	switch (getSn_SR (sn))// �������� ������ ������
-//	   {
-//	case SOCK_CLOSED:// ����� ������
-//		socket(sn,Sn_MR_TCP,port,0x00); // ��������� �����
-//		break;
-//	case SOCK_INIT: // ����� ��� ���������������
-//		listen (sn); // �������
-//	case SOCK_ESTABLISHED: // ����� ���������
-//		if(getSn_IR(sn) & Sn_IR_CON)
-//		{
-//			setSn_IR(sn,Sn_IR_CON);
-//		}
-//		ucTCPRequestLen = getSn_RX_RSR (sn); // �������� ����� ���������� ������
-//			if(ucTCPRequestLen>0)
-//			{
-//				recv(sn,ucTCPRequestFrame, ucTCPRequestLen); // W5500 �������� ������
-//				xMBPortEventPost (EV_FRAME_RECEIVED); // ���������� ������� EV_FRAME_RECEIVED ��� ���������� �������� ��������� � ������� eMBpoll ()
-//				eMBPoll (); // ������������ ������� EV_FRAME_RECEIVED
-//				eMBPoll (); // ������������ ������� EV_EXECUTE
-//				if(bFrameSent)
-//				{
-//					bFrameSent = FALSE;
-//					send(sn,ucTCPResponseFrame,ucTCPResponseLen); // W5500 ���������� ����� ������ ������ Modbus
-//				}
-//			}
-//		break;
-//	case SOCK_CLOSE_WAIT: // ����� ������� ��������
-//		disconnect (sn); // ��������� ����������
-//		break;
-//	default:
-//		break;
-//   }
-//}
-//
 
+
+
+//mg_check_ip_acl(struct mg_str acl, struct mg_addr *remote_ip);
 static void handler_mb_tcp(struct mg_connection *c, int ev, void *ev_data){
 
 	if (ev == MG_EV_READ){
+		if (mg_check_ip_acl(mg_acl, &c->rem) != 1){
+			c->is_closing = 1;
+			return;
+		}
 		struct mg_iobuf *r = &c->recv;
 
 		ucTCPRequestLen = r->len;
@@ -80,7 +57,7 @@ static void handler_mb_tcp(struct mg_connection *c, int ev, void *ev_data){
 	}
 }
 
-static const char *s_lsn = "tcp://0.0.0.0:502";   // Listening address ModBusTCP
+
 
 void init_mb_tcp(void * param){
 
@@ -89,6 +66,24 @@ void init_mb_tcp(void * param){
 
 	eMBTCPInit(0);
 	eMBEnable();
+
+	size_t acl_size = 0;
+	mg_fs_lfs_status(ACL_FILE, &acl_size, NULL);
+	if(acl_size && (acl_size < ACL_FILE_MAX_SIZE)){
+		mg_acl.buf = calloc(acl_size + 1, sizeof(char));
+		void *fd = mg_fs_lfs_open(ACL_FILE, MG_FS_READ);
+		mg_fs_lfs_read(fd, mg_acl.buf, acl_size);
+		mg_acl.len = acl_size;
+		mg_fs_lfs_close(fd);
+
+	}else{
+		mg_acl.buf = calloc(strlen(DEFAULT_ACL) + 1, sizeof(char));
+		mg_acl.len = strlen(DEFAULT_ACL) + 1;
+		strncpy(mg_acl.buf, DEFAULT_ACL, mg_acl.len);
+		void *fd1 = mg_fs_lfs_open(ACL_FILE, MG_FS_WRITE);
+		mg_fs_lfs_write(fd1, mg_acl.buf, mg_acl.len);
+		mg_fs_lfs_close(fd1);
+	}
 }
 
 BOOL  xMBTCPPortInit( USHORT usTCPPort )

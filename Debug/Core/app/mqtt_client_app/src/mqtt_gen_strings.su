@@ -1,4 +1,4 @@
-../Core/Inc/definitions.h:68:21:void* my_calloc(size_t, size_t)	16	static
+../Core/Inc/definitions.h:70:21:void* my_calloc(size_t, size_t)	16	static
 ../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:112:19:mqtt_config_error set_device_id(const uint8_t*, unsigned int)	16	static
 ../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:134:19:mqtt_config_error set_device_conf_ip(char*, unsigned int)	16	static
 ../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:152:5:int set_home_assistant_prefix(char*, uint8_t)	8	static
