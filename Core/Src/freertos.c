@@ -691,7 +691,7 @@ void StartWatchDogTask(void *argument)
   /* Infinite loop */
   for(;;)
   {
-//	HAL_IWDG_Refresh(&hiwdg);
+	HAL_IWDG_Refresh(&hiwdg);
     osDelay(500);
     HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
   }
