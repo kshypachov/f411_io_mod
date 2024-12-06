@@ -1,3 +1,0 @@
-../Core/app/sntp_app/src/sntp.c:44:6:timer_fn	8	static
-../Core/app/sntp_app/src/sntp.c:22:13:sfn	16	static
-../Core/app/sntp_app/src/sntp.c:50:6:start_sntp	32	static

@@ -42,6 +42,12 @@
 #include "logger.h"
 #include "sntp.h"
 #include "ssdp.h"
+#include "mb.h"
+#include "mb_tcp_app.h"
+#include "mb.h"
+#include "mbutils.h"
+#include "iwdg.h"
+//#include "mbport.h"
 
 /* USER CODE END Includes */
 
@@ -98,6 +104,13 @@ const osThreadAttr_t loggingTask_attributes = {
   .name = "loggingTask",
   .stack_size = 1024 * 4,
   .priority = (osPriority_t) osPriorityLow,
+};
+/* Definitions for WatchDog */
+osThreadId_t WatchDogHandle;
+const osThreadAttr_t WatchDog_attributes = {
+  .name = "WatchDog",
+  .stack_size = 265 * 4,
+  .priority = (osPriority_t) osPriorityHigh,
 };
 /* Definitions for inputReadQ */
 osMessageQueueId_t inputReadQHandle;
@@ -166,6 +179,7 @@ void StartIOTask(void *argument);
 void StartDisplayTask(void *argument);
 void StartSettingsTask(void *argument);
 void StartLoggingTask(void *argument);
+void StartWatchDogTask(void *argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -232,6 +246,9 @@ void MX_FREERTOS_Init(void) {
 
   /* creation of loggingTask */
   loggingTaskHandle = osThreadNew(StartLoggingTask, NULL, &loggingTask_attributes);
+
+  /* creation of WatchDog */
+  WatchDogHandle = osThreadNew(StartWatchDogTask, NULL, &WatchDog_attributes);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -320,6 +337,7 @@ void StartEthTask(void *argument)
   }
   start_sntp(&mgr);
   ssdp_start_server(&mgr, &mif);
+  init_mb_tcp(&mgr);
   TickType_t last_tick = xTaskGetTickCount(); // начальное значение тиков
 
   /* Infinite loop */
@@ -658,6 +676,25 @@ void StartLoggingTask(void *argument)
   /* USER CODE END StartLoggingTask */
 }
 
+/* USER CODE BEGIN Header_StartWatchDogTask */
+/**
+* @brief Function implementing the WatchDog thread.
+* @param argument: Not used
+* @retval None
+*/
+/* USER CODE END Header_StartWatchDogTask */
+void StartWatchDogTask(void *argument)
+{
+  /* USER CODE BEGIN StartWatchDogTask */
+  /* Infinite loop */
+  for(;;)
+  {
+	HAL_IWDG_Refresh(&hiwdg);
+    osDelay(500);
+  }
+  /* USER CODE END StartWatchDogTask */
+}
+
 /* Private application code --------------------------------------------------*/
 /* USER CODE BEGIN Application */
 void EthResetBegin(void){
@@ -779,6 +816,71 @@ void add_log_mess_to_q(struct log_message mess){
 }
 
 void empty_fn(void *data){};
+
+eMBErrorCode eMBRegDiscreteCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNDiscrete){
+
+	eMBErrorCode eStatus = MB_ENOERR;
+
+	//usAddress --; /* to c-style address */
+	if (((int16_t) usAddress >= INPUTS_FIRST_INDEX) && (usAddress + usNDiscrete <= INPUTS_FIRST_INDEX + INPUTS_COUNT)){
+		inputs_state_t input;
+		usAddress --; /* to c-style address */
+		RW_parameters_from_queue(input, S_INPUTS, S_READ);
+
+		for(int i = usAddress; i < usNDiscrete; i++){
+			xMBUtilSetBits( pucRegBuffer, i, 1, input[i] );
+		}
+	}else{
+		eStatus = MB_ENOREG;
+	}
+	return eStatus;
+}
+
+eMBErrorCode eMBRegCoilsCB(UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNCoils, eMBRegisterMode eMode)
+{
+	eMBErrorCode eStatus = MB_ENOERR;
+
+	if (((int16_t) usAddress >= OUTPUTS_FIRST_INDEX) && (usAddress + usNCoils <= OUTPUTS_FIRST_INDEX + OUTPUTS_COUNT)){
+		outputs_state_t outputs;
+
+		switch (eMode) {
+
+			case MB_REG_WRITE:
+				usAddress --; /* to c-style address */
+				RW_parameters_from_queue(outputs, S_OUTPUTS, S_READ);
+				for(int i = usAddress; i < usNCoils + usAddress; i++){
+					UCHAR wbit = xMBUtilGetBits(pucRegBuffer, i, 1 );
+					outputs[i] = xMBUtilGetBits(pucRegBuffer, 0, 1 );
+					//xMBUtilSetBits( pucRegBuffer, i, 1, outputs[i] );
+				}
+				RW_parameters_from_queue(outputs, S_OUTPUTS, S_WRITE);
+				return MB_ENOERR;
+				break;
+			case MB_REG_READ:
+				usAddress --; /* to c-style address */
+				RW_parameters_from_queue(outputs, S_OUTPUTS, S_READ);
+				for(int i = usAddress; i < usNCoils; i++){
+					xMBUtilSetBits( pucRegBuffer, i, 1, outputs[i] );
+				}
+				return MB_ENOERR;
+				break;
+			default:
+				return MB_ENOREG;
+				break;
+		}
+	}
+	return MB_ENOREG;
+}
+
+eMBErrorCode eMBRegInputCB(UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs )
+{
+	return MB_ENOREG;
+}
+
+eMBErrorCode eMBRegHoldingCB(UCHAR *pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegisterMode eMode)
+{
+	return MB_ENOREG;
+}
 
 /* USER CODE END Application */
 

@@ -44,6 +44,10 @@
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/crypto_lib_mbed_TLS/include/psa"/>
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/crypto_lib_mbed_TLS/include"/>
 									<listOptionValue builtIn="false" value="../Core/app/sntp_app/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.input.541092561" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.input"/>
 							</tool>
@@ -73,6 +77,10 @@
 									<listOptionValue builtIn="false" value="../Drivers/i2c_display/inc"/>
 									<listOptionValue builtIn="false" value="../Core/app/sntp_app/inc"/>
 									<listOptionValue builtIn="false" value="../Core/app/ssdp_auto_discovery_app/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.361741197" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -101,6 +109,10 @@
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/validation/inc"/>
 									<listOptionValue builtIn="false" value="../Drivers/i2c_display/inc"/>
 									<listOptionValue builtIn="false" value="../Core/app/sntp_app/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.1964465482" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp"/>
 							</tool>
@@ -170,6 +182,10 @@
 									<listOptionValue builtIn="false" value="../Core/app/http_server_app/inc"/>
 									<listOptionValue builtIn="false" value="../Drivers/i2c_display/inc"/>
 									<listOptionValue builtIn="false" value="../Core/app/sntp_app/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.input.805354546" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.assembler.input"/>
 							</tool>
@@ -198,6 +214,10 @@
 									<listOptionValue builtIn="false" value="../Drivers/i2c_display/inc"/>
 									<listOptionValue builtIn="false" value="../Core/app/sntp_app/inc"/>
 									<listOptionValue builtIn="false" value="../Core/app/ssdp_auto_discovery_app/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp"/>
 								</option>
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.languagestandard.421092479" name="Language standard" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.languagestandard" useByScannerDiscovery="true" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.option.languagestandard.value.gnu11" valueType="enumerated"/>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.959035374" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
@@ -226,6 +246,10 @@
 									<listOptionValue builtIn="false" value="../Middlewares/Third_Party/validation/inc"/>
 									<listOptionValue builtIn="false" value="../Drivers/i2c_display/inc"/>
 									<listOptionValue builtIn="false" value="../Core/app/sntp_app/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/inc"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/include"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port"/>
+									<listOptionValue builtIn="false" value="../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp"/>
 								</option>
 								<option id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.languagestandard.64872107" name="Language standard" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.languagestandard" useByScannerDiscovery="true" value="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.option.languagestandard.value.gnupp14" valueType="enumerated"/>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp.683959442" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.cpp.compiler.input.cpp"/>
