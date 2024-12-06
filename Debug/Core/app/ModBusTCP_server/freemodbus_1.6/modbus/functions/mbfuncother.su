@@ -1,0 +1,2 @@
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.c:52:1:eMBSetSlaveID	16	static
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.c:80:1:eMBFuncReportSlaveID	16	static

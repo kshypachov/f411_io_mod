@@ -1,0 +1,5 @@
+../Core/Src/logger.c:21:13:proto	1
+../Middlewares/Third_Party/mongoose/mongoose.h:192:21:mg_calloc	2
+../Core/Src/logger.c:26:6:reg_logging_fn	2
+../Core/Src/logger.c:32:6:logger_set_level	1
+../Core/Src/logger.c:36:6:logging	5
