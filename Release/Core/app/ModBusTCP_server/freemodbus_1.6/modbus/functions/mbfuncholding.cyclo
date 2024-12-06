@@ -1,4 +1,4 @@
 ../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.c:76:1:eMBFuncWriteHoldingRegister	3
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.c:109:1:eMBFuncWriteMultipleHoldingRegister	6
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.c:169:1:eMBFuncReadHoldingRegister	5
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.c:234:1:eMBFuncReadWriteMultipleHoldingRegister	10
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.c:109:1:eMBFuncWriteMultipleHoldingRegister	5
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.c:169:1:eMBFuncReadHoldingRegister	4
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.c:234:1:eMBFuncReadWriteMultipleHoldingRegister	7

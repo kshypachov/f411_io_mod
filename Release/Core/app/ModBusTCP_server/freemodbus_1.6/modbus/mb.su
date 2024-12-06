@@ -1,7 +1,7 @@
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:129:1:eMBInit	24	static
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:196:1:eMBTCPInit	24	static
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:225:1:eMBRegisterCB	24	static
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:272:1:eMBClose	16	static
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:291:1:eMBEnable	16	static
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:309:1:eMBDisable	16	static
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:129:1:eMBInit	0	static
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:196:1:eMBTCPInit	8	static
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:225:1:eMBRegisterCB	16	static
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:272:1:eMBClose	8	static
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:291:1:eMBEnable	8	static
+../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:309:1:eMBDisable	8	static
 ../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.c:331:1:eMBPoll	24	static
