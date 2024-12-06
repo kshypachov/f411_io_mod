@@ -1469,12 +1469,12 @@ void FlashEnd(void){
 {
  801112c:	b510      	push	{r4, lr}
  801112e:	b08e      	sub	sp, #56	@ 0x38
-	uint16_t pinCoils[] = {coil1_Pin, coil2_Pin, coil3_Pin};
+	uint16_t pinCoils[] = {coil3_Pin, coil2_Pin,coil1_Pin};
  8011130:	4b48      	ldr	r3, [pc, #288]	@ (8011254 <StartIOTask+0x128>)
  8011132:	e893 0003 	ldmia.w	r3, {r0, r1}
  8011136:	900c      	str	r0, [sp, #48]	@ 0x30
  8011138:	f8ad 1034 	strh.w	r1, [sp, #52]	@ 0x34
-	GPIO_TypeDef* portCoils[] = {coil1_GPIO_Port, coil2_GPIO_Port, coil3_GPIO_Port};
+	GPIO_TypeDef* portCoils[] = {coil3_GPIO_Port, coil2_GPIO_Port, coil1_GPIO_Port};
  801113c:	f10d 0c24 	add.w	ip, sp, #36	@ 0x24
  8011140:	f103 0408 	add.w	r4, r3, #8
  8011144:	e894 0007 	ldmia.w	r4, {r0, r1, r2}

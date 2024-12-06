@@ -372,8 +372,8 @@ void StartEthTask(void *argument)
 void StartIOTask(void *argument)
 {
   /* USER CODE BEGIN StartIOTask */
-	uint16_t pinCoils[] = {coil1_Pin, coil2_Pin, coil3_Pin};
-	GPIO_TypeDef* portCoils[] = {coil1_GPIO_Port, coil2_GPIO_Port, coil3_GPIO_Port};
+	uint16_t pinCoils[] = {coil3_Pin, coil2_Pin,coil1_Pin};
+	GPIO_TypeDef* portCoils[] = {coil3_GPIO_Port, coil2_GPIO_Port, coil1_GPIO_Port};
 	uint16_t pinInputs[] = {input1_Pin, input2_Pin, input3_Pin};
 	GPIO_TypeDef* portInputs[] = {input1_GPIO_Port, input2_GPIO_Port, input3_GPIO_Port};
 	inputs_state_t pinInputs_r;
