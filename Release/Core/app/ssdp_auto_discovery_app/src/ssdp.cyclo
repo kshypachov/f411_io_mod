@@ -1,4 +1,4 @@
-../Core/Inc/definitions.h:57:21:my_calloc	2
+../Core/Inc/definitions.h:70:21:my_calloc	2
 ../Core/app/ssdp_auto_discovery_app/src/ssdp.c:67:6:ip_to_string	1
 ../Core/app/ssdp_auto_discovery_app/src/ssdp.c:80:13:send_ssdp_notify	3
 ../Core/app/ssdp_auto_discovery_app/src/ssdp.c:101:6:ssdp_set_id	6
