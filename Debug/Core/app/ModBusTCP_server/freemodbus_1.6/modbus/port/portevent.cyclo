@@ -1,3 +1,0 @@
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.c:20:1:xMBPortEventInit	1
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.c:27:1:xMBPortEventPost	1
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.c:35:1:xMBPortEventGet	2

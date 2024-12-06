@@ -1,8 +1,0 @@
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:31:13:handler_mb_tcp	5
-../Core/Inc/definitions.h:70:21:my_calloc	2
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:62:6:init_mb_tcp	2
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:89:7:xMBTCPPortInit	1
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:96:7:xMBTCPPortGetRequest	1
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:106:6:xMBTCPPortSendResponse	1
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:115:7:vMBTCPPortClose	1
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.c:119:6:vMBTCPPortDisable	1

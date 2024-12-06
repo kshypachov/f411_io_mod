@@ -1,4 +1,0 @@
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portserial.c:43:6:vMBPortSerialEnable	0	static
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portserial.c:63:1:xMBPortSerialInit	0	static
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portserial.c:113:1:xMBPortSerialPutByte	0	static
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portserial.c:124:1:xMBPortSerialGetByte	0	static

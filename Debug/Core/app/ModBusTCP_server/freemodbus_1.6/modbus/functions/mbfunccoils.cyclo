@@ -1,3 +1,0 @@
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.c:68:1:eMBFuncReadCoils	5
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.c:147:1:eMBFuncWriteCoil	6
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.c:201:1:eMBFuncWriteMultipleCoils	6

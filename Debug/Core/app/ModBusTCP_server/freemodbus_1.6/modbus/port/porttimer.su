@@ -1,4 +1,0 @@
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttimer.c:32:1:xMBPortTimersInit	0	static
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttimer.c:41:1:prvvMBTimerIRQHandler	0	static
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttimer.c:47:1:vMBPortTimersEnable	0	static
-../Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttimer.c:53:1:vMBPortTimersDisable	0	static
