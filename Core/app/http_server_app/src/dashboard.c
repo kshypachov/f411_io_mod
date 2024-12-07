@@ -1023,7 +1023,18 @@ static void handler_dev_version(struct mg_connection *c, struct mg_http_message 
 		mg_http_reply(c, 405, headers, //TODO delete for release,
 						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET method\"}\r\n");
 		return;
+	}
+}
 
+static void handler_dev_info(struct mg_connection *c, struct mg_http_message *hm){
+	if (mg_match(hm->method, mg_str("GET"), NULL)){
+		mg_http_reply(c, 200, headers,
+					  "{\"status\":\"success\",\"sw_ver\": \"%s\",\"hw_ver\": \"%s\",\"dev_system\": \"%s\",\"dev_name\": \"%s\",\"dev_model\": \"%s\"}\r\n", dev_sw_ver, dev_hw_ver, dev_system, dev_common_name, dev_model_name);
+		return;
+	}else{
+		mg_http_reply(c, 405, headers, //TODO delete for release,
+						"{\"status\":\"error\",\"message\":\"Unsupported method, support only GET method\"}\r\n");
+		return;
 	}
 }
 
@@ -1074,6 +1085,9 @@ static void dashboard(struct mg_connection *c, int ev, void *ev_data) {
 		}else if(mg_match(hm->uri, mg_str("/api/device/version"), NULL)){
 			logging(L_INFO, "Call API /api/device/version");
 			handler_dev_version(c, hm);
+		}else if(mg_match(hm->uri, mg_str("/api/device/info"), NULL)){
+			logging(L_INFO, "Call API /api/device/info");
+			handler_dev_info(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/upload"), NULL)){
 			handle_firmware_upload(c, hm);
 		}else if(mg_match(hm->uri, mg_str("/api/firmware/md5"), NULL)){

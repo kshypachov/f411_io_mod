@@ -1,5 +1,6 @@
 ../Core/app/http_server_app/src/dashboard.c:515:13:handle_OPTIONS_method	8	static
 ../Core/app/http_server_app/src/dashboard.c:1017:13:handler_dev_version	32	static
+../Core/app/http_server_app/src/dashboard.c:1029:13:handler_dev_info	48	static
 ../Core/app/http_server_app/src/dashboard.c:621:13:handle_firmware_deactivate	32	static
 ../Core/app/http_server_app/src/dashboard.c:638:13:handle_web_files_remove	32	static
 ../Core/app/http_server_app/src/dashboard.c:156:13:handler_logout	288	static
@@ -22,6 +23,6 @@
 ../Core/app/http_server_app/src/dashboard.c:542:13:handle_firmware_upload	160	static
 ../Core/app/http_server_app/src/dashboard.c:221:12:calc_file_md5sum	112	static
 ../Core/app/http_server_app/src/dashboard.c:560:13:handle_firmware_md5	32	static
-../Core/app/http_server_app/src/dashboard.c:1030:13:dashboard	224	static
-../Core/app/http_server_app/src/dashboard.c:1104:8:dash_hdl	8	static
-../Core/app/http_server_app/src/dashboard.c:1112:6:reg_parameter_handler	0	static
+../Core/app/http_server_app/src/dashboard.c:1041:13:dashboard	232	static
+../Core/app/http_server_app/src/dashboard.c:1118:8:dash_hdl	8	static
+../Core/app/http_server_app/src/dashboard.c:1126:6:reg_parameter_handler	0	static
