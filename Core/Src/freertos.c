@@ -374,8 +374,8 @@ void StartIOTask(void *argument)
   /* USER CODE BEGIN StartIOTask */
 	uint16_t pinCoils[] = {coil3_Pin, coil2_Pin,coil1_Pin};
 	GPIO_TypeDef* portCoils[] = {coil3_GPIO_Port, coil2_GPIO_Port, coil1_GPIO_Port};
-	uint16_t pinInputs[] = {input1_Pin, input2_Pin, input3_Pin};
-	GPIO_TypeDef* portInputs[] = {input1_GPIO_Port, input2_GPIO_Port, input3_GPIO_Port};
+	uint16_t pinInputs[] = {input3_Pin, input2_Pin, input1_Pin };
+	GPIO_TypeDef* portInputs[] = {input3_GPIO_Port, input2_GPIO_Port, input1_GPIO_Port};
 	inputs_state_t pinInputs_r;
 	outputs_state_t pinOutputs_r;
 	outputs_state_t pinOutputs_w;
@@ -420,7 +420,7 @@ void StartIOTask(void *argument)
 
 	// read inputs status
 	for (i = 0; i < INPUTS_COUNT; i++) {
-		pinInputs_r[i] = (uint8_t)HAL_GPIO_ReadPin(portInputs[i], pinInputs[i]);
+		pinInputs_r[i] = (uint8_t)(!HAL_GPIO_ReadPin(portInputs[i], pinInputs[i]));
 	}
 	//xQueueOverwrite(inputReadQHandle, &pinInputs_r);
 	osMessageQueueReset(inputReadQHandle);
@@ -513,11 +513,7 @@ void StartSettingsTask(void *argument)
 
   SPI_flash_reg_cb(FlashBegin, FlashEnd, FlashSPIrecvBuff, FlashSPIsendByte);
   if (lfs_fs_ll_init(FS_Lock, FS_Unlock) < 0){
-//	  while (1){
-//		  osDelay(1000);
-//	  }
-
-	  HAL_NVIC_SystemReset(); //TODO fo Release uncomment
+	  HAL_NVIC_SystemReset();
   }
 
   mg_fs_lfs_mkdir("/web");
@@ -741,15 +737,6 @@ void FlashSPIsendByte(uint8_t byte){
 int FlashSPIrecvBuff(uint8_t * buffer, uint16_t size){
 	return HAL_SPI_Receive(&hspi1, buffer, size, HAL_MAX_DELAY);
 }
-
-
-//void SendByteSPI2(uint8_t byte){
-//	HAL_SPI_Transmit(&hspi2, &byte, 1, HAL_MAX_DELAY);
-//}
-//
-//int RecvBuffSPI2(uint8_t * buffer, uint16_t size){
-//	return HAL_SPI_Receive(&hspi2, buffer, size, HAL_MAX_DELAY);
-//}
 
 void FS_Lock(void * param){
 	osMutexAcquire(FSMutexHandle, HAL_MAX_DELAY);
