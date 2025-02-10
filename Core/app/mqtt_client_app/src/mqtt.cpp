@@ -140,47 +140,64 @@ static void mqtt_subscrabe_recv_cmd_parce(mg_mqtt_message * mess){
 
     //Топик выглядит как "cedar_4022422E1436/switch0/set"
     const char *topic = mess->topic.buf;
+    const size_t topic_len = mess->topic.len;
     const char *message = mess->data.buf;
+    const size_t message_len = mess->data.len;
 
     if(message == NULL || topic == NULL){
     	MG_ERROR(("Error: topik or message id NULL.\n"));
     	return;
     }
 
+    if (topic_len < 1 || message_len < 1){
+    	logging(L_ERR, "Subscrabed topik len or message len < 1");
+    	MG_ERROR(("Subscrabed topik len or message len < 1 \n"));
+    	return;
+    }
+
+    char * local_message = (char *)calloc (message_len + 1, sizeof (char));
+    char * local_topic = (char *)calloc (topic_len + 1, sizeof(char));
+
+    strncpy(local_message, message, message_len);
+    strncpy(local_topic, topic, topic_len);
+
     r_w_parameter(sw_r, (sett_type_t)OUTPUT_SENSOR, S_READ);
     memcpy(sw_w, sw_r, sizeof(sw_r));
 
     // Ищем "switch" в топике и затем извлекаем номер реле
-    const char *switch_position = strstr(topic, "switch");
+    const char *switch_position = strstr(local_topic, "switch");
 
     if (switch_position != NULL) {
     	// Извлекаем номер реле (например, "3" из "switch3")
     	if (sscanf(switch_position, "switch%d", &relay_number) == 1){
-    		MG_INFO(("Getting relay number %d, from topik %s.\n", relay_number, topic));
+    		MG_INFO(("Getting relay number %d, from topik %s.\n", relay_number, local_topic));
 
-    		logging(L_INFO, "Getting relay number %d, from topik %s.", relay_number, topic);
+    		logging(L_INFO, "Getting relay number %d, from topik %s.", relay_number, local_topic);
 
     		if(relay_number < 1 || relay_number > OUTPUTS_COUNT){
     			MG_ERROR(("Error: invalid relay number. Relay number should be between 1 and %d. Got %d.\n", OUTPUTS_COUNT, relay_number));
 
     			logging(L_ERR, "Error: invalid relay number. Relay number should be between 1 and %d. Got %d.\n", OUTPUTS_COUNT, relay_number);
 
+    		    free(local_message);
+    		    free(local_topic);
+
     			return;
     		}
 
     		// Получаем состояние реле (ON или OFF) из данных сообщения
-			if (mess->data.len == 2 && strncmp(message, "ON", 2) == 0) {
+			if (message_len == 2 && strncmp(local_message, "ON", 2) == 0) {
 				sw_w[relay_number-1] = 1;
 				MG_INFO(("Relay %d is ON.\n", relay_number));
 				r_w_parameter(sw_w, (sett_type_t)OUTPUT_SENSOR, S_WRITE);
-			} else if (mess->data.len == 3 && strncmp(message, "OFF", 3) == 0) {
+			} else if (message_len == 3 && strncmp(local_message, "OFF", 3) == 0) {
 				sw_w[relay_number-1] = 0;
 				MG_INFO(("Relay %d is OFF.\n", relay_number));
 				r_w_parameter(sw_w, (sett_type_t)OUTPUT_SENSOR, S_WRITE);
 
 			}else{
-				MG_ERROR(("Error: expected message \"ON\" or \"OFF\" but got message: %s \n", message));
-				logging(L_ERR, "Error: expected message \"ON\" or \"OFF\" but got message: %s \n", message);
+				MG_ERROR(("Error: expected message \"ON\" or \"OFF\" but got message: %s \n", local_message));
+				logging(L_ERR, "Error: expected message \"ON\" or \"OFF\" but got message: %s \n", local_message);
 			}
 
     	}else{
@@ -188,9 +205,12 @@ static void mqtt_subscrabe_recv_cmd_parce(mg_mqtt_message * mess){
 			logging(L_ERR, "Error: relay number is not found, or incorrect format.");
     	}
     }else{
-    	MG_ERROR(("Substring \"switch\" is not fount in topik %s. \n", topic));
-    	logging(L_ERR, "Substring \"switch\" is not fount in topik %s. \n", topic);
+    	MG_ERROR(("Substring \"switch\" is not fount in topik %s. \n", local_topic));
+    	logging(L_ERR, "Substring \"switch\" is not fount in topik %s. \n", local_topic);
     }
+
+    free(local_message);
+    free(local_topic);
 }
 
 
