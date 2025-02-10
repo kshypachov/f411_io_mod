@@ -18,7 +18,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Download Cubectl
       run: |
@@ -44,13 +44,13 @@ jobs:
         make all -C ./Debug
 
     - name: Upload Build Artifacts bin
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: build_bin
         path: ./Debug/*.bin  # Укажите путь к файлам сборки или выходной директории
 
     - name: Upload Build Artifacts hex
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: build_hex
         path: ./Debug/*.hex  # Укажите путь к файлам сборки или выходной директории
