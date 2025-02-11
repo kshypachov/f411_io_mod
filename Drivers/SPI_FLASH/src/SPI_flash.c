@@ -147,7 +147,7 @@ struct SPI_flash_info sFLASH_GetInfo(void){
 			flash_info.erase_size = 4096;
 			flash_info.page_size = 256;
 			flash_info.block_count = 512;
-			strncpy(flash_info.model_name, "W25Q16", sizeof(flash_info.model_name) - 1);
+			strncpy(flash_info.model_name, "Winbond W25Q16", sizeof(flash_info.model_name) - 1);
 			flash_info.model_name[sizeof(flash_info.model_name) - 1] = '\0'; // Guarantee null-terminator
 			break;
 		case sFLASH_W25Q32BV_ID:
@@ -157,7 +157,7 @@ struct SPI_flash_info sFLASH_GetInfo(void){
 			flash_info.erase_size = 4096;
 			flash_info.page_size = 256;
 			flash_info.block_count = 1024;
-			strncpy(flash_info.model_name, "W25Q32", sizeof(flash_info.model_name) - 1);
+			strncpy(flash_info.model_name, "Winbond W25Q32", sizeof(flash_info.model_name) - 1);
 			flash_info.model_name[sizeof(flash_info.model_name) - 1] = '\0'; // Guarantee null-terminator
 			break;
 		case sFLASH_W25Q64BV_ID:
@@ -167,7 +167,7 @@ struct SPI_flash_info sFLASH_GetInfo(void){
 			flash_info.erase_size = 4096;
 			flash_info.page_size = 256;
 			flash_info.block_count = 2048;
-			strncpy(flash_info.model_name, "W25Q64", sizeof(flash_info.model_name) - 1);
+			strncpy(flash_info.model_name, "Winbond W25Q64", sizeof(flash_info.model_name) - 1);
 			flash_info.model_name[sizeof(flash_info.model_name) - 1] = '\0'; // Guarantee null-terminator
 			break;
 		case sFLASH_W25Q128BV_ID:
@@ -177,7 +177,7 @@ struct SPI_flash_info sFLASH_GetInfo(void){
 			flash_info.erase_size = 4096;
 			flash_info.page_size = 256;
 			flash_info.block_count = 4096;
-			strncpy(flash_info.model_name, "W25Q128", sizeof(flash_info.model_name) - 1);
+			strncpy(flash_info.model_name, "Winbond W25Q128", sizeof(flash_info.model_name) - 1);
 			flash_info.model_name[sizeof(flash_info.model_name) - 1] = '\0'; // Guarantee null-terminator
 			break;
 		case sFLASH_MX25L32xxx_ID:
@@ -193,6 +193,7 @@ struct SPI_flash_info sFLASH_GetInfo(void){
 
 		default:
 			flash_info.flash_id = sFLASH_UNNOUN_ID;
+			strncpy(flash_info.model_name, "Unknown", sizeof(flash_info.model_name) - 1);
 			break;
 	}
 	return flash_info;

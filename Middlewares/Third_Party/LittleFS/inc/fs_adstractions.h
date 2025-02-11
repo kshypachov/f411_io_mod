@@ -59,6 +59,9 @@ uint32_t get_fs_size(void);
 //Get mount status
 bool mg_fs_mounted(void);
 
+//Get flash chip madel name
+const char * get_flash_chip_model(void);
+
 // Erase all flash
 void lfs_erase_flash(void);
 

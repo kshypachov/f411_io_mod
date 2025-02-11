@@ -172,7 +172,7 @@ static void mqtt_subscrabe_recv_cmd_parce(mg_mqtt_message * mess){
     	if (sscanf(switch_position, "switch%d", &relay_number) == 1){
     		MG_INFO(("Getting relay number %d, from topik %s.\n", relay_number, local_topic));
 
-    		logging(L_INFO, "Getting relay number %d, from topik %s.", relay_number, local_topic);
+    		logging(L_INFO, "Recv control message in topik %s, relay number %d, action %s", local_topic, relay_number, local_message);
 
     		if(relay_number < 1 || relay_number > OUTPUTS_COUNT){
     			MG_ERROR(("Error: invalid relay number. Relay number should be between 1 and %d. Got %d.\n", OUTPUTS_COUNT, relay_number));

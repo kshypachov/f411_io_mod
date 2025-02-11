@@ -69,6 +69,10 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN Variables */
 struct mg_full_net_info mg_full_info;
+//flag to indicate file system healthy
+int8_t	flash_status_flag = 0;
+//flag to indicate flash is not found
+uint8_t flash_not_connect_flag = 0;
 /* USER CODE END Variables */
 /* Definitions for ethTask */
 osThreadId_t ethTaskHandle;
@@ -445,16 +449,31 @@ void StartDisplayTask(void *argument)
 	char buf[20];
 	osDelay(1000);//
 
+	static struct DeviceStatus io_status;
+
 	SSD1306_Init (); // initialise the display
 	osDelay(100);//
-    SSD1306_GotoXY(x=1,y=0);
-    SSD1306_Fill(SSD1306_COLOR_BLACK);
-    SSD1306_Puts("Compiled: ", &Font_7x10, SSD1306_COLOR_WHITE);
-    //SSD1306_GotoXY(x=1,y=y+11);
-    SSD1306_Puts(__TIME__, &Font_7x10, SSD1306_COLOR_WHITE);
-    SSD1306_GotoXY(x=1,y=y+11);
-    SSD1306_Puts(__DATE__, &Font_7x10, SSD1306_COLOR_WHITE);
-    SSD1306_GotoXY(x=1,y=y+11);
+	SSD1306_GotoXY(x=1,y=0);
+	SSD1306_Fill(SSD1306_COLOR_BLACK);
+
+	if (flash_not_connect_flag){
+		SSD1306_GotoXY(x=1,y=0);
+		SSD1306_Fill(SSD1306_COLOR_BLACK);
+		SSD1306_Puts("Error. Flash mem", &Font_7x10, SSD1306_COLOR_WHITE);
+		SSD1306_GotoXY(x=1,y=10);
+		SSD1306_Puts("chip is not", &Font_7x10, SSD1306_COLOR_WHITE);
+		SSD1306_GotoXY(x=1,y=20);
+		SSD1306_Puts("connected. Reboot", &Font_7x10, SSD1306_COLOR_WHITE);
+		SSD1306_UpdateScreen();
+		vTaskDelay(3000);
+	}
+
+	SSD1306_Puts("Compiled: ", &Font_7x10, SSD1306_COLOR_WHITE);
+	//SSD1306_GotoXY(x=1,y=y+11);
+	SSD1306_Puts(__TIME__, &Font_7x10, SSD1306_COLOR_WHITE);
+	SSD1306_GotoXY(x=1,y=y+11);
+	SSD1306_Puts(__DATE__, &Font_7x10, SSD1306_COLOR_WHITE);
+	SSD1306_GotoXY(x=1,y=y+11);
 	SSD1306_Puts("MAC: ", &Font_7x10, SSD1306_COLOR_WHITE);
 	SSD1306_GotoXY(x=1,y=y+11);
 	sprintf((char *)buf,"%02X:%02X:%02X:%02X:%02X:%02X",
@@ -463,24 +482,72 @@ void StartDisplayTask(void *argument)
 			mg_full_info.mgr_if->mac[4], mg_full_info.mgr_if->mac[5]);
 	SSD1306_Puts((char *)buf, &Font_7x10, SSD1306_COLOR_WHITE);
 
-    SSD1306_UpdateScreen();
-    vTaskDelay(3000);
-    int i=0;
+	SSD1306_UpdateScreen();
+	vTaskDelay(3000);
+	int i=0;
 
   /* Infinite loop */
-  for(;;)
-  {
-		SSD1306_GotoXY(x=1,y=0);
+	for(;;)
+	{
+		RW_parameters_from_queue(io_status.inputs, S_INPUTS, S_READ);
+		RW_parameters_from_queue(io_status.outputs, S_OUTPUTS, S_READ);
+
 		SSD1306_Fill(SSD1306_COLOR_BLACK);
+
+
+		switch (flash_status_flag) {
+		case -5:
+			SSD1306_GotoXY(x=1,y=40);
+			SSD1306_Puts("LFS_ERR_IO", &Font_7x10, SSD1306_COLOR_WHITE);
+			break;
+		case -84:
+			SSD1306_GotoXY(x=1,y=40);
+			SSD1306_Puts("LFS_ERR_CORRUPT", &Font_7x10, SSD1306_COLOR_WHITE);
+			break;
+		case -24:
+			SSD1306_GotoXY(x=1,y=40);
+			SSD1306_Puts("LFS_ERR_NOSPC", &Font_7x10, SSD1306_COLOR_WHITE);
+			break;
+		case -12:
+			SSD1306_GotoXY(x=1,y=40);
+			SSD1306_Puts("LFS_ERR_NOMEM", &Font_7x10, SSD1306_COLOR_WHITE);
+			break;
+		default:
+			break;
+		}
+
+		SSD1306_GotoXY(x=1,y=0);
 		SSD1306_Puts("IP:", &Font_7x10, SSD1306_COLOR_WHITE);
-	    sprintf(buf,"%lu.%lu.%lu.%lu",
-	    		(mg_full_info.mgr_if->ip) & 0xFF, (mg_full_info.mgr_if->ip >> 8) & 0xFF,
+		sprintf(buf,"%lu.%lu.%lu.%lu",
+				(mg_full_info.mgr_if->ip) & 0xFF, (mg_full_info.mgr_if->ip >> 8) & 0xFF,
 				(mg_full_info.mgr_if->ip >> 16) & 0xFF, (mg_full_info.mgr_if->ip >> 24) & 0xFF);
-	    SSD1306_Puts(buf, &Font_7x10, SSD1306_COLOR_WHITE);
-	    SSD1306_GotoXY(x=1,y=10);
-	    SSD1306_Puts("I=", &Font_7x10, SSD1306_COLOR_WHITE);
-	    sprintf(buf,"%d", ++i);
-	    SSD1306_Puts(buf, &Font_7x10, SSD1306_COLOR_WHITE);
+		SSD1306_Puts(buf, &Font_7x10, SSD1306_COLOR_WHITE);
+		SSD1306_GotoXY(x,y=y+11);
+		SSD1306_Puts("Inputs:", &Font_7x10, SSD1306_COLOR_WHITE);
+		SSD1306_GotoXY(x=x+60,y);
+		for (i=0 ; i<INPUTS_COUNT ; i++){
+			sprintf((char *)buf,"%d",i+1);
+			if ( io_status.inputs[i] ){
+				SSD1306_Puts((char *)buf, &Font_7x10, SSD1306_COLOR_BLACK);
+			}else{
+				SSD1306_Puts((char *)buf, &Font_7x10, SSD1306_COLOR_WHITE);
+			}
+			SSD1306_GotoXY(x=x+8,y);
+		}
+		SSD1306_GotoXY(x=1,y=y+11);
+		SSD1306_Puts("Outputs:", &Font_7x10, SSD1306_COLOR_WHITE);
+		SSD1306_GotoXY(x=x+60,y);
+
+		for (i=0 ; i<OUTPUTS_COUNT ; i++){
+			sprintf((char *)buf,"%d",i+1);
+			if ( io_status.outputs[i] ){
+				SSD1306_Puts((char *)buf, &Font_7x10, SSD1306_COLOR_BLACK);
+			}else{
+				SSD1306_Puts((char *)buf, &Font_7x10, SSD1306_COLOR_WHITE);
+			}
+			SSD1306_GotoXY(x=x+8,y);
+		}
+
 		SSD1306_UpdateScreen();
 
 		while(HAL_I2C_IsDeviceReady(&hi2c1, SSD1306_I2C_ADDR, 1, 1000) != HAL_OK){
@@ -490,8 +557,8 @@ void StartDisplayTask(void *argument)
 			vTaskDelay(1000);
 			SSD1306_Init ();
 		}
-		osDelay(1000);
-  }
+		osDelay(200);
+	}
   /* USER CODE END StartDisplayTask */
 }
 
@@ -513,6 +580,8 @@ void StartSettingsTask(void *argument)
 
   SPI_flash_reg_cb(FlashBegin, FlashEnd, FlashSPIrecvBuff, FlashSPIsendByte);
   if (lfs_fs_ll_init(FS_Lock, FS_Unlock) < 0){
+	  flash_not_connect_flag = 1; //indicate that flash is not found
+	  osDelay(3000);
 	  HAL_NVIC_SystemReset();
   }
 
@@ -612,7 +681,7 @@ void StartLoggingTask(void *argument)
 {
   /* USER CODE BEGIN StartLoggingTask */
 
-	uint32_t count = 2000;
+	uint32_t count = 1780;
 	void *  f_pointer = NULL;
 	size_t fs_size;
 	HeapStats_t heap_status;
@@ -633,7 +702,7 @@ void StartLoggingTask(void *argument)
 		  log_message_t log;
 		  osMessageQueueGet(loggingQHandle, &log, 0, 0);
 		  f_pointer = mg_fs_lfs_open(LOG_FILE_LOCATION, MG_FS_WRITE);
-		  mg_fs_lfs_write(f_pointer, &log.log_text, log.log_len); //
+		  flash_status_flag = mg_fs_lfs_write(f_pointer, &log.log_text, log.log_len);
 		  mg_fs_lfs_close(f_pointer);
 	  }
 	  //--------logging
@@ -667,6 +736,8 @@ void StartLoggingTask(void *argument)
 			mg_full_info.mgr_if->mac[0], mg_full_info.mgr_if->mac[1],
 			mg_full_info.mgr_if->mac[2], mg_full_info.mgr_if->mac[3],
 			mg_full_info.mgr_if->mac[4], mg_full_info.mgr_if->mac[5]);
+
+    	logging(L_INFO, "Flash chip model name: %s",  get_flash_chip_model());
 
     }
     count ++;

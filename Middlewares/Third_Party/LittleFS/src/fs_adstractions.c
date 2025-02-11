@@ -17,7 +17,11 @@ static struct lfs_file_data {
 
 bool fs_mounted = 0;
 
+//structure for store info about flash chip
+static struct SPI_flash_info	flash_info;
+
 void fs_proto(void){}; //function prototype
+
 
 // Получение информации о файле
 int mg_fs_lfs_status(const char *path, size_t *size, time_t *mtime) {
@@ -219,14 +223,20 @@ bool mg_fs_mounted(void){
 	return fs_mounted;
 }
 
+const char * get_flash_chip_model(void){
+	return flash_info.model_name;
+}
+
 int block_device_read(const struct lfs_config *c, lfs_block_t block, lfs_off_t off, void *buffer, lfs_size_t size);
 int block_device_prog(const struct lfs_config *c, lfs_block_t block, lfs_off_t off, const void *buffer, lfs_size_t size);
 int block_device_erase(const struct lfs_config *c, lfs_block_t block);
 int block_device_sync(const struct lfs_config *c);
 
+
+
 int lfs_fs_ll_init(void (*lock)(void *), void (*unlock)(void *)){
 
-	struct SPI_flash_info	flash_info;
+
 
 	flash_info = sFLASH_GetInfo();
 	if (flash_info.flash_id == 0x0) return -1;
