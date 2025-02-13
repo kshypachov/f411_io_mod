@@ -709,7 +709,7 @@ void StartLoggingTask(void *argument)
     osDelay(500);
 
 
-    if (count == 2000){
+    if (count == 20000){
     	mg_fs_lfs_status(LOG_FILE_LOCATION, &fs_size, NULL);
     	if (fs_size > LOG_FILE_MAX_SIZE){
     		mg_fs_lfs_remove(LOG_FILE_LOCATION_OLD);

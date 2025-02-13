@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "cmsis_os.h"
+#include "adc.h"
 #include "i2c.h"
 #include "iwdg.h"
 #include "spi.h"
@@ -103,6 +104,7 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   MX_IWDG_Init();
+  MX_ADC1_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
