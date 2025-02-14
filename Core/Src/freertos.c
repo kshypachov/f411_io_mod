@@ -468,13 +468,11 @@ void StartDisplayTask(void *argument)
 		vTaskDelay(3000);
 	}
 
-	SSD1306_Puts("Compiled: ", &Font_7x10, SSD1306_COLOR_WHITE);
+	SSD1306_Puts("Builded: ", &Font_7x10, SSD1306_COLOR_WHITE);
 	//SSD1306_GotoXY(x=1,y=y+11);
 	SSD1306_Puts(__TIME__, &Font_7x10, SSD1306_COLOR_WHITE);
 	SSD1306_GotoXY(x=1,y=y+11);
 	SSD1306_Puts(__DATE__, &Font_7x10, SSD1306_COLOR_WHITE);
-	SSD1306_GotoXY(x=1,y=y+11);
-	SSD1306_Puts("MAC: ", &Font_7x10, SSD1306_COLOR_WHITE);
 	SSD1306_GotoXY(x=1,y=y+11);
 	sprintf((char *)buf,"%02X:%02X:%02X:%02X:%02X:%02X",
 			mg_full_info.mgr_if->mac[0], mg_full_info.mgr_if->mac[1],
@@ -482,8 +480,11 @@ void StartDisplayTask(void *argument)
 			mg_full_info.mgr_if->mac[4], mg_full_info.mgr_if->mac[5]);
 	SSD1306_Puts((char *)buf, &Font_7x10, SSD1306_COLOR_WHITE);
 
+	SSD1306_GotoXY(x=1,y=y+11);
+	sprintf((char *)buf, "%s",get_flash_chip_model());
+	SSD1306_Puts((char *)buf, &Font_7x10, SSD1306_COLOR_WHITE);
 	SSD1306_UpdateScreen();
-	vTaskDelay(3000);
+	osDelay(3000);
 	int i=0;
 
   /* Infinite loop */
@@ -681,7 +682,7 @@ void StartLoggingTask(void *argument)
 {
   /* USER CODE BEGIN StartLoggingTask */
 
-	uint32_t count = 1780;
+	uint32_t count = 19400;
 	void *  f_pointer = NULL;
 	size_t fs_size;
 	HeapStats_t heap_status;
@@ -738,6 +739,7 @@ void StartLoggingTask(void *argument)
 			mg_full_info.mgr_if->mac[4], mg_full_info.mgr_if->mac[5]);
 
     	logging(L_INFO, "Flash chip model name: %s",  get_flash_chip_model());
+    	logging(L_INFO, "Firmware version: %s", dev_sw_ver);
 
     }
     count ++;
