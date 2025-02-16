@@ -92,6 +92,11 @@ void sFLASH_CS_HIGH(void);
 
 void function_prototype(void){};
 
+static unsigned long erace_sectors = 0;
+static unsigned long write_bytes = 0;
+static unsigned long read_bytes = 0;
+
+
 //void (*flash_conf.select_chip)() = &function_prototype;
 
 /* Private functions ---------------------------------------------------------*/
@@ -242,6 +247,9 @@ void sFLASH_EraseSector(uint32_t SectorAddr)
 
   /*!< Wait the end of Flash writing */
   sFLASH_WaitForWriteEnd();
+
+  erace_sectors++ ;
+
 }
 
 void sFLASH_EraseBlock32k(uint32_t SectorAddr)
@@ -345,6 +353,8 @@ void sFLASH_WriteBuffer(uint8_t* pBuffer, uint32_t WriteAddr, uint16_t NumByteTo
 {
   uint8_t NumOfPage = 0, NumOfSingle = 0, Addr = 0, count = 0, temp = 0;
 
+  write_bytes = write_bytes + NumByteToWrite;
+
   Addr = WriteAddr % sFLASH_SPI_PAGESIZE;
   count = sFLASH_SPI_PAGESIZE - Addr;
   NumOfPage =  NumByteToWrite / sFLASH_SPI_PAGESIZE;
@@ -410,6 +420,7 @@ void sFLASH_WriteBuffer(uint8_t* pBuffer, uint32_t WriteAddr, uint16_t NumByteTo
       }
     }
   }
+
 }
 
 /**
@@ -424,6 +435,8 @@ void sFLASH_ReadBuffer(uint8_t* pBuffer, uint32_t ReadAddr, uint16_t NumByteToRe
 //#include "cmsis_os.h"
   /*!< Select the FLASH: Chip Select low */
   sFLASH_CS_LOW();
+
+  read_bytes = read_bytes + NumByteToRead;
 
   if (NumByteToRead > 16){
 	  //Send "Fast read" inctruction
@@ -459,6 +472,8 @@ void sFLASH_ReadBuffer(uint8_t* pBuffer, uint32_t ReadAddr, uint16_t NumByteToRe
 		pBuffer++;
 	  }
   }
+
+
   /*!< Deselect the FLASH: Chip Select high */
   sFLASH_CS_HIGH();
 }
@@ -641,4 +656,27 @@ void sFLASH_WaitForWriteEnd(void)
   //sFLASH_CS_HIGH();
 }
 
+unsigned long sFLASH_GetReadedBytes(void){
+	return read_bytes;
+}
+
+unsigned long sFLASH_GetWritedBytes(void){
+	return write_bytes;
+}
+
+unsigned long sFLASH_GetEraceSectorTimes(void){
+	return erace_sectors;
+}
+
+void sFLASH_SetReadedBytes(unsigned long bytes){
+	read_bytes = bytes;
+}
+
+void sFLASH_SetWritedBytes(unsigned long bytes){
+	write_bytes = bytes;
+}
+
+void sFLASH_SetEraceSectorTimes(unsigned long sectors){
+	erace_sectors = sectors;
+}
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

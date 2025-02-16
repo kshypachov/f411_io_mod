@@ -52,6 +52,6 @@ void start_sntp(void *arg){
 	struct mg_mgr *mgr = (struct mg_mgr*)arg;
 
 	mg_timer_add(mgr, 20000,  MG_TIMER_ONCE, timer_fn, mgr); //Run once with delay 20 seconds
-	mg_timer_add(mgr, 1080000, MG_TIMER_REPEAT, timer_fn, mgr); //Repeat every 30 minutes 1080 seconds
+	mg_timer_add(mgr, 4000000, MG_TIMER_REPEAT, timer_fn, mgr); //Repeat every ~ 60 minutes
 
 }

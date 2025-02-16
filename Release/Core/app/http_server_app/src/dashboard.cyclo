@@ -3,6 +3,6 @@
 ../Core/app/http_server_app/src/dashboard.c:685:13:handle_fs_get_log	5
 ../Core/app/http_server_app/src/dashboard.c:67:13:write_users	1
 ../Core/app/http_server_app/src/dashboard.c:524:13:handle_restart_mcu	2
-../Core/app/http_server_app/src/dashboard.c:1030:13:dashboard	124
-../Core/app/http_server_app/src/dashboard.c:1104:8:dash_hdl	2
-../Core/app/http_server_app/src/dashboard.c:1112:6:reg_parameter_handler	1
+../Core/app/http_server_app/src/dashboard.c:1041:13:dashboard	126
+../Core/app/http_server_app/src/dashboard.c:1118:8:dash_hdl	2
+../Core/app/http_server_app/src/dashboard.c:1126:6:reg_parameter_handler	1

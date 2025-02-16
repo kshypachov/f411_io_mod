@@ -594,7 +594,7 @@ void StartSettingsTask(void *argument)
   mg_fs_lfs_mkdir("/certs");
   mg_fs_lfs_mkdir("/log");
   mg_fs_lfs_mkdir("/auth");
-
+  mg_fs_lfs_mkdir("/smart"); //flash usage info
 
 
   if (mg_fs_lfs_status("/settings/mqtt.conf", &f_size, NULL)){//file found
@@ -682,7 +682,7 @@ void StartLoggingTask(void *argument)
 {
   /* USER CODE BEGIN StartLoggingTask */
 
-	uint32_t count = 19400;
+	uint32_t count = 20000;
 	void *  f_pointer = NULL;
 	size_t fs_size;
 	HeapStats_t heap_status;
@@ -716,6 +716,12 @@ void StartLoggingTask(void *argument)
     		mg_fs_lfs_remove(LOG_FILE_LOCATION_OLD);
     		mg_fs_lfs_rename(LOG_FILE_LOCATION, LOG_FILE_LOCATION_OLD);
     		logging(L_INFO, "Log file rotated");
+        	logging(L_INFO, "MAC addr: %02X:%02X:%02X:%02X:%02X:%02X",
+    			mg_full_info.mgr_if->mac[0], mg_full_info.mgr_if->mac[1],
+    			mg_full_info.mgr_if->mac[2], mg_full_info.mgr_if->mac[3],
+    			mg_full_info.mgr_if->mac[4], mg_full_info.mgr_if->mac[5]);
+        	logging(L_INFO, "Flash chip model name: %s",  get_flash_chip_model());
+        	logging(L_INFO, "Firmware version: %s", dev_sw_ver);
     	}
 
     	count = 0;
@@ -733,13 +739,10 @@ void StartLoggingTask(void *argument)
     			(mg_full_info.mgr_if->ip) & 0xFF, (mg_full_info.mgr_if->ip >> 8) & 0xFF,
 				(mg_full_info.mgr_if->ip >> 16) & 0xFF, (mg_full_info.mgr_if->ip >> 24) & 0xFF);
 
-    	logging(L_INFO, "MAC addr: %02X:%02X:%02X:%02X:%02X:%02X",
-			mg_full_info.mgr_if->mac[0], mg_full_info.mgr_if->mac[1],
-			mg_full_info.mgr_if->mac[2], mg_full_info.mgr_if->mac[3],
-			mg_full_info.mgr_if->mac[4], mg_full_info.mgr_if->mac[5]);
 
-    	logging(L_INFO, "Flash chip model name: %s",  get_flash_chip_model());
-    	logging(L_INFO, "Firmware version: %s", dev_sw_ver);
+    	logging(L_INFO, "Read bytes from flash: %lu", sFLASH_GetReadedBytes());
+    	logging(L_INFO, "Write bytes to flash: %lu", sFLASH_GetWritedBytes());
+    	logging(L_INFO, "Erased sectors: %lu", sFLASH_GetEraceSectorTimes());
 
     }
     count ++;
