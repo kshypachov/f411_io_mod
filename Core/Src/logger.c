@@ -10,17 +10,50 @@
 #include "definitions.h"
 #include "data_types.h"
 #include "time.h"
+#include "rtc.h"  // Include RTC header
 
-#include "mongoose.h"
+//#include "mongoose.h"
 
-#define time_ms_now() mg_now()
-
+time_t get_rtc_timestamp_ms(void);
+//#define time_ms_now() mg_now()
+#define time_ms_now() get_rtc_timestamp_ms()
 logging_level_t _level_ = L_DEBUG;
 const char *level_strings[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 
 static void proto(struct log_message mess ){};
 
 void (*_send_log_mess)(struct log_message mess) = proto;
+
+
+
+// Function to get current timestamp from RTC
+time_t get_rtc_timestamp_ms(void) {
+    RTC_TimeTypeDef sTime;
+    RTC_DateTypeDef sDate;
+
+    // Read the current date and time from RTC
+    HAL_RTC_GetTime(&hrtc, &sTime, RTC_FORMAT_BIN);
+    HAL_RTC_GetDate(&hrtc, &sDate, RTC_FORMAT_BIN);
+
+    // Convert RTC date and time to UNIX timestamp
+    struct tm t;
+    memset(&t, 0, sizeof(struct tm));
+
+    t.tm_year = sDate.Year + 100;  // Year since 1900 (RTC year starts from 2000)
+    t.tm_mon = sDate.Month - 1;    // RTC month is 1-12, struct tm month is 0-11
+    t.tm_mday = sDate.Date;
+    t.tm_hour = sTime.Hours;
+    t.tm_min = sTime.Minutes;
+    t.tm_sec = sTime.Seconds;
+
+    time_t timestamp = mktime(&t); // Convert to UNIX timestamp
+
+    // Add milliseconds from RTC subseconds
+    uint32_t ms = 1000 - ((sTime.SubSeconds * 1000) / sTime.SecondFraction + 1);
+
+    return (timestamp * 1000) + ms;
+}
+
 
 
 void reg_logging_fn(void (* fn)(struct log_message)){

@@ -92,9 +92,9 @@ void sFLASH_CS_HIGH(void);
 
 void function_prototype(void){};
 
-static unsigned long erace_sectors = 0;
-static unsigned long write_bytes = 0;
-static unsigned long read_bytes = 0;
+static uint32_t erace_sectors = 0;
+static uint32_t write_bytes = 0;
+static uint32_t read_bytes = 0;
 
 
 //void (*flash_conf.select_chip)() = &function_prototype;
@@ -656,27 +656,27 @@ void sFLASH_WaitForWriteEnd(void)
   //sFLASH_CS_HIGH();
 }
 
-unsigned long sFLASH_GetReadedBytes(void){
+uint32_t sFLASH_GetReadedBytes(void){
 	return read_bytes;
 }
 
-unsigned long sFLASH_GetWritedBytes(void){
+uint32_t sFLASH_GetWritedBytes(void){
 	return write_bytes;
 }
 
-unsigned long sFLASH_GetEraceSectorTimes(void){
+uint32_t sFLASH_GetEraceSectorTimes(void){
 	return erace_sectors;
 }
 
-void sFLASH_SetReadedBytes(unsigned long bytes){
+void sFLASH_SetReadedBytes(uint32_t bytes){
 	read_bytes = bytes;
 }
 
-void sFLASH_SetWritedBytes(unsigned long bytes){
+void sFLASH_SetWritedBytes(uint32_t bytes){
 	write_bytes = bytes;
 }
 
-void sFLASH_SetEraceSectorTimes(unsigned long sectors){
+void sFLASH_SetEraceSectorTimes(uint32_t sectors){
 	erace_sectors = sectors;
 }
 /************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

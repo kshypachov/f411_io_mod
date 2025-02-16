@@ -133,13 +133,13 @@ void sFLASH_WriteEnable(void);
 void sFLASH_WaitForWriteEnd(void);
 void flash_reg_cb_mutex_functions(void(*mutex_give_f)(void), void(*mutex_release_f)(void));
 
-unsigned long sFLASH_GetReadedBytes(void);
-unsigned long sFLASH_GetWritedBytes(void);
-unsigned long sFLASH_GetEraceSectorTimes(void);
+uint32_t sFLASH_GetReadedBytes(void);
+uint32_t sFLASH_GetWritedBytes(void);
+uint32_t sFLASH_GetEraceSectorTimes(void);
 
-void sFLASH_SetReadedBytes(unsigned long bytes);
-void sFLASH_SetWritedBytes(unsigned long bytes);
-void sFLASH_SetEraceSectorTimes(unsigned long sectors);
+void sFLASH_SetReadedBytes(uint32_t bytes);
+void sFLASH_SetWritedBytes(uint32_t bytes);
+void sFLASH_SetEraceSectorTimes(uint32_t sectors);
 
 #ifdef __cplusplus
 }

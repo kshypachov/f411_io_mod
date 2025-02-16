@@ -22,6 +22,7 @@
 #include "adc.h"
 #include "i2c.h"
 #include "iwdg.h"
+#include "rtc.h"
 #include "spi.h"
 #include "gpio.h"
 
@@ -105,8 +106,20 @@ int main(void)
   MX_SPI1_Init();
   MX_IWDG_Init();
   MX_ADC1_Init();
+  MX_RTC_Init();
   /* USER CODE BEGIN 2 */
+  //load spi flash statistic from RTC registers
+  if (HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR2) == HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR3)){
+	  sFLASH_SetEraceSectorTimes(HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR2));
+  }
 
+  if (HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR4) == HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR5)){
+	  sFLASH_SetReadedBytes(HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR4));
+  }
+
+  if (HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR6) == HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR7)){
+	  sFLASH_SetWritedBytes(HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR6));
+  }
   /* USER CODE END 2 */
 
   /* Init scheduler */

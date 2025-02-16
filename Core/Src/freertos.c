@@ -47,6 +47,7 @@
 #include "mb.h"
 #include "mbutils.h"
 #include "iwdg.h"
+#include "rtc.h"
 //#include "mbport.h"
 
 /* USER CODE END Includes */
@@ -687,6 +688,8 @@ void StartLoggingTask(void *argument)
 	size_t fs_size;
 	HeapStats_t heap_status;
 
+	uint32_t bytes_read = 0, bytes_write = 0, erace_times = 0;
+
 	reg_logging_fn(add_log_mess_to_q);
 	logger_set_level(L_INFO);
 	logging(L_INFO, "Device started...");
@@ -739,10 +742,19 @@ void StartLoggingTask(void *argument)
     			(mg_full_info.mgr_if->ip) & 0xFF, (mg_full_info.mgr_if->ip >> 8) & 0xFF,
 				(mg_full_info.mgr_if->ip >> 16) & 0xFF, (mg_full_info.mgr_if->ip >> 24) & 0xFF);
 
+    	bytes_read  = sFLASH_GetReadedBytes();
+		bytes_write = sFLASH_GetWritedBytes();
+		erace_times = sFLASH_GetEraceSectorTimes();
+    	logging(L_INFO, "Read bytes from flash: %" PRIu32, bytes_read);
+    	logging(L_INFO, "Write bytes to flash: %" PRIu32, bytes_write);
+    	logging(L_INFO, "Erased sectors: %" PRIu32, erace_times);
 
-    	logging(L_INFO, "Read bytes from flash: %lu", sFLASH_GetReadedBytes());
-    	logging(L_INFO, "Write bytes to flash: %lu", sFLASH_GetWritedBytes());
-    	logging(L_INFO, "Erased sectors: %lu", sFLASH_GetEraceSectorTimes());
+    	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR2, erace_times);
+    	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR3, erace_times);
+    	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR4, bytes_read);
+    	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR5, bytes_read);
+    	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR6, bytes_write);
+    	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR7, bytes_write);
 
     }
     count ++;
