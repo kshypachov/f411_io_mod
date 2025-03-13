@@ -24,7 +24,8 @@ typedef enum{
 	VOLTAGE_SENSOR_TOPIK		= 5,
 	POWER_FACTOR_SENSOR_TOPIK	= 6,
 	CURRENT_SENSOR_TOPIK 		= 7,
-	APPARENT_POWER_SENSOR_TOPIK	= 8
+	APPARENT_POWER_SENSOR_TOPIK	= 8,
+	VOLTAGE_CONFIG_SENSOR_TOPIK	= 9,
 }mqtt_topik_string_type;
 
 typedef enum{
@@ -35,7 +36,8 @@ typedef enum{
 	VOLTAGE_SENSOR_PAYLOAD			= 5,
 	POWER_FACTOR_SENSOR_PAYLOAD		= 6,
 	CURRENT_SENSOR_PAYLOAD			= 7,
-	APPARENT_POWER_SENSOR_PAYLOAD	= 8
+	APPARENT_POWER_SENSOR_PAYLOAD	= 8,
+	VOLTAGE_CONFIG_SENSOR_PAYLOAD	= 9
 }mqtt_conf_payload_string_type;
 
 
@@ -47,7 +49,9 @@ typedef enum{
 	VOLTAGE_SENSOR			= 5,
 	POWER_FACTOR_SENSOR		= 6,
 	CURRENT_SENSOR 			= 7,
-	APPARENT_POWER_SENSOR	= 8
+	APPARENT_POWER_SENSOR	= 8,
+	VOLTAGE_DIAGNOSTIC_BATT_SENSOR	= 9,
+	VOLTAGE_DIAGNOSTIC_POW_SUPL_SENSOR	= 10,
 }mqtt_sensor_type_t;
 
 typedef enum{
@@ -72,6 +76,12 @@ typedef struct {
 #define component_input_human			"Вхід"
 
 #define component_switch				"switch"
+
+#define component_battery				"battery"
+#define component_battery_human			"Батарея"
+
+#define component_power_supply			"power_supply"
+#define component_power_supply_human	"Джерело живлення"
 
 #define dev_system						"cedar"
 #define dev_common_name					"CedarSwitch"
@@ -110,6 +120,7 @@ typedef struct {
 #define state_topik						"main"
 
 mqtt_config_error set_device_id(const uint8_t* id, unsigned const int dev_id_len);
+mqtt_config_error get_dev_id_str(char **str, uint32_t *len);
 mqtt_config_error set_device_conf_ip(char * chr_ip, unsigned int ip_len);
 int set_home_assistant_prefix(char * prefix_string, uint8_t prefix_len);
 int get_config_topik_string (char * buff, uint32_t buff_len, uint8_t topik_type, uint8_t obj_number);

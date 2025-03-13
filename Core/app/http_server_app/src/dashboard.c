@@ -18,6 +18,7 @@
 #include "stm32f4xx_hal.h"
 #include "validation.h"
 #include "logger.h"
+#include "adc.h"
 
 struct mg_fs mg_fs_lfs = {
 	    .st = mg_fs_lfs_status,
@@ -648,7 +649,7 @@ static void handle_web_files_remove(struct mg_connection *c, struct mg_http_mess
     }
 }
 
-// Функция для создания папки
+// Function for folder creation
 static void handle_fs_mkdir(struct mg_connection *c, struct mg_http_message *hm) {
   char name[123];
   char path[MG_PATH_MAX];
@@ -1017,7 +1018,7 @@ static void handle_mb_tcp_access_list(struct mg_connection *c, struct mg_http_me
 static void handler_dev_version(struct mg_connection *c, struct mg_http_message *hm){
 	if (mg_match(hm->method, mg_str("GET"), NULL)){
 		mg_http_reply(c, 200, headers,
-					  "{\"status\":\"success\",\"sw_ver\": \"%s\",\"hw_ver\": \"%s\"}\r\n", dev_sw_ver, dev_hw_ver);
+					  "{\"status\":\"success\",\"sw_ver\": \"%s\",\"hw_ver\": \"%s\", \"build_date\": \"%s %s\"}\r\n", dev_sw_ver, dev_hw_ver, __TIME__, __DATE__);
 		return;
 	}else{
 		mg_http_reply(c, 405, headers, //TODO delete for release,
@@ -1028,8 +1029,10 @@ static void handler_dev_version(struct mg_connection *c, struct mg_http_message 
 
 static void handler_dev_info(struct mg_connection *c, struct mg_http_message *hm){
 	if (mg_match(hm->method, mg_str("GET"), NULL)){
+		float vbat = Read_VBAT();
+		float vdd  = Read_VDD();
 		mg_http_reply(c, 200, headers,
-					  "{\"status\":\"success\",\"sw_ver\": \"%s\",\"hw_ver\": \"%s\",\"dev_system\": \"%s\",\"dev_name\": \"%s\",\"dev_model\": \"%s\"}\r\n", dev_sw_ver, dev_hw_ver, dev_system, dev_common_name, dev_model_name);
+					  "{\"status\":\"success\",\"sw_ver\": \"%s\",\"hw_ver\": \"%s\",\"dev_system\": \"%s\",\"dev_name\": \"%s\",\"dev_model\": \"%s\", \"dev_vbat_rtc_v\": \"%.3f\", \"dev_power_v\": \"%.3f\"}\r\n", dev_sw_ver, dev_hw_ver, dev_system, dev_common_name, dev_model_name, vbat, vdd);
 		return;
 	}else{
 		mg_http_reply(c, 405, headers, //TODO delete for release,

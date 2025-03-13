@@ -18,7 +18,7 @@
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:3810:19:lfs_file_tell_	0	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:3824:19:lfs_file_size_	0	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:4827:13:lfs_fs_prepsuperblock	0	static
-../Middlewares/Third_Party/LittleFS/src/lfs.c:4845:13:lfs_fs_prepmove	4	static
+../Middlewares/Third_Party/LittleFS/src/lfs.c:4845:13:lfs_fs_prepmove	0	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:5111:12:lfs_fs_size_count	0	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:275:12:lfs_bd_erase	8	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:4833:12:lfs_fs_preporphans	8	static
@@ -41,7 +41,7 @@
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:3456:20:lfs_file_flushedread	56	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:154:12:lfs_bd_crc	72	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:1095:19:lfs_dir_fetchmatch	128	static
-../Middlewares/Third_Party/LittleFS/src/lfs.c:4790:19:lfs_fs_parent	72	static
+../Middlewares/Third_Party/LittleFS/src/lfs.c:4790:19:lfs_fs_parent	80	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:1374:12:lfs_dir_fetch	24	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:4617:5:lfs_fs_traverse_	112	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:628:12:lfs_alloc_scan	16	static
@@ -58,7 +58,7 @@
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:3620:20:lfs_file_write_	32	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:3728:12:lfs_file_truncate_	48	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:5118:20:lfs_fs_size_	16	static
-../Middlewares/Third_Party/LittleFS/src/lfs.c:4725:12:lfs_fs_pred	40	static
+../Middlewares/Third_Party/LittleFS/src/lfs.c:4725:12:lfs_fs_pred	48	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:2829:12:lfs_dir_rewind_	8	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:2787:12:lfs_dir_seek_	24	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:4577:12:lfs_fs_stat_	80	static

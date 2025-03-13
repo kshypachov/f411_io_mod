@@ -107,5 +107,83 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
 }
 
 /* USER CODE BEGIN 1 */
+// VREFINT calibration value address from system memory (typical value is 1.21V at 3.3V VDD)
+
+// Function to measure VREFINT and calculate actual VDD
+float Read_VDD(void)
+{
+    uint32_t raw_value = 0;
+    float vrefint_cal = (float)(*VREFINT_CAL_ADDR);  // Read calibration value from system memory
+
+    ADC_ChannelConfTypeDef sConfig = {0};
+
+    // Configure ADC channel to VREFINT
+    sConfig.Channel = ADC_CHANNEL_VREFINT;
+    sConfig.Rank = 1;
+    sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;  // Longer sampling time for better accuracy
+    sConfig.Offset = 0;
+
+    if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+    {
+        // Failed to configure VREFINT channel
+        return -1.0;
+    }
+
+    HAL_ADC_Start(&hadc1);
+    if (HAL_ADC_PollForConversion(&hadc1, 10) == HAL_OK)
+    {
+        raw_value = HAL_ADC_GetValue(&hadc1);  // Read raw ADC value for VREFINT
+    }
+    HAL_ADC_Stop(&hadc1);
+
+    // Calculate actual VDD based on calibration value and raw ADC reading
+    float vdd = 3.3f * (vrefint_cal / raw_value);
+
+    return vdd;
+}
+
+// Function to measure VBAT voltage with VDD compensation from VREFINT
+float Read_VBAT(void)
+{
+    uint32_t raw_value = 0;
+    float vbat_voltage = 0.0;
+
+    ADC_ChannelConfTypeDef sConfig = {0};
+
+    // 1. Get actual VDD using VREFINT measurement
+    float vdd = Read_VDD();
+    if (vdd < 0)
+    {
+        // Failed to get valid VDD measurement
+        return -1.0;
+    }
+
+    // 2. Configure ADC channel to VBAT (Channel 18)
+    sConfig.Channel = ADC_CHANNEL_VBAT;
+    sConfig.Rank = 1;
+    sConfig.SamplingTime = ADC_SAMPLETIME_480CYCLES;  // Longer sampling time for better accuracy
+    sConfig.Offset = 0;
+
+    if (HAL_ADC_ConfigChannel(&hadc1, &sConfig) != HAL_OK)
+    {
+        // Failed to configure VBAT channel
+        return -1.0;
+    }
+
+    // 3. Start ADC conversion and get raw VBAT value
+    HAL_ADC_Start(&hadc1);
+    if (HAL_ADC_PollForConversion(&hadc1, 10) == HAL_OK)
+    {
+        raw_value = HAL_ADC_GetValue(&hadc1);  // Read raw ADC value for VBAT
+    }
+    HAL_ADC_Stop(&hadc1);
+
+    // 4. Calculate VBAT voltage
+    // The VBAT channel has an internal divider by 4
+    float adc_resolution = 4095.0f;
+    vbat_voltage = ((raw_value / adc_resolution) * vdd) * 4.0f;
+
+    return vbat_voltage;
+}
 
 /* USER CODE END 1 */

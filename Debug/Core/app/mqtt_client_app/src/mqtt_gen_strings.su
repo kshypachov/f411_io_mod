@@ -1,10 +1,11 @@
 ../Core/Inc/definitions.h:70:21:void* my_calloc(size_t, size_t)	16	static
-../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:112:19:mqtt_config_error set_device_id(const uint8_t*, unsigned int)	16	static
-../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:134:19:mqtt_config_error set_device_conf_ip(char*, unsigned int)	16	static
-../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:152:5:int set_home_assistant_prefix(char*, uint8_t)	8	static
-../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:159:5:int get_config_topik_string(char*, uint32_t, uint8_t, uint8_t)	32	static
-../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:196:5:int get_config_payload_string(char*, uint32_t, uint8_t, uint8_t)	136	static
-../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:286:5:int gen_bin_sensor_status_payload_JSON(char*, uint32_t, uint8_t, uint8_t, uint8_t)	24	static
-../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:336:5:int generate_comand_topik_for_subscrabe(char*, uint32_t, uint8_t, uint8_t)	24	static
-../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:346:5:int generate_status_topik(char*, uint32_t, mqtt_sensor_type_t, uint8_t)	24	static
-../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:367:6:void generate_key_value_JSON(char*, char*, float)	24	static
+../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:113:19:mqtt_config_error set_device_id(const uint8_t*, unsigned int)	16	static
+../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:137:19:mqtt_config_error get_dev_id_str(char**, uint32_t*)	0	static
+../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:149:19:mqtt_config_error set_device_conf_ip(char*, unsigned int)	16	static
+../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:167:5:int set_home_assistant_prefix(char*, uint8_t)	8	static
+../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:174:5:int get_config_topik_string(char*, uint32_t, uint8_t, uint8_t)	32	static
+../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:218:5:int get_config_payload_string(char*, uint32_t, uint8_t, uint8_t)	128	static
+../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:337:5:int gen_bin_sensor_status_payload_JSON(char*, uint32_t, uint8_t, uint8_t, uint8_t)	24	static
+../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:387:5:int generate_comand_topik_for_subscrabe(char*, uint32_t, uint8_t, uint8_t)	24	static
+../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:397:5:int generate_status_topik(char*, uint32_t, mqtt_sensor_type_t, uint8_t)	24	static
+../Core/app/mqtt_client_app/src/mqtt_gen_strings.cpp:425:6:void generate_key_value_JSON(char*, char*, float)	24	static

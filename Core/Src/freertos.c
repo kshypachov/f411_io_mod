@@ -230,7 +230,7 @@ void MX_FREERTOS_Init(void) {
   mqttQHandle = osMessageQueueNew (1, sizeof(MQTT_cred_struct), &mqttQ_attributes);
 
   /* creation of loggingQ */
-  loggingQHandle = osMessageQueueNew (15, sizeof(log_message_t), &loggingQ_attributes);
+  loggingQHandle = osMessageQueueNew (25, sizeof(log_message_t), &loggingQ_attributes);
 
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
@@ -694,9 +694,13 @@ void StartLoggingTask(void *argument)
 	logger_set_level(L_INFO);
 	logging(L_INFO, "Device started...");
 
-	  while (mg_fs_mounted() == 0){
-		  osDelay(500);
-	  }
+	while (mg_fs_mounted() == 0){
+	  osDelay(500);
+	}
+
+	logging(L_INFO, "Flash chip model name: %s",  get_flash_chip_model());
+	logging(L_INFO, "Firmware version: %s", dev_sw_ver);
+
 
   /* Infinite loop */
   for(;;)

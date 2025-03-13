@@ -41,7 +41,8 @@ extern ADC_HandleTypeDef hadc1;
 void MX_ADC1_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-
+float Read_VDD(void);
+float Read_VBAT(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

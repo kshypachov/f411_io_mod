@@ -10,6 +10,7 @@
 #include "mqtt_gen_strings.hpp"
 #include "definitions.h"
 #include "logger.h"
+#include "adc.h"
 
 
 static char   *mqtt_broker_url = NULL;
@@ -26,6 +27,7 @@ static char * ip_addr_str = NULL; //Переменная для хранения
 struct mg_timer * mqtt_timer; //Структура для таймера
 struct mg_timer * mqtt_timer_periodic_status_send;
 struct mg_timer * mqtt_timer_io_sheck;
+struct mg_timer * mqtt_timer_diagnostic_send;
 bool   is_registered = false; //Статус регистрации сенсоров в  Home Assistant
 SensorInfo sensors[] = { //список сенсоров
         {INPUT_SENSOR,  1},
@@ -33,7 +35,9 @@ SensorInfo sensors[] = { //список сенсоров
 		{INPUT_SENSOR,  3},
         {OUTPUT_SENSOR, 1},
 		{OUTPUT_SENSOR, 2},
-		{OUTPUT_SENSOR, 3}
+		{OUTPUT_SENSOR, 3},
+		{VOLTAGE_DIAGNOSTIC_BATT_SENSOR, 0},
+		{VOLTAGE_DIAGNOSTIC_POW_SUPL_SENSOR, 0},
     };
 
 static void (*r_w_parameter)(void * parameter, sett_type_t parameter_type,  sett_direction_t direction) = NULL;
@@ -111,6 +115,48 @@ static void mqtt_send_io_status(struct mg_connection * arg, bool force_update){
 		free(payload);
 		free(topik);
 	}
+}
+
+static void mqtt_send_diagnostic_data (struct mg_connection * arg){
+	char *   payload = NULL;
+	char *   topik = NULL;
+    float    batt_voltage = 0;
+    float    pow_supl_voltage = 0;
+
+	payload = (char * )calloc(MQTT_PAYLOAD_MAX_LEN, sizeof(char));
+	topik   = (char * )calloc(MQTT_TOPIK_MAX_LEN,   sizeof(char));
+
+	batt_voltage = Read_VBAT();
+	pow_supl_voltage = Read_VDD();
+
+	logging(L_DEBUG, "Send diagnostic data to MQTT server");
+
+	generate_status_topik(topik,   MQTT_TOPIK_MAX_LEN, VOLTAGE_DIAGNOSTIC_BATT_SENSOR, 0);
+	logging(L_DEBUG, "Topik: %s", topik);
+	generate_key_value_JSON(payload, "battery0", batt_voltage);
+	logging(L_DEBUG, "Payload: %s", payload);
+
+	mqtt_opts.topic = mg_str(topik);
+	mqtt_opts.message = mg_str(payload);
+	mqtt_opts.qos = 0;
+	mqtt_opts.retain = 0;
+	mg_mqtt_pub(arg, &mqtt_opts);
+
+	generate_status_topik(topik,   MQTT_TOPIK_MAX_LEN, VOLTAGE_DIAGNOSTIC_POW_SUPL_SENSOR, 0);
+	logging(L_DEBUG, "Topik: %s", topik);
+	generate_key_value_JSON(payload, "power_supply0", pow_supl_voltage);
+	logging(L_DEBUG, "Payload: %s", payload);
+
+	mqtt_opts.topic = mg_str(topik);
+	mqtt_opts.message = mg_str(payload);
+	mqtt_opts.qos = 0;
+	mqtt_opts.retain = 0;
+	mg_mqtt_pub(arg, &mqtt_opts);
+
+
+	free(payload);
+	free(topik);
+
 }
 
 static void mqtt_subscrabe_on_sw(struct mg_connection *conn, const SensorInfo * sensors, const size_t sensor_count){
@@ -276,6 +322,13 @@ static void mqtt_timer_handler_cher_io_status(void *arg){
 	}
 }
 
+static void mqtt_timer_handler_send_diagnostic_data(void * arg){
+	logging(L_DEBUG, "Call timer function for send diagnostic data");
+	if(mqtt_conn && is_registered){
+		mqtt_send_diagnostic_data(mqtt_conn);
+	}
+}
+
 // Getter для mqtt_conn
 struct mg_connection* get_mqtt_connection(void){
     return mqtt_conn;
@@ -290,13 +343,12 @@ void mqtt_init(void *mgr_parameter, void * mif_parameter, void * broker_url, voi
 	topik_buff      = (char *) calloc(MQTT_TOPIK_MAX_LEN,   sizeof(char));
 	payload_buff    = (char *) calloc(MQTT_PAYLOAD_MAX_LEN, sizeof(char));
 	ip_addr_str     = (char *) calloc(IP_v6_STR_LEN,        sizeof(char));
+
 	r_w_parameter   = fn;
 
 	strcpy(mqtt_broker_url, (char *)broker_url);
 	strcpy(mqtt_username,   (char *)username);
 	strcpy(mqtt_password,   (char *)password);
-
-	logging(L_INFO, "Start MQTT task, server: %s, username: %s", mqtt_broker_url, mqtt_username);
 
 	mgr = (struct mg_mgr *)     mgr_parameter;
 	mif = (struct mg_tcpip_if*) mif_parameter;
@@ -307,8 +359,11 @@ void mqtt_init(void *mgr_parameter, void * mif_parameter, void * broker_url, voi
 	mqtt_opts.pass		    = mg_str(mqtt_password);
 	mqtt_opts.keepalive 	= 60;
 
-	mqtt_timer =                      mg_timer_add(mgr, 10000 /* 10 seconds */, MG_TIMER_REPEAT | MG_TIMER_RUN_NOW, mqtt_timer_handler,                      NULL); // Timer for following connection and reconnect every 10 seconds if needed
-	mqtt_timer_periodic_status_send = mg_timer_add(mgr, 15000 /* 15 seconds */, MG_TIMER_REPEAT,                mqtt_pereodic_status_send_timer_handler, NULL); // Timer for send io statuses every ~150 seconds
-	mqtt_timer_io_sheck	=             mg_timer_add(mgr,	500 /* 0.5 seconds */, MG_TIMER_REPEAT,                    mqtt_timer_handler_cher_io_status,       NULL); // timer for follow io status every 0.5 seconds
+	logging(L_INFO, "Start MQTT task, server: %s, username: %s", mqtt_broker_url, mqtt_username);
+
+	mqtt_timer =                      mg_timer_add(mgr, 10000 /* 10 seconds */, MG_TIMER_REPEAT | MG_TIMER_RUN_NOW,  mqtt_timer_handler,                       NULL); // Timer for following connection and reconnect every 10 seconds if needed
+	mqtt_timer_periodic_status_send = mg_timer_add(mgr, 15000 /* 15 seconds */, MG_TIMER_REPEAT,                     mqtt_pereodic_status_send_timer_handler,  NULL); // Timer for send io statuses every ~15 seconds
+	mqtt_timer_io_sheck	=             mg_timer_add(mgr,	500 /* 0.5 seconds */, MG_TIMER_REPEAT,                      mqtt_timer_handler_cher_io_status,        NULL); // timer for follow io status every 0.5 seconds
+	mqtt_timer_diagnostic_send =      mg_timer_add(mgr, 120000 /* 120 seconds */, MG_TIMER_REPEAT | MG_TIMER_RUN_NOW,mqtt_timer_handler_send_diagnostic_data,  NULL); // Timer for send diagnostic data every 120 seconds
 
 }

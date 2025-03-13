@@ -1,3 +1,5 @@
 ../Core/Src/adc.c:30:6:MX_ADC1_Init	24	static
 ../Core/Src/adc.c:77:6:HAL_ADC_MspInit	8	static
 ../Core/Src/adc.c:93:6:HAL_ADC_MspDeInit	0	static
+../Core/Src/adc.c:113:7:Read_VDD	32	static
+../Core/Src/adc.c:146:7:Read_VBAT	32	static

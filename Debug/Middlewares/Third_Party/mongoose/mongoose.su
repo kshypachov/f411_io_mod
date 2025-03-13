@@ -367,7 +367,7 @@
 ../Middlewares/Third_Party/mongoose/mongoose.c:3340:6:mg_hello	88	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:7167:10:mg_now	8	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:7177:9:mg_sntp_parse	32	static
-../Middlewares/Third_Party/mongoose/mongoose.c:7224:6:mg_sntp_request	72	static
+../Middlewares/Third_Party/mongoose/mongoose.c:7224:6:mg_sntp_request	80	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:7202:13:sntp_cb	24	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:7239:23:mg_sntp_connect	16	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:16643:8:mg_ws_send	40	static

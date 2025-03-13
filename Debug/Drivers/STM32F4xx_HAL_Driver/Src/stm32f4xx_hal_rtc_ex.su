@@ -2,8 +2,8 @@
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c:258:19:HAL_RTCEx_SetTimeStamp_IT	8	static
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c:321:19:HAL_RTCEx_DeactivateTimeStamp	0	static
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c:365:19:HAL_RTCEx_GetTimeStamp	16	static
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c:418:19:HAL_RTCEx_SetTamper	4	static
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c:495:19:HAL_RTCEx_SetTamper_IT	4	static
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c:418:19:HAL_RTCEx_SetTamper	8	static
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c:495:19:HAL_RTCEx_SetTamper_IT	8	static
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c:580:19:HAL_RTCEx_DeactivateTamper	4	static
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c:678:13:HAL_RTCEx_TimeStampEventCallback	0	static
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c:694:13:HAL_RTCEx_Tamper1EventCallback	0	static

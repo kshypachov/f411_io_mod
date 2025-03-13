@@ -55,7 +55,8 @@ Core/app/http_server_app/src/dashboard.o: \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Middlewares/Third_Party/validation/inc/validation.h \
- ../Core/Inc/logger.h ../Core/Inc/data_types.h
+ ../Core/Inc/logger.h ../Core/Inc/data_types.h ../Core/Inc/adc.h \
+ ../Core/Inc/main.h
 ../Core/app/http_server_app/inc/dashboard.h:
 ../Core/Inc/data_types.h:
 ../Core/Inc/definitions.h:
@@ -115,3 +116,5 @@ Core/app/http_server_app/src/dashboard.o: \
 ../Middlewares/Third_Party/validation/inc/validation.h:
 ../Core/Inc/logger.h:
 ../Core/Inc/data_types.h:
+../Core/Inc/adc.h:
+../Core/Inc/main.h:

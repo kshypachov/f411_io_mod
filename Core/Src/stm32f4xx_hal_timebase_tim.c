@@ -51,7 +51,7 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
   /* Enable TIM9 clock */
   __HAL_RCC_TIM9_CLK_ENABLE();
 
-/* Get clock configuration */
+  /* Get clock configuration */
   HAL_RCC_GetClockConfig(&clkconfig, &pFLatency);
 
   /* Compute TIM9 clock */
@@ -64,12 +64,11 @@ HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
   htim9.Instance = TIM9;
 
   /* Initialize TIMx peripheral as follow:
-
-  + Period = [(TIM9CLK/1000) - 1]. to have a (1/1000) s time base.
-  + Prescaler = (uwTimclock/1000000 - 1) to have a 1MHz counter clock.
-  + ClockDivision = 0
-  + Counter direction = Up
-  */
+   * Period = [(TIM9CLK/1000) - 1]. to have a (1/1000) s time base.
+   * Prescaler = (uwTimclock/1000000 - 1) to have a 1MHz counter clock.
+   * ClockDivision = 0
+   * Counter direction = Up
+   */
   htim9.Init.Period = (1000000U / 1000U) - 1U;
   htim9.Init.Prescaler = uwPrescalerValue;
   htim9.Init.ClockDivision = 0;

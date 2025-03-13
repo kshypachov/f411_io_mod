@@ -19,7 +19,7 @@
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c:698:19:HAL_RTC_SetTime	16	static
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c:857:19:HAL_RTC_SetDate	16	static
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c:1004:19:HAL_RTC_SetAlarm	24	static
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c:1201:19:HAL_RTC_SetAlarm_IT	32	static
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c:1201:19:HAL_RTC_SetAlarm_IT	24	static
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c:1892:9:RTC_Bcd2ToByte	0	static
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c:812:19:HAL_RTC_GetTime	16	static
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c:946:19:HAL_RTC_GetDate	16	static

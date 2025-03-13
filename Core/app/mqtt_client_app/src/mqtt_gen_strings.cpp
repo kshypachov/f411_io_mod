@@ -22,8 +22,9 @@
 #define sensor_state_off                 "OFF"
 
 
-char* unical_id = NULL; // unical id for example MAC.
-char* dev_conf_ip = NULL; //IPv4 or IPv6
+char*		unical_id 		= NULL; // unical id for example MAC.
+uint32_t	unical_id_len	= 0;
+char* 		dev_conf_ip 	= NULL; //IPv4 or IPv6
 
 
 char home_assistant_prefix[] = {"homeassistant"};
@@ -124,11 +125,25 @@ mqtt_config_error set_device_id(const uint8_t* id, unsigned const int id_len){
             // Конвертируем каждый байт в два символа и добавляем в строку
             sprintf(&unical_id[i * 2], "%02X", id[i]);
         }
+
+        unical_id_len = id_len;
 	}else{
         return MEM_ALLOC_ERR; // Ошибка выделения памяти
 	}
 
 	return NO_ERR; // Успешно
+}
+
+mqtt_config_error get_dev_id_str(char **str, uint32_t *len){
+    if (unical_id) {
+        *str = unical_id;
+        *len = unical_id_len; // сохраняем длину
+        return NO_ERR;
+    } else {
+        *str = NULL;
+        *len = 0;
+        return NOT_FOUND;
+    }
 }
 
 mqtt_config_error set_device_conf_ip(char * chr_ip, unsigned int ip_len){
@@ -166,6 +181,12 @@ int get_config_topik_string (char * buff, uint32_t buff_len, uint8_t topik_type,
 		case OUTPUT_TOPIK:
 			snprintf(buff, buff_len, universal_config_topik_template, home_assistant_prefix, component_switch, dev_system, unical_id, dev_class_switch, obj_number);
 			break;
+	    case VOLTAGE_DIAGNOSTIC_BATT_SENSOR:
+			snprintf(buff, buff_len, universal_config_topik_template, home_assistant_prefix, component_sensor, dev_system, unical_id, component_battery, obj_number);
+			break;
+	    case VOLTAGE_DIAGNOSTIC_POW_SUPL_SENSOR:
+	    	snprintf(buff, buff_len, universal_config_topik_template, home_assistant_prefix, component_sensor, dev_system, unical_id, component_power_supply, obj_number);
+	    	break;
 		case ENERGY_SENSOR_TOPIK:
 			snprintf(buff, buff_len, universal_config_topik_template, home_assistant_prefix, component_sensor, dev_system, unical_id, dev_class_energy, obj_number);
 			break;
@@ -184,6 +205,7 @@ int get_config_topik_string (char * buff, uint32_t buff_len, uint8_t topik_type,
 		case CURRENT_SENSOR_TOPIK:
 			snprintf(buff, buff_len, universal_config_topik_template, home_assistant_prefix, component_sensor, dev_system, unical_id, dev_class_current, obj_number);
 			break;
+
 		default:
 			return -1;
 			break;
@@ -202,7 +224,7 @@ int get_config_payload_string( char * payload, uint32_t payload_len, uint8_t pay
 
 	switch (payload_type) {
 
-		case INP_CONF_PAYLOAD:
+		case INPUT_SENSOR:
 
 			name = (char *) calloc(MQTT_TOPIK_MAX_LEN, sizeof(char));
 			snprintf(name, MQTT_TOPIK_MAX_LEN, "%s %u", component_input_human, obj_number);
@@ -217,7 +239,7 @@ int get_config_payload_string( char * payload, uint32_t payload_len, uint8_t pay
 			return len;
 			break;
 
-		case OUT_CONF_PAYLOAD:
+		case OUTPUT_SENSOR:
 
 			name =      (char *) calloc(MQTT_TOPIK_MAX_LEN, sizeof(char));
 			com_topik = (char *) calloc(MQTT_TOPIK_MAX_LEN, sizeof(char));
@@ -234,6 +256,35 @@ int get_config_payload_string( char * payload, uint32_t payload_len, uint8_t pay
 			//len = sprintf(payload, switch_conf_payload_templ, unical_id, unical_id, obj_number, obj_number, obj_number, unical_id, obj_number, unical_id, unical_id, dev_conf_ip);
 			free(name);
 			free(com_topik);
+
+			return len;
+			break;
+
+		case VOLTAGE_DIAGNOSTIC_BATT_SENSOR:
+			name =      (char *) calloc(MQTT_TOPIK_MAX_LEN, sizeof(char));
+			snprintf(name, MQTT_TOPIK_MAX_LEN, "%s", component_battery_human);
+
+			len = snprintf(payload, payload_len, universal_conf_template, dev_class_voltage, dev_system, \
+							unical_id, component_battery, obj_number, component_battery, obj_number, "\"entity_category\": \"diagnostic\",\n", \
+							name, dev_system, unical_id, \
+							component_battery, obj_number,dev_class_voltage_unit_of_measurement,dev_system, unical_id, dev_common_name, dev_model_name, \
+							dev_manufacturer_name, dev_hw_ver, dev_sw_ver, dev_conf_ip);
+
+			free(name);
+
+			return len;
+			break;
+
+
+		case VOLTAGE_DIAGNOSTIC_POW_SUPL_SENSOR:
+			name =      (char *) calloc(MQTT_TOPIK_MAX_LEN, sizeof(char));
+			snprintf(name, MQTT_TOPIK_MAX_LEN, "%s", component_power_supply_human);
+			len = snprintf(payload, payload_len, universal_conf_template, dev_class_voltage, dev_system, \
+							unical_id, component_power_supply, obj_number, component_power_supply, obj_number, "\"entity_category\": \"diagnostic\",\n", \
+							name, dev_system, unical_id, \
+							component_power_supply, obj_number, dev_class_voltage_unit_of_measurement, dev_system, unical_id, dev_common_name, dev_model_name, \
+							dev_manufacturer_name, dev_hw_ver, dev_sw_ver, dev_conf_ip);
+			free(name);
 
 			return len;
 			break;
@@ -356,6 +407,13 @@ int generate_status_topik(char * topik, const uint32_t topik_len, const mqtt_sen
 			return snprintf(topik, topik_len, universal_status_topik_template, dev_system, unical_id, dev_class_switch, sensor_number);
 			break;
 
+		case VOLTAGE_DIAGNOSTIC_BATT_SENSOR:
+			return snprintf(topik, topik_len, universal_status_topik_template, dev_system, unical_id, component_battery, sensor_number);
+			break;
+
+		case VOLTAGE_DIAGNOSTIC_POW_SUPL_SENSOR:
+			return snprintf(topik, topik_len, universal_status_topik_template, dev_system, unical_id, component_power_supply, sensor_number);
+			break;
 		default:
 			return -1;
 			break;
