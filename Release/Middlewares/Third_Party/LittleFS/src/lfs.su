@@ -17,8 +17,7 @@
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:1095:19:lfs_dir_fetchmatch	136	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:1374:12:lfs_dir_fetch	24	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:4312:12:lfs_deinit	8	static
-../Middlewares/Third_Party/LittleFS/src/lfs.c:4790:19:lfs_fs_parent	72	static
-../Middlewares/Third_Party/LittleFS/src/lfs.c:4725:12:lfs_fs_pred	32	static
+../Middlewares/Third_Party/LittleFS/src/lfs.c:4790:19:lfs_fs_parent	64	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:176:12:lfs_bd_flush	48	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:227:12:lfs_bd_prog	48	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:1576:12:lfs_dir_commitprog	40	static
@@ -27,6 +26,7 @@
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:211:12:lfs_bd_sync	16	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:1641:12:lfs_dir_commitcrc	80	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:4156:12:lfs_init	16	static
+../Middlewares/Third_Party/LittleFS/src/lfs.c:4725:12:lfs_fs_pred	32	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:706:19:lfs_dir_getslice	72	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:771:19:lfs_dir_get	24	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:1382:12:lfs_dir_getgstate	32	static
@@ -40,7 +40,7 @@
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:1924:12:lfs_dir_compact	128	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:1852:12:lfs_dir_split	80	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:2205:12:lfs_dir_relocatingcommit	144	static
-../Middlewares/Third_Party/LittleFS/src/lfs.c:3230:12:lfs_file_relocate	96	static
+../Middlewares/Third_Party/LittleFS/src/lfs.c:3230:12:lfs_file_relocate	88	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:3456:20:lfs_file_flushedread	80	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:3536:20:lfs_file_flushedwrite	104	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:3314:12:lfs_file_flush	128	static
@@ -56,7 +56,7 @@
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:3210:12:lfs_file_close_	16	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:3035:12:lfs_file_opencfg_	80	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:5884:5:lfs_format	104	static
-../Middlewares/Third_Party/LittleFS/src/lfs.c:5914:5:lfs_mount	136	static
+../Middlewares/Third_Party/LittleFS/src/lfs.c:5914:5:lfs_mount	128	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:5943:5:lfs_unmount	16	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:5958:5:lfs_remove	120	static
 ../Middlewares/Third_Party/LittleFS/src/lfs.c:5974:5:lfs_rename	224	static

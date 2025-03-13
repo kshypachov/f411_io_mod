@@ -1,7 +1,8 @@
-../Core/app/mqtt_client_app/src/mqtt.cpp:251:13:void mqtt_timer_handler(void*)	32	static
-../Core/app/mqtt_client_app/src/mqtt.cpp:65:13:void mqtt_send_io_status(mg_connection*, bool)	64	static
-../Core/app/mqtt_client_app/src/mqtt.cpp:273:13:void mqtt_timer_handler_cher_io_status(void*)	8	static
-../Core/app/mqtt_client_app/src/mqtt.cpp:217:13:void mqtt_pereodic_status_send_timer_handler(void*)	8	static
-../Core/app/mqtt_client_app/src/mqtt.cpp:223:13:void mqtt_event_handler(mg_connection*, int, void*)	80	static
-../Core/app/mqtt_client_app/src/mqtt.cpp:280:23:mg_connection* get_mqtt_connection()	0	static
-../Core/app/mqtt_client_app/src/mqtt.cpp:285:6:void mqtt_init(void*, void*, void*, void*, void*, void (*)(void*, sett_type_t, sett_direction_t))	56	static
+../Core/app/mqtt_client_app/src/mqtt.cpp:297:13:void mqtt_timer_handler(void*)	32	static
+../Core/app/mqtt_client_app/src/mqtt.cpp:325:13:void mqtt_timer_handler_send_diagnostic_data(void*)	56	static
+../Core/app/mqtt_client_app/src/mqtt.cpp:69:13:void mqtt_send_io_status(mg_connection*, bool)	64	static
+../Core/app/mqtt_client_app/src/mqtt.cpp:319:13:void mqtt_timer_handler_cher_io_status(void*)	8	static
+../Core/app/mqtt_client_app/src/mqtt.cpp:263:13:void mqtt_pereodic_status_send_timer_handler(void*)	8	static
+../Core/app/mqtt_client_app/src/mqtt.cpp:269:13:void mqtt_event_handler(mg_connection*, int, void*)	80	static
+../Core/app/mqtt_client_app/src/mqtt.cpp:333:23:mg_connection* get_mqtt_connection()	0	static
+../Core/app/mqtt_client_app/src/mqtt.cpp:338:6:void mqtt_init(void*, void*, void*, void*, void*, void (*)(void*, sett_type_t, sett_direction_t))	56	static

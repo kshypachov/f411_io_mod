@@ -19,9 +19,9 @@
 ../Drivers/SPI_FLASH/src/SPI_flash.c:283:6:sFLASH_EraseBulk	1
 ../Drivers/SPI_FLASH/src/SPI_flash.c:311:6:sFLASH_WritePage	3
 ../Drivers/SPI_FLASH/src/SPI_flash.c:352:6:sFLASH_WriteBuffer	9
-../Drivers/SPI_FLASH/src/SPI_flash.c:659:15:sFLASH_GetReadedBytes	1
-../Drivers/SPI_FLASH/src/SPI_flash.c:663:15:sFLASH_GetWritedBytes	1
-../Drivers/SPI_FLASH/src/SPI_flash.c:667:15:sFLASH_GetEraceSectorTimes	1
+../Drivers/SPI_FLASH/src/SPI_flash.c:659:10:sFLASH_GetReadedBytes	1
+../Drivers/SPI_FLASH/src/SPI_flash.c:663:10:sFLASH_GetWritedBytes	1
+../Drivers/SPI_FLASH/src/SPI_flash.c:667:10:sFLASH_GetEraceSectorTimes	1
 ../Drivers/SPI_FLASH/src/SPI_flash.c:671:6:sFLASH_SetReadedBytes	1
 ../Drivers/SPI_FLASH/src/SPI_flash.c:675:6:sFLASH_SetWritedBytes	1
 ../Drivers/SPI_FLASH/src/SPI_flash.c:679:6:sFLASH_SetEraceSectorTimes	1

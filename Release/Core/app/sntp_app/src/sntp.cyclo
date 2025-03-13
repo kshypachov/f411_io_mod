@@ -1,3 +1,4 @@
-../Core/app/sntp_app/src/sntp.c:44:6:timer_fn	3
-../Core/app/sntp_app/src/sntp.c:22:13:sfn	5
-../Core/app/sntp_app/src/sntp.c:50:6:start_sntp	1
+../Core/app/sntp_app/src/sntp.c:84:6:timer_fn	3
+../Core/app/sntp_app/src/sntp.c:25:6:update_rtc_from_ntp	3
+../Core/app/sntp_app/src/sntp.c:61:13:sfn	5
+../Core/app/sntp_app/src/sntp.c:90:6:start_sntp	1

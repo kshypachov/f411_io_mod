@@ -63,7 +63,7 @@
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c:6399:23:HAL_TIM_GetActiveChannel	1
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c:6417:29:HAL_TIM_GetChannelState	4
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c:6434:30:HAL_TIM_DMABurstState	1
-../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c:6777:6:TIM_Base_SetConfig	10
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c:6777:6:TIM_Base_SetConfig	15
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c:266:19:HAL_TIM_Base_Init	3
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c:650:19:HAL_TIM_OC_Init	3
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c:1315:19:HAL_TIM_PWM_Init	3

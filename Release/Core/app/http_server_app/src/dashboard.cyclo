@@ -1,8 +1,8 @@
-../Core/app/http_server_app/src/dashboard.c:77:13:handle_login	2
-../Core/app/http_server_app/src/dashboard.c:89:13:auth	14
-../Core/app/http_server_app/src/dashboard.c:685:13:handle_fs_get_log	5
-../Core/app/http_server_app/src/dashboard.c:67:13:write_users	1
-../Core/app/http_server_app/src/dashboard.c:524:13:handle_restart_mcu	2
-../Core/app/http_server_app/src/dashboard.c:1041:13:dashboard	126
-../Core/app/http_server_app/src/dashboard.c:1118:8:dash_hdl	2
-../Core/app/http_server_app/src/dashboard.c:1126:6:reg_parameter_handler	1
+../Core/app/http_server_app/src/dashboard.c:78:13:handle_login	2
+../Core/app/http_server_app/src/dashboard.c:90:13:auth	14
+../Core/app/http_server_app/src/dashboard.c:686:13:handle_fs_get_log	5
+../Core/app/http_server_app/src/dashboard.c:68:13:write_users	1
+../Core/app/http_server_app/src/dashboard.c:525:13:handle_restart_mcu	2
+../Core/app/http_server_app/src/dashboard.c:1044:13:dashboard	124
+../Core/app/http_server_app/src/dashboard.c:1121:8:dash_hdl	2
+../Core/app/http_server_app/src/dashboard.c:1129:6:reg_parameter_handler	1

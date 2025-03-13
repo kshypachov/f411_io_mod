@@ -281,7 +281,7 @@
 ../Middlewares/Third_Party/mongoose/mongoose.c:7239:23:mg_sntp_connect	8	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:5467:15:tx_tcp_pkt	64	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:5530:6:mg_io_send	64	static
-../Middlewares/Third_Party/mongoose/mongoose.c:7224:6:mg_sntp_request	72	static
+../Middlewares/Third_Party/mongoose/mongoose.c:7224:6:mg_sntp_request	80	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:7202:13:sntp_cb	24	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:16391:10:mg_ntohs	0	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:16397:10:mg_crc32	4	static
@@ -295,7 +295,7 @@
 ../Middlewares/Third_Party/mongoose/mongoose.c:3152:6:mg_http_upload	328	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:16462:10:mg_millis	8	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:16643:8:mg_ws_send	40	static
-../Middlewares/Third_Party/mongoose/mongoose.c:16677:13:mg_ws_cb	72	static
+../Middlewares/Third_Party/mongoose/mongoose.c:16677:13:mg_ws_cb	64	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:16746:23:mg_ws_connect	104	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:16776:6:mg_ws_upgrade	176	static
 ../Middlewares/Third_Party/mongoose/mongoose.c:16796:8:mg_ws_wrap	40	static
