@@ -28,6 +28,8 @@ struct mg_timer * mqtt_timer; //Структура для таймера
 struct mg_timer * mqtt_timer_periodic_status_send;
 struct mg_timer * mqtt_timer_io_sheck;
 struct mg_timer * mqtt_timer_diagnostic_send;
+struct mg_timer * mqtt_timer_diagnostic_send_onсe; //Таймер для отправки диагностических данных один раз (первая отправка);
+struct mg_timer * mqtt_timer_ping; //Таймер для отправки пинга
 bool   is_registered = false; //Статус регистрации сенсоров в  Home Assistant
 SensorInfo sensors[] = { //список сенсоров
         {INPUT_SENSOR,  1},
@@ -266,6 +268,12 @@ static void mqtt_pereodic_status_send_timer_handler(void *arg){
 	}
 }
 
+static void mqtt_pereodic_ping_timer_handler(void *arg){
+	if (is_registered) {
+		mg_mqtt_ping(mqtt_conn);
+	}
+}
+
 static void mqtt_event_handler(struct mg_connection *conn, int ev, void *ev_data){
 	if (ev == MG_EV_MQTT_OPEN) {// MQTT connect is successful
 		MG_DEBUG(("MQTT_open_connection"));
@@ -301,6 +309,7 @@ static void mqtt_timer_handler(void *arg){
 		mqtt_opts.user 		    = mg_str(mqtt_username);
 		mqtt_opts.pass		    = mg_str(mqtt_password);
 		mqtt_opts.keepalive 	= 60;
+		mqtt_opts.clean 		= 1;
 		mqtt_conn = mg_mqtt_connect(mgr, mqtt_broker_url, &mqtt_opts, mqtt_event_handler, NULL);
 
 	}else if(mqtt_conn && is_registered){ //connection established and registered sensors
@@ -357,13 +366,15 @@ void mqtt_init(void *mgr_parameter, void * mif_parameter, void * broker_url, voi
 
 	mqtt_opts.user 		    = mg_str(mqtt_username);
 	mqtt_opts.pass		    = mg_str(mqtt_password);
-	mqtt_opts.keepalive 	= 60;
+	mqtt_opts.keepalive 	= MQTT_KEEP_ALIVE;
+	mqtt_opts.clean 		= 1;
 
 	logging(L_INFO, "Start MQTT task, server: %s, username: %s", mqtt_broker_url, mqtt_username);
 
-	mqtt_timer =                      mg_timer_add(mgr, 10000 /* 10 seconds */, MG_TIMER_REPEAT | MG_TIMER_RUN_NOW,  mqtt_timer_handler,                       NULL); // Timer for following connection and reconnect every 10 seconds if needed
-	mqtt_timer_periodic_status_send = mg_timer_add(mgr, 15000 /* 15 seconds */, MG_TIMER_REPEAT,                     mqtt_pereodic_status_send_timer_handler,  NULL); // Timer for send io statuses every ~15 seconds
-	mqtt_timer_io_sheck	=             mg_timer_add(mgr,	500 /* 0.5 seconds */, MG_TIMER_REPEAT,                      mqtt_timer_handler_cher_io_status,        NULL); // timer for follow io status every 0.5 seconds
-	mqtt_timer_diagnostic_send =      mg_timer_add(mgr, 120000 /* 120 seconds */, MG_TIMER_REPEAT | MG_TIMER_RUN_NOW,mqtt_timer_handler_send_diagnostic_data,  NULL); // Timer for send diagnostic data every 120 seconds
-
+	mqtt_timer =                      mg_timer_add(mgr, 10000 /* 10 seconds */,		MG_TIMER_REPEAT | MG_TIMER_RUN_NOW,  	mqtt_timer_handler,                       NULL); // Timer for following connection and reconnect every 10 seconds if needed
+	mqtt_timer_periodic_status_send = mg_timer_add(mgr, 300000 /* 300 seconds */,	MG_TIMER_REPEAT,                     	mqtt_pereodic_status_send_timer_handler,  NULL); // Timer for send io statuses every ~300 seconds
+	mqtt_timer_io_sheck	=             mg_timer_add(mgr,	500 /* 0.5 seconds */,		MG_TIMER_REPEAT,                     	mqtt_timer_handler_cher_io_status,        NULL); // timer for follow io status every 0.5 seconds
+	mqtt_timer_diagnostic_send =      mg_timer_add(mgr, 1200000 /* 1200 seconds */, MG_TIMER_REPEAT | MG_TIMER_RUN_NOW,		mqtt_timer_handler_send_diagnostic_data,  NULL); // Timer for send diagnostic data every 1200 seconds
+	mqtt_timer_diagnostic_send_onсe = mg_timer_add(mgr, 20000 /* 20 seconds */, 	MG_TIMER_ONCE,							mqtt_timer_handler_send_diagnostic_data,  NULL); // Timer for send diagnostic data with delay 20 seconds after start, once
+	mqtt_timer_ping =                 mg_timer_add(mgr, MQTT_PING_INTERVAL_MS , 	MG_TIMER_REPEAT,						mqtt_pereodic_ping_timer_handler,		  NULL); // Timer for send ping every MQTT_PING_INTERVAL_MS
 }

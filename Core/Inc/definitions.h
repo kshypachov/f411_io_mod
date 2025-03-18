@@ -17,7 +17,7 @@
 #define MAX_DOMAIN_NAME_LEN   	128
 
 #define dev_hw_ver				"0.3"
-#define dev_sw_ver				"2.4"
+#define dev_sw_ver				"2.4.1"
 
 #define FIRMWARE_FILE_NAME		"firmware.bin"
 #define FIRMWARE_FILE_MAX_SIZE  250000
@@ -30,6 +30,9 @@
 #define MAX_MQTT_LOGIN_LEN			33
 #define MAX_MQTT_PASS_LEN			33
 #define MAX_MQTT_URL_LEN			MAX_DOMAIN_NAME_LEN
+#define MQTT_KEEP_ALIVE				60
+#define MQTT_PING_INTERVAL_MS		MQTT_KEEP_ALIVE / 5 * 1000 // ping every (MQTT_KEEP_ALIVE / 5 ) seconds
+
 #define DEV_UID_LEN					14
 #define IP_v4_LEN					18
 #define IP_v6_STR_LEN               40
@@ -41,7 +44,7 @@
 #define LOG_MES_TEXT_LEN    		256
 #define LOG_FILE_LOCATION			"/log/main.log"
 #define LOG_FILE_LOCATION_OLD		"/log/main1.log"
-#define LOG_FILE_MAX_SIZE			50000
+#define LOG_FILE_MAX_SIZE			100000
 
 
 #define user_list_size				10

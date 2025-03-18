@@ -177,6 +177,7 @@ uint8_t spi_txn(void *spi, uint8_t data);
 void RW_parameters_from_queue(void * param, sett_type_t param_type,  sett_direction_t direction);
 void add_log_mess_to_q(struct log_message mess);
 void empty_fn(void *data);
+void my_custom_log_function(char ch, void *param);
 /* USER CODE END FunctionPrototypes */
 
 void StartEthTask(void *argument);
@@ -308,9 +309,12 @@ void StartEthTask(void *argument)
   while (mg_fs_mounted() == 0){
 	  osDelay(500);
   }
+  // Set custom logging function
+  mg_log_set_fn(my_custom_log_function, NULL);
+
 
   mg_mgr_init(&mgr);        // Mongoose event manager
-  mg_log_set(MG_LL_DEBUG);  // Set log level
+  mg_log_set(MG_LL_INFO);  // Set log level
 
   web_handler = dash_hdl(); // Get dashboard handler
 
@@ -717,7 +721,7 @@ void StartLoggingTask(void *argument)
     osDelay(500);
 
 
-    if (count == 20000){
+    if (count > 200){
     	mg_fs_lfs_status(LOG_FILE_LOCATION, &fs_size, NULL);
     	if (fs_size > LOG_FILE_MAX_SIZE){
     		mg_fs_lfs_remove(LOG_FILE_LOCATION_OLD);
@@ -729,29 +733,37 @@ void StartLoggingTask(void *argument)
     			mg_full_info.mgr_if->mac[4], mg_full_info.mgr_if->mac[5]);
         	logging(L_INFO, "Flash chip model name: %s",  get_flash_chip_model());
         	logging(L_INFO, "Firmware version: %s", dev_sw_ver);
+
+        	bytes_read  = sFLASH_GetReadedBytes();
+    		bytes_write = sFLASH_GetWritedBytes();
+    		erace_times = sFLASH_GetEraceSectorTimes();
+        	logging(L_INFO, "Read bytes from flash: %" PRIu32, bytes_read);
+        	logging(L_INFO, "Write bytes to flash: %" PRIu32, bytes_write);
+        	logging(L_INFO, "Erased sectors: %" PRIu32, erace_times);
+
     	}
 
     	count = 0;
-    	vPortGetHeapStats(&heap_status);
-    	logging(L_INFO, "Free Heap: %u, LargestFreeBlock: %u, SmallestFeeBlock: %u, NumFreeBlock: %u,  MinEverFreeBytes: %u, NumOfSuccessAlloc: %u, NumOfSuccessFree: %u ",
-                (unsigned int)heap_status.xAvailableHeapSpaceInBytes,
-                (unsigned int)heap_status.xSizeOfLargestFreeBlockInBytes,
-                (unsigned int)heap_status.xSizeOfSmallestFreeBlockInBytes,
-                (unsigned int)heap_status.xNumberOfFreeBlocks,
-                (unsigned int)heap_status.xMinimumEverFreeBytesRemaining,
-                (unsigned int)heap_status.xNumberOfSuccessfulAllocations,
-                (unsigned int)heap_status.xNumberOfSuccessfulFrees);
+//    	vPortGetHeapStats(&heap_status);
+//    	logging(L_INFO, "Free Heap: %u, LargestFreeBlock: %u, SmallestFeeBlock: %u, NumFreeBlock: %u,  MinEverFreeBytes: %u, NumOfSuccessAlloc: %u, NumOfSuccessFree: %u ",
+//                (unsigned int)heap_status.xAvailableHeapSpaceInBytes,
+//                (unsigned int)heap_status.xSizeOfLargestFreeBlockInBytes,
+//                (unsigned int)heap_status.xSizeOfSmallestFreeBlockInBytes,
+//                (unsigned int)heap_status.xNumberOfFreeBlocks,
+//                (unsigned int)heap_status.xMinimumEverFreeBytesRemaining,
+//                (unsigned int)heap_status.xNumberOfSuccessfulAllocations,
+//                (unsigned int)heap_status.xNumberOfSuccessfulFrees);
 
-    	logging(L_INFO, "IP addr: %lu.%lu.%lu.%lu",
-    			(mg_full_info.mgr_if->ip) & 0xFF, (mg_full_info.mgr_if->ip >> 8) & 0xFF,
-				(mg_full_info.mgr_if->ip >> 16) & 0xFF, (mg_full_info.mgr_if->ip >> 24) & 0xFF);
+//    	logging(L_INFO, "IP addr: %lu.%lu.%lu.%lu",
+//    			(mg_full_info.mgr_if->ip) & 0xFF, (mg_full_info.mgr_if->ip >> 8) & 0xFF,
+//				(mg_full_info.mgr_if->ip >> 16) & 0xFF, (mg_full_info.mgr_if->ip >> 24) & 0xFF);
 
-    	bytes_read  = sFLASH_GetReadedBytes();
-		bytes_write = sFLASH_GetWritedBytes();
-		erace_times = sFLASH_GetEraceSectorTimes();
-    	logging(L_INFO, "Read bytes from flash: %" PRIu32, bytes_read);
-    	logging(L_INFO, "Write bytes to flash: %" PRIu32, bytes_write);
-    	logging(L_INFO, "Erased sectors: %" PRIu32, erace_times);
+//    	bytes_read  = sFLASH_GetReadedBytes();
+//		bytes_write = sFLASH_GetWritedBytes();
+//		erace_times = sFLASH_GetEraceSectorTimes();
+//    	logging(L_INFO, "Read bytes from flash: %" PRIu32, bytes_read);
+//    	logging(L_INFO, "Write bytes to flash: %" PRIu32, bytes_write);
+//    	logging(L_INFO, "Erased sectors: %" PRIu32, erace_times);
 
     	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR2, erace_times);
     	HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR3, erace_times);
@@ -962,6 +974,18 @@ eMBErrorCode eMBRegInputCB(UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNReg
 eMBErrorCode eMBRegHoldingCB(UCHAR *pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegisterMode eMode)
 {
 	return MB_ENOREG;
+}
+
+void my_custom_log_function(char ch, void *param) {
+    static char buffer[256];
+    static size_t length = 0;
+
+    buffer[length++] = ch;
+    if (ch == '\n' || length >= sizeof(buffer)) {
+        // Call your custom logging function here
+        logging(L_INFO, "mg %.*s", (int) length, buffer);
+        length = 0;
+    }
 }
 
 /* USER CODE END Application */

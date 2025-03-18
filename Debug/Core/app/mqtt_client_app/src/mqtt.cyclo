@@ -1,13 +1,14 @@
-../Core/app/mqtt_client_app/src/mqtt.cpp:297:13:void mqtt_timer_handler(void*)	2
-../Core/app/mqtt_client_app/src/mqtt.cpp:45:13:void mqtt_send_registration_data(mg_connection*, const SensorInfo*, size_t)	2
-../Core/Inc/definitions.h:70:21:void* my_calloc(size_t, size_t)	2
-../Core/app/mqtt_client_app/src/mqtt.cpp:120:13:void mqtt_send_diagnostic_data(mg_connection*)	1
-../Core/app/mqtt_client_app/src/mqtt.cpp:325:13:void mqtt_timer_handler_send_diagnostic_data(void*)	3
-../Core/app/mqtt_client_app/src/mqtt.cpp:69:13:void mqtt_send_io_status(mg_connection*, bool)	6
-../Core/app/mqtt_client_app/src/mqtt.cpp:319:13:void mqtt_timer_handler_cher_io_status(void*)	3
-../Core/app/mqtt_client_app/src/mqtt.cpp:263:13:void mqtt_pereodic_status_send_timer_handler(void*)	2
-../Core/app/mqtt_client_app/src/mqtt.cpp:162:13:void mqtt_subscrabe_on_sw(mg_connection*, const SensorInfo*, size_t)	3
-../Core/app/mqtt_client_app/src/mqtt.cpp:181:13:void mqtt_subscrabe_recv_cmd_parce(mg_mqtt_message*)	21
-../Core/app/mqtt_client_app/src/mqtt.cpp:269:13:void mqtt_event_handler(mg_connection*, int, void*)	6
-../Core/app/mqtt_client_app/src/mqtt.cpp:333:23:mg_connection* get_mqtt_connection()	1
-../Core/app/mqtt_client_app/src/mqtt.cpp:338:6:void mqtt_init(void*, void*, void*, void*, void*, void (*)(void*, sett_type_t, sett_direction_t))	1
+../Core/app/mqtt_client_app/src/mqtt.cpp:271:13:void mqtt_pereodic_ping_timer_handler(void*)	2
+../Core/app/mqtt_client_app/src/mqtt.cpp:305:13:void mqtt_timer_handler(void*)	2
+../Core/app/mqtt_client_app/src/mqtt.cpp:47:13:void mqtt_send_registration_data(mg_connection*, const SensorInfo*, size_t)	2
+../Core/Inc/definitions.h:73:21:void* my_calloc(size_t, size_t)	2
+../Core/app/mqtt_client_app/src/mqtt.cpp:122:13:void mqtt_send_diagnostic_data(mg_connection*)	1
+../Core/app/mqtt_client_app/src/mqtt.cpp:334:13:void mqtt_timer_handler_send_diagnostic_data(void*)	3
+../Core/app/mqtt_client_app/src/mqtt.cpp:71:13:void mqtt_send_io_status(mg_connection*, bool)	6
+../Core/app/mqtt_client_app/src/mqtt.cpp:328:13:void mqtt_timer_handler_cher_io_status(void*)	3
+../Core/app/mqtt_client_app/src/mqtt.cpp:265:13:void mqtt_pereodic_status_send_timer_handler(void*)	2
+../Core/app/mqtt_client_app/src/mqtt.cpp:164:13:void mqtt_subscrabe_on_sw(mg_connection*, const SensorInfo*, size_t)	3
+../Core/app/mqtt_client_app/src/mqtt.cpp:183:13:void mqtt_subscrabe_recv_cmd_parce(mg_mqtt_message*)	21
+../Core/app/mqtt_client_app/src/mqtt.cpp:277:13:void mqtt_event_handler(mg_connection*, int, void*)	6
+../Core/app/mqtt_client_app/src/mqtt.cpp:342:23:mg_connection* get_mqtt_connection()	1
+../Core/app/mqtt_client_app/src/mqtt.cpp:347:6:void mqtt_init(void*, void*, void*, void*, void*, void (*)(void*, sett_type_t, sett_direction_t))	1

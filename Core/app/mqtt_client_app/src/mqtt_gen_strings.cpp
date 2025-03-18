@@ -21,6 +21,10 @@
 #define sensor_state_on                  "ON"
 #define sensor_state_off                 "OFF"
 
+#define sec_1h								3600
+#define sec_2h								7200
+#define sec_5m								300
+
 
 char*		unical_id 		= NULL; // unical id for example MAC.
 uint32_t	unical_id_len	= 0;
@@ -83,7 +87,7 @@ char home_assistant_prefix[] = {"homeassistant"};
 const char universal_conf_template[]={
 		"{\n"
 				"\t\"device_class\" :\"%s\",\n"
-				"\t\"expire_after\" : 300 ,\n"
+				"\t\"expire_after\" : %u ,\n"
 				"\t\"state_topic\" :\"%s_%s/%s%u/state\",\n"
 				"\t\"value_template\":\"{{ value_json.%s%u }}\",\n"
 				"\t%s"
@@ -229,7 +233,7 @@ int get_config_payload_string( char * payload, uint32_t payload_len, uint8_t pay
 			name = (char *) calloc(MQTT_TOPIK_MAX_LEN, sizeof(char));
 			snprintf(name, MQTT_TOPIK_MAX_LEN, "%s %u", component_input_human, obj_number);
 
-		    len = snprintf(payload, payload_len, universal_conf_template, dev_class_power, dev_system, \
+		    len = snprintf(payload, payload_len, universal_conf_template, dev_class_power, sec_5m, dev_system, \
 							unical_id, component_input, obj_number, component_input, obj_number, "\n", \
 							name, dev_system, unical_id, \
 		                    component_input, obj_number,"",dev_system, unical_id, dev_common_name, dev_model_name, \
@@ -248,7 +252,7 @@ int get_config_payload_string( char * payload, uint32_t payload_len, uint8_t pay
 			snprintf(com_topik, MQTT_TOPIK_MAX_LEN, universal_conf_template_comand_topik_part, dev_system, unical_id, name, "");
 			snprintf(name,      MQTT_TOPIK_MAX_LEN, "%s %u", dev_class_switch_human, obj_number);
 
-			len = snprintf(payload, payload_len, universal_conf_template, dev_class_switch, dev_system, \
+			len = snprintf(payload, payload_len, universal_conf_template, dev_class_switch, sec_5m, dev_system, \
 							unical_id, component_switch, obj_number, component_switch, obj_number, com_topik, \
 							name, dev_system, unical_id, \
 							component_switch, obj_number,"",dev_system, unical_id, dev_common_name, dev_model_name, \
@@ -264,7 +268,7 @@ int get_config_payload_string( char * payload, uint32_t payload_len, uint8_t pay
 			name =      (char *) calloc(MQTT_TOPIK_MAX_LEN, sizeof(char));
 			snprintf(name, MQTT_TOPIK_MAX_LEN, "%s", component_battery_human);
 
-			len = snprintf(payload, payload_len, universal_conf_template, dev_class_voltage, dev_system, \
+			len = snprintf(payload, payload_len, universal_conf_template, dev_class_voltage, sec_2h, dev_system, \
 							unical_id, component_battery, obj_number, component_battery, obj_number, "\"entity_category\": \"diagnostic\",\n", \
 							name, dev_system, unical_id, \
 							component_battery, obj_number,dev_class_voltage_unit_of_measurement,dev_system, unical_id, dev_common_name, dev_model_name, \
@@ -279,7 +283,7 @@ int get_config_payload_string( char * payload, uint32_t payload_len, uint8_t pay
 		case VOLTAGE_DIAGNOSTIC_POW_SUPL_SENSOR:
 			name =      (char *) calloc(MQTT_TOPIK_MAX_LEN, sizeof(char));
 			snprintf(name, MQTT_TOPIK_MAX_LEN, "%s", component_power_supply_human);
-			len = snprintf(payload, payload_len, universal_conf_template, dev_class_voltage, dev_system, \
+			len = snprintf(payload, payload_len, universal_conf_template, dev_class_voltage, sec_2h, dev_system, \
 							unical_id, component_power_supply, obj_number, component_power_supply, obj_number, "\"entity_category\": \"diagnostic\",\n", \
 							name, dev_system, unical_id, \
 							component_power_supply, obj_number, dev_class_voltage_unit_of_measurement, dev_system, unical_id, dev_common_name, dev_model_name, \
@@ -290,38 +294,38 @@ int get_config_payload_string( char * payload, uint32_t payload_len, uint8_t pay
 			break;
 
 		case ENERGY_SENSOR_PAYLOAD:
-			len = sprintf(payload, universal_conf_template, dev_class_energy, dev_system, \
+			len = sprintf(payload, universal_conf_template, dev_class_energy, sec_5m, dev_system, \
 					unical_id, state_topik, dev_class_energy, dev_class_energy_state, dev_class_energy_human, dev_system, unical_id, \
 					dev_class_energy, dev_class_energy_unit_of_measurement, dev_system, unical_id, dev_common_name, dev_model_name,\
 					dev_manufacturer_name, dev_hw_ver, dev_sw_ver, dev_conf_ip);
 			break;
 		case VOLTAGE_SENSOR_PAYLOAD:
-			len = sprintf(payload, universal_conf_template, dev_class_voltage, dev_system, \
+			len = sprintf(payload, universal_conf_template, dev_class_voltage, sec_5m, dev_system, \
 					unical_id, state_topik, dev_class_voltage, "\n", dev_class_voltage_human, dev_system, unical_id, \
 					dev_class_voltage, dev_class_voltage_unit_of_measurement, dev_system, unical_id, dev_common_name, dev_model_name,\
 					dev_manufacturer_name, dev_hw_ver, dev_sw_ver, dev_conf_ip);
 			break;
 		case POWER_SENSOR_PAYLOAD:
-			len = sprintf(payload, universal_conf_template, dev_class_power, dev_system, \
+			len = sprintf(payload, universal_conf_template, dev_class_power, sec_5m, dev_system, \
 					unical_id, state_topik, dev_class_power, "\n", dev_class_power_human, dev_system, unical_id, \
 					dev_class_power, dev_class_power_unit_of_measurement, dev_system, unical_id, dev_common_name, dev_model_name,\
 					dev_manufacturer_name, dev_hw_ver, dev_sw_ver, dev_conf_ip);
 			break;
 		case APPARENT_POWER_SENSOR_PAYLOAD:
-			len = sprintf(payload, universal_conf_template, dev_class_apparent_power, dev_system, \
+			len = sprintf(payload, universal_conf_template, dev_class_apparent_power, sec_5m, dev_system, \
 					unical_id, state_topik, dev_class_apparent_power, "\n", dev_class_apparent_power_human, dev_system, unical_id, \
 					dev_class_apparent_power, dev_class_apparent_power_unit_of_measurement, dev_system, unical_id, dev_common_name, dev_model_name,\
 					dev_manufacturer_name, dev_hw_ver, dev_sw_ver, dev_conf_ip);
 			break;
 
 		case POWER_FACTOR_SENSOR_PAYLOAD:
-			len = sprintf(payload, universal_conf_template, dev_class_power_factor, dev_system, \
+			len = sprintf(payload, universal_conf_template, dev_class_power_factor, sec_5m, dev_system, \
 					unical_id, state_topik, dev_class_power_factor, "\n", dev_class_power_factor_human, dev_system, unical_id, \
 					dev_class_power_factor, dev_class_power_factor_unit_of_measurement, dev_system, unical_id, dev_common_name, dev_model_name,\
 					dev_manufacturer_name, dev_hw_ver, dev_sw_ver, dev_conf_ip);
 			break;
 		case CURRENT_SENSOR_PAYLOAD:
-			len = sprintf(payload, universal_conf_template, dev_class_current, dev_system, \
+			len = sprintf(payload, universal_conf_template, dev_class_current, sec_5m, dev_system, \
 					unical_id, state_topik, dev_class_current, "\n", dev_class_current_human, dev_system, unical_id, \
 					dev_class_current, dev_class_current_unit_of_measurement, dev_system, unical_id, dev_common_name, dev_model_name,\
 					dev_manufacturer_name, dev_hw_ver, dev_sw_ver, dev_conf_ip);
