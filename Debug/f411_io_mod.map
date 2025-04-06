@@ -342,7 +342,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x1b ./Core/Src/eth.o
  .debug_macro   0x00000000      0xad8 ./Core/Src/eth.o
  .debug_line    0x00000000       0x47 ./Core/Src/eth.o
- .debug_str     0x00000000     0x2e7f ./Core/Src/eth.o
+ .debug_str     0x00000000     0x2e81 ./Core/Src/eth.o
  .comment       0x00000000       0x44 ./Core/Src/eth.o
  .ARM.attributes
                 0x00000000       0x34 ./Core/Src/eth.o
@@ -1127,6 +1127,7 @@ Discarded input sections
  .group         0x00000000        0xc ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/main.o
+ .group         0x00000000        0xc ./Core/Src/main.o
  .text          0x00000000        0x0 ./Core/Src/main.o
  .data          0x00000000        0x0 ./Core/Src/main.o
  .bss           0x00000000        0x0 ./Core/Src/main.o
@@ -1203,6 +1204,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xaa ./Core/Src/main.o
  .debug_macro   0x00000000       0x74 ./Core/Src/main.o
  .debug_macro   0x00000000       0xdd ./Core/Src/main.o
+ .debug_macro   0x00000000       0x9a ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/rtc.o
  .group         0x00000000        0xc ./Core/Src/rtc.o
  .group         0x00000000        0xc ./Core/Src/rtc.o
@@ -2070,7 +2072,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x43 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/ascii/mbascii.o
  .debug_macro   0x00000000       0x1c ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/ascii/mbascii.o
  .debug_line    0x00000000      0x601 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/ascii/mbascii.o
- .debug_str     0x00000000     0xba8e ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/ascii/mbascii.o
+ .debug_str     0x00000000     0xba90 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/ascii/mbascii.o
  .comment       0x00000000       0x44 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/ascii/mbascii.o
  .ARM.attributes
                 0x00000000       0x34 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/ascii/mbascii.o
@@ -2170,7 +2172,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdiag.o
  .debug_macro   0x00000000      0xad8 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdiag.o
  .debug_line    0x00000000       0x6a ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdiag.o
- .debug_str     0x00000000     0x2eab ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdiag.o
+ .debug_str     0x00000000     0x2ead ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdiag.o
  .comment       0x00000000       0x44 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdiag.o
  .ARM.attributes
                 0x00000000       0x34 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdiag.o
@@ -2872,7 +2874,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x1c ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portserial.o
  .debug_macro   0x00000000       0x7c ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portserial.o
  .debug_line    0x00000000      0x625 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portserial.o
- .debug_str     0x00000000     0xbc94 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portserial.o
+ .debug_str     0x00000000     0xbc96 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portserial.o
  .comment       0x00000000       0x44 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portserial.o
  .debug_frame   0x00000000       0x50 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portserial.o
  .ARM.attributes
@@ -3113,7 +3115,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x1c ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttimer.o
  .debug_macro   0x00000000       0x7c ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttimer.o
  .debug_line    0x00000000      0x61d ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttimer.o
- .debug_str     0x00000000     0xbc39 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttimer.o
+ .debug_str     0x00000000     0xbc3b ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttimer.o
  .comment       0x00000000       0x44 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttimer.o
  .debug_frame   0x00000000       0x50 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttimer.o
  .ARM.attributes
@@ -3203,7 +3205,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x43 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbcrc.o
  .debug_macro   0x00000000       0x1c ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbcrc.o
  .debug_line    0x00000000      0x5fe ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbcrc.o
- .debug_str     0x00000000     0xb971 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbcrc.o
+ .debug_str     0x00000000     0xb973 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbcrc.o
  .comment       0x00000000       0x44 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbcrc.o
  .debug_frame   0x00000000       0x28 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbcrc.o
  .ARM.attributes
@@ -3346,7 +3348,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x7c ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbrtu.o
  .debug_macro   0x00000000       0x22 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbrtu.o
  .debug_line    0x00000000      0x95c ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbrtu.o
- .debug_str     0x00000000     0xc196 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbrtu.o
+ .debug_str     0x00000000     0xc198 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbrtu.o
  .comment       0x00000000       0x44 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbrtu.o
  .debug_frame   0x00000000       0xe8 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/rtu/mbrtu.o
  .ARM.attributes
@@ -3675,7 +3677,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 ./Core/app/mqtt_client_app/src/home_mqtt_gen.o
  .debug_macro   0x00000000      0xbb0 ./Core/app/mqtt_client_app/src/home_mqtt_gen.o
  .debug_line    0x00000000       0x52 ./Core/app/mqtt_client_app/src/home_mqtt_gen.o
- .debug_str     0x00000000     0x32b4 ./Core/app/mqtt_client_app/src/home_mqtt_gen.o
+ .debug_str     0x00000000     0x32b6 ./Core/app/mqtt_client_app/src/home_mqtt_gen.o
  .comment       0x00000000       0x44 ./Core/app/mqtt_client_app/src/home_mqtt_gen.o
  .ARM.attributes
                 0x00000000       0x34 ./Core/app/mqtt_client_app/src/home_mqtt_gen.o
@@ -4890,7 +4892,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x47 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o
  .debug_macro   0x00000000      0x126 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o
  .debug_line    0x00000000     0x1191 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o
- .debug_str     0x00000000    0x99db7 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o
+ .debug_str     0x00000000    0x99db9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o
  .comment       0x00000000       0x44 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o
  .debug_frame   0x00000000      0x18c ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o
  .ARM.attributes
@@ -5183,7 +5185,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x47 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
  .debug_macro   0x00000000      0x126 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
  .debug_line    0x00000000     0x13f2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
- .debug_str     0x00000000    0x99b90 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
+ .debug_str     0x00000000    0x99b92 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
  .comment       0x00000000       0x44 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
  .debug_frame   0x00000000      0x188 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o
  .ARM.attributes
@@ -5309,7 +5311,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x47 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o
  .debug_macro   0x00000000      0x126 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o
  .debug_line    0x00000000     0x14ca ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o
- .debug_str     0x00000000    0x9994a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o
+ .debug_str     0x00000000    0x9994c ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o
  .comment       0x00000000       0x44 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o
  .debug_frame   0x00000000       0x74 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o
  .ARM.attributes
@@ -5445,7 +5447,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x47 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o
  .debug_macro   0x00000000      0x126 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o
  .debug_line    0x00000000      0xbe6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o
- .debug_str     0x00000000    0x997e2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o
+ .debug_str     0x00000000    0x997e4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o
  .comment       0x00000000       0x44 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o
  .debug_frame   0x00000000       0xe8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o
  .ARM.attributes
@@ -5598,7 +5600,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x47 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o
  .debug_macro   0x00000000      0x126 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o
  .debug_line    0x00000000      0xce4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o
- .debug_str     0x00000000    0x99966 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o
+ .debug_str     0x00000000    0x99968 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o
  .comment       0x00000000       0x44 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o
  .debug_frame   0x00000000      0x164 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o
  .ARM.attributes
@@ -5760,7 +5762,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x47 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o
  .debug_macro   0x00000000      0x126 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o
  .debug_line    0x00000000      0xd92 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o
- .debug_str     0x00000000    0x99a89 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o
+ .debug_str     0x00000000    0x99a8b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o
  .comment       0x00000000       0x44 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o
  .debug_frame   0x00000000      0x1dc ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o
  .ARM.attributes
@@ -5877,7 +5879,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x47 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o
  .debug_macro   0x00000000      0x126 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o
  .debug_line    0x00000000      0x806 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o
- .debug_str     0x00000000    0x997b0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o
+ .debug_str     0x00000000    0x997b2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o
  .comment       0x00000000       0x44 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o
  .debug_frame   0x00000000       0x70 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o
  .ARM.attributes
@@ -6355,7 +6357,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x47 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o
  .debug_macro   0x00000000      0x126 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o
  .debug_line    0x00000000      0x85e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o
- .debug_str     0x00000000    0x99b58 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o
+ .debug_str     0x00000000    0x99b5a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o
  .comment       0x00000000       0x44 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o
  .debug_frame   0x00000000       0x30 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.o
  .ARM.attributes
@@ -6608,7 +6610,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x47 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o
  .debug_macro   0x00000000      0x126 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o
  .debug_line    0x00000000      0x9e1 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o
- .debug_str     0x00000000    0x999be ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o
+ .debug_str     0x00000000    0x999c0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o
  .comment       0x00000000       0x44 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o
  .debug_frame   0x00000000      0x138 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o
  .ARM.attributes
@@ -6746,7 +6748,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x47 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
  .debug_macro   0x00000000      0x126 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
  .debug_line    0x00000000      0x9be ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
- .debug_str     0x00000000    0x99939 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
+ .debug_str     0x00000000    0x9993b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
  .comment       0x00000000       0x44 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
  .debug_frame   0x00000000       0xd0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o
  .ARM.attributes
@@ -7999,7 +8001,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x11 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o
  .debug_macro   0x00000000      0xad8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o
  .debug_line    0x00000000       0x57 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o
- .debug_str     0x00000000     0x2e98 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o
+ .debug_str     0x00000000     0x2e9a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o
  .comment       0x00000000       0x44 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o
  .ARM.attributes
                 0x00000000       0x34 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.o
@@ -8683,7 +8685,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xaa ./Middlewares/Third_Party/FreeRTOS/Source/croutine.o
  .debug_macro   0x00000000       0x43 ./Middlewares/Third_Party/FreeRTOS/Source/croutine.o
  .debug_line    0x00000000      0x545 ./Middlewares/Third_Party/FreeRTOS/Source/croutine.o
- .debug_str     0x00000000     0xb020 ./Middlewares/Third_Party/FreeRTOS/Source/croutine.o
+ .debug_str     0x00000000     0xb022 ./Middlewares/Third_Party/FreeRTOS/Source/croutine.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/FreeRTOS/Source/croutine.o
  .ARM.attributes
                 0x00000000       0x34 ./Middlewares/Third_Party/FreeRTOS/Source/croutine.o
@@ -8798,7 +8800,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xaa ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.o
  .debug_macro   0x00000000       0x91 ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.o
  .debug_line    0x00000000      0xd74 ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.o
- .debug_str     0x00000000     0xba94 ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.o
+ .debug_str     0x00000000     0xba96 ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.o
  .debug_frame   0x00000000      0x1b8 ./Middlewares/Third_Party/FreeRTOS/Source/event_groups.o
  .ARM.attributes
@@ -9102,7 +9104,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xaa ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o
  .debug_macro   0x00000000       0x18 ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o
  .debug_line    0x00000000     0x167d ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o
- .debug_str     0x00000000     0xbb66 ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o
+ .debug_str     0x00000000     0xbb68 ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o
  .comment       0x00000000       0x44 ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o
  .debug_frame   0x00000000      0x380 ./Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o
  .ARM.attributes
@@ -13631,7 +13633,7 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
 .iplt           0x08037890        0x0
  .iplt          0x08037890        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.rodata         0x08037890     0x6a68
+.rodata         0x08037890     0x6a60
                 0x08037890                        . = ALIGN (0x4)
  *(.rodata)
  .rodata        0x08037890       0x2c ./Core/Src/freertos.o
@@ -13640,719 +13642,720 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  *(.rodata*)
  *fill*         0x08037b0b        0x1 
  .rodata.my_custom_log_function.str1.4
-                0x08037b0c     0x4be7 ./Core/Src/freertos.o
+                0x08037b0c     0x4bdb ./Core/Src/freertos.o
                                   0x8 (size before relaxing)
  .rodata.StartSettingsTask.str1.4
-                0x0803c6f3       0xf5 ./Core/Src/freertos.o
+                0x0803c6e7       0xf5 ./Core/Src/freertos.o
  .rodata.StartDisplayTask.str1.4
-                0x0803c6f3       0xdd ./Core/Src/freertos.o
+                0x0803c6e7       0xdd ./Core/Src/freertos.o
  .rodata.StartLoggingTask.str1.4
-                0x0803c6f3       0xf8 ./Core/Src/freertos.o
+                0x0803c6e7       0xf8 ./Core/Src/freertos.o
  .rodata.StartEthTask.str1.4
-                0x0803c6f3       0x5f ./Core/Src/freertos.o
+                0x0803c6e7       0x5f ./Core/Src/freertos.o
  .rodata.str1.4
-                0x0803c6f3       0x94 ./Core/Src/freertos.o
- *fill*         0x0803c6f3        0x1 
+                0x0803c6e7       0x94 ./Core/Src/freertos.o
+ *fill*         0x0803c6e7        0x1 
  .rodata.FSMutex_attributes
-                0x0803c6f4       0x10 ./Core/Src/freertos.o
-                0x0803c6f4                FSMutex_attributes
+                0x0803c6e8       0x10 ./Core/Src/freertos.o
+                0x0803c6e8                FSMutex_attributes
  .rodata.SPI2Mutex_attributes
-                0x0803c704       0x10 ./Core/Src/freertos.o
-                0x0803c704                SPI2Mutex_attributes
+                0x0803c6f8       0x10 ./Core/Src/freertos.o
+                0x0803c6f8                SPI2Mutex_attributes
  .rodata.loggingQ_attributes
-                0x0803c714       0x18 ./Core/Src/freertos.o
-                0x0803c714                loggingQ_attributes
+                0x0803c708       0x18 ./Core/Src/freertos.o
+                0x0803c708                loggingQ_attributes
  .rodata.mqttQ_attributes
-                0x0803c72c       0x18 ./Core/Src/freertos.o
-                0x0803c72c                mqttQ_attributes
+                0x0803c720       0x18 ./Core/Src/freertos.o
+                0x0803c720                mqttQ_attributes
  .rodata.outputWriteQ_attributes
-                0x0803c744       0x18 ./Core/Src/freertos.o
-                0x0803c744                outputWriteQ_attributes
+                0x0803c738       0x18 ./Core/Src/freertos.o
+                0x0803c738                outputWriteQ_attributes
  .rodata.outputReadQ_attributes
-                0x0803c75c       0x18 ./Core/Src/freertos.o
-                0x0803c75c                outputReadQ_attributes
+                0x0803c750       0x18 ./Core/Src/freertos.o
+                0x0803c750                outputReadQ_attributes
  .rodata.inputReadQ_attributes
-                0x0803c774       0x18 ./Core/Src/freertos.o
-                0x0803c774                inputReadQ_attributes
+                0x0803c768       0x18 ./Core/Src/freertos.o
+                0x0803c768                inputReadQ_attributes
  .rodata.WatchDog_attributes
-                0x0803c78c       0x24 ./Core/Src/freertos.o
-                0x0803c78c                WatchDog_attributes
+                0x0803c780       0x24 ./Core/Src/freertos.o
+                0x0803c780                WatchDog_attributes
  .rodata.loggingTask_attributes
-                0x0803c7b0       0x24 ./Core/Src/freertos.o
-                0x0803c7b0                loggingTask_attributes
+                0x0803c7a4       0x24 ./Core/Src/freertos.o
+                0x0803c7a4                loggingTask_attributes
  .rodata.settingsTask_attributes
-                0x0803c7d4       0x24 ./Core/Src/freertos.o
-                0x0803c7d4                settingsTask_attributes
+                0x0803c7c8       0x24 ./Core/Src/freertos.o
+                0x0803c7c8                settingsTask_attributes
  .rodata.displayTask_attributes
-                0x0803c7f8       0x24 ./Core/Src/freertos.o
-                0x0803c7f8                displayTask_attributes
+                0x0803c7ec       0x24 ./Core/Src/freertos.o
+                0x0803c7ec                displayTask_attributes
  .rodata.IOTask_attributes
-                0x0803c81c       0x24 ./Core/Src/freertos.o
-                0x0803c81c                IOTask_attributes
+                0x0803c810       0x24 ./Core/Src/freertos.o
+                0x0803c810                IOTask_attributes
  .rodata.ethTask_attributes
-                0x0803c840       0x24 ./Core/Src/freertos.o
-                0x0803c840                ethTask_attributes
+                0x0803c834       0x24 ./Core/Src/freertos.o
+                0x0803c834                ethTask_attributes
  .rodata.logging.str1.4
-                0x0803c864       0x27 ./Core/Src/logger.o
+                0x0803c858       0x27 ./Core/Src/logger.o
  .rodata.str1.4
-                0x0803c864       0x1e ./Core/Src/logger.o
+                0x0803c858       0x1e ./Core/Src/logger.o
  .rodata.APBPrescTable
-                0x0803c864        0x8 ./Core/Src/system_stm32f4xx.o
-                0x0803c864                APBPrescTable
+                0x0803c858        0x8 ./Core/Src/system_stm32f4xx.o
+                0x0803c858                APBPrescTable
  .rodata.AHBPrescTable
-                0x0803c86c       0x10 ./Core/Src/system_stm32f4xx.o
-                0x0803c86c                AHBPrescTable
+                0x0803c860       0x10 ./Core/Src/system_stm32f4xx.o
+                0x0803c860                AHBPrescTable
  .rodata.xMBUtilSetBits.str1.4
-                0x0803c87c       0x57 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
+                0x0803c870       0x57 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
  .rodata.__func__.0
-                0x0803c87c        0xf ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
+                0x0803c870        0xf ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
  .rodata.init_mb_tcp.str1.4
-                0x0803c88b       0x33 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+                0x0803c87f       0x33 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
  .rodata.handle_OPTIONS_method.str1.4
-                0x0803c88b       0xa2 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0xa2 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handler_dev_version.str1.4
-                0x0803c88b      0x131 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f      0x131 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_firmware_deactivate.str1.4
-                0x0803c88b       0xe6 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0xe6 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_web_files_remove.str1.4
-                0x0803c88b       0x4f ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0x4f ./Core/app/http_server_app/src/dashboard.o
  .rodata.handler_logout.str1.4
-                0x0803c88b      0x179 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f      0x179 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_login.str1.4
-                0x0803c88b       0xa4 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0xa4 ./Core/app/http_server_app/src/dashboard.o
  .rodata.auth.str1.4
-                0x0803c88b       0x7c ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0x7c ./Core/app/http_server_app/src/dashboard.o
  .rodata.handler_authanticate.str1.4
-                0x0803c88b       0x2d ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0x2d ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_ram_status_get.str1.4
-                0x0803c88b      0x145 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f      0x145 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_io_status_get.str1.4
-                0x0803c88b      0x14c ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f      0x14c ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_mqtt_conf.str1.4
-                0x0803c88b      0x26e ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f      0x26e ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_mb_tcp_access_list.str1.4
-                0x0803c88b      0x207 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f      0x207 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_dev_status.str1.4
-                0x0803c88b       0xe6 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0xe6 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_fs_get_log.str1.4
-                0x0803c88b       0x7f ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0x7f ./Core/app/http_server_app/src/dashboard.o
  .rodata.write_users.str1.4
-                0x0803c88b       0x18 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0x18 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_manage_user.str1.4
-                0x0803c88b      0x32e ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f      0x32e ./Core/app/http_server_app/src/dashboard.o
  .rodata.load_users.str1.4
-                0x0803c88b       0x37 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0x37 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_restart_mcu.str1.4
-                0x0803c88b       0x38 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0x38 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_activete_and_reboot.str1.4
-                0x0803c88b       0x5a ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0x5a ./Core/app/http_server_app/src/dashboard.o
  .rodata.handler_dev_info.str1.4
-                0x0803c88b       0xc2 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0xc2 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_fs_mkdir.str1.4
-                0x0803c88b       0xba ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0xba ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_firmware_upload.str1.4
-                0x0803c88b       0x70 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0x70 ./Core/app/http_server_app/src/dashboard.o
  .rodata.calc_file_md5sum.str1.4
-                0x0803c88b        0x5 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f        0x5 ./Core/app/http_server_app/src/dashboard.o
  .rodata.handle_firmware_md5.str1.4
-                0x0803c88b       0x64 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f       0x64 ./Core/app/http_server_app/src/dashboard.o
  .rodata.dashboard.str1.4
-                0x0803c88b      0x355 ./Core/app/http_server_app/src/dashboard.o
+                0x0803c87f      0x355 ./Core/app/http_server_app/src/dashboard.o
  .rodata._ZL18mqtt_timer_handlerPv.str1.4
-                0x0803c88b       0x1e ./Core/app/mqtt_client_app/src/mqtt.o
+                0x0803c87f       0x1e ./Core/app/mqtt_client_app/src/mqtt.o
  .rodata._ZL27mqtt_send_registration_dataP13mg_connectionPK10SensorInfoj.str1.4
-                0x0803c88b       0x25 ./Core/app/mqtt_client_app/src/mqtt.o
+                0x0803c87f       0x25 ./Core/app/mqtt_client_app/src/mqtt.o
  .rodata._ZL25mqtt_send_diagnostic_dataP13mg_connection.str1.4
-                0x0803c88b       0x56 ./Core/app/mqtt_client_app/src/mqtt.o
+                0x0803c87f       0x56 ./Core/app/mqtt_client_app/src/mqtt.o
  .rodata._ZL39mqtt_timer_handler_send_diagnostic_dataPv.str1.4
-                0x0803c88b       0x2d ./Core/app/mqtt_client_app/src/mqtt.o
+                0x0803c87f       0x2d ./Core/app/mqtt_client_app/src/mqtt.o
  .rodata._ZL20mqtt_subscrabe_on_swP13mg_connectionPK10SensorInfoj.str1.4
-                0x0803c88b       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
+                0x0803c87f       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
  .rodata._ZL29mqtt_subscrabe_recv_cmd_parceP15mg_mqtt_message.str1.4
-                0x0803c88b      0x29f ./Core/app/mqtt_client_app/src/mqtt.o
+                0x0803c87f      0x29f ./Core/app/mqtt_client_app/src/mqtt.o
  .rodata._ZL18mqtt_event_handlerP13mg_connectioniPv.str1.4
-                0x0803c88b       0x7e ./Core/app/mqtt_client_app/src/mqtt.o
+                0x0803c87f       0x7e ./Core/app/mqtt_client_app/src/mqtt.o
  .rodata.mqtt_init.str1.4
-                0x0803c88b       0x2a ./Core/app/mqtt_client_app/src/mqtt.o
+                0x0803c87f       0x2a ./Core/app/mqtt_client_app/src/mqtt.o
  .rodata.set_device_id.str1.4
-                0x0803c88b        0x5 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+                0x0803c87f        0x5 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
  .rodata.get_config_topik_string.str1.4
-                0x0803c88b       0xa0 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+                0x0803c87f       0xa0 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
  .rodata.get_config_payload_string.str1.4
-                0x0803c88b      0x1a7 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+                0x0803c87f      0x1a7 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
  .rodata.gen_bin_sensor_status_payload_JSON.str1.4
-                0x0803c88b        0x8 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+                0x0803c87f        0x8 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
  .rodata.generate_comand_topik_for_subscrabe.str1.4
-                0x0803c88b        0xf ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+                0x0803c87f        0xf ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
  .rodata.generate_status_topik.str1.4
-                0x0803c88b       0x11 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+                0x0803c87f       0x11 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
  .rodata.generate_key_value_JSON.str1.4
-                0x0803c88b       0x10 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- *fill*         0x0803c88b        0x1 
+                0x0803c87f       0x10 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ *fill*         0x0803c87f        0x1 
  .rodata._ZL11io_template
-                0x0803c88c       0x10 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+                0x0803c880       0x10 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
  .rodata._ZL41universal_conf_template_comand_topik_part
-                0x0803c89c       0x25 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- *fill*         0x0803c8c1        0x3 
+                0x0803c890       0x25 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ *fill*         0x0803c8b5        0x3 
  .rodata._ZL23universal_conf_template
-                0x0803c8c4      0x17d ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+                0x0803c8b8      0x17d ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
  .rodata.update_rtc_from_ntp.str1.4
-                0x0803ca41       0x5b ./Core/app/sntp_app/src/sntp.o
+                0x0803ca35       0x5b ./Core/app/sntp_app/src/sntp.o
  .rodata.sfn.str1.4
-                0x0803ca41       0xd9 ./Core/app/sntp_app/src/sntp.o
+                0x0803ca35       0xd9 ./Core/app/sntp_app/src/sntp.o
  .rodata.start_sntp.str1.4
-                0x0803ca41       0x1c ./Core/app/sntp_app/src/sntp.o
- *fill*         0x0803ca41        0x3 
+                0x0803ca35       0x1c ./Core/app/sntp_app/src/sntp.o
+ *fill*         0x0803ca35        0x3 
  .rodata.__func__.0
-                0x0803ca44        0x4 ./Core/app/sntp_app/src/sntp.o
+                0x0803ca38        0x4 ./Core/app/sntp_app/src/sntp.o
  .rodata.dev_description_handler.str1.4
-                0x0803ca48       0xb7 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x0803ca3c       0xb7 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.dev_404_handler.str1.4
-                0x0803ca48       0x43 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x0803ca3c       0x43 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.ssdp_web_handler.str1.4
-                0x0803ca48       0x43 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x0803ca3c       0x43 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.ip_to_string.str1.4
-                0x0803ca48        0xc ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x0803ca3c        0xc ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.send_ssdp_notify.str1.4
-                0x0803ca48       0x56 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x0803ca3c       0x56 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.ssdp_listener_handler.str1.4
-                0x0803ca48       0x80 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x0803ca3c       0x80 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.ssdp_timer_handler.str1.4
-                0x0803ca48       0x40 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x0803ca3c       0x40 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.ssdp_set_id.str1.4
-                0x0803ca48       0x19 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x0803ca3c       0x19 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.ssdp_start_server.str1.4
-                0x0803ca48       0x2d ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x0803ca3c       0x2d ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.ssdp_notify_template
-                0x0803ca48       0xf5 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- *fill*         0x0803cb3d        0x3 
+                0x0803ca3c       0xf5 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ *fill*         0x0803cb31        0x3 
  .rodata.device_description
-                0x0803cb40      0x1a1 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- *fill*         0x0803cce1        0x3 
+                0x0803cb34      0x1a1 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ *fill*         0x0803ccd5        0x3 
  .rodata.ssdp_addr
-                0x0803cce4       0x1b ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+                0x0803ccd8       0x1b ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
  .rodata.sFLASH_GetInfo.str1.4
-                0x0803ccff       0x50 ./Drivers/SPI_FLASH/src/SPI_flash.o
- *fill*         0x0803ccff        0x1 
+                0x0803ccf3       0x50 ./Drivers/SPI_FLASH/src/SPI_flash.o
+ *fill*         0x0803ccf3        0x1 
  .rodata.Font7x10
-                0x0803cd00      0x76c ./Drivers/i2c_display/src/fonts.o
-                0x0803cd00                Font7x10
+                0x0803ccf4      0x76c ./Drivers/i2c_display/src/fonts.o
+                0x0803ccf4                Font7x10
  .rodata.vTaskStartScheduler.str1.4
-                0x0803d46c        0x5 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0803d460        0x5 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .rodata.prvCheckForValidListAndQueue.str1.4
-                0x0803d46c        0x5 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+                0x0803d460        0x5 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .rodata.xTimerCreateTimerTask.str1.4
-                0x0803d46c        0x8 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+                0x0803d460        0x8 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
  .rodata.block_device_read.str1.4
-                0x0803d46c       0x52 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+                0x0803d460       0x52 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
  .rodata.__func__.0
-                0x0803d46c       0x12 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- *fill*         0x0803d47e        0x2 
+                0x0803d460       0x12 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ *fill*         0x0803d472        0x2 
  .rodata.__func__.1
-                0x0803d480       0x13 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- *fill*         0x0803d493        0x1 
+                0x0803d474       0x13 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ *fill*         0x0803d487        0x1 
  .rodata.__func__.2
-                0x0803d494       0x12 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+                0x0803d488       0x12 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
  .rodata.lfs_bd_erase.str1.4
-                0x0803d4a6       0x55 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x55 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_fs_preporphans.str1.4
-                0x0803d4a6       0x6e ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x6e ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_bd_read.str1.4
-                0x0803d4a6       0x2e ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x2e ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_dir_traverse.str1.4
-                0x0803d4a6        0x7 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a        0x7 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_bd_flush.str1.4
-                0x0803d4a6       0x21 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x21 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_bd_prog.str1.4
-                0x0803d4a6       0x7f ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x7f ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_dir_fetchmatch.str1.4
-                0x0803d4a6       0x39 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x39 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_fs_parent.str1.4
-                0x0803d4a6       0x2b ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x2b ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_alloc.str1.4
-                0x0803d4a6       0x29 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x29 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_file_relocate.str1.4
-                0x0803d4a6       0x23 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x23 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_file_read_.str1.4
-                0x0803d4a6       0x2d ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x2d ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_file_write_.str1.4
-                0x0803d4a6       0x2d ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x2d ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_dir_compact.str1.4
-                0x0803d4a6       0x5e ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x5e ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_dir_splittingcompact.str1.4
-                0x0803d4a6       0x8b ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x8b ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_dir_relocatingcommit.str1.4
-                0x0803d4a6       0x15 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x15 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_dir_orphaningcommit.str1.4
-                0x0803d4a6       0xa5 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0xa5 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_fs_deorphan.str1.4
-                0x0803d4a6       0xb9 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0xb9 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_fs_desuperblock.str1.4
-                0x0803d4a6       0x34 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x34 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_fs_demove.str1.4
-                0x0803d4a6       0x65 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x65 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_init.str1.4
-                0x0803d4a6      0x403 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a      0x403 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_format_.str1.4
-                0x0803d4a6       0x21 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x21 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_mount_.str1.4
-                0x0803d4a6      0x1af ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a      0x1af ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_dir_find.str1.4
-                0x0803d4a6        0x7 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a        0x7 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_dir_read_.str1.4
-                0x0803d4a6        0x2 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a        0x2 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_file_open.str1.4
-                0x0803d4a6       0x37 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x37 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_file_close.str1.4
-                0x0803d4a6       0x36 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d49a       0x36 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.lfs_dir_open.str1.4
-                0x0803d4a6       0x36 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d4a6        0x2 
+                0x0803d49a       0x36 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d49a        0x2 
  .rodata.__func__.1
-                0x0803d4a8        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d4b5        0x3 
+                0x0803d49c        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d4a9        0x3 
  .rodata.__func__.3
-                0x0803d4b8        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d4c6        0x2 
+                0x0803d4ac        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d4ba        0x2 
  .rodata.__func__.6
-                0x0803d4c8        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d4d6        0x2 
+                0x0803d4bc        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d4ca        0x2 
  .rodata.__func__.7
-                0x0803d4d8       0x10 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d4cc       0x10 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.8
-                0x0803d4e8        0xf ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d4f7        0x1 
+                0x0803d4dc        0xf ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d4eb        0x1 
  .rodata.__func__.9
-                0x0803d4f8        0xf ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d507        0x1 
+                0x0803d4ec        0xf ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d4fb        0x1 
  .rodata.__func__.10
-                0x0803d508        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d516        0x2 
+                0x0803d4fc        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d50a        0x2 
  .rodata.__func__.12
-                0x0803d518        0xf ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d527        0x1 
+                0x0803d50c        0xf ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d51b        0x1 
  .rodata.defaults.14
-                0x0803d528        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d51c        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.15
-                0x0803d534        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d542        0x2 
+                0x0803d528        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d536        0x2 
  .rodata.__func__.16
-                0x0803d544        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d552        0x2 
+                0x0803d538        0xe ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d546        0x2 
  .rodata.__func__.17
-                0x0803d554       0x10 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d548       0x10 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.18
-                0x0803d564        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d558        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.19
-                0x0803d570       0x11 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d581        0x3 
+                0x0803d564       0x11 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d575        0x3 
  .rodata.__func__.20
-                0x0803d584       0x19 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d59d        0x3 
+                0x0803d578       0x19 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d591        0x3 
  .rodata.__func__.21
-                0x0803d5a0       0x13 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d5b3        0x1 
+                0x0803d594       0x13 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d5a7        0x1 
  .rodata.__func__.22
-                0x0803d5b4        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d5c1        0x3 
+                0x0803d5a8        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d5b5        0x3 
  .rodata.__func__.23
-                0x0803d5c4        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d5b8        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.24
-                0x0803d5d0        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d5dd        0x3 
+                0x0803d5c4        0xd ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d5d1        0x3 
  .rodata.__func__.25
-                0x0803d5e0       0x18 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d5d4       0x18 ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.26
-                0x0803d5f8        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d5ec        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.__func__.27
-                0x0803d604        0x9 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- *fill*         0x0803d60d        0x3 
+                0x0803d5f8        0x9 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ *fill*         0x0803d601        0x3 
  .rodata.__func__.28
-                0x0803d610        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
+                0x0803d604        0xc ./Middlewares/Third_Party/LittleFS/src/lfs.o
  .rodata.rtable.0
-                0x0803d61c       0x40 ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+                0x0803d610       0x40 ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
  .rodata.mg_lld.str1.4
-                0x0803d65c       0x11 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x11 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_http_status_code_str.str1.4
-                0x0803d65c      0x4a1 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650      0x4a1 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.escapeseq.str1.4
-                0x0803d65c       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.parse_net.str1.4
-                0x0803d65c       0x22 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x22 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_json_get.str1.4
-                0x0803d65c       0x16 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x16 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_hexdump.str1.4
-                0x0803d65c        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_mgr_init.str1.4
-                0x0803d65c       0x34 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x34 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_dtoa.str1.4
-                0x0803d65c       0x1d ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x1d ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_vxprintf.str1.4
-                0x0803d65c        0x3 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0x3 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.print_ip4.str1.4
-                0x0803d65c        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_print_mac.str1.4
-                0x0803d65c       0x1e ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x1e ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_log.str1.4
-                0x0803d65c        0x3 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0x3 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_http_reply.str1.4
-                0x0803d65c       0x3b ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x3b ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_http_etag.str1.4
-                0x0803d65c        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_url_encode.str1.4
-                0x0803d65c        0x5 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0x5 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_http_serve_ssi.str1.4
-                0x0803d65c       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_http_parse.str1.4
-                0x0803d65c       0x28 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x28 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.guess_content_type.str1.4
-                0x0803d65c       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.getrange.str1.4
-                0x0803d65c        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_http_serve_file.str1.4
-                0x0803d65c       0xfd ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0xfd ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_http_creds.str1.4
-                0x0803d65c       0x35 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x35 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.listdir.str1.4
-                0x0803d65c      0x63c ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650      0x63c ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_url_is_ssl.str1.4
-                0x0803d65c       0x2e ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x2e ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_url_uri.str1.4
-                0x0803d65c        0x2 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0x2 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_url_port.str1.4
-                0x0803d65c       0x12 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x12 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_atonl.str1.4
-                0x0803d65c        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.print_ip6.str1.4
-                0x0803d65c       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_print_ip_port.str1.4
-                0x0803d65c        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_log_prefix.str1.4
-                0x0803d65c       0x13 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x13 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_dns_parse.str1.4
-                0x0803d65c       0x59 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x59 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_error.str1.4
-                0x0803d65c        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.handle_tls_recv.str1.4
-                0x0803d65c        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.http_cb.str1.4
-                0x0803d65c       0xa6 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0xa6 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.uri_to_path2.str1.4
-                0x0803d65c       0x9f ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x9f ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.printdirentry.str1.4
-                0x0803d65c       0x94 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x94 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_http_upload.str1.4
-                0x0803d65c      0x10d ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650      0x10d ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_iobuf_resize.str1.4
-                0x0803d65c        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.rx_udp.str1.4
-                0x0803d65c       0x20 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x20 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_close_conn.str1.4
-                0x0803d65c        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_listen.str1.4
-                0x0803d65c       0x25 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x25 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.trim_len.str1.4
-                0x0803d65c       0x55 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x55 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_send.str1.4
-                0x0803d65c        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_mqtt_pub.str1.4
-                0x0803d65c       0x15 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x15 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mqtt_cb.str1.4
-                0x0803d65c       0x6a ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x6a ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.tx_tcp.str1.4
-                0x0803d65c       0x22 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x22 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.settmout.str1.4
-                0x0803d65c        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.write_conn.str1.4
-                0x0803d65c        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_connect_resolved.str1.4
-                0x0803d65c       0x22 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x22 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.dns_cb.str1.4
-                0x0803d65c       0x82 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x82 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.tx_dhcp_discover.str1.4
-                0x0803d65c       0x29 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x29 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.tx_dhcp_request_re.str1.4
-                0x0803d65c        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.rx_arp.str1.4
-                0x0803d65c       0x32 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x32 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.read_conn.str1.4
-                0x0803d65c       0x54 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x54 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.accept_conn.str1.4
-                0x0803d65c       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.rx_tcp.str1.4
-                0x0803d65c        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_sendnsreq.str1.4
-                0x0803d65c       0x71 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x71 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_connect.str1.4
-                0x0803d65c        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_tcpip_init.str1.4
-                0x0803d65c       0x37 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x37 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.onstatechange.str1.4
-                0x0803d65c       0x42 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x42 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.rx_dhcp_client.str1.4
-                0x0803d65c       0x15 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x15 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.rx_ip.str1.4
-                0x0803d65c       0x54 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x54 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_tcpip_rx.str1.4
-                0x0803d65c       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_tcpip_poll.str1.4
-                0x0803d65c       0x5a ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x5a ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_mgr_poll.str1.4
-                0x0803d65c       0x12 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x12 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_sntp_parse.str1.4
-                0x0803d65c       0x57 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x57 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_sntp_request.str1.4
-                0x0803d65c       0x18 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x18 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.sntp_cb.str1.4
-                0x0803d65c       0x21 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x21 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.mg_sntp_connect.str1.4
-                0x0803d65c       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x1a ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.crclut.3
-                0x0803d65c       0x40 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d650       0x40 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.5
-                0x0803d69c        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d690        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.6
-                0x0803d6a4       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d698       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.7
-                0x0803d6b4        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d6c2        0x2 
+                0x0803d6a8        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d6b6        0x2 
  .rodata.__func__.8
-                0x0803d6c4        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d6b8        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.9
-                0x0803d6d0        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d6da        0x2 
+                0x0803d6c4        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d6ce        0x2 
  .rodata.__func__.10
-                0x0803d6dc       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d6d0       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.11
-                0x0803d6f0        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d6ff        0x1 
+                0x0803d6e4        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d6f3        0x1 
  .rodata.__func__.12
-                0x0803d700        0x6 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d706        0x2 
+                0x0803d6f4        0x6 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d6fa        0x2 
  .rodata.__func__.13
-                0x0803d708        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d70f        0x1 
+                0x0803d6fc        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d703        0x1 
  .rodata.__func__.14
-                0x0803d710        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d704        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.15
-                0x0803d71c       0x13 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d72f        0x1 
+                0x0803d710       0x13 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d723        0x1 
  .rodata.__func__.16
-                0x0803d730        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d73e        0x2 
+                0x0803d724        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d732        0x2 
  .rodata.__func__.17
-                0x0803d740       0x11 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d751        0x3 
+                0x0803d734       0x11 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d745        0x3 
  .rodata.__func__.18
-                0x0803d754        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d762        0x2 
+                0x0803d748        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d756        0x2 
  .rodata.__func__.19
-                0x0803d764        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d758        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.20
-                0x0803d770       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d764       0x14 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.21
-                0x0803d784        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d792        0x2 
+                0x0803d778        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d786        0x2 
  .rodata.__func__.22
-                0x0803d794        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d79d        0x3 
+                0x0803d788        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d791        0x3 
  .rodata.__func__.23
-                0x0803d7a0        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d7a7        0x1 
+                0x0803d794        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d79b        0x1 
  .rodata.__func__.24
-                0x0803d7a8        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d7b1        0x3 
+                0x0803d79c        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d7a5        0x3 
  .rodata.__func__.26
-                0x0803d7b4        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d7be        0x2 
+                0x0803d7a8        0xa ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d7b2        0x2 
  .rodata.__func__.27
-                0x0803d7c0        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d7cb        0x1 
+                0x0803d7b4        0xb ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d7bf        0x1 
  .rodata.__func__.28
-                0x0803d7cc        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d7da        0x2 
+                0x0803d7c0        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d7ce        0x2 
  .rodata.__func__.29
-                0x0803d7dc        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d7d0        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.30
-                0x0803d7e4        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d7d8        0xc ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.31
-                0x0803d7f0       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d7e4       0x10 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.32
-                0x0803d800        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d80f        0x1 
+                0x0803d7f4        0xf ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d803        0x1 
  .rodata.__func__.33
-                0x0803d810        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d81e        0x2 
+                0x0803d804        0xe ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d812        0x2 
  .rodata.__func__.34
-                0x0803d820        0xd ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d82d        0x3 
+                0x0803d814        0xd ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d821        0x3 
  .rodata.__func__.35
-                0x0803d830        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d824        0x8 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.__func__.37
-                0x0803d838        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d841        0x3 
+                0x0803d82c        0x9 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d835        0x3 
  .rodata.__func__.38
-                0x0803d844        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d84b        0x1 
+                0x0803d838        0x7 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d83f        0x1 
  .rodata.__func__.39
-                0x0803d84c        0xd ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d859        0x3 
+                0x0803d840        0xd ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d84d        0x3 
  .rodata.__func__.40
-                0x0803d85c        0xd ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d869        0x3 
+                0x0803d850        0xd ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d85d        0x3 
  .rodata.broadcast
-                0x0803d86c        0x6 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d872        0x2 
+                0x0803d860        0x6 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d866        0x2 
  .rodata.s_prop_map
-                0x0803d874       0x36 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d868       0x36 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.str1.4
-                0x0803d8aa      0x243 ./Middlewares/Third_Party/mongoose/mongoose.o
- *fill*         0x0803d8aa        0x2 
+                0x0803d89e      0x243 ./Middlewares/Third_Party/mongoose/mongoose.o
+ *fill*         0x0803d89e        0x2 
  .rodata.s_known_types
-                0x0803d8ac      0x1e8 ./Middlewares/Third_Party/mongoose/mongoose.o
+                0x0803d8a0      0x1e8 ./Middlewares/Third_Party/mongoose/mongoose.o
  .rodata.has_mqtt_prefix.str1.4
-                0x0803da94        0x8 ./Middlewares/Third_Party/validation/src/validation.o
+                0x0803da88        0x8 ./Middlewares/Third_Party/validation/src/validation.o
  .rodata.is_valid_mqtt_url.str1.4
-                0x0803da94       0x9f ./Middlewares/Third_Party/validation/src/validation.o
+                0x0803da88       0x9f ./Middlewares/Third_Party/validation/src/validation.o
  .rodata.__assert_func.str1.1
-                0x0803da94      0x38f /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-assert.o)
+                0x0803da88      0x38f /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-assert.o)
                                  0x3d (size before relaxing)
  .rodata._vfiprintf_r.str1.1
-                0x0803de23       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
+                0x0803de17       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
  .rodata.zeroes.0
-                0x0803de23       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
+                0x0803de17       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
  .rodata.blanks.1
-                0x0803de33       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
+                0x0803de27       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfiprintf.o)
  .rodata._puts_r.str1.1
-                0x0803de43        0x2 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-puts.o)
- *fill*         0x0803de43        0x1 
+                0x0803de37        0x2 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-puts.o)
+ *fill*         0x0803de37        0x1 
  .rodata._DAYS_BEFORE_MONTH
-                0x0803de44       0x30 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mktime.o)
+                0x0803de38       0x30 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mktime.o)
  .rodata.DAYS_IN_MONTH
-                0x0803de74       0x30 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mktime.o)
+                0x0803de68       0x30 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mktime.o)
  .rodata.__month_lengths
-                0x0803dea4       0x60 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-month_lengths.o)
-                0x0803dea4                __month_lengths
+                0x0803de98       0x60 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-month_lengths.o)
+                0x0803de98                __month_lengths
  .rodata.__strftime.isra.0.str1.1
-                0x0803df04       0x7a /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strftime.o)
+                0x0803def8       0x7a /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strftime.o)
  .rodata._tzset_unlocked_r.str1.1
-                0x0803df04       0x61 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-tzset_r.o)
+                0x0803def8       0x61 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-tzset_r.o)
  .rodata.str1.1
-                0x0803df04        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-tzvars.o)
+                0x0803def8        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-tzvars.o)
  .rodata.str1.1
-                0x0803df04      0x12c /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-timelocal.o)
+                0x0803def8      0x12c /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-timelocal.o)
  .rodata._C_time_locale
-                0x0803df04       0xfc /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-timelocal.o)
-                0x0803df04                _C_time_locale
+                0x0803def8       0xfc /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-timelocal.o)
+                0x0803def8                _C_time_locale
  .rodata._ctype_
-                0x0803e000      0x101 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-ctype_.o)
-                0x0803e000                _ctype_
+                0x0803dff4      0x101 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-ctype_.o)
+                0x0803dff4                _ctype_
  .rodata._svfiprintf_r.str1.1
-                0x0803e101       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiprintf.o)
+                0x0803e0f5       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiprintf.o)
  .rodata.zeroes.0
-                0x0803e101       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiprintf.o)
+                0x0803e0f5       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiprintf.o)
  .rodata.blanks.1
-                0x0803e111       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiprintf.o)
- *fill*         0x0803e121        0x1 
+                0x0803e105       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiprintf.o)
+ *fill*         0x0803e115        0x1 
  .rodata.basefix.0
-                0x0803e122       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiscanf.o)
+                0x0803e116       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfiscanf.o)
  .rodata._svfprintf_r.str1.1
-                0x0803e144       0x34 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
+                0x0803e138       0x34 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
  .rodata.zeroes.0
-                0x0803e144       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
+                0x0803e138       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
  .rodata.blanks.1
-                0x0803e154       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
+                0x0803e148       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfprintf.o)
  .rodata.__ssvfscanf_r.str1.1
-                0x0803e164        0x6 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfscanf.o)
+                0x0803e158        0x6 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfscanf.o)
  .rodata.basefix.0
-                0x0803e164       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfscanf.o)
+                0x0803e158       0x22 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-svfscanf.o)
  .rodata._vfprintf_r.str1.1
-                0x0803e186       0x34 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfprintf.o)
+                0x0803e17a       0x34 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfprintf.o)
  .rodata.zeroes.0
-                0x0803e186       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfprintf.o)
+                0x0803e17a       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfprintf.o)
  .rodata.blanks.1
-                0x0803e196       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfprintf.o)
+                0x0803e18a       0x10 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-vfprintf.o)
  .rodata._strtod_l.str1.1
-                0x0803e1a6        0xf /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
- *fill*         0x0803e1a6        0x2 
+                0x0803e19a        0xf /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
+ *fill*         0x0803e19a        0x2 
  .rodata.fpinan.0
-                0x0803e1a8       0x14 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
- .rodata.fpi.1  0x0803e1bc       0x14 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
+                0x0803e19c       0x14 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
+ .rodata.fpi.1  0x0803e1b0       0x14 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
+ *fill*         0x0803e1c4        0x4 
  .rodata.tinytens
-                0x0803e1d0       0x28 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
+                0x0803e1c8       0x28 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strtod.o)
  .rodata._setlocale_r.str1.1
-                0x0803e1f8        0x9 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-locale.o)
+                0x0803e1f0        0x9 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-locale.o)
  .rodata.str1.1
-                0x0803e1f8        0x2 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-locale.o)
+                0x0803e1f0        0x2 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-locale.o)
  .rodata._mbrtowc_r.str1.1
-                0x0803e1f8        0x1 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mbrtowc.o)
+                0x0803e1f0        0x1 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mbrtowc.o)
  .rodata._dtoa_r.str1.1
-                0x0803e1f8       0x78 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-dtoa.o)
+                0x0803e1f0       0x78 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-dtoa.o)
  .rodata.__gethex.str1.1
-                0x0803e1f8       0x73 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-gdtoa-gethex.o)
+                0x0803e1f0       0x73 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-gdtoa-gethex.o)
  .rodata.__multadd.str1.1
-                0x0803e1f8       0x6a /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
- .rodata.p05.0  0x0803e1f8        0xc /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
- *fill*         0x0803e204        0x4 
+                0x0803e1f0       0x6a /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
+ .rodata.p05.0  0x0803e1f0        0xc /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
+ *fill*         0x0803e1fc        0x4 
  .rodata.__mprec_bigtens
-                0x0803e208       0x28 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
-                0x0803e208                __mprec_bigtens
+                0x0803e200       0x28 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
+                0x0803e200                __mprec_bigtens
  .rodata.__mprec_tens
-                0x0803e230       0xc8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
-                0x0803e230                __mprec_tens
-                0x0803e2f8                        . = ALIGN (0x4)
+                0x0803e228       0xc8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-mprec.o)
+                0x0803e228                __mprec_tens
+                0x0803e2f0                        . = ALIGN (0x4)
 
-.ARM.extab      0x0803e2f8        0x0
-                0x0803e2f8                        . = ALIGN (0x4)
+.ARM.extab      0x0803e2f0        0x0
+                0x0803e2f0                        . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0803e2f8                        . = ALIGN (0x4)
+                0x0803e2f0                        . = ALIGN (0x4)
 
-.ARM            0x0803e2f8        0x8
-                0x0803e2f8                        . = ALIGN (0x4)
-                0x0803e2f8                        __exidx_start = .
+.ARM            0x0803e2f0        0x8
+                0x0803e2f0                        . = ALIGN (0x4)
+                0x0803e2f0                        __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0803e2f8        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strcmp.o)
- .ARM.exidx     0x0803e300        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memchr.o)
+ .ARM.exidx     0x0803e2f0        0x8 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strcmp.o)
+ .ARM.exidx     0x0803e2f8        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-memchr.o)
                                   0x8 (size before relaxing)
- .ARM.exidx     0x0803e300        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strlen.o)
+ .ARM.exidx     0x0803e2f8        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-strlen.o)
                                   0x8 (size before relaxing)
- .ARM.exidx     0x0803e300        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x0803e2f8        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
                                   0x8 (size before relaxing)
-                0x0803e300                        __exidx_end = .
-                0x0803e300                        . = ALIGN (0x4)
+                0x0803e2f8                        __exidx_end = .
+                0x0803e2f8                        . = ALIGN (0x4)
 
-.preinit_array  0x0803e300        0x0
-                0x0803e300                        . = ALIGN (0x4)
-                0x0803e300                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0803e2f8        0x0
+                0x0803e2f8                        . = ALIGN (0x4)
+                0x0803e2f8                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0803e300                        PROVIDE (__preinit_array_end = .)
-                0x0803e300                        . = ALIGN (0x4)
+                0x0803e2f8                        PROVIDE (__preinit_array_end = .)
+                0x0803e2f8                        . = ALIGN (0x4)
 
-.init_array     0x0803e300        0x8
-                0x0803e300                        . = ALIGN (0x4)
-                0x0803e300                        PROVIDE (__init_array_start = .)
+.init_array     0x0803e2f8        0x8
+                0x0803e2f8                        . = ALIGN (0x4)
+                0x0803e2f8                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  .init_array.00000
-                0x0803e300        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
+                0x0803e2f8        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a(libc_a-__call_atexit.o)
  *(.init_array*)
- .init_array    0x0803e304        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x0803e308                        PROVIDE (__init_array_end = .)
-                0x0803e308                        . = ALIGN (0x4)
+ .init_array    0x0803e2fc        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0803e300                        PROVIDE (__init_array_end = .)
+                0x0803e300                        . = ALIGN (0x4)
 
-.fini_array     0x0803e308        0x4
-                0x0803e308                        . = ALIGN (0x4)
-                0x0803e308                        PROVIDE (__fini_array_start = .)
+.fini_array     0x0803e300        0x4
+                0x0803e300                        . = ALIGN (0x4)
+                0x0803e300                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0803e308        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
-                0x0803e30c                        PROVIDE (__fini_array_end = .)
-                0x0803e30c                        . = ALIGN (0x4)
-                0x0803e30c                        _sidata = LOADADDR (.data)
+ .fini_array    0x0803e300        0x4 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+                0x0803e304                        PROVIDE (__fini_array_end = .)
+                0x0803e304                        . = ALIGN (0x4)
+                0x0803e304                        _sidata = LOADADDR (.data)
 
-.rel.dyn        0x0803e30c        0x0
- .rel.iplt      0x0803e30c        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
+.rel.dyn        0x0803e304        0x0
+ .rel.iplt      0x0803e304        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
 
-.data           0x20000000      0x89c load address 0x0803e30c
+.data           0x20000000      0x89c load address 0x0803e304
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -14436,11 +14439,11 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
                 0x2000089c                        . = ALIGN (0x4)
                 0x2000089c                        _edata = .
 
-.igot.plt       0x2000089c        0x0 load address 0x0803eba8
+.igot.plt       0x2000089c        0x0 load address 0x0803eba0
  .igot.plt      0x2000089c        0x0 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/crtbegin.o
                 0x2000089c                        . = ALIGN (0x4)
 
-.bss            0x200008a0    0x19bc0 load address 0x0803eba8
+.bss            0x200008a0    0x19bc0 load address 0x0803eba0
                 0x200008a0                        _sbss = .
                 0x200008a0                        __bss_start__ = _sbss
  *(.bss)
@@ -14837,7 +14840,7 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
                 0x2001a460                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x2001a460      0xc00 load address 0x0803eba8
+                0x2001a460      0xc00 load address 0x0803eba0
                 0x2001a460                        . = ALIGN (0x8)
                 [!provide]                        PROVIDE (end = .)
                 0x2001a460                        PROVIDE (_end = .)
@@ -15241,127 +15244,127 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
 LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
 LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a
 
-.debug_info     0x00000000    0x6239d
+.debug_info     0x00000000    0x62343
  .debug_info    0x00000000      0xacf ./Core/Src/adc.o
  .debug_info    0x00000acf     0x4788 ./Core/Src/freertos.o
  .debug_info    0x00005257      0x533 ./Core/Src/gpio.o
  .debug_info    0x0000578a      0xa1d ./Core/Src/i2c.o
  .debug_info    0x000061a7      0x1da ./Core/Src/iwdg.o
  .debug_info    0x00006381      0xcd8 ./Core/Src/logger.o
- .debug_info    0x00007059     0x135b ./Core/Src/main.o
- .debug_info    0x000083b4      0x76b ./Core/Src/rtc.o
- .debug_info    0x00008b1f      0xa9b ./Core/Src/spi.o
- .debug_info    0x000095ba      0x46d ./Core/Src/stm32f4xx_hal_msp.o
- .debug_info    0x00009a27      0xc08 ./Core/Src/stm32f4xx_hal_timebase_tim.o
- .debug_info    0x0000a62f      0x6b2 ./Core/Src/stm32f4xx_it.o
- .debug_info    0x0000ace1      0x78d ./Core/Src/syscalls.o
- .debug_info    0x0000b46e      0x175 ./Core/Src/sysmem.o
- .debug_info    0x0000b5e3      0x557 ./Core/Src/system_stm32f4xx.o
- .debug_info    0x0000bb3a       0x30 ./Core/Startup/startup_stm32f411ceux.o
- .debug_info    0x0000bb6a      0x402 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_info    0x0000bf6c      0x241 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
- .debug_info    0x0000c1ad      0x4df ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
- .debug_info    0x0000c68c      0x235 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
- .debug_info    0x0000c8c1      0x2bb ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
- .debug_info    0x0000cb7c      0x353 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
- .debug_info    0x0000cecf      0x883 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
- .debug_info    0x0000d752      0x168 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
- .debug_info    0x0000d8ba      0xcef ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_info    0x0000e5a9      0x330 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
- .debug_info    0x0000e8d9     0x5419 ./Core/app/http_server_app/src/dashboard.o
- .debug_info    0x00013cf2     0x2c6b ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_info    0x0001695d     0x1640 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_info    0x00017f9d     0x10a4 ./Core/app/sntp_app/src/sntp.o
- .debug_info    0x00019041     0x147d ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- .debug_info    0x0001a4be      0xe02 ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_info    0x0001b2c0      0x966 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_info    0x0001bc26      0xe83 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_info    0x0001caa9      0xf69 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_info    0x0001da12      0x73e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_info    0x0001e150     0x381a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_info    0x0002196a      0x1f9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
- .debug_info    0x00021b63      0xab2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_info    0x00022615      0x6be ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
- .debug_info    0x00022cd3      0xfe8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
- .debug_info    0x00023cbb     0x1164 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
- .debug_info    0x00024e1f     0x1cdb ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_info    0x00026afa     0x3c50 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_info    0x0002a74a     0x1ae9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_info    0x0002c233      0x274 ./Drivers/i2c_display/src/fonts.o
- .debug_info    0x0002c4a7     0x2188 ./Drivers/i2c_display/src/ssd1306.o
- .debug_info    0x0002e62f     0x547c ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_info    0x00033aab      0x2c3 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_info    0x00033d6e     0x27ac ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_info    0x0003651a     0x37d9 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_info    0x00039cf3     0x2219 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_info    0x0003bf0c      0x55e ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .debug_info    0x0003c46a      0x599 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_info    0x0003ca03     0x1a8c ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_info    0x0003e48f     0xd3a0 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- .debug_info    0x0004b82f      0x16a ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
- .debug_info    0x0004b999    0x165e6 ./Middlewares/Third_Party/mongoose/mongoose.o
- .debug_info    0x00061f7f      0x41e ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_info    0x00007059     0x1301 ./Core/Src/main.o
+ .debug_info    0x0000835a      0x76b ./Core/Src/rtc.o
+ .debug_info    0x00008ac5      0xa9b ./Core/Src/spi.o
+ .debug_info    0x00009560      0x46d ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_info    0x000099cd      0xc08 ./Core/Src/stm32f4xx_hal_timebase_tim.o
+ .debug_info    0x0000a5d5      0x6b2 ./Core/Src/stm32f4xx_it.o
+ .debug_info    0x0000ac87      0x78d ./Core/Src/syscalls.o
+ .debug_info    0x0000b414      0x175 ./Core/Src/sysmem.o
+ .debug_info    0x0000b589      0x557 ./Core/Src/system_stm32f4xx.o
+ .debug_info    0x0000bae0       0x30 ./Core/Startup/startup_stm32f411ceux.o
+ .debug_info    0x0000bb10      0x402 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_info    0x0000bf12      0x241 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
+ .debug_info    0x0000c153      0x4df ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
+ .debug_info    0x0000c632      0x235 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
+ .debug_info    0x0000c867      0x2bb ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
+ .debug_info    0x0000cb22      0x353 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
+ .debug_info    0x0000ce75      0x883 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
+ .debug_info    0x0000d6f8      0x168 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
+ .debug_info    0x0000d860      0xcef ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_info    0x0000e54f      0x330 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
+ .debug_info    0x0000e87f     0x5419 ./Core/app/http_server_app/src/dashboard.o
+ .debug_info    0x00013c98     0x2c6b ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_info    0x00016903     0x1640 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_info    0x00017f43     0x10a4 ./Core/app/sntp_app/src/sntp.o
+ .debug_info    0x00018fe7     0x147d ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ .debug_info    0x0001a464      0xe02 ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_info    0x0001b266      0x966 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_info    0x0001bbcc      0xe83 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_info    0x0001ca4f      0xf69 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_info    0x0001d9b8      0x73e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_info    0x0001e0f6     0x381a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_info    0x00021910      0x1f9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
+ .debug_info    0x00021b09      0xab2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_info    0x000225bb      0x6be ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
+ .debug_info    0x00022c79      0xfe8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
+ .debug_info    0x00023c61     0x1164 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
+ .debug_info    0x00024dc5     0x1cdb ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_info    0x00026aa0     0x3c50 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_info    0x0002a6f0     0x1ae9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_info    0x0002c1d9      0x274 ./Drivers/i2c_display/src/fonts.o
+ .debug_info    0x0002c44d     0x2188 ./Drivers/i2c_display/src/ssd1306.o
+ .debug_info    0x0002e5d5     0x547c ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_info    0x00033a51      0x2c3 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_info    0x00033d14     0x27ac ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_info    0x000364c0     0x37d9 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_info    0x00039c99     0x2219 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_info    0x0003beb2      0x55e ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_info    0x0003c410      0x599 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_info    0x0003c9a9     0x1a8c ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_info    0x0003e435     0xd3a0 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ .debug_info    0x0004b7d5      0x16a ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+ .debug_info    0x0004b93f    0x165e6 ./Middlewares/Third_Party/mongoose/mongoose.o
+ .debug_info    0x00061f25      0x41e ./Middlewares/Third_Party/validation/src/validation.o
 
-.debug_abbrev   0x00000000     0x8ce3
+.debug_abbrev   0x00000000     0x8cde
  .debug_abbrev  0x00000000      0x23d ./Core/Src/adc.o
  .debug_abbrev  0x0000023d      0x41e ./Core/Src/freertos.o
  .debug_abbrev  0x0000065b      0x165 ./Core/Src/gpio.o
  .debug_abbrev  0x000007c0      0x210 ./Core/Src/i2c.o
  .debug_abbrev  0x000009d0      0x145 ./Core/Src/iwdg.o
  .debug_abbrev  0x00000b15      0x331 ./Core/Src/logger.o
- .debug_abbrev  0x00000e46      0x2a2 ./Core/Src/main.o
- .debug_abbrev  0x000010e8      0x1b0 ./Core/Src/rtc.o
- .debug_abbrev  0x00001298      0x21c ./Core/Src/spi.o
- .debug_abbrev  0x000014b4      0x122 ./Core/Src/stm32f4xx_hal_msp.o
- .debug_abbrev  0x000015d6      0x248 ./Core/Src/stm32f4xx_hal_timebase_tim.o
- .debug_abbrev  0x0000181e      0x19b ./Core/Src/stm32f4xx_it.o
- .debug_abbrev  0x000019b9      0x1c3 ./Core/Src/syscalls.o
- .debug_abbrev  0x00001b7c       0xec ./Core/Src/sysmem.o
- .debug_abbrev  0x00001c68      0x120 ./Core/Src/system_stm32f4xx.o
- .debug_abbrev  0x00001d88       0x24 ./Core/Startup/startup_stm32f411ceux.o
- .debug_abbrev  0x00001dac      0x13e ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_abbrev  0x00001eea       0xfd ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
- .debug_abbrev  0x00001fe7      0x11b ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
- .debug_abbrev  0x00002102       0xfd ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
- .debug_abbrev  0x000021ff      0x125 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
- .debug_abbrev  0x00002324      0x120 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
- .debug_abbrev  0x00002444      0x261 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
- .debug_abbrev  0x000026a5       0xd5 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
- .debug_abbrev  0x0000277a      0x2c3 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_abbrev  0x00002a3d      0x162 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
- .debug_abbrev  0x00002b9f      0x46b ./Core/app/http_server_app/src/dashboard.o
- .debug_abbrev  0x0000300a      0x45c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_abbrev  0x00003466      0x263 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_abbrev  0x000036c9      0x2f9 ./Core/app/sntp_app/src/sntp.o
- .debug_abbrev  0x000039c2      0x2e0 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- .debug_abbrev  0x00003ca2      0x2ce ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_abbrev  0x00003f70      0x279 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_abbrev  0x000041e9      0x236 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_abbrev  0x0000441f      0x393 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_abbrev  0x000047b2      0x203 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_abbrev  0x000049b5      0x2d4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_abbrev  0x00004c89      0x13b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
- .debug_abbrev  0x00004dc4      0x2c8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_abbrev  0x0000508c      0x1c9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
- .debug_abbrev  0x00005255      0x216 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
- .debug_abbrev  0x0000546b      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
- .debug_abbrev  0x0000569d      0x270 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_abbrev  0x0000590d      0x286 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_abbrev  0x00005b93      0x284 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_abbrev  0x00005e17      0x134 ./Drivers/i2c_display/src/fonts.o
- .debug_abbrev  0x00005f4b      0x325 ./Drivers/i2c_display/src/ssd1306.o
- .debug_abbrev  0x00006270      0x617 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_abbrev  0x00006887      0x10c ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_abbrev  0x00006993      0x3ec ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_abbrev  0x00006d7f      0x461 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_abbrev  0x000071e0      0x3c9 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_abbrev  0x000075a9      0x295 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .debug_abbrev  0x0000783e      0x265 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_abbrev  0x00007aa3      0x3d8 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_abbrev  0x00007e7b      0x5e4 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- .debug_abbrev  0x0000845f       0xe7 ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
- .debug_abbrev  0x00008546      0x63e ./Middlewares/Third_Party/mongoose/mongoose.o
- .debug_abbrev  0x00008b84      0x15f ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_abbrev  0x00000e46      0x29d ./Core/Src/main.o
+ .debug_abbrev  0x000010e3      0x1b0 ./Core/Src/rtc.o
+ .debug_abbrev  0x00001293      0x21c ./Core/Src/spi.o
+ .debug_abbrev  0x000014af      0x122 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_abbrev  0x000015d1      0x248 ./Core/Src/stm32f4xx_hal_timebase_tim.o
+ .debug_abbrev  0x00001819      0x19b ./Core/Src/stm32f4xx_it.o
+ .debug_abbrev  0x000019b4      0x1c3 ./Core/Src/syscalls.o
+ .debug_abbrev  0x00001b77       0xec ./Core/Src/sysmem.o
+ .debug_abbrev  0x00001c63      0x120 ./Core/Src/system_stm32f4xx.o
+ .debug_abbrev  0x00001d83       0x24 ./Core/Startup/startup_stm32f411ceux.o
+ .debug_abbrev  0x00001da7      0x13e ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_abbrev  0x00001ee5       0xfd ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
+ .debug_abbrev  0x00001fe2      0x11b ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
+ .debug_abbrev  0x000020fd       0xfd ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
+ .debug_abbrev  0x000021fa      0x125 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
+ .debug_abbrev  0x0000231f      0x120 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
+ .debug_abbrev  0x0000243f      0x261 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
+ .debug_abbrev  0x000026a0       0xd5 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
+ .debug_abbrev  0x00002775      0x2c3 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_abbrev  0x00002a38      0x162 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
+ .debug_abbrev  0x00002b9a      0x46b ./Core/app/http_server_app/src/dashboard.o
+ .debug_abbrev  0x00003005      0x45c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_abbrev  0x00003461      0x263 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_abbrev  0x000036c4      0x2f9 ./Core/app/sntp_app/src/sntp.o
+ .debug_abbrev  0x000039bd      0x2e0 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ .debug_abbrev  0x00003c9d      0x2ce ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_abbrev  0x00003f6b      0x279 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_abbrev  0x000041e4      0x236 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_abbrev  0x0000441a      0x393 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_abbrev  0x000047ad      0x203 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_abbrev  0x000049b0      0x2d4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_abbrev  0x00004c84      0x13b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
+ .debug_abbrev  0x00004dbf      0x2c8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_abbrev  0x00005087      0x1c9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
+ .debug_abbrev  0x00005250      0x216 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
+ .debug_abbrev  0x00005466      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
+ .debug_abbrev  0x00005698      0x270 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_abbrev  0x00005908      0x286 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_abbrev  0x00005b8e      0x284 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_abbrev  0x00005e12      0x134 ./Drivers/i2c_display/src/fonts.o
+ .debug_abbrev  0x00005f46      0x325 ./Drivers/i2c_display/src/ssd1306.o
+ .debug_abbrev  0x0000626b      0x617 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_abbrev  0x00006882      0x10c ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_abbrev  0x0000698e      0x3ec ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_abbrev  0x00006d7a      0x461 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_abbrev  0x000071db      0x3c9 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_abbrev  0x000075a4      0x295 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_abbrev  0x00007839      0x265 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_abbrev  0x00007a9e      0x3d8 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_abbrev  0x00007e76      0x5e4 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ .debug_abbrev  0x0000845a       0xe7 ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+ .debug_abbrev  0x00008541      0x63e ./Middlewares/Third_Party/mongoose/mongoose.o
+ .debug_abbrev  0x00008b7f      0x15f ./Middlewares/Third_Party/validation/src/validation.o
 
 .debug_loclists
                 0x00000000    0x2e553
@@ -15715,7 +15718,7 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  .debug_rnglists
                 0x00003275       0x3f ./Middlewares/Third_Party/validation/src/validation.o
 
-.debug_macro    0x00000000    0x26731
+.debug_macro    0x00000000    0x2673a
  .debug_macro   0x00000000      0x24b ./Core/Src/adc.o
  .debug_macro   0x0000024b      0xad8 ./Core/Src/adc.o
  .debug_macro   0x00000d23      0x2b3 ./Core/Src/adc.o
@@ -15845,235 +15848,235 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  .debug_macro   0x00019703      0x24b ./Core/Src/iwdg.o
  .debug_macro   0x0001994e      0x51d ./Core/Src/logger.o
  .debug_macro   0x00019e6b       0x16 ./Core/Src/logger.o
- .debug_macro   0x00019e81      0x3ae ./Core/Src/main.o
- .debug_macro   0x0001a22f      0x16f ./Core/Src/main.o
- .debug_macro   0x0001a39e       0x66 ./Core/Src/main.o
- .debug_macro   0x0001a404      0x24b ./Core/Src/rtc.o
- .debug_macro   0x0001a64f      0x24b ./Core/Src/spi.o
- .debug_macro   0x0001a89a      0x241 ./Core/Src/stm32f4xx_hal_msp.o
- .debug_macro   0x0001aadb      0x232 ./Core/Src/stm32f4xx_hal_timebase_tim.o
- .debug_macro   0x0001ad0d      0x24b ./Core/Src/stm32f4xx_it.o
- .debug_macro   0x0001af58      0x265 ./Core/Src/syscalls.o
- .debug_macro   0x0001b1bd       0x6e ./Core/Src/syscalls.o
- .debug_macro   0x0001b22b       0x94 ./Core/Src/syscalls.o
- .debug_macro   0x0001b2bf       0x57 ./Core/Src/syscalls.o
- .debug_macro   0x0001b316       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0001b326       0xcf ./Core/Src/syscalls.o
- .debug_macro   0x0001b3f5       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0001b405       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0001b415      0x18a ./Core/Src/syscalls.o
- .debug_macro   0x0001b59f       0x16 ./Core/Src/syscalls.o
- .debug_macro   0x0001b5b5       0xce ./Core/Src/syscalls.o
- .debug_macro   0x0001b683       0xff ./Core/Src/sysmem.o
- .debug_macro   0x0001b782      0x23c ./Core/Src/sysmem.o
- .debug_macro   0x0001b9be      0x232 ./Core/Src/system_stm32f4xx.o
- .debug_macro   0x0001bbf0      0x294 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_macro   0x0001be84       0x22 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_macro   0x0001bea6       0x70 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_macro   0x0001bf16      0x25e ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
- .debug_macro   0x0001c174      0x2be ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
- .debug_macro   0x0001c432      0x264 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
- .debug_macro   0x0001c696      0x246 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
- .debug_macro   0x0001c8dc      0x23a ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
- .debug_macro   0x0001cb16      0x263 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
- .debug_macro   0x0001cd79       0x10 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
- .debug_macro   0x0001cd89      0x1d6 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
- .debug_macro   0x0001cf5f      0x3e0 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_macro   0x0001d33f      0x528 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_macro   0x0001d867       0xf4 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_macro   0x0001d95b      0x273 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
- .debug_macro   0x0001dbce      0x598 ./Core/app/http_server_app/src/dashboard.o
- .debug_macro   0x0001e166       0xa6 ./Core/app/http_server_app/src/dashboard.o
- .debug_macro   0x0001e20c      0x578 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001e784       0x34 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001e7b8      0x197 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001e94f      0x38c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001ecdb       0x4c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001ed27       0x4a ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001ed71       0x16 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001ed87       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001eda3       0x3c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001eddf      0x138 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001ef17      0x1f2 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f109       0x10 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f119      0x409 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f522       0x10 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f532       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f54e       0xde ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f62c      0x536 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001fb62     0x1011 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x00020b73      0x21b ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_macro   0x00020d8e       0xdc ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_macro   0x00020e6a       0x1c ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_macro   0x00020e86      0x52f ./Core/app/sntp_app/src/sntp.o
- .debug_macro   0x000213b5      0x119 ./Core/app/sntp_app/src/sntp.o
- .debug_macro   0x000214ce      0x366 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- .debug_macro   0x00021834      0x300 ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_macro   0x00021b34       0x94 ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_macro   0x00021bc8      0x292 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_macro   0x00021e5a      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_macro   0x0002208d      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_macro   0x000222bf      0x238 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_macro   0x000224f7      0x280 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_macro   0x00022777      0x23e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
- .debug_macro   0x000229b5      0x256 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_macro   0x00022c0b      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
- .debug_macro   0x00022e3d      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
- .debug_macro   0x00023070      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
- .debug_macro   0x000232a2      0x241 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_macro   0x000234e3      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_macro   0x00023716      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_macro   0x00023948      0x30a ./Drivers/i2c_display/src/fonts.o
- .debug_macro   0x00023c52      0x365 ./Drivers/i2c_display/src/ssd1306.o
- .debug_macro   0x00023fb7      0x42c ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x000243e3       0x10 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x000243f3       0xf5 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x000244e8       0x91 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x00024579       0x8d ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x00024606       0x9a ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x000246a0       0x22 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x000246c2      0x18a ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_macro   0x0002484c      0x219 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_macro   0x00024a65      0x282 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_macro   0x00024ce7       0x10 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_macro   0x00024cf7      0x1df ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_macro   0x00024ed6       0x97 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_macro   0x00024f6d      0x233 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .debug_macro   0x000251a0      0x1b1 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_macro   0x00025351      0x546 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_macro   0x00025897       0x4c ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_macro   0x000258e3      0x132 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_macro   0x00025a15      0x28d ./Middlewares/Third_Party/LittleFS/src/lfs.o
- .debug_macro   0x00025ca2      0x23d ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
- .debug_macro   0x00025edf      0x4f3 ./Middlewares/Third_Party/mongoose/mongoose.o
- .debug_macro   0x000263d2      0x183 ./Middlewares/Third_Party/validation/src/validation.o
- .debug_macro   0x00026555       0x16 ./Middlewares/Third_Party/validation/src/validation.o
- .debug_macro   0x0002656b       0x9e ./Middlewares/Third_Party/validation/src/validation.o
- .debug_macro   0x00026609      0x112 ./Middlewares/Third_Party/validation/src/validation.o
- .debug_macro   0x0002671b       0x16 ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_macro   0x00019e81      0x3b7 ./Core/Src/main.o
+ .debug_macro   0x0001a238      0x16f ./Core/Src/main.o
+ .debug_macro   0x0001a3a7       0x66 ./Core/Src/main.o
+ .debug_macro   0x0001a40d      0x24b ./Core/Src/rtc.o
+ .debug_macro   0x0001a658      0x24b ./Core/Src/spi.o
+ .debug_macro   0x0001a8a3      0x241 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_macro   0x0001aae4      0x232 ./Core/Src/stm32f4xx_hal_timebase_tim.o
+ .debug_macro   0x0001ad16      0x24b ./Core/Src/stm32f4xx_it.o
+ .debug_macro   0x0001af61      0x265 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b1c6       0x6e ./Core/Src/syscalls.o
+ .debug_macro   0x0001b234       0x94 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b2c8       0x57 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b31f       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b32f       0xcf ./Core/Src/syscalls.o
+ .debug_macro   0x0001b3fe       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b40e       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b41e      0x18a ./Core/Src/syscalls.o
+ .debug_macro   0x0001b5a8       0x16 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b5be       0xce ./Core/Src/syscalls.o
+ .debug_macro   0x0001b68c       0xff ./Core/Src/sysmem.o
+ .debug_macro   0x0001b78b      0x23c ./Core/Src/sysmem.o
+ .debug_macro   0x0001b9c7      0x232 ./Core/Src/system_stm32f4xx.o
+ .debug_macro   0x0001bbf9      0x294 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_macro   0x0001be8d       0x22 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_macro   0x0001beaf       0x70 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_macro   0x0001bf1f      0x25e ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
+ .debug_macro   0x0001c17d      0x2be ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
+ .debug_macro   0x0001c43b      0x264 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
+ .debug_macro   0x0001c69f      0x246 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
+ .debug_macro   0x0001c8e5      0x23a ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
+ .debug_macro   0x0001cb1f      0x263 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
+ .debug_macro   0x0001cd82       0x10 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
+ .debug_macro   0x0001cd92      0x1d6 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
+ .debug_macro   0x0001cf68      0x3e0 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_macro   0x0001d348      0x528 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_macro   0x0001d870       0xf4 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_macro   0x0001d964      0x273 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
+ .debug_macro   0x0001dbd7      0x598 ./Core/app/http_server_app/src/dashboard.o
+ .debug_macro   0x0001e16f       0xa6 ./Core/app/http_server_app/src/dashboard.o
+ .debug_macro   0x0001e215      0x578 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001e78d       0x34 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001e7c1      0x197 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001e958      0x38c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ece4       0x4c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ed30       0x4a ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ed7a       0x16 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ed90       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001edac       0x3c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ede8      0x138 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ef20      0x1f2 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f112       0x10 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f122      0x409 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f52b       0x10 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f53b       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f557       0xde ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f635      0x536 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001fb6b     0x1011 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x00020b7c      0x21b ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_macro   0x00020d97       0xdc ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_macro   0x00020e73       0x1c ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_macro   0x00020e8f      0x52f ./Core/app/sntp_app/src/sntp.o
+ .debug_macro   0x000213be      0x119 ./Core/app/sntp_app/src/sntp.o
+ .debug_macro   0x000214d7      0x366 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ .debug_macro   0x0002183d      0x300 ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_macro   0x00021b3d       0x94 ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_macro   0x00021bd1      0x292 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_macro   0x00021e63      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_macro   0x00022096      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_macro   0x000222c8      0x238 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_macro   0x00022500      0x280 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_macro   0x00022780      0x23e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
+ .debug_macro   0x000229be      0x256 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_macro   0x00022c14      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
+ .debug_macro   0x00022e46      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
+ .debug_macro   0x00023079      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
+ .debug_macro   0x000232ab      0x241 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_macro   0x000234ec      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_macro   0x0002371f      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_macro   0x00023951      0x30a ./Drivers/i2c_display/src/fonts.o
+ .debug_macro   0x00023c5b      0x365 ./Drivers/i2c_display/src/ssd1306.o
+ .debug_macro   0x00023fc0      0x42c ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x000243ec       0x10 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x000243fc       0xf5 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x000244f1       0x91 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x00024582       0x8d ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x0002460f       0x9a ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x000246a9       0x22 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x000246cb      0x18a ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_macro   0x00024855      0x219 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_macro   0x00024a6e      0x282 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_macro   0x00024cf0       0x10 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_macro   0x00024d00      0x1df ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_macro   0x00024edf       0x97 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_macro   0x00024f76      0x233 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_macro   0x000251a9      0x1b1 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_macro   0x0002535a      0x546 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_macro   0x000258a0       0x4c ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_macro   0x000258ec      0x132 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_macro   0x00025a1e      0x28d ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ .debug_macro   0x00025cab      0x23d ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+ .debug_macro   0x00025ee8      0x4f3 ./Middlewares/Third_Party/mongoose/mongoose.o
+ .debug_macro   0x000263db      0x183 ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_macro   0x0002655e       0x16 ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_macro   0x00026574       0x9e ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_macro   0x00026612      0x112 ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_macro   0x00026724       0x16 ./Middlewares/Third_Party/validation/src/validation.o
 
-.debug_line     0x00000000    0x50e75
+.debug_line     0x00000000    0x50e9d
  .debug_line    0x00000000      0x9c5 ./Core/Src/adc.o
  .debug_line    0x000009c5     0x18b8 ./Core/Src/freertos.o
  .debug_line    0x0000227d      0x86b ./Core/Src/gpio.o
  .debug_line    0x00002ae8      0x890 ./Core/Src/i2c.o
  .debug_line    0x00003378      0x7c6 ./Core/Src/iwdg.o
  .debug_line    0x00003b3e      0xccd ./Core/Src/logger.o
- .debug_line    0x0000480b      0xb6d ./Core/Src/main.o
- .debug_line    0x00005378      0x8ee ./Core/Src/rtc.o
- .debug_line    0x00005c66      0x97c ./Core/Src/spi.o
- .debug_line    0x000065e2      0x7a7 ./Core/Src/stm32f4xx_hal_msp.o
- .debug_line    0x00006d89      0x864 ./Core/Src/stm32f4xx_hal_timebase_tim.o
- .debug_line    0x000075ed      0x83b ./Core/Src/stm32f4xx_it.o
- .debug_line    0x00007e28      0x7f0 ./Core/Src/syscalls.o
- .debug_line    0x00008618      0x478 ./Core/Src/sysmem.o
- .debug_line    0x00008a90      0x85a ./Core/Src/system_stm32f4xx.o
- .debug_line    0x000092ea       0x7a ./Core/Startup/startup_stm32f411ceux.o
- .debug_line    0x00009364      0x8f0 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_line    0x00009c54      0x760 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
- .debug_line    0x0000a3b4      0x985 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
- .debug_line    0x0000ad39      0x74a ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
- .debug_line    0x0000b483      0x741 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
- .debug_line    0x0000bbc4      0x778 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
- .debug_line    0x0000c33c      0xa32 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
- .debug_line    0x0000cd6e      0x659 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
- .debug_line    0x0000d3c7      0x9fe ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_line    0x0000ddc5      0x7ad ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
- .debug_line    0x0000e572     0x1eff ./Core/app/http_server_app/src/dashboard.o
- .debug_line    0x00010471     0x165d ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_line    0x00011ace      0xabe ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_line    0x0001258c      0xcec ./Core/app/sntp_app/src/sntp.o
- .debug_line    0x00013278      0xa73 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- .debug_line    0x00013ceb      0xead ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_line    0x00014b98      0xaff ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_line    0x00015697     0x1589 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_line    0x00016c20      0xe02 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_line    0x00017a22      0xca0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_line    0x000186c2     0x5a02 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_line    0x0001e0c4      0x844 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
- .debug_line    0x0001e908     0x114b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_line    0x0001fa53      0xc6c ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
- .debug_line    0x000206bf     0x1652 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
- .debug_line    0x00021d11     0x17c3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
- .debug_line    0x000234d4     0x2a0f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_line    0x00025ee3     0x4c57 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_line    0x0002ab3a     0x200a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_line    0x0002cb44      0x87d ./Drivers/i2c_display/src/fonts.o
- .debug_line    0x0002d3c1     0x12ae ./Drivers/i2c_display/src/ssd1306.o
- .debug_line    0x0002e66f     0x3230 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_line    0x0003189f      0x711 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_line    0x00031fb0     0x200d ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_line    0x00033fbd     0x2b47 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_line    0x00036b04     0x111e ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_line    0x00037c22      0x997 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .debug_line    0x000385b9      0xa59 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_line    0x00039012     0x1169 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_line    0x0003a17b     0x78be ./Middlewares/Third_Party/LittleFS/src/lfs.o
- .debug_line    0x00041a39      0x66f ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
- .debug_line    0x000420a8     0xe6db ./Middlewares/Third_Party/mongoose/mongoose.o
- .debug_line    0x00050783      0x6f2 ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_line    0x0000480b      0xb95 ./Core/Src/main.o
+ .debug_line    0x000053a0      0x8ee ./Core/Src/rtc.o
+ .debug_line    0x00005c8e      0x97c ./Core/Src/spi.o
+ .debug_line    0x0000660a      0x7a7 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_line    0x00006db1      0x864 ./Core/Src/stm32f4xx_hal_timebase_tim.o
+ .debug_line    0x00007615      0x83b ./Core/Src/stm32f4xx_it.o
+ .debug_line    0x00007e50      0x7f0 ./Core/Src/syscalls.o
+ .debug_line    0x00008640      0x478 ./Core/Src/sysmem.o
+ .debug_line    0x00008ab8      0x85a ./Core/Src/system_stm32f4xx.o
+ .debug_line    0x00009312       0x7a ./Core/Startup/startup_stm32f411ceux.o
+ .debug_line    0x0000938c      0x8f0 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_line    0x00009c7c      0x760 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
+ .debug_line    0x0000a3dc      0x985 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
+ .debug_line    0x0000ad61      0x74a ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
+ .debug_line    0x0000b4ab      0x741 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
+ .debug_line    0x0000bbec      0x778 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
+ .debug_line    0x0000c364      0xa32 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
+ .debug_line    0x0000cd96      0x659 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
+ .debug_line    0x0000d3ef      0x9fe ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_line    0x0000dded      0x7ad ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
+ .debug_line    0x0000e59a     0x1eff ./Core/app/http_server_app/src/dashboard.o
+ .debug_line    0x00010499     0x165d ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_line    0x00011af6      0xabe ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_line    0x000125b4      0xcec ./Core/app/sntp_app/src/sntp.o
+ .debug_line    0x000132a0      0xa73 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ .debug_line    0x00013d13      0xead ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_line    0x00014bc0      0xaff ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_line    0x000156bf     0x1589 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_line    0x00016c48      0xe02 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_line    0x00017a4a      0xca0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_line    0x000186ea     0x5a02 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_line    0x0001e0ec      0x844 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
+ .debug_line    0x0001e930     0x114b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_line    0x0001fa7b      0xc6c ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
+ .debug_line    0x000206e7     0x1652 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
+ .debug_line    0x00021d39     0x17c3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
+ .debug_line    0x000234fc     0x2a0f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_line    0x00025f0b     0x4c57 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_line    0x0002ab62     0x200a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_line    0x0002cb6c      0x87d ./Drivers/i2c_display/src/fonts.o
+ .debug_line    0x0002d3e9     0x12ae ./Drivers/i2c_display/src/ssd1306.o
+ .debug_line    0x0002e697     0x3230 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_line    0x000318c7      0x711 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_line    0x00031fd8     0x200d ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_line    0x00033fe5     0x2b47 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_line    0x00036b2c     0x111e ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_line    0x00037c4a      0x997 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_line    0x000385e1      0xa59 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_line    0x0003903a     0x1169 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_line    0x0003a1a3     0x78be ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ .debug_line    0x00041a61      0x66f ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+ .debug_line    0x000420d0     0xe6db ./Middlewares/Third_Party/mongoose/mongoose.o
+ .debug_line    0x000507ab      0x6f2 ./Middlewares/Third_Party/validation/src/validation.o
 
-.debug_str      0x00000000    0xbd6a3
- .debug_str     0x00000000    0xbd6a3 ./Core/Src/adc.o
-                              0x99e59 (size before relaxing)
- .debug_str     0x000bd6a3    0xa9d95 ./Core/Src/freertos.o
- .debug_str     0x000bd6a3    0x999dc ./Core/Src/gpio.o
- .debug_str     0x000bd6a3    0x99f10 ./Core/Src/i2c.o
- .debug_str     0x000bd6a3    0x998a6 ./Core/Src/iwdg.o
- .debug_str     0x000bd6a3    0xa46a8 ./Core/Src/logger.o
- .debug_str     0x000bd6a3    0xa1895 ./Core/Src/main.o
- .debug_str     0x000bd6a3    0x99c2e ./Core/Src/rtc.o
- .debug_str     0x000bd6a3    0x99e7b ./Core/Src/spi.o
- .debug_str     0x000bd6a3    0x99cc6 ./Core/Src/stm32f4xx_hal_msp.o
- .debug_str     0x000bd6a3    0x9a117 ./Core/Src/stm32f4xx_hal_timebase_tim.o
- .debug_str     0x000bd6a3    0x99db5 ./Core/Src/stm32f4xx_it.o
- .debug_str     0x000bd6a3     0x9451 ./Core/Src/syscalls.o
- .debug_str     0x000bd6a3     0x714a ./Core/Src/sysmem.o
- .debug_str     0x000bd6a3    0x99788 ./Core/Src/system_stm32f4xx.o
- .debug_str     0x000bd6a3       0x80 ./Core/Startup/startup_stm32f411ceux.o
- .debug_str     0x000bd6a3     0xc48e ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_str     0x000bd6a3     0xc267 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
- .debug_str     0x000bd6a3     0xc6a0 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
- .debug_str     0x000bd6a3     0xc28b ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
- .debug_str     0x000bd6a3     0xc1da ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
- .debug_str     0x000bd6a3     0xbf4a ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
- .debug_str     0x000bd6a3     0xc615 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
- .debug_str     0x000bd6a3     0xbc61 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
- .debug_str     0x000bd6a3    0x11739 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_str     0x000bd6a3     0xc1ad ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
- .debug_str     0x000bd6a3    0xa6e95 ./Core/app/http_server_app/src/dashboard.o
- .debug_str     0x000bd6a3    0xa6e43 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_str     0x000bd6a3     0xb869 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_str     0x000bd6a3    0xa5b29 ./Core/app/sntp_app/src/sntp.o
- .debug_str     0x000bd6a3     0xf7b5 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- .debug_str     0x000bd6a3    0x9c7d6 ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_str     0x000bd6a3    0x9a1b4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_str     0x000bd6a3    0x99d63 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_str     0x000bd6a3    0x99f1e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_str     0x000bd6a3    0x99903 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_str     0x000bd6a3    0x9a799 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_str     0x000bd6a3    0x99724 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
- .debug_str     0x000bd6a3    0x99bcd ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_str     0x000bd6a3    0x99910 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
- .debug_str     0x000bd6a3    0x99be5 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
- .debug_str     0x000bd6a3    0x99e7f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
- .debug_str     0x000bd6a3    0x9a034 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_str     0x000bd6a3    0x9ab00 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_str     0x000bd6a3    0x9a30c ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_str     0x000bd6a3    0x9c485 ./Drivers/i2c_display/src/fonts.o
- .debug_str     0x000bd6a3    0x9cfdf ./Drivers/i2c_display/src/ssd1306.o
- .debug_str     0x000bd6a3    0xa3ffc ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_str     0x000bd6a3     0xa5fb ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_str     0x000bd6a3     0xc14c ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_str     0x000bd6a3     0xcf5b ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_str     0x000bd6a3     0xc991 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_str     0x000bd6a3     0xb339 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .debug_str     0x000bd6a3     0xaf3d ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_str     0x000bd6a3    0xa60a7 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_str     0x000bd6a3     0xd66d ./Middlewares/Third_Party/LittleFS/src/lfs.o
- .debug_str     0x000bd6a3     0xbd41 ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
- .debug_str     0x000bd6a3    0x1176e ./Middlewares/Third_Party/mongoose/mongoose.o
- .debug_str     0x000bd6a3     0x72a2 ./Middlewares/Third_Party/validation/src/validation.o
+.debug_str      0x00000000    0xbd6a5
+ .debug_str     0x00000000    0xbd6a5 ./Core/Src/adc.o
+                              0x99e5b (size before relaxing)
+ .debug_str     0x000bd6a5    0xa9d97 ./Core/Src/freertos.o
+ .debug_str     0x000bd6a5    0x999de ./Core/Src/gpio.o
+ .debug_str     0x000bd6a5    0x99f12 ./Core/Src/i2c.o
+ .debug_str     0x000bd6a5    0x998a8 ./Core/Src/iwdg.o
+ .debug_str     0x000bd6a5    0xa46aa ./Core/Src/logger.o
+ .debug_str     0x000bd6a5    0xa1ae8 ./Core/Src/main.o
+ .debug_str     0x000bd6a5    0x99c30 ./Core/Src/rtc.o
+ .debug_str     0x000bd6a5    0x99e7d ./Core/Src/spi.o
+ .debug_str     0x000bd6a5    0x99cc8 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_str     0x000bd6a5    0x9a119 ./Core/Src/stm32f4xx_hal_timebase_tim.o
+ .debug_str     0x000bd6a5    0x99db7 ./Core/Src/stm32f4xx_it.o
+ .debug_str     0x000bd6a5     0x9453 ./Core/Src/syscalls.o
+ .debug_str     0x000bd6a5     0x714c ./Core/Src/sysmem.o
+ .debug_str     0x000bd6a5    0x9978a ./Core/Src/system_stm32f4xx.o
+ .debug_str     0x000bd6a5       0x82 ./Core/Startup/startup_stm32f411ceux.o
+ .debug_str     0x000bd6a5     0xc490 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_str     0x000bd6a5     0xc269 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
+ .debug_str     0x000bd6a5     0xc6a2 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
+ .debug_str     0x000bd6a5     0xc28d ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
+ .debug_str     0x000bd6a5     0xc1dc ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
+ .debug_str     0x000bd6a5     0xbf4c ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
+ .debug_str     0x000bd6a5     0xc617 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
+ .debug_str     0x000bd6a5     0xbc63 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
+ .debug_str     0x000bd6a5    0x1173b ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_str     0x000bd6a5     0xc1af ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
+ .debug_str     0x000bd6a5    0xa6e97 ./Core/app/http_server_app/src/dashboard.o
+ .debug_str     0x000bd6a5    0xa6e45 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_str     0x000bd6a5     0xb86b ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_str     0x000bd6a5    0xa5b2b ./Core/app/sntp_app/src/sntp.o
+ .debug_str     0x000bd6a5     0xf7b7 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ .debug_str     0x000bd6a5    0x9c7d8 ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_str     0x000bd6a5    0x9a1b6 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_str     0x000bd6a5    0x99d65 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_str     0x000bd6a5    0x99f20 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_str     0x000bd6a5    0x99905 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_str     0x000bd6a5    0x9a79b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_str     0x000bd6a5    0x99726 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
+ .debug_str     0x000bd6a5    0x99bcf ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_str     0x000bd6a5    0x99912 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
+ .debug_str     0x000bd6a5    0x99be7 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
+ .debug_str     0x000bd6a5    0x99e81 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
+ .debug_str     0x000bd6a5    0x9a036 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_str     0x000bd6a5    0x9ab02 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_str     0x000bd6a5    0x9a30e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_str     0x000bd6a5    0x9c487 ./Drivers/i2c_display/src/fonts.o
+ .debug_str     0x000bd6a5    0x9cfe1 ./Drivers/i2c_display/src/ssd1306.o
+ .debug_str     0x000bd6a5    0xa3ffe ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_str     0x000bd6a5     0xa5fd ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_str     0x000bd6a5     0xc14e ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_str     0x000bd6a5     0xcf5d ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_str     0x000bd6a5     0xc993 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_str     0x000bd6a5     0xb33b ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_str     0x000bd6a5     0xaf3f ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_str     0x000bd6a5    0xa60a9 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_str     0x000bd6a5     0xd66f ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ .debug_str     0x000bd6a5     0xbd43 ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+ .debug_str     0x000bd6a5    0x11770 ./Middlewares/Third_Party/mongoose/mongoose.o
+ .debug_str     0x000bd6a5     0x72a4 ./Middlewares/Third_Party/validation/src/validation.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Core/Src/adc.o
@@ -16318,6 +16321,6 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  .debug_frame   0x0000ca0c       0x34 /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a(_udivmoddi4.o)
 
 .debug_line_str
-                0x00000000       0x64
+                0x00000000       0x66
  .debug_line_str
-                0x00000000       0x64 ./Core/Startup/startup_stm32f411ceux.o
+                0x00000000       0x66 ./Core/Startup/startup_stm32f411ceux.o
