@@ -690,7 +690,7 @@ void StartLoggingTask(void *argument)
 	uint32_t count = 20000;
 	void *  f_pointer = NULL;
 	size_t fs_size;
-	HeapStats_t heap_status;
+//	HeapStats_t heap_status;
 
 	uint32_t bytes_read = 0, bytes_write = 0, erace_times = 0;
 
@@ -704,6 +704,19 @@ void StartLoggingTask(void *argument)
 
 	logging(L_INFO, "Flash chip model name: %s",  get_flash_chip_model());
 	logging(L_INFO, "Firmware version: %s", dev_sw_ver);
+
+    uint32_t idcode = DBGMCU->IDCODE;
+    uint32_t dev_id = idcode & 0xFFF;
+    uint32_t rev_id = (idcode >> 16) & 0xFFFF;
+    logging(L_INFO, "MCU ID and revision: %04X:%04X", dev_id, rev_id);
+
+    uint16_t flash_kb = *(uint16_t*)FLASHSIZE_BASE;
+    logging(L_INFO, "MCU flash size: %u KB", flash_kb);
+	logging(L_INFO, "Firmware build date: %s", __DATE__);
+	logging(L_INFO, "Firmware build time: %s", __TIME__);
+
+
+
 
 
   /* Infinite loop */
@@ -732,7 +745,15 @@ void StartLoggingTask(void *argument)
     			mg_full_info.mgr_if->mac[2], mg_full_info.mgr_if->mac[3],
     			mg_full_info.mgr_if->mac[4], mg_full_info.mgr_if->mac[5]);
         	logging(L_INFO, "Flash chip model name: %s",  get_flash_chip_model());
+
+            logging(L_INFO, "MCU ID and revision: %04X:%04X", dev_id, rev_id);
+
+
+            logging(L_INFO, "MCU flash size: %u KB", flash_kb);
+
         	logging(L_INFO, "Firmware version: %s", dev_sw_ver);
+        	logging(L_INFO, "Firmware build date: %s", __DATE__);
+        	logging(L_INFO, "Firmware build time: %s", __TIME__);
 
         	bytes_read  = sFLASH_GetReadedBytes();
     		bytes_write = sFLASH_GetWritedBytes();
