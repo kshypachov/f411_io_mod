@@ -1127,6 +1127,7 @@ Discarded input sections
  .group         0x00000000        0xc ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/main.o
+ .group         0x00000000        0xc ./Core/Src/main.o
  .text          0x00000000        0x0 ./Core/Src/main.o
  .data          0x00000000        0x0 ./Core/Src/main.o
  .bss           0x00000000        0x0 ./Core/Src/main.o
@@ -1203,6 +1204,7 @@ Discarded input sections
  .debug_macro   0x00000000       0xaa ./Core/Src/main.o
  .debug_macro   0x00000000       0x74 ./Core/Src/main.o
  .debug_macro   0x00000000       0xdd ./Core/Src/main.o
+ .debug_macro   0x00000000       0x9a ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/rtc.o
  .group         0x00000000        0xc ./Core/Src/rtc.o
  .group         0x00000000        0xc ./Core/Src/rtc.o
@@ -15241,127 +15243,127 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
 LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
 LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.13.3.rel1.macos64_1.0.0.202411102158/tools/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7e-m+fp/hard/libgcc.a
 
-.debug_info     0x00000000    0x624dd
+.debug_info     0x00000000    0x62483
  .debug_info    0x00000000      0xacf ./Core/Src/adc.o
  .debug_info    0x00000acf     0x48c8 ./Core/Src/freertos.o
  .debug_info    0x00005397      0x533 ./Core/Src/gpio.o
  .debug_info    0x000058ca      0xa1d ./Core/Src/i2c.o
  .debug_info    0x000062e7      0x1da ./Core/Src/iwdg.o
  .debug_info    0x000064c1      0xcd8 ./Core/Src/logger.o
- .debug_info    0x00007199     0x135b ./Core/Src/main.o
- .debug_info    0x000084f4      0x76b ./Core/Src/rtc.o
- .debug_info    0x00008c5f      0xa9b ./Core/Src/spi.o
- .debug_info    0x000096fa      0x46d ./Core/Src/stm32f4xx_hal_msp.o
- .debug_info    0x00009b67      0xc08 ./Core/Src/stm32f4xx_hal_timebase_tim.o
- .debug_info    0x0000a76f      0x6b2 ./Core/Src/stm32f4xx_it.o
- .debug_info    0x0000ae21      0x78d ./Core/Src/syscalls.o
- .debug_info    0x0000b5ae      0x175 ./Core/Src/sysmem.o
- .debug_info    0x0000b723      0x557 ./Core/Src/system_stm32f4xx.o
- .debug_info    0x0000bc7a       0x30 ./Core/Startup/startup_stm32f411ceux.o
- .debug_info    0x0000bcaa      0x402 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_info    0x0000c0ac      0x241 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
- .debug_info    0x0000c2ed      0x4df ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
- .debug_info    0x0000c7cc      0x235 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
- .debug_info    0x0000ca01      0x2bb ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
- .debug_info    0x0000ccbc      0x353 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
- .debug_info    0x0000d00f      0x883 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
- .debug_info    0x0000d892      0x168 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
- .debug_info    0x0000d9fa      0xcef ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_info    0x0000e6e9      0x330 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
- .debug_info    0x0000ea19     0x5419 ./Core/app/http_server_app/src/dashboard.o
- .debug_info    0x00013e32     0x2c6b ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_info    0x00016a9d     0x1640 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_info    0x000180dd     0x10a4 ./Core/app/sntp_app/src/sntp.o
- .debug_info    0x00019181     0x147d ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- .debug_info    0x0001a5fe      0xe02 ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_info    0x0001b400      0x966 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_info    0x0001bd66      0xe83 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_info    0x0001cbe9      0xf69 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_info    0x0001db52      0x73e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_info    0x0001e290     0x381a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_info    0x00021aaa      0x1f9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
- .debug_info    0x00021ca3      0xab2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_info    0x00022755      0x6be ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
- .debug_info    0x00022e13      0xfe8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
- .debug_info    0x00023dfb     0x1164 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
- .debug_info    0x00024f5f     0x1cdb ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_info    0x00026c3a     0x3c50 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_info    0x0002a88a     0x1ae9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_info    0x0002c373      0x274 ./Drivers/i2c_display/src/fonts.o
- .debug_info    0x0002c5e7     0x2188 ./Drivers/i2c_display/src/ssd1306.o
- .debug_info    0x0002e76f     0x547c ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_info    0x00033beb      0x2c3 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_info    0x00033eae     0x27ac ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_info    0x0003665a     0x37d9 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_info    0x00039e33     0x2219 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_info    0x0003c04c      0x55e ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .debug_info    0x0003c5aa      0x599 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_info    0x0003cb43     0x1a8c ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_info    0x0003e5cf     0xd3a0 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- .debug_info    0x0004b96f      0x16a ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
- .debug_info    0x0004bad9    0x165e6 ./Middlewares/Third_Party/mongoose/mongoose.o
- .debug_info    0x000620bf      0x41e ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_info    0x00007199     0x1301 ./Core/Src/main.o
+ .debug_info    0x0000849a      0x76b ./Core/Src/rtc.o
+ .debug_info    0x00008c05      0xa9b ./Core/Src/spi.o
+ .debug_info    0x000096a0      0x46d ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_info    0x00009b0d      0xc08 ./Core/Src/stm32f4xx_hal_timebase_tim.o
+ .debug_info    0x0000a715      0x6b2 ./Core/Src/stm32f4xx_it.o
+ .debug_info    0x0000adc7      0x78d ./Core/Src/syscalls.o
+ .debug_info    0x0000b554      0x175 ./Core/Src/sysmem.o
+ .debug_info    0x0000b6c9      0x557 ./Core/Src/system_stm32f4xx.o
+ .debug_info    0x0000bc20       0x30 ./Core/Startup/startup_stm32f411ceux.o
+ .debug_info    0x0000bc50      0x402 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_info    0x0000c052      0x241 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
+ .debug_info    0x0000c293      0x4df ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
+ .debug_info    0x0000c772      0x235 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
+ .debug_info    0x0000c9a7      0x2bb ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
+ .debug_info    0x0000cc62      0x353 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
+ .debug_info    0x0000cfb5      0x883 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
+ .debug_info    0x0000d838      0x168 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
+ .debug_info    0x0000d9a0      0xcef ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_info    0x0000e68f      0x330 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
+ .debug_info    0x0000e9bf     0x5419 ./Core/app/http_server_app/src/dashboard.o
+ .debug_info    0x00013dd8     0x2c6b ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_info    0x00016a43     0x1640 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_info    0x00018083     0x10a4 ./Core/app/sntp_app/src/sntp.o
+ .debug_info    0x00019127     0x147d ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ .debug_info    0x0001a5a4      0xe02 ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_info    0x0001b3a6      0x966 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_info    0x0001bd0c      0xe83 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_info    0x0001cb8f      0xf69 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_info    0x0001daf8      0x73e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_info    0x0001e236     0x381a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_info    0x00021a50      0x1f9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
+ .debug_info    0x00021c49      0xab2 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_info    0x000226fb      0x6be ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
+ .debug_info    0x00022db9      0xfe8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
+ .debug_info    0x00023da1     0x1164 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
+ .debug_info    0x00024f05     0x1cdb ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_info    0x00026be0     0x3c50 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_info    0x0002a830     0x1ae9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_info    0x0002c319      0x274 ./Drivers/i2c_display/src/fonts.o
+ .debug_info    0x0002c58d     0x2188 ./Drivers/i2c_display/src/ssd1306.o
+ .debug_info    0x0002e715     0x547c ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_info    0x00033b91      0x2c3 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_info    0x00033e54     0x27ac ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_info    0x00036600     0x37d9 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_info    0x00039dd9     0x2219 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_info    0x0003bff2      0x55e ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_info    0x0003c550      0x599 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_info    0x0003cae9     0x1a8c ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_info    0x0003e575     0xd3a0 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ .debug_info    0x0004b915      0x16a ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+ .debug_info    0x0004ba7f    0x165e6 ./Middlewares/Third_Party/mongoose/mongoose.o
+ .debug_info    0x00062065      0x41e ./Middlewares/Third_Party/validation/src/validation.o
 
-.debug_abbrev   0x00000000     0x8ce3
+.debug_abbrev   0x00000000     0x8cde
  .debug_abbrev  0x00000000      0x23d ./Core/Src/adc.o
  .debug_abbrev  0x0000023d      0x41e ./Core/Src/freertos.o
  .debug_abbrev  0x0000065b      0x165 ./Core/Src/gpio.o
  .debug_abbrev  0x000007c0      0x210 ./Core/Src/i2c.o
  .debug_abbrev  0x000009d0      0x145 ./Core/Src/iwdg.o
  .debug_abbrev  0x00000b15      0x331 ./Core/Src/logger.o
- .debug_abbrev  0x00000e46      0x2a2 ./Core/Src/main.o
- .debug_abbrev  0x000010e8      0x1b0 ./Core/Src/rtc.o
- .debug_abbrev  0x00001298      0x21c ./Core/Src/spi.o
- .debug_abbrev  0x000014b4      0x122 ./Core/Src/stm32f4xx_hal_msp.o
- .debug_abbrev  0x000015d6      0x248 ./Core/Src/stm32f4xx_hal_timebase_tim.o
- .debug_abbrev  0x0000181e      0x19b ./Core/Src/stm32f4xx_it.o
- .debug_abbrev  0x000019b9      0x1c3 ./Core/Src/syscalls.o
- .debug_abbrev  0x00001b7c       0xec ./Core/Src/sysmem.o
- .debug_abbrev  0x00001c68      0x120 ./Core/Src/system_stm32f4xx.o
- .debug_abbrev  0x00001d88       0x24 ./Core/Startup/startup_stm32f411ceux.o
- .debug_abbrev  0x00001dac      0x13e ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_abbrev  0x00001eea       0xfd ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
- .debug_abbrev  0x00001fe7      0x11b ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
- .debug_abbrev  0x00002102       0xfd ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
- .debug_abbrev  0x000021ff      0x125 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
- .debug_abbrev  0x00002324      0x120 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
- .debug_abbrev  0x00002444      0x261 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
- .debug_abbrev  0x000026a5       0xd5 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
- .debug_abbrev  0x0000277a      0x2c3 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_abbrev  0x00002a3d      0x162 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
- .debug_abbrev  0x00002b9f      0x46b ./Core/app/http_server_app/src/dashboard.o
- .debug_abbrev  0x0000300a      0x45c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_abbrev  0x00003466      0x263 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_abbrev  0x000036c9      0x2f9 ./Core/app/sntp_app/src/sntp.o
- .debug_abbrev  0x000039c2      0x2e0 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- .debug_abbrev  0x00003ca2      0x2ce ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_abbrev  0x00003f70      0x279 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_abbrev  0x000041e9      0x236 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_abbrev  0x0000441f      0x393 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_abbrev  0x000047b2      0x203 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_abbrev  0x000049b5      0x2d4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_abbrev  0x00004c89      0x13b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
- .debug_abbrev  0x00004dc4      0x2c8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_abbrev  0x0000508c      0x1c9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
- .debug_abbrev  0x00005255      0x216 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
- .debug_abbrev  0x0000546b      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
- .debug_abbrev  0x0000569d      0x270 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_abbrev  0x0000590d      0x286 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_abbrev  0x00005b93      0x284 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_abbrev  0x00005e17      0x134 ./Drivers/i2c_display/src/fonts.o
- .debug_abbrev  0x00005f4b      0x325 ./Drivers/i2c_display/src/ssd1306.o
- .debug_abbrev  0x00006270      0x617 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_abbrev  0x00006887      0x10c ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_abbrev  0x00006993      0x3ec ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_abbrev  0x00006d7f      0x461 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_abbrev  0x000071e0      0x3c9 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_abbrev  0x000075a9      0x295 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .debug_abbrev  0x0000783e      0x265 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_abbrev  0x00007aa3      0x3d8 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_abbrev  0x00007e7b      0x5e4 ./Middlewares/Third_Party/LittleFS/src/lfs.o
- .debug_abbrev  0x0000845f       0xe7 ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
- .debug_abbrev  0x00008546      0x63e ./Middlewares/Third_Party/mongoose/mongoose.o
- .debug_abbrev  0x00008b84      0x15f ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_abbrev  0x00000e46      0x29d ./Core/Src/main.o
+ .debug_abbrev  0x000010e3      0x1b0 ./Core/Src/rtc.o
+ .debug_abbrev  0x00001293      0x21c ./Core/Src/spi.o
+ .debug_abbrev  0x000014af      0x122 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_abbrev  0x000015d1      0x248 ./Core/Src/stm32f4xx_hal_timebase_tim.o
+ .debug_abbrev  0x00001819      0x19b ./Core/Src/stm32f4xx_it.o
+ .debug_abbrev  0x000019b4      0x1c3 ./Core/Src/syscalls.o
+ .debug_abbrev  0x00001b77       0xec ./Core/Src/sysmem.o
+ .debug_abbrev  0x00001c63      0x120 ./Core/Src/system_stm32f4xx.o
+ .debug_abbrev  0x00001d83       0x24 ./Core/Startup/startup_stm32f411ceux.o
+ .debug_abbrev  0x00001da7      0x13e ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_abbrev  0x00001ee5       0xfd ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
+ .debug_abbrev  0x00001fe2      0x11b ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
+ .debug_abbrev  0x000020fd       0xfd ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
+ .debug_abbrev  0x000021fa      0x125 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
+ .debug_abbrev  0x0000231f      0x120 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
+ .debug_abbrev  0x0000243f      0x261 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
+ .debug_abbrev  0x000026a0       0xd5 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
+ .debug_abbrev  0x00002775      0x2c3 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_abbrev  0x00002a38      0x162 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
+ .debug_abbrev  0x00002b9a      0x46b ./Core/app/http_server_app/src/dashboard.o
+ .debug_abbrev  0x00003005      0x45c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_abbrev  0x00003461      0x263 ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_abbrev  0x000036c4      0x2f9 ./Core/app/sntp_app/src/sntp.o
+ .debug_abbrev  0x000039bd      0x2e0 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ .debug_abbrev  0x00003c9d      0x2ce ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_abbrev  0x00003f6b      0x279 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_abbrev  0x000041e4      0x236 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_abbrev  0x0000441a      0x393 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_abbrev  0x000047ad      0x203 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_abbrev  0x000049b0      0x2d4 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_abbrev  0x00004c84      0x13b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
+ .debug_abbrev  0x00004dbf      0x2c8 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_abbrev  0x00005087      0x1c9 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
+ .debug_abbrev  0x00005250      0x216 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
+ .debug_abbrev  0x00005466      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
+ .debug_abbrev  0x00005698      0x270 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_abbrev  0x00005908      0x286 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_abbrev  0x00005b8e      0x284 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_abbrev  0x00005e12      0x134 ./Drivers/i2c_display/src/fonts.o
+ .debug_abbrev  0x00005f46      0x325 ./Drivers/i2c_display/src/ssd1306.o
+ .debug_abbrev  0x0000626b      0x617 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_abbrev  0x00006882      0x10c ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_abbrev  0x0000698e      0x3ec ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_abbrev  0x00006d7a      0x461 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_abbrev  0x000071db      0x3c9 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_abbrev  0x000075a4      0x295 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_abbrev  0x00007839      0x265 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_abbrev  0x00007a9e      0x3d8 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_abbrev  0x00007e76      0x5e4 ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ .debug_abbrev  0x0000845a       0xe7 ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+ .debug_abbrev  0x00008541      0x63e ./Middlewares/Third_Party/mongoose/mongoose.o
+ .debug_abbrev  0x00008b7f      0x15f ./Middlewares/Third_Party/validation/src/validation.o
 
 .debug_loclists
                 0x00000000    0x2e591
@@ -15715,7 +15717,7 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  .debug_rnglists
                 0x00003275       0x3f ./Middlewares/Third_Party/validation/src/validation.o
 
-.debug_macro    0x00000000    0x26731
+.debug_macro    0x00000000    0x2673a
  .debug_macro   0x00000000      0x24b ./Core/Src/adc.o
  .debug_macro   0x0000024b      0xad8 ./Core/Src/adc.o
  .debug_macro   0x00000d23      0x2b3 ./Core/Src/adc.o
@@ -15845,173 +15847,173 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  .debug_macro   0x00019703      0x24b ./Core/Src/iwdg.o
  .debug_macro   0x0001994e      0x51d ./Core/Src/logger.o
  .debug_macro   0x00019e6b       0x16 ./Core/Src/logger.o
- .debug_macro   0x00019e81      0x3ae ./Core/Src/main.o
- .debug_macro   0x0001a22f      0x16f ./Core/Src/main.o
- .debug_macro   0x0001a39e       0x66 ./Core/Src/main.o
- .debug_macro   0x0001a404      0x24b ./Core/Src/rtc.o
- .debug_macro   0x0001a64f      0x24b ./Core/Src/spi.o
- .debug_macro   0x0001a89a      0x241 ./Core/Src/stm32f4xx_hal_msp.o
- .debug_macro   0x0001aadb      0x232 ./Core/Src/stm32f4xx_hal_timebase_tim.o
- .debug_macro   0x0001ad0d      0x24b ./Core/Src/stm32f4xx_it.o
- .debug_macro   0x0001af58      0x265 ./Core/Src/syscalls.o
- .debug_macro   0x0001b1bd       0x6e ./Core/Src/syscalls.o
- .debug_macro   0x0001b22b       0x94 ./Core/Src/syscalls.o
- .debug_macro   0x0001b2bf       0x57 ./Core/Src/syscalls.o
- .debug_macro   0x0001b316       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0001b326       0xcf ./Core/Src/syscalls.o
- .debug_macro   0x0001b3f5       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0001b405       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x0001b415      0x18a ./Core/Src/syscalls.o
- .debug_macro   0x0001b59f       0x16 ./Core/Src/syscalls.o
- .debug_macro   0x0001b5b5       0xce ./Core/Src/syscalls.o
- .debug_macro   0x0001b683       0xff ./Core/Src/sysmem.o
- .debug_macro   0x0001b782      0x23c ./Core/Src/sysmem.o
- .debug_macro   0x0001b9be      0x232 ./Core/Src/system_stm32f4xx.o
- .debug_macro   0x0001bbf0      0x294 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_macro   0x0001be84       0x22 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_macro   0x0001bea6       0x70 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_macro   0x0001bf16      0x25e ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
- .debug_macro   0x0001c174      0x2be ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
- .debug_macro   0x0001c432      0x264 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
- .debug_macro   0x0001c696      0x246 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
- .debug_macro   0x0001c8dc      0x23a ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
- .debug_macro   0x0001cb16      0x263 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
- .debug_macro   0x0001cd79       0x10 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
- .debug_macro   0x0001cd89      0x1d6 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
- .debug_macro   0x0001cf5f      0x3e0 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_macro   0x0001d33f      0x528 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_macro   0x0001d867       0xf4 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_macro   0x0001d95b      0x273 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
- .debug_macro   0x0001dbce      0x598 ./Core/app/http_server_app/src/dashboard.o
- .debug_macro   0x0001e166       0xa6 ./Core/app/http_server_app/src/dashboard.o
- .debug_macro   0x0001e20c      0x578 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001e784       0x34 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001e7b8      0x197 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001e94f      0x38c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001ecdb       0x4c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001ed27       0x4a ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001ed71       0x16 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001ed87       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001eda3       0x3c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001eddf      0x138 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001ef17      0x1f2 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f109       0x10 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f119      0x409 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f522       0x10 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f532       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f54e       0xde ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001f62c      0x536 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x0001fb62     0x1011 ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_macro   0x00020b73      0x21b ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_macro   0x00020d8e       0xdc ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_macro   0x00020e6a       0x1c ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_macro   0x00020e86      0x52f ./Core/app/sntp_app/src/sntp.o
- .debug_macro   0x000213b5      0x119 ./Core/app/sntp_app/src/sntp.o
- .debug_macro   0x000214ce      0x366 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- .debug_macro   0x00021834      0x300 ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_macro   0x00021b34       0x94 ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_macro   0x00021bc8      0x292 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_macro   0x00021e5a      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_macro   0x0002208d      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_macro   0x000222bf      0x238 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_macro   0x000224f7      0x280 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_macro   0x00022777      0x23e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
- .debug_macro   0x000229b5      0x256 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_macro   0x00022c0b      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
- .debug_macro   0x00022e3d      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
- .debug_macro   0x00023070      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
- .debug_macro   0x000232a2      0x241 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_macro   0x000234e3      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_macro   0x00023716      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_macro   0x00023948      0x30a ./Drivers/i2c_display/src/fonts.o
- .debug_macro   0x00023c52      0x365 ./Drivers/i2c_display/src/ssd1306.o
- .debug_macro   0x00023fb7      0x42c ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x000243e3       0x10 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x000243f3       0xf5 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x000244e8       0x91 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x00024579       0x8d ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x00024606       0x9a ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x000246a0       0x22 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_macro   0x000246c2      0x18a ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_macro   0x0002484c      0x219 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_macro   0x00024a65      0x282 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_macro   0x00024ce7       0x10 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_macro   0x00024cf7      0x1df ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_macro   0x00024ed6       0x97 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_macro   0x00024f6d      0x233 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .debug_macro   0x000251a0      0x1b1 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_macro   0x00025351      0x546 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_macro   0x00025897       0x4c ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_macro   0x000258e3      0x132 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_macro   0x00025a15      0x28d ./Middlewares/Third_Party/LittleFS/src/lfs.o
- .debug_macro   0x00025ca2      0x23d ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
- .debug_macro   0x00025edf      0x4f3 ./Middlewares/Third_Party/mongoose/mongoose.o
- .debug_macro   0x000263d2      0x183 ./Middlewares/Third_Party/validation/src/validation.o
- .debug_macro   0x00026555       0x16 ./Middlewares/Third_Party/validation/src/validation.o
- .debug_macro   0x0002656b       0x9e ./Middlewares/Third_Party/validation/src/validation.o
- .debug_macro   0x00026609      0x112 ./Middlewares/Third_Party/validation/src/validation.o
- .debug_macro   0x0002671b       0x16 ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_macro   0x00019e81      0x3b7 ./Core/Src/main.o
+ .debug_macro   0x0001a238      0x16f ./Core/Src/main.o
+ .debug_macro   0x0001a3a7       0x66 ./Core/Src/main.o
+ .debug_macro   0x0001a40d      0x24b ./Core/Src/rtc.o
+ .debug_macro   0x0001a658      0x24b ./Core/Src/spi.o
+ .debug_macro   0x0001a8a3      0x241 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_macro   0x0001aae4      0x232 ./Core/Src/stm32f4xx_hal_timebase_tim.o
+ .debug_macro   0x0001ad16      0x24b ./Core/Src/stm32f4xx_it.o
+ .debug_macro   0x0001af61      0x265 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b1c6       0x6e ./Core/Src/syscalls.o
+ .debug_macro   0x0001b234       0x94 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b2c8       0x57 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b31f       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b32f       0xcf ./Core/Src/syscalls.o
+ .debug_macro   0x0001b3fe       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b40e       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b41e      0x18a ./Core/Src/syscalls.o
+ .debug_macro   0x0001b5a8       0x16 ./Core/Src/syscalls.o
+ .debug_macro   0x0001b5be       0xce ./Core/Src/syscalls.o
+ .debug_macro   0x0001b68c       0xff ./Core/Src/sysmem.o
+ .debug_macro   0x0001b78b      0x23c ./Core/Src/sysmem.o
+ .debug_macro   0x0001b9c7      0x232 ./Core/Src/system_stm32f4xx.o
+ .debug_macro   0x0001bbf9      0x294 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_macro   0x0001be8d       0x22 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_macro   0x0001beaf       0x70 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_macro   0x0001bf1f      0x25e ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
+ .debug_macro   0x0001c17d      0x2be ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
+ .debug_macro   0x0001c43b      0x264 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
+ .debug_macro   0x0001c69f      0x246 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
+ .debug_macro   0x0001c8e5      0x23a ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
+ .debug_macro   0x0001cb1f      0x263 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
+ .debug_macro   0x0001cd82       0x10 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
+ .debug_macro   0x0001cd92      0x1d6 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
+ .debug_macro   0x0001cf68      0x3e0 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_macro   0x0001d348      0x528 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_macro   0x0001d870       0xf4 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_macro   0x0001d964      0x273 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
+ .debug_macro   0x0001dbd7      0x598 ./Core/app/http_server_app/src/dashboard.o
+ .debug_macro   0x0001e16f       0xa6 ./Core/app/http_server_app/src/dashboard.o
+ .debug_macro   0x0001e215      0x578 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001e78d       0x34 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001e7c1      0x197 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001e958      0x38c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ece4       0x4c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ed30       0x4a ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ed7a       0x16 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ed90       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001edac       0x3c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ede8      0x138 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001ef20      0x1f2 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f112       0x10 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f122      0x409 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f52b       0x10 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f53b       0x1c ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f557       0xde ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001f635      0x536 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x0001fb6b     0x1011 ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_macro   0x00020b7c      0x21b ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_macro   0x00020d97       0xdc ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_macro   0x00020e73       0x1c ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_macro   0x00020e8f      0x52f ./Core/app/sntp_app/src/sntp.o
+ .debug_macro   0x000213be      0x119 ./Core/app/sntp_app/src/sntp.o
+ .debug_macro   0x000214d7      0x366 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ .debug_macro   0x0002183d      0x300 ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_macro   0x00021b3d       0x94 ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_macro   0x00021bd1      0x292 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_macro   0x00021e63      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_macro   0x00022096      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_macro   0x000222c8      0x238 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_macro   0x00022500      0x280 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_macro   0x00022780      0x23e ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
+ .debug_macro   0x000229be      0x256 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_macro   0x00022c14      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
+ .debug_macro   0x00022e46      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
+ .debug_macro   0x00023079      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
+ .debug_macro   0x000232ab      0x241 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_macro   0x000234ec      0x233 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_macro   0x0002371f      0x232 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_macro   0x00023951      0x30a ./Drivers/i2c_display/src/fonts.o
+ .debug_macro   0x00023c5b      0x365 ./Drivers/i2c_display/src/ssd1306.o
+ .debug_macro   0x00023fc0      0x42c ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x000243ec       0x10 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x000243fc       0xf5 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x000244f1       0x91 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x00024582       0x8d ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x0002460f       0x9a ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x000246a9       0x22 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_macro   0x000246cb      0x18a ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_macro   0x00024855      0x219 ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_macro   0x00024a6e      0x282 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_macro   0x00024cf0       0x10 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_macro   0x00024d00      0x1df ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_macro   0x00024edf       0x97 ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_macro   0x00024f76      0x233 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_macro   0x000251a9      0x1b1 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_macro   0x0002535a      0x546 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_macro   0x000258a0       0x4c ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_macro   0x000258ec      0x132 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_macro   0x00025a1e      0x28d ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ .debug_macro   0x00025cab      0x23d ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+ .debug_macro   0x00025ee8      0x4f3 ./Middlewares/Third_Party/mongoose/mongoose.o
+ .debug_macro   0x000263db      0x183 ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_macro   0x0002655e       0x16 ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_macro   0x00026574       0x9e ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_macro   0x00026612      0x112 ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_macro   0x00026724       0x16 ./Middlewares/Third_Party/validation/src/validation.o
 
-.debug_line     0x00000000    0x50eaa
+.debug_line     0x00000000    0x50ed2
  .debug_line    0x00000000      0x9c5 ./Core/Src/adc.o
  .debug_line    0x000009c5     0x18ed ./Core/Src/freertos.o
  .debug_line    0x000022b2      0x86b ./Core/Src/gpio.o
  .debug_line    0x00002b1d      0x890 ./Core/Src/i2c.o
  .debug_line    0x000033ad      0x7c6 ./Core/Src/iwdg.o
  .debug_line    0x00003b73      0xccd ./Core/Src/logger.o
- .debug_line    0x00004840      0xb6d ./Core/Src/main.o
- .debug_line    0x000053ad      0x8ee ./Core/Src/rtc.o
- .debug_line    0x00005c9b      0x97c ./Core/Src/spi.o
- .debug_line    0x00006617      0x7a7 ./Core/Src/stm32f4xx_hal_msp.o
- .debug_line    0x00006dbe      0x864 ./Core/Src/stm32f4xx_hal_timebase_tim.o
- .debug_line    0x00007622      0x83b ./Core/Src/stm32f4xx_it.o
- .debug_line    0x00007e5d      0x7f0 ./Core/Src/syscalls.o
- .debug_line    0x0000864d      0x478 ./Core/Src/sysmem.o
- .debug_line    0x00008ac5      0x85a ./Core/Src/system_stm32f4xx.o
- .debug_line    0x0000931f       0x7a ./Core/Startup/startup_stm32f411ceux.o
- .debug_line    0x00009399      0x8f0 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
- .debug_line    0x00009c89      0x760 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
- .debug_line    0x0000a3e9      0x985 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
- .debug_line    0x0000ad6e      0x74a ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
- .debug_line    0x0000b4b8      0x741 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
- .debug_line    0x0000bbf9      0x778 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
- .debug_line    0x0000c371      0xa32 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
- .debug_line    0x0000cda3      0x659 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
- .debug_line    0x0000d3fc      0x9fe ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
- .debug_line    0x0000ddfa      0x7ad ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
- .debug_line    0x0000e5a7     0x1eff ./Core/app/http_server_app/src/dashboard.o
- .debug_line    0x000104a6     0x165d ./Core/app/mqtt_client_app/src/mqtt.o
- .debug_line    0x00011b03      0xabe ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
- .debug_line    0x000125c1      0xcec ./Core/app/sntp_app/src/sntp.o
- .debug_line    0x000132ad      0xa73 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
- .debug_line    0x00013d20      0xead ./Drivers/SPI_FLASH/src/SPI_flash.o
- .debug_line    0x00014bcd      0xaff ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
- .debug_line    0x000156cc     0x1589 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
- .debug_line    0x00016c55      0xe02 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
- .debug_line    0x00017a57      0xca0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
- .debug_line    0x000186f7     0x5a02 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
- .debug_line    0x0001e0f9      0x844 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
- .debug_line    0x0001e93d     0x114b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
- .debug_line    0x0001fa88      0xc6c ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
- .debug_line    0x000206f4     0x1652 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
- .debug_line    0x00021d46     0x17c3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
- .debug_line    0x00023509     0x2a0f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
- .debug_line    0x00025f18     0x4c57 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
- .debug_line    0x0002ab6f     0x200a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
- .debug_line    0x0002cb79      0x87d ./Drivers/i2c_display/src/fonts.o
- .debug_line    0x0002d3f6     0x12ae ./Drivers/i2c_display/src/ssd1306.o
- .debug_line    0x0002e6a4     0x3230 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
- .debug_line    0x000318d4      0x711 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_line    0x00031fe5     0x200d ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
- .debug_line    0x00033ff2     0x2b47 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_line    0x00036b39     0x111e ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
- .debug_line    0x00037c57      0x997 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
- .debug_line    0x000385ee      0xa59 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .debug_line    0x00039047     0x1169 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
- .debug_line    0x0003a1b0     0x78be ./Middlewares/Third_Party/LittleFS/src/lfs.o
- .debug_line    0x00041a6e      0x66f ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
- .debug_line    0x000420dd     0xe6db ./Middlewares/Third_Party/mongoose/mongoose.o
- .debug_line    0x000507b8      0x6f2 ./Middlewares/Third_Party/validation/src/validation.o
+ .debug_line    0x00004840      0xb95 ./Core/Src/main.o
+ .debug_line    0x000053d5      0x8ee ./Core/Src/rtc.o
+ .debug_line    0x00005cc3      0x97c ./Core/Src/spi.o
+ .debug_line    0x0000663f      0x7a7 ./Core/Src/stm32f4xx_hal_msp.o
+ .debug_line    0x00006de6      0x864 ./Core/Src/stm32f4xx_hal_timebase_tim.o
+ .debug_line    0x0000764a      0x83b ./Core/Src/stm32f4xx_it.o
+ .debug_line    0x00007e85      0x7f0 ./Core/Src/syscalls.o
+ .debug_line    0x00008675      0x478 ./Core/Src/sysmem.o
+ .debug_line    0x00008aed      0x85a ./Core/Src/system_stm32f4xx.o
+ .debug_line    0x00009347       0x7a ./Core/Startup/startup_stm32f411ceux.o
+ .debug_line    0x000093c1      0x8f0 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfunccoils.o
+ .debug_line    0x00009cb1      0x760 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncdisc.o
+ .debug_line    0x0000a411      0x985 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncholding.o
+ .debug_line    0x0000ad96      0x74a ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncinput.o
+ .debug_line    0x0000b4e0      0x741 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbfuncother.o
+ .debug_line    0x0000bc21      0x778 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/functions/mbutils.o
+ .debug_line    0x0000c399      0xa32 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/mb.o
+ .debug_line    0x0000cdcb      0x659 ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/portevent.o
+ .debug_line    0x0000d424      0x9fe ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/port/porttcp.o
+ .debug_line    0x0000de22      0x7ad ./Core/app/ModBusTCP_server/freemodbus_1.6/modbus/tcp/mbtcp.o
+ .debug_line    0x0000e5cf     0x1eff ./Core/app/http_server_app/src/dashboard.o
+ .debug_line    0x000104ce     0x165d ./Core/app/mqtt_client_app/src/mqtt.o
+ .debug_line    0x00011b2b      0xabe ./Core/app/mqtt_client_app/src/mqtt_gen_strings.o
+ .debug_line    0x000125e9      0xcec ./Core/app/sntp_app/src/sntp.o
+ .debug_line    0x000132d5      0xa73 ./Core/app/ssdp_auto_discovery_app/src/ssdp.o
+ .debug_line    0x00013d48      0xead ./Drivers/SPI_FLASH/src/SPI_flash.o
+ .debug_line    0x00014bf5      0xaff ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
+ .debug_line    0x000156f4     0x1589 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
+ .debug_line    0x00016c7d      0xe02 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
+ .debug_line    0x00017a7f      0xca0 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o
+ .debug_line    0x0001871f     0x5a02 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.o
+ .debug_line    0x0001e121      0x844 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.o
+ .debug_line    0x0001e965     0x114b ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o
+ .debug_line    0x0001fab0      0xc6c ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o
+ .debug_line    0x0002071c     0x1652 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.o
+ .debug_line    0x00021d6e     0x17c3 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.o
+ .debug_line    0x00023531     0x2a0f ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.o
+ .debug_line    0x00025f40     0x4c57 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o
+ .debug_line    0x0002ab97     0x200a ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o
+ .debug_line    0x0002cba1      0x87d ./Drivers/i2c_display/src/fonts.o
+ .debug_line    0x0002d41e     0x12ae ./Drivers/i2c_display/src/ssd1306.o
+ .debug_line    0x0002e6cc     0x3230 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.o
+ .debug_line    0x000318fc      0x711 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_line    0x0003200d     0x200d ./Middlewares/Third_Party/FreeRTOS/Source/queue.o
+ .debug_line    0x0003401a     0x2b47 ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_line    0x00036b61     0x111e ./Middlewares/Third_Party/FreeRTOS/Source/timers.o
+ .debug_line    0x00037c7f      0x997 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM4F/port.o
+ .debug_line    0x00038616      0xa59 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_line    0x0003906f     0x1169 ./Middlewares/Third_Party/LittleFS/src/fs_adstractions.o
+ .debug_line    0x0003a1d8     0x78be ./Middlewares/Third_Party/LittleFS/src/lfs.o
+ .debug_line    0x00041a96      0x66f ./Middlewares/Third_Party/LittleFS/src/lfs_util.o
+ .debug_line    0x00042105     0xe6db ./Middlewares/Third_Party/mongoose/mongoose.o
+ .debug_line    0x000507e0      0x6f2 ./Middlewares/Third_Party/validation/src/validation.o
 
 .debug_str      0x00000000    0xbd6ba
  .debug_str     0x00000000    0xbd6ba ./Core/Src/adc.o
@@ -16021,7 +16023,7 @@ LOAD /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.id
  .debug_str     0x000bd6ba    0x99f10 ./Core/Src/i2c.o
  .debug_str     0x000bd6ba    0x998a6 ./Core/Src/iwdg.o
  .debug_str     0x000bd6ba    0xa46a8 ./Core/Src/logger.o
- .debug_str     0x000bd6ba    0xa1895 ./Core/Src/main.o
+ .debug_str     0x000bd6ba    0xa1ae6 ./Core/Src/main.o
  .debug_str     0x000bd6ba    0x99c2e ./Core/Src/rtc.o
  .debug_str     0x000bd6ba    0x99e7b ./Core/Src/spi.o
  .debug_str     0x000bd6ba    0x99cc6 ./Core/Src/stm32f4xx_hal_msp.o
