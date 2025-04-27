@@ -40,6 +40,23 @@
 
 4. Select the extracted web interface folder and click **Upload**.
 
+## Device and Interface Gallery
+
+Below are images showcasing the F411 IO Mod hardware and interface.
+
+- **Assembled Device**:  
+  ![Assembled Device](images/device_photo.jpg)
+
+- **3D Render of the Device**:  
+  ![3D Render](images/device_render.png)
+
+- **PCB Layout Render**:  
+  ![PCB Render](images/pcb_render.png)
+
+- **Web Interface Screenshots**:  
+  ![Web UI - Overview](images/web_ui%201.png)  
+  ![Web UI - Settings](images/web%20ui%202.png)
+
 ## Quick Start
 
 - The project is built using **STM32CubeIDE**.
