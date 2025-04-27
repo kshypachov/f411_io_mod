@@ -2,7 +2,7 @@
 
 ![Build Status](https://github.com/kshypachov/f411_io_mod/actions/workflows/c-cpp.yml/badge.svg)
 
-**F411 IO Mod** is firmware for the STM32F411CEUX microcontroller, designed for digital input/output control, network functionality, and MQTT communication with Home Assistant integration. The device supports over-the-air firmware and web interface updates, runs FreeRTOS for multitasking, and provides a REST API for remote management.
+**F411 IO Mod** is firmware for the STM32F411CEUX microcontroller, designed for digital input/output control, network functionality, and MQTT communication with Home Assistant integration. The device supports over-the-air firmware and web interface updates, runs FreeRTOS for multitasking, and provides a REST API for remote management. Web interface by [Roman Lakhnov](https://github.com/roman-lakhnov/vite-react-js-switch-ui)
 
 ## Key Features
 
